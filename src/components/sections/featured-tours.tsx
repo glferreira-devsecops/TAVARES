@@ -11,16 +11,17 @@ interface FeaturedToursProps {
     tours: Tour[];
 }
 
-// Helper to get lang code
-function getLang(locale: string): "pt" | "en" | "es" | "fr" {
-    if (locale.startsWith("pt")) return "pt";
-    if (locale.startsWith("es")) return "es";
-    if (locale.startsWith("fr")) return "fr";
-    return "en";
-}
+
 
 export function FeaturedTours({ locale = "pt", tours }: FeaturedToursProps) {
-    const currentLang = getLang(locale);
+    const currentLang = (() => {
+        if (locale.startsWith("pt")) return "pt";
+        if (locale.startsWith("es")) return "es";
+        if (locale.startsWith("fr")) return "fr";
+        return "en";
+    })() as "pt" | "en" | "es" | "fr";
+
+    const contentLang = (currentLang === "pt" ? "pt" : "en") as "pt" | "en";
 
     const content = {
         pt: {
@@ -70,7 +71,7 @@ export function FeaturedTours({ locale = "pt", tours }: FeaturedToursProps) {
     };
 
     return (
-        <section className="py-24 md:py-32 bg-white relative overflow-hidden">
+        <section className="py-12 md:py-24 bg-white relative overflow-hidden">
             {/* Decorative blob */}
             <div className="absolute top-40 right-0 w-[600px] h-[600px] bg-orange-500/5 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/2" />
 
@@ -81,17 +82,17 @@ export function FeaturedTours({ locale = "pt", tours }: FeaturedToursProps) {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="text-center mb-16 md:mb-20"
+                    className="text-center mb-10 md:mb-20"
                 >
-                    <span className="inline-block text-xs font-black text-orange-600 uppercase tracking-[0.3em] mb-5">
+                    <span className="inline-block text-[10px] md:text-xs font-black text-orange-600 uppercase tracking-[0.3em] mb-3 md:mb-5">
                         {t.badge}
                     </span>
-                    <h2 className="font-heading text-4xl md:text-6xl font-bold text-neutral-900 leading-[1.1] mb-6 tracking-tight">
+                    <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold text-neutral-900 leading-[1.1] mb-4 md:mb-6 tracking-tight">
                         {t.title}
                         <br />
                         <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">{t.subtitle}</span>
                     </h2>
-                    <p className="text-lg md:text-xl text-neutral-500 max-w-2xl mx-auto font-light leading-relaxed">
+                    <p className="text-base md:text-xl text-neutral-500 max-w-2xl mx-auto font-light leading-relaxed px-4 md:px-0">
                         {t.description}
                     </p>
                 </motion.div>
@@ -114,7 +115,7 @@ export function FeaturedTours({ locale = "pt", tours }: FeaturedToursProps) {
                                 <div className="relative aspect-[4/3] overflow-hidden">
                                     <Image
                                         src={tour.images[0]?.src || "/images/tours/tour-completo-hero.png"}
-                                        alt={tour.title[currentLang]}
+                                        alt={tour.title[contentLang]}
                                         fill
                                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                         className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -145,12 +146,12 @@ export function FeaturedTours({ locale = "pt", tours }: FeaturedToursProps) {
                                 </div>
 
                                 {/* Content */}
-                                <div className="p-8 flex flex-col flex-1">
+                                <div className="p-6 md:p-8 flex flex-col flex-1">
                                     <h3 className="font-heading text-xl md:text-2xl font-bold text-neutral-900 mb-3 group-hover:text-orange-600 transition-colors leading-tight tracking-tight">
-                                        {tour.title[currentLang]}
+                                        {tour.title[contentLang]}
                                     </h3>
                                     <p className="text-neutral-500 text-sm leading-relaxed mb-6 line-clamp-3 flex-1">
-                                        {tour.shortDescription[currentLang]}
+                                        {tour.shortDescription[contentLang]}
                                     </p>
 
                                     {/* Footer */}

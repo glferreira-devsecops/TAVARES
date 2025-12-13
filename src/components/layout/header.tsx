@@ -66,11 +66,10 @@ export function Header({ locale = "pt" }: HeaderProps) {
     }, []);
 
     // Close mobile menu on route change
+    // Close mobile menu on route change
     useEffect(() => {
-        if (isMobileMenuOpen) {
-            requestAnimationFrame(() => setIsMobileMenuOpen(false));
-        }
-    }, [pathname, isMobileMenuOpen]);
+        setIsMobileMenuOpen(false);
+    }, [pathname]);
 
     // Close language menu when clicking outside
     useEffect(() => {

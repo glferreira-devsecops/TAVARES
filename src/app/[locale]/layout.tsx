@@ -59,7 +59,7 @@ export default async function LocaleLayout({
     return (
         <html lang={locale} className={`${playfair.variable} ${inter.variable}`} suppressHydrationWarning>
             <body
-                className={`${inter.className} antialiased`}
+                className={`${inter.className} antialiased overflow-x-hidden`}
                 style={{
                     fontFamily: 'var(--font-body), Inter, system-ui, -apple-system, sans-serif',
                     backgroundColor: '#fafafa',

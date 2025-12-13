@@ -1,4 +1,5 @@
 
+import { NewsletterForm } from "@/components/layout/newsletter-form";
 import { Link } from "@/i18n/navigation";
 import { CONTACT, NAV_ITEMS, SOCIAL_LINKS } from "@/lib/constants";
 import { ArrowUpRight, Code2, Heart, Instagram, Mail, MapPin, Phone } from "lucide-react";
@@ -53,103 +54,33 @@ export function Footer({ locale = "pt" }: FooterProps) {
     const t = content[currentLang];
 
     return (
-        <footer
-            style={{
-                background: 'linear-gradient(180deg, #0a0a0a 0%, #171717 100%)',
-                color: '#ffffff',
-                position: 'relative',
-                overflow: 'hidden',
-            }}
-        >
-            <div
-                style={{
-                    position: 'absolute',
-                    top: '-50%',
-                    left: '-10%',
-                    width: '500px',
-                    height: '500px',
-                    background: 'radial-gradient(circle, rgba(200,90,52,0.08) 0%, transparent 70%)',
-                    borderRadius: '50%',
-                    filter: 'blur(80px)',
-                    pointerEvents: 'none',
-                }}
-            />
-            <div
-                style={{
-                    position: 'absolute',
-                    bottom: '-30%',
-                    right: '-10%',
-                    width: '400px',
-                    height: '400px',
-                    background: 'radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 70%)',
-                    borderRadius: '50%',
-                    filter: 'blur(60px)',
-                    pointerEvents: 'none',
-                }}
-            />
+        <footer className="relative overflow-hidden bg-gradient-to-b from-neutral-950 to-neutral-900 text-white">
+            {/* Ambient Background Effects */}
+            <div className="absolute -top-[50%] -left-[10%] w-[500px] h-[500px] bg-orange-500/10 rounded-full blur-[100px] pointer-events-none" />
+            <div className="absolute -bottom-[30%] -right-[10%] w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[80px] pointer-events-none" />
 
-            <div
-                style={{
-                    maxWidth: '1400px',
-                    margin: '0 auto',
-                    padding: 'clamp(4rem, 8vw, 6rem) 1.5rem clamp(3rem, 5vw, 4rem)',
-                    position: 'relative',
-                    zIndex: 1,
-                }}
-            >
-                <div
-                    style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-                        gap: 'clamp(2rem, 4vw, 4rem)',
-                        marginBottom: '4rem',
-                    }}
-                >
-                    <div style={{ maxWidth: '320px' }}>
-                        <Link href="/" className="flex items-center gap-2 mb-2">
-                            <span
-                                style={{
-                                    fontFamily: 'var(--font-heading), Georgia, serif',
-                                    fontSize: 'clamp(1.5rem, 3vw, 2rem)',
-                                    fontWeight: 700,
-                                }}
-                            >
-                                <span style={{ color: '#f1825a' }}>Favela</span>
-                                <span style={{ color: '#ffffff' }}>-República</span>
+            <div className="container-custom relative z-10 py-16 md:py-24">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-20">
+                    {/* Brand Column */}
+                    <div className="max-w-xs">
+                        <Link href="/" className="flex items-center gap-2 mb-4 group">
+                            <span className="font-heading text-2xl md:text-3xl font-bold">
+                                <span className="text-primary-500 transition-colors group-hover:text-primary-400">Favela</span>
+                                <span className="text-white">-República</span>
                             </span>
                         </Link>
-                        <p
-                            style={{
-                                color: '#d4d4d4', // Brightened from #a3a3a3
-                                fontSize: '0.95rem',
-                                lineHeight: 1.7,
-                                marginBottom: '2rem',
-                            }}
-                        >
+                        <p className="text-neutral-400 text-sm leading-relaxed mb-8">
                             {t.tagline}
                         </p>
 
-                        <div style={{ display: 'flex', gap: '12px' }}>
+                        <div className="flex gap-3">
                             {SOCIAL_LINKS.map((social) => (
                                 <a
                                     key={social.platform}
                                     href={social.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    style={{
-                                        width: '44px',
-                                        height: '44px',
-                                        borderRadius: '12px',
-                                        background: 'linear-gradient(135deg, #262626 0%, #1a1a1a 100%)',
-                                        border: '1px solid #333',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        color: '#d4d4d4', // Brightened from #a3a3a3
-                                        transition: 'all 0.3s ease',
-                                        textDecoration: 'none',
-                                    }}
-                                    className="hover:bg-primary-500 hover:border-primary-500 hover:text-white hover:scale-110 hover:shadow-[0_4px_20px_rgba(200,90,52,0.4)]"
+                                    className="w-11 h-11 rounded-xl bg-neutral-800/50 border border-neutral-700 flex items-center justify-center text-neutral-400 hover:bg-primary-500 hover:border-primary-500 hover:text-white transition-all duration-300 hover:scale-110 hover:shadow-lg shadow-orange-500/20"
                                     aria-label={social.label}
                                 >
                                     {social.platform === "instagram" && <Instagram size={20} />}
@@ -163,32 +94,17 @@ export function Footer({ locale = "pt" }: FooterProps) {
                         </div>
                     </div>
 
+                    {/* Navigation */}
                     <div>
-                        <h4
-                            style={{
-                                fontSize: '0.8rem',
-                                fontWeight: 600,
-                                textTransform: 'uppercase',
-                                letterSpacing: '0.1em',
-                            }}
-                            className="text-neutral-400 mb-6"
-                        >
+                        <h4 className="text-xs font-bold uppercase tracking-widest text-neutral-500 mb-6 font-heading">
                             {t.navigation}
                         </h4>
-                        <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                        <ul className="space-y-3">
                             {NAV_ITEMS.map((item) => (
                                 <li key={item.href}>
                                     <Link
                                         href={item.href}
-                                        style={{
-                                            textDecoration: 'none',
-                                            fontSize: '0.95rem',
-                                            transition: 'all 0.2s ease',
-                                            display: 'inline-flex',
-                                            alignItems: 'center',
-                                            gap: '4px',
-                                        }}
-                                        className="text-neutral-300 hover:text-primary-400 hover:translate-x-1"
+                                        className="inline-flex items-center gap-1.5 text-neutral-300 hover:text-primary-400 hover:translate-x-1 transition-all duration-200 text-sm font-medium"
                                     >
                                         {item.label[currentLang]}
                                     </Link>
@@ -197,20 +113,12 @@ export function Footer({ locale = "pt" }: FooterProps) {
                         </ul>
                     </div>
 
+                    {/* Tours */}
                     <div>
-                        <h4
-                            style={{
-                                fontSize: '0.8rem',
-                                fontWeight: 600,
-                                textTransform: 'uppercase',
-                                letterSpacing: '0.1em',
-                                color: '#a3a3a3',
-                                marginBottom: '1.5rem',
-                            }}
-                        >
+                        <h4 className="text-xs font-bold uppercase tracking-widest text-neutral-500 mb-6 font-heading">
                             {t.tours}
                         </h4>
-                        <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                        <ul className="space-y-3">
                             {[
                                 { href: "/tours/tour-completo-tavares-bastos", label: "Tour Completo" },
                                 { href: "/tours/tour-arte-urbana-grafite", label: "Arte Urbana & Grafite" },
@@ -219,123 +127,52 @@ export function Footer({ locale = "pt" }: FooterProps) {
                                 <li key={tour.href}>
                                     <Link
                                         href={tour.href}
-                                        style={{
-                                            color: '#d4d4d4',
-                                            textDecoration: 'none',
-                                            fontSize: '0.95rem',
-                                            transition: 'all 0.2s ease',
-                                            display: 'inline-flex',
-                                            alignItems: 'center',
-                                            gap: '4px',
-                                        }}
-                                        className="hover:text-primary-400 hover:translate-x-1"
+                                        className="inline-flex items-center gap-1.5 text-neutral-300 hover:text-primary-400 hover:translate-x-1 transition-all duration-200 text-sm font-medium"
                                     >
                                         {tour.label}
-                                        <ArrowUpRight size={14} style={{ opacity: 0.5 }} />
+                                        <ArrowUpRight className="w-3 h-3 opacity-50" />
                                     </Link>
                                 </li>
                             ))}
                         </ul>
                     </div>
 
+                    {/* Contact */}
                     <div>
-                        <h4
-                            style={{
-                                fontSize: '0.8rem',
-                                fontWeight: 600,
-                                textTransform: 'uppercase',
-                                letterSpacing: '0.1em',
-                                color: '#a3a3a3',
-                                marginBottom: '1.5rem',
-                            }}
-                        >
+                        <h4 className="text-xs font-bold uppercase tracking-widest text-neutral-500 mb-6 font-heading">
                             {t.contact}
                         </h4>
-                        <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                        <ul className="space-y-4">
                             <li>
                                 <a
                                     href={`https://wa.me/${CONTACT.whatsapp.number}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    style={{
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        gap: '12px',
-                                        color: '#d4d4d4', // Brightened
-                                        textDecoration: 'none',
-                                        transition: 'all 0.2s ease',
-                                    }}
-                                    className="hover:text-green-400"
+                                    className="flex items-center gap-3 text-neutral-300 hover:text-green-400 transition-colors group"
                                 >
-                                    <div
-                                        style={{
-                                            width: '36px',
-                                            height: '36px',
-                                            borderRadius: '10px',
-                                            background: 'rgba(37, 211, 102, 0.1)',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                        }}
-                                    >
-                                        <Phone size={16} style={{ color: '#25d366' }} />
+                                    <div className="w-9 h-9 rounded-lg bg-green-500/10 flex items-center justify-center group-hover:bg-green-500/20 transition-colors">
+                                        <Phone className="w-4 h-4 text-green-500" />
                                     </div>
-                                    <span style={{ fontSize: '0.9rem' }}>{CONTACT.whatsapp.displayNumber}</span>
+                                    <span className="text-sm font-medium">{CONTACT.whatsapp.displayNumber}</span>
                                 </a>
                             </li>
                             <li>
                                 <a
                                     href={`mailto:${CONTACT.email}`}
-                                    style={{
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        gap: '12px',
-                                        color: '#d4d4d4', // Brightened
-                                        textDecoration: 'none',
-                                        transition: 'all 0.2s ease',
-                                    }}
-                                    className="hover:text-primary-400"
+                                    className="flex items-center gap-3 text-neutral-300 hover:text-primary-400 transition-colors group"
                                 >
-                                    <div
-                                        style={{
-                                            width: '36px',
-                                            height: '36px',
-                                            borderRadius: '10px',
-                                            background: 'rgba(200, 90, 52, 0.1)',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                        }}
-                                    >
-                                        <Mail size={16} style={{ color: '#f1825a' }} />
+                                    <div className="w-9 h-9 rounded-lg bg-primary-500/10 flex items-center justify-center group-hover:bg-primary-500/20 transition-colors">
+                                        <Mail className="w-4 h-4 text-primary-500" />
                                     </div>
-                                    <span style={{ fontSize: '0.9rem' }}>{CONTACT.email}</span>
+                                    <span className="text-sm font-medium">{CONTACT.email}</span>
                                 </a>
                             </li>
                             <li>
-                                <div
-                                    style={{
-                                        display: 'flex',
-                                        alignItems: 'flex-start',
-                                        gap: '12px',
-                                        color: '#d4d4d4', // Brightened
-                                    }}
-                                >
-                                    <div
-                                        style={{
-                                            width: '36px',
-                                            height: '36px',
-                                            borderRadius: '10px',
-                                            background: 'rgba(59, 130, 246, 0.1)',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            flexShrink: 0,
-                                        }}
-                                    >
-                                        <MapPin size={16} style={{ color: '#3b82f6' }} />
+                                <div className="flex items-start gap-3 text-neutral-300">
+                                    <div className="w-9 h-9 rounded-lg bg-blue-500/10 flex items-center justify-center shrink-0">
+                                        <MapPin className="w-4 h-4 text-blue-500" />
                                     </div>
-                                    <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
+                                    <span className="text-sm leading-relaxed">
                                         {CONTACT.address.neighborhood}, {CONTACT.address.city}<br />
                                         {CONTACT.address.state}, {CONTACT.address.country}
                                     </span>
@@ -345,145 +182,71 @@ export function Footer({ locale = "pt" }: FooterProps) {
                     </div>
                 </div>
 
-                <div
-                    style={{
-                        background: 'linear-gradient(135deg, rgba(200,90,52,0.1) 0%, rgba(200,90,52,0.05) 100%)',
-                        borderRadius: '20px',
-                        padding: 'clamp(1.5rem, 3vw, 2.5rem)',
-                        border: '1px solid rgba(200,90,52,0.15)',
-                        marginBottom: '3rem',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        textAlign: 'center',
-                    }}
-                    className="md:flex-row md:text-left md:justify-between"
-                >
-                    <div style={{ marginBottom: '1.5rem' }} className="md:mb-0">
-                        <h3
-                            style={{
-                                fontFamily: 'var(--font-heading), Georgia, serif',
-                                fontSize: 'clamp(1.25rem, 2.5vw, 1.5rem)',
-                                fontWeight: 700,
-                                color: '#ffffff',
-                                marginBottom: '0.5rem',
-                            }}
-                        >
+                {/* Newsletter Box */}
+                <div className="bg-gradient-to-br from-primary-900/10 to-transparent rounded-2xl p-6 md:p-10 border border-primary-500/10 mb-16 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-10 text-center md:text-left">
+                    <div className="max-w-md">
+                        <h3 className="font-heading text-xl md:text-2xl font-bold text-white mb-2">
                             {t.newsletter}
                         </h3>
-                        <p style={{ color: '#d4d4d4', fontSize: '0.95rem' }}>{t.newsletterDesc}</p>
+                        <p className="text-neutral-400 text-sm">
+                            {t.newsletterDesc}
+                        </p>
                     </div>
-                    <form
-                        style={{
-                            display: 'flex',
-                            gap: '12px',
-                            width: '100%',
-                            maxWidth: '400px',
+                    <NewsletterForm
+                        labels={{
+                            placeholder: "seu@email.com",
+                            button: t.subscribe,
+                            successTitle: currentLang === 'pt' ? "Inscrito com sucesso!" : "Successfully subscribed!",
+                            successMessage: currentLang === 'pt'
+                                ? "Bem-vindo à nossa comunidade."
+                                : "Welcome to our community.",
+                            error: currentLang === 'pt' ? "Erro ao inscrever" : "Error subscribing"
                         }}
-                        className="flex-col sm:flex-row"
-                    >
-                        <input
-                            type="email"
-                            placeholder="seu@email.com"
-                            style={{
-                                flex: 1,
-                                padding: '14px 18px',
-                                borderRadius: '12px',
-                                border: '1px solid #333',
-                                background: '#1a1a1a',
-                                color: '#ffffff',
-                                fontSize: '0.95rem',
-                                outline: 'none',
-                                transition: 'all 0.2s ease',
-                            }}
-                            className="focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
-                        />
-                        <button
-                            type="submit"
-                            style={{
-                                padding: '14px 24px',
-                                borderRadius: '12px',
-                                background: 'linear-gradient(135deg, #f1825a 0%, #c85a34 100%)',
-                                color: '#ffffff',
-                                fontWeight: 600,
-                                fontSize: '0.95rem',
-                                border: 'none',
-                                cursor: 'pointer',
-                                transition: 'all 0.3s ease',
-                                whiteSpace: 'nowrap',
-                            }}
-                            className="hover:shadow-[0_4px_20px_rgba(200,90,52,0.4)] hover:-translate-y-0.5"
-                        >
-                            {t.subscribe}
-                        </button>
-                    </form>
+                    />
                 </div>
             </div>
 
-            <div
-                style={{
-                    borderTop: '1px solid #262626',
-                    background: 'rgba(0,0,0,0.3)',
-                }}
-            >
-                <div
-                    style={{
-                        maxWidth: '1400px',
-                        margin: '0 auto',
-                        padding: '1.5rem',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        gap: '1rem',
-                    }}
-                    className="md:flex-row md:justify-between"
-                >
-                    <p style={{ color: '#d4d4d4', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                        © {currentYear} Favela-República Tour. {t.rights}
-                    </p>
-                    <p style={{ color: '#d4d4d4', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                        {t.madeWith} <Heart size={14} style={{ color: '#ef4444', fill: '#ef4444' }} /> {t.inRio}
-                    </p>
-                    <a
-                        href="https://linkedin.com/in/devferreirag"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{
-                            color: '#d4d4d4',
-                            fontSize: '0.85rem',
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '6px',
-                            textDecoration: 'none',
-                            transition: 'color 0.2s ease'
-                        }}
-                        className="hover:text-primary-500"
-                    >
-                        <Code2 size={14} /> Dev by Gabriel L. Ferreira
-                    </a>
-                    <div style={{ display: 'flex', gap: '24px' }}>
-                        {[
-                            { href: "/seguranca", label: t.safety },
-                            { href: "/privacidade", label: t.privacy },
-                            { href: "/termos", label: t.terms },
-                        ].map((link) => (
-                            <Link
-                                key={link.href}
-                                href={getLocalePath(link.href)}
-                                style={{
-                                    color: '#d4d4d4',
-                                    textDecoration: 'none',
-                                    fontSize: '0.85rem',
-                                    transition: 'color 0.2s ease',
-                                }}
-                                className="hover:text-neutral-300"
-                            >
-                                {link.label}
-                            </Link>
-                        ))}
+            {/* Bottom Bar */}
+            <div className="border-t border-neutral-800 bg-black/20 backdrop-blur-sm">
+                <div className="container-custom py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+                    <div className="flex flex-col md:flex-row items-center gap-4 text-xs text-neutral-500">
+                        <p>© {currentYear} Favela-República Tour. {t.rights}</p>
+                        <span className="hidden md:inline text-neutral-700">•</span>
+                        <p className="flex items-center gap-1.5">
+                            {t.madeWith} <Heart className="w-3.5 h-3.5 text-red-500 fill-red-500 animate-pulse" /> {t.inRio}
+                        </p>
+                    </div>
+
+                    <div className="flex items-center gap-6">
+                        <a
+                            href="https://linkedin.com/in/devferreirag"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-1.5 text-xs font-medium text-neutral-500 hover:text-primary-500 transition-colors"
+                        >
+                            <Code2 className="w-3.5 h-3.5" />
+                            Dev by Gabriel L. Ferreira
+                        </a>
+                        <div className="h-3 w-px bg-neutral-800 hidden sm:block" />
+                        <div className="flex gap-4">
+                            {[
+                                { href: "/seguranca", label: t.safety },
+                                { href: "/privacidade", label: t.privacy },
+                                { href: "/termos", label: t.terms },
+                            ].map((link) => (
+                                <Link
+                                    key={link.href}
+                                    href={getLocalePath(link.href)}
+                                    className="text-xs text-neutral-500 hover:text-neutral-300 transition-colors"
+                                >
+                                    {link.label}
+                                </Link>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
-        </footer >
+        </footer>
     );
 }
+

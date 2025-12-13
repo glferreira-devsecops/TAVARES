@@ -1,6 +1,6 @@
-import { Metadata } from "next";
-import { Shield, CheckCircle, Users, MapPin, Phone, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { CheckCircle, Clock, MapPin, Phone, Shield, Users } from "lucide-react";
+import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -91,7 +91,7 @@ export default async function SegurancaPage({ params }: { params: Promise<{ loca
     return (
         <main className="min-h-screen bg-neutral-50">
             {/* Hero Section */}
-            <section className="relative py-24 md:py-32 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white overflow-hidden">
+            <section className="relative py-12 md:py-24 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white overflow-hidden">
                 <div className="absolute inset-0 bg-[url('/images/about-community.png')] bg-cover bg-center opacity-10" />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent" />
 
@@ -100,17 +100,17 @@ export default async function SegurancaPage({ params }: { params: Promise<{ loca
                         <Shield className="w-4 h-4" />
                         {content.badge}
                     </span>
-                    <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                    <h1 className="font-heading text-3xl md:text-5xl lg:text-7xl font-bold mb-6 leading-tight">
                         {content.title}
                     </h1>
-                    <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-lg md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
                         {content.subtitle}
                     </p>
                 </div>
             </section>
 
             {/* Features Grid */}
-            <section className="py-20 md:py-28">
+            <section className="py-12 md:py-24">
                 <div className="container-custom">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {content.features.map((feature, index) => {
@@ -118,7 +118,7 @@ export default async function SegurancaPage({ params }: { params: Promise<{ loca
                             return (
                                 <div
                                     key={index}
-                                    className="group bg-white p-8 rounded-2xl border border-neutral-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                                    className="group bg-white p-6 md:p-8 rounded-2xl border border-neutral-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                                 >
                                     <div className="w-14 h-14 rounded-xl bg-blue-100 flex items-center justify-center mb-6 group-hover:bg-blue-500 group-hover:scale-110 transition-all duration-300">
                                         <Icon className="w-7 h-7 text-blue-600 group-hover:text-white transition-colors" />
@@ -137,7 +137,7 @@ export default async function SegurancaPage({ params }: { params: Promise<{ loca
             </section>
 
             {/* CTA Section */}
-            <section className="py-16 bg-neutral-900">
+            <section className="py-12 md:py-20 bg-neutral-900">
                 <div className="container-custom text-center">
                     <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-6">
                         {isPt ? "Pronto para uma experiência segura?" : "Ready for a safe experience?"}

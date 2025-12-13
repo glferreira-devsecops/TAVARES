@@ -1,7 +1,7 @@
 "use client";
 
 import { getAverageRating, getFeaturedTestimonials, getTotalReviews } from "@/data/testimonials";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, PanInfo } from "framer-motion";
 import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
@@ -20,6 +20,8 @@ export function Testimonials({ locale = "pt" }: TestimonialsProps) {
         if (locale.startsWith("fr")) return "fr";
         return "en";
     })() as "pt" | "en" | "es" | "fr";
+
+    const contentLang = (currentLang === "pt" ? "pt" : "en") as "pt" | "en";
 
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isPaused, setIsPaused] = useState(false);
@@ -74,7 +76,7 @@ export function Testimonials({ locale = "pt" }: TestimonialsProps) {
     };
 
     return (
-        <section className="py-24 md:py-32 bg-neutral-50 relative overflow-hidden">
+        <section className="py-12 md:py-24 bg-neutral-50 relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px] pointer-events-none translate-x-1/2 -translate-y-1/2" />
             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-orange-500/5 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 translate-y-1/2" />
@@ -86,19 +88,19 @@ export function Testimonials({ locale = "pt" }: TestimonialsProps) {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="text-center mb-16 md:mb-20"
+                    className="text-center mb-12 md:mb-20"
                 >
                     {/* Trust badges */}
-                    <div className="inline-flex items-center gap-4 px-6 py-3 bg-white/80 backdrop-blur-md rounded-full border border-neutral-200 shadow-sm mb-6">
+                    <div className="inline-flex items-center gap-4 px-5 py-2.5 md:px-6 md:py-3 bg-white/80 backdrop-blur-md rounded-full border border-neutral-200 shadow-sm mb-6">
                         <div className="flex -space-x-1">
                             {[...Array(5)].map((_, i) => (
                                 <Star
                                     key={i}
-                                    className="w-4 h-4 text-amber-400 fill-amber-400"
+                                    className="w-3.5 h-3.5 md:w-4 md:h-4 text-amber-400 fill-amber-400"
                                 />
                             ))}
                         </div>
-                        <div className="flex items-center gap-3 text-sm">
+                        <div className="flex items-center gap-3 text-xs md:text-sm">
                             <span className="font-bold text-neutral-900 mt-0.5">
                                 {averageRating}
                             </span>
@@ -109,10 +111,10 @@ export function Testimonials({ locale = "pt" }: TestimonialsProps) {
                         </div>
                     </div>
 
-                    <h2 className="font-heading text-4xl md:text-6xl font-bold text-neutral-900 mb-6 leading-[1.1]">
+                    <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-4 md:mb-6 leading-[1.1]">
                         {t.title}
                     </h2>
-                    <p className="text-xl text-neutral-600 max-w-2xl mx-auto font-light leading-relaxed">
+                    <p className="text-base md:text-xl text-neutral-600 max-w-2xl mx-auto font-light leading-relaxed px-4">
                         {t.subtitle}
                     </p>
                 </motion.div>
@@ -138,7 +140,7 @@ export function Testimonials({ locale = "pt" }: TestimonialsProps) {
                                         name={testimonial.name}
                                         country={testimonial.country}
                                         countryCode={testimonial.countryCode}
-                                        quote={testimonial.quote[currentLang]}
+                                        quote={testimonial.quote[contentLang]}
                                         rating={testimonial.rating}
                                         avatar={testimonial.avatar}
                                         featured={i === 1}
@@ -156,13 +158,25 @@ export function Testimonials({ locale = "pt" }: TestimonialsProps) {
                                 initial={{ opacity: 0, x: 50 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 exit={{ opacity: 0, x: -50 }}
-                                transition={{ duration: 0.4 }}
+                                drag="x"
+                                dragConstraints={{ left: 0, right: 0 }}
+                                dragElastic={0.2}
+                                onDragEnd={(e, { offset }: PanInfo) => {
+                                    const swipe = offset.x; // Distance dragged
+
+                                    if (swipe < -50) {
+                                        nextSlide();
+                                    } else if (swipe > 50) {
+                                        prevSlide();
+                                    }
+                                }}
+                                className="cursor-grab active:cursor-grabbing touch-pan-y"
                             >
                                 <TestimonialCard
                                     name={testimonials[currentIndex].name}
                                     country={testimonials[currentIndex].country}
                                     countryCode={testimonials[currentIndex].countryCode}
-                                    quote={testimonials[currentIndex].quote[currentLang]}
+                                    quote={testimonials[currentIndex].quote[contentLang]}
                                     rating={testimonials[currentIndex].rating}
                                     avatar={testimonials[currentIndex].avatar}
                                     featured
@@ -174,14 +188,14 @@ export function Testimonials({ locale = "pt" }: TestimonialsProps) {
                     {/* Navigation Arrows */}
                     <button
                         onClick={prevSlide}
-                        className="absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white border border-neutral-200 shadow-lg flex items-center justify-center text-neutral-600 hover:bg-primary-500 hover:text-white hover:border-primary-500 transition-all duration-300 hover:scale-110 z-20"
+                        className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white border border-neutral-200 shadow-lg items-center justify-center text-neutral-600 hover:bg-primary-500 hover:text-white hover:border-primary-500 transition-all duration-300 hover:scale-110 z-20"
                         aria-label="Anterior"
                     >
                         <ChevronLeft className="w-6 h-6" />
                     </button>
                     <button
                         onClick={nextSlide}
-                        className="absolute right-0 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white border border-neutral-200 shadow-lg flex items-center justify-center text-neutral-600 hover:bg-primary-500 hover:text-white hover:border-primary-500 transition-all duration-300 hover:scale-110 z-20"
+                        className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white border border-neutral-200 shadow-lg items-center justify-center text-neutral-600 hover:bg-primary-500 hover:text-white hover:border-primary-500 transition-all duration-300 hover:scale-110 z-20"
                         aria-label="Próximo"
                     >
                         <ChevronRight className="w-6 h-6" />
@@ -195,8 +209,8 @@ export function Testimonials({ locale = "pt" }: TestimonialsProps) {
                             key={index}
                             onClick={() => setCurrentIndex(index)}
                             className={`h-2.5 rounded-full transition-all duration-300 ${index === currentIndex
-                                    ? "w-8 bg-orange-500 shadow-lg shadow-orange-500/20"
-                                    : "w-2.5 bg-neutral-300 hover:bg-neutral-400"
+                                ? "w-8 bg-orange-500 shadow-lg shadow-orange-500/20"
+                                : "w-2.5 bg-neutral-300 hover:bg-neutral-400"
                                 }`}
                             aria-label={`Ir para depoimento ${index + 1}`}
                         />
@@ -222,7 +236,7 @@ function TestimonialCard({ name, country, countryCode, quote, rating, avatar, fe
     const flagUrl = `https://flagcdn.com/w40/${countryCode.toLowerCase()}.png`;
 
     return (
-        <div className={`h-full flex flex-col p-8 md:p-10 rounded-[2rem] transition-all duration-300 relative overflow-hidden group hover:-translate-y-2
+        <div className={`h-full flex flex-col p-6 md:p-10 rounded-[2rem] transition-all duration-300 relative overflow-hidden group hover:-translate-y-2
             ${featured
                 ? "bg-white border-2 border-orange-100 shadow-[0_20px_40px_rgba(0,0,0,0.08)]"
                 : "bg-white border border-neutral-100 shadow-sm"

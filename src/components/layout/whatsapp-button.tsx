@@ -19,31 +19,28 @@ export function WhatsAppFloatingButton({ locale = "pt" }: WhatsAppFloatingButton
     const message = WHATSAPP_MESSAGES.general[currentLang];
     const whatsappUrl = `https://wa.me/${CONTACT.whatsapp.number}?text=${encodeURIComponent(message)}`;
 
-    // Show button after scrolling
+    // Show button only after scrolling past Hero (Smart Visibility)
     useEffect(() => {
         const handleScroll = () => {
-            setIsVisible(window.scrollY > 300);
+            // Show only after scrolling down 600px (approx. 1 viewport height)
+            setIsVisible(window.scrollY > 600);
         };
 
-        // Show immediately after a delay
-        const timer = setTimeout(() => {
-            setIsVisible(true);
-        }, 2000);
-
         window.addEventListener("scroll", handleScroll, { passive: true });
+        // Trigger once on mount to check initial position
+        handleScroll();
 
         return () => {
             window.removeEventListener("scroll", handleScroll);
-            clearTimeout(timer);
         };
     }, []);
 
-    // Show tooltip after a delay
+    // Show tooltip shortly after button appears
     useEffect(() => {
         if (isVisible) {
             const timer = setTimeout(() => {
                 setIsTooltipVisible(true);
-            }, 3000);
+            }, 1000); // Faster tooltip for better context
 
             return () => clearTimeout(timer);
         }
@@ -66,7 +63,7 @@ export function WhatsAppFloatingButton({ locale = "pt" }: WhatsAppFloatingButton
                                 animate={{ opacity: 1, x: 0, scale: 1 }}
                                 exit={{ opacity: 0, x: 20, scale: 0.9 }}
                                 transition={{ type: "spring", damping: 20 }}
-                                className="relative bg-white rounded-xl shadow-soft-xl p-4 max-w-[240px]"
+                                className="hidden md:block relative bg-white rounded-xl shadow-soft-xl p-4 max-w-[240px]"
                             >
                                 {/* Close button */}
                                 <button

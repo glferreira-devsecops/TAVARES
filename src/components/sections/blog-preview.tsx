@@ -15,17 +15,12 @@ interface BlogPreviewProps {
     posts: BlogPost[];
 }
 
-// Helper to get lang code
-function getLang(locale: string): "pt" | "en" | "es" | "fr" {
-    if (locale.startsWith("pt")) return "pt";
-    if (locale.startsWith("es")) return "es";
-    if (locale.startsWith("fr")) return "fr";
-    return "en";
-}
+
 
 export function BlogPreview({ locale = "pt", posts }: BlogPreviewProps) {
     const featuredPosts = posts;
-    const currentLang = getLang(locale);
+    const lang = locale.startsWith("pt") ? "pt" : "en";
+    const currentLang = lang as "pt" | "en";
 
     const content = {
         pt: {

@@ -48,7 +48,7 @@ export function CTABanner({ locale = "pt" }: CTABannerProps) {
     const t = content[currentLang];
 
     return (
-        <section className="relative py-32 overflow-hidden">
+        <section className="relative py-16 md:py-32 overflow-hidden">
             {/* Background Image with Parallax-like fixity or just cover */}
             <div className="absolute inset-0 z-0">
                 <Image

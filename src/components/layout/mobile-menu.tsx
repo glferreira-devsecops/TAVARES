@@ -6,6 +6,7 @@ import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { CONTACT, NAV_ITEMS, WHATSAPP_MESSAGES } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
+import { X } from "lucide-react";
 
 interface MobileMenuProps {
     isOpen: boolean;
@@ -30,6 +31,17 @@ export function MobileMenu({ onClose, locale, isActive }: MobileMenuProps) {
             transition={{ duration: 0.3 }}
             className="fixed inset-0 z-modal bg-white/95 backdrop-blur-xl lg:hidden flex flex-col"
         >
+            {/* Close Button */}
+            <div className="absolute top-6 right-4 z-50">
+                <button
+                    onClick={onClose}
+                    className="p-2 -mr-2 text-neutral-900 bg-neutral-100/50 rounded-full hover:bg-neutral-200 transition-colors"
+                    aria-label="Close menu"
+                >
+                    <X className="w-6 h-6" />
+                </button>
+            </div>
+
             <div className="flex-1 flex flex-col justify-center px-8">
                 <nav className="mb-12">
                     <ul className="space-y-6">
@@ -47,7 +59,7 @@ export function MobileMenu({ onClose, locale, isActive }: MobileMenuProps) {
                                         onClick={onClose}
                                         aria-current={active ? "page" : undefined}
                                         className={cn(
-                                            "block text-3xl md:text-4xl font-heading font-bold transition-colors",
+                                            "block text-2xl md:text-4xl font-heading font-bold transition-colors",
                                             active ? "text-primary-500" : "text-neutral-900"
                                         )}
                                     >

@@ -13,12 +13,14 @@ interface FAQPageClientProps {
 
 export function FAQPageClient({ locale }: FAQPageClientProps) {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
-    const lang = (() => {
+    const currentLang = (() => {
         if (locale.startsWith("pt")) return "pt";
         if (locale.startsWith("es")) return "es";
         if (locale.startsWith("fr")) return "fr";
         return "en";
     })() as "pt" | "en" | "es" | "fr";
+
+    const contentLang = (currentLang === "pt" ? "pt" : "en") as "pt" | "en";
     const faqs = getAllFaqs();
 
     const content = {
@@ -52,10 +54,10 @@ export function FAQPageClient({ locale }: FAQPageClientProps) {
         },
     };
 
-    const t = content[lang];
+    const t = content[currentLang];
 
     return (
-        <main className="min-h-screen bg-neutral-50 pt-24 pb-16">
+        <main className="min-h-screen bg-neutral-50 pt-20 pb-12">
             <div className="container mx-auto px-4">
                 {/* Header */}
                 <motion.div
@@ -66,7 +68,7 @@ export function FAQPageClient({ locale }: FAQPageClientProps) {
                     <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-6">
                         <HelpCircle className="w-8 h-8 text-primary-500" />
                     </div>
-                    <h1 className="font-heading text-4xl md:text-5xl font-bold text-neutral-900 mb-4">
+                    <h1 className="font-heading text-3xl md:text-5xl font-bold text-neutral-900 mb-4">
                         {t.title}
                     </h1>
                     <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
@@ -89,7 +91,7 @@ export function FAQPageClient({ locale }: FAQPageClientProps) {
                                 className="w-full bg-white rounded-xl p-5 shadow-soft-md hover:shadow-soft-lg transition-shadow text-left flex items-start justify-between gap-4"
                             >
                                 <span className="font-semibold text-neutral-900">
-                                    {faq.question[lang]}
+                                    {faq.question[contentLang]}
                                 </span>
                                 <ChevronDown
                                     className={`w-5 h-5 text-primary-500 flex-shrink-0 transition-transform ${openIndex === index ? "rotate-180" : ""
@@ -107,7 +109,7 @@ export function FAQPageClient({ locale }: FAQPageClientProps) {
                                     >
                                         <div className="bg-neutral-100 rounded-b-xl p-5 -mt-2">
                                             <p className="text-neutral-700 leading-relaxed">
-                                                {faq.answer[lang]}
+                                                {faq.answer[contentLang]}
                                             </p>
                                         </div>
                                     </motion.div>
@@ -134,7 +136,7 @@ export function FAQPageClient({ locale }: FAQPageClientProps) {
                         </p>
                         <WhatsAppButton
                             phone={CONTACT.whatsapp.number}
-                            message={WHATSAPP_MESSAGES.general[lang]}
+                            message={WHATSAPP_MESSAGES.general[currentLang]}
                             size="lg"
                         >
                             WhatsApp

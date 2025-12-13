@@ -13,7 +13,12 @@ interface HeroProps {
 }
 
 export function Hero({ locale = "pt" }: HeroProps) {
-    const currentLang = locale.startsWith("pt") ? "pt" : "en";
+    const currentLang = (() => {
+        if (locale.startsWith("pt")) return "pt";
+        if (locale.startsWith("es")) return "es";
+        if (locale.startsWith("fr")) return "fr";
+        return "en";
+    })() as "pt" | "en" | "es" | "fr";
     const dict = useDictionary(locale);
     const containerRef = useRef<HTMLElement>(null);
     const { scrollY } = useScroll();
@@ -30,7 +35,7 @@ export function Hero({ locale = "pt" }: HeroProps) {
     };
 
     return (
-        <section ref={containerRef} className="relative h-screen min-h-[800px] flex items-center justify-center overflow-hidden">
+        <section ref={containerRef} className="relative h-[100dvh] min-h-[600px] md:min-h-[800px] flex items-center justify-center overflow-hidden">
 
             {/* 1. Cinematic Background Layer */}
             <motion.div
@@ -72,7 +77,7 @@ export function Hero({ locale = "pt" }: HeroProps) {
 
             {/* 2. Main Content Layer */}
             <motion.div
-                className="container-custom relative z-10 pt-20 text-center"
+                className="container-custom relative z-10 pt-24 pb-24 md:pb-0 text-center flex flex-col justify-center h-full"
                 style={{ y: yText, opacity: opacityText }}
             >
                 {/* Eyebrow / Tagline */}
@@ -80,25 +85,30 @@ export function Hero({ locale = "pt" }: HeroProps) {
                     initial="hidden"
                     animate="visible"
                     variants={fadeInUp}
-                    className="mb-8 flex justify-center"
+                    className="mb-6 md:mb-8 flex justify-center"
                 >
-                    <span className="inline-flex items-center gap-2.5 px-5 py-2 bg-white/10 backdrop-blur-xl rounded-full border border-white/25 text-white text-xs font-bold tracking-[0.25em] uppercase shadow-2xl">
-                        <span className="w-2 h-2 rounded-full bg-gradient-to-r from-orange-400 to-red-500 animate-pulse shadow-lg shadow-orange-500/50" />
+                    <span className="inline-flex items-center gap-2.5 px-4 py-1.5 md:px-5 md:py-2 bg-white/10 backdrop-blur-xl rounded-full border border-white/25 text-white text-[10px] md:text-xs font-bold tracking-[0.25em] uppercase shadow-2xl">
+                        <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-gradient-to-r from-orange-400 to-red-500 animate-pulse shadow-lg shadow-orange-500/50" />
                         {dict.hero.eyebrow}
                     </span>
                 </motion.div>
 
-                {/* Headline - Masked Reveal */}
-                <h1 className="text-white mb-8 overflow-hidden">
+                {/* Headline - Standard FadeInUp to ensure mobile visibility */}
+                <motion.h1
+                    className="text-white mb-6 md:mb-8 relative z-20"
+                    initial="hidden"
+                    animate="visible"
+                    variants={{
+                        visible: { transition: { staggerChildren: 0.1 } }
+                    }}
+                >
                     <div className="sr-only">{dict.hero.title} {dict.hero.titleHighlight}</div>
 
                     {/* First Line */}
-                    <div className="overflow-hidden mb-2">
+                    <div className="mb-1 md:mb-2">
                         <motion.span
                             className="block text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]"
-                            initial={{ y: "110%" }}
-                            animate={{ y: 0 }}
-                            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+                            variants={fadeInUp}
                             style={{ textShadow: "0 4px 30px rgba(0,0,0,0.4)" }}
                         >
                             {dict.hero.title}
@@ -106,12 +116,10 @@ export function Hero({ locale = "pt" }: HeroProps) {
                     </div>
 
                     {/* Highlight Line */}
-                    <div className="overflow-hidden">
+                    <div className="p-1">
                         <motion.span
                             className="block text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black tracking-[-0.03em] leading-[1.05]"
-                            initial={{ y: "110%" }}
-                            animate={{ y: 0 }}
-                            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
+                            variants={fadeInUp}
                         >
                             <span
                                 className="bg-gradient-to-r from-orange-300 via-orange-500 to-red-500 bg-clip-text text-transparent"
@@ -124,7 +132,7 @@ export function Hero({ locale = "pt" }: HeroProps) {
                             </span>
                         </motion.span>
                     </div>
-                </h1>
+                </motion.h1>
 
                 {/* Description */}
                 <motion.p
@@ -132,7 +140,7 @@ export function Hero({ locale = "pt" }: HeroProps) {
                     initial="hidden"
                     animate="visible"
                     transition={{ delay: 0.6 }}
-                    className="text-white/90 text-lg sm:text-xl md:text-2xl font-light mb-14 max-w-3xl mx-auto leading-relaxed tracking-wide"
+                    className="text-white/90 text-base sm:text-xl md:text-2xl font-light mb-10 md:mb-14 max-w-3xl mx-auto leading-relaxed tracking-wide px-4 relative z-20"
                     style={{ textShadow: "0 2px 20px rgba(0,0,0,0.3)" }}
                 >
                     {dict.hero.subtitle}
@@ -144,15 +152,15 @@ export function Hero({ locale = "pt" }: HeroProps) {
                     initial="hidden"
                     animate="visible"
                     transition={{ delay: 0.8 }}
-                    className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-20"
+                    className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 md:mb-20 px-4 w-full"
                 >
                     <WhatsAppButton
                         message={WHATSAPP_MESSAGES.general[currentLang]}
                         phone={CONTACT.whatsapp.number}
                         size="lg"
-                        className="group relative overflow-hidden bg-white text-neutral-900 border-none px-10 py-6 text-lg rounded-full font-bold shadow-2xl hover:scale-105 transition-transform duration-300"
+                        className="group relative overflow-hidden bg-white text-neutral-900 border-none px-8 py-5 md:px-10 md:py-6 text-base md:text-lg rounded-full font-bold shadow-2xl hover:scale-105 transition-transform duration-300 w-full sm:w-auto"
                     >
-                        <span className="relative z-10 flex items-center gap-2">
+                        <span className="relative z-10 flex items-center justify-center gap-2">
                             {dict.hero.ctaMain}
                             <ArrowRight className="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform duration-300" />
                         </span>
@@ -164,17 +172,17 @@ export function Hero({ locale = "pt" }: HeroProps) {
                         href="/tours"
                         variant="ghost"
                         size="lg"
-                        className="px-10 py-6 text-lg rounded-full border border-white/30 text-white hover:bg-white/10 backdrop-blur-sm transition-all duration-300"
+                        className="px-8 py-5 md:px-10 md:py-6 text-base md:text-lg rounded-full border border-white/30 text-white hover:bg-white/10 backdrop-blur-sm transition-all duration-300 w-full sm:w-auto"
                     >
                         {dict.hero.ctaSecondary}
                     </Button>
                 </motion.div>
 
-                {/* Trust Indicators - Glass Cards */}
+                {/* Trust Indicators - Compact Mobile Grid */}
                 <motion.div
                     initial="hidden"
                     animate="visible"
-                    className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto"
+                    className="grid grid-cols-3 gap-2 md:gap-4 max-w-4xl mx-auto w-full px-2"
                 >
                     {[
                         { icon: Star, value: "4.9/5", label: dict.hero.stats.rating, color: "text-yellow-400" },
@@ -184,14 +192,14 @@ export function Hero({ locale = "pt" }: HeroProps) {
                         <motion.div
                             key={i}
                             variants={fadeInUp}
-                            className="flex items-center gap-4 p-4 rounded-2xl bg-black/20 backdrop-blur-md border border-white/10 hover:bg-white/5 transition-colors cursor-default group"
+                            className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 p-3 md:p-4 rounded-xl md:rounded-2xl bg-black/40 md:bg-black/20 backdrop-blur-md border border-white/10 hover:bg-white/5 transition-colors cursor-default group"
                         >
-                            <div className={`p-3 rounded-full bg-white/5 group-hover:scale-110 transition-transform duration-300 ${stat.color}`}>
-                                <stat.icon className="w-6 h-6" />
+                            <div className={`p-1.5 md:p-3 rounded-full bg-white/5 group-hover:scale-110 transition-transform duration-300 ${stat.color}`}>
+                                <stat.icon className="w-4 h-4 md:w-6 md:h-6" />
                             </div>
-                            <div className="text-left">
-                                <div className="text-xl font-bold text-white leading-none mb-1">{stat.value}</div>
-                                <div className="text-xs text-white/50 uppercase tracking-wider font-medium">{stat.label}</div>
+                            <div className="text-center md:text-left">
+                                <div className="text-sm md:text-xl font-bold text-white leading-none mb-1">{stat.value}</div>
+                                <div className="text-[10px] md:text-xs text-white/60 uppercase tracking-wider font-medium">{stat.label}</div>
                             </div>
                         </motion.div>
                     ))}

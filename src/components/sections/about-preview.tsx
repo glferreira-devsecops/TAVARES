@@ -18,6 +18,31 @@ export function AboutPreview({ locale = "pt-br" }: AboutPreviewProps) {
         return "en";
     })() as "pt" | "en" | "es" | "fr";
 
+    // Derived language for content that only supports pt/en (like WhatsApp messages if needed, though they seem fully supported now)
+    // AboutPreview mostly uses static content defined in the file, which supports all 4, so this might be less critical but good for consistency.
+    // Checking file usage... WhatsApp messages use WHATSAPP_MESSAGES which supports all 4.
+    // Static content `content` object supports all 4.
+    // So actually AboutPreview DOES NOT need contentLang if it doesn't access external data with limited locales.
+    // Let's re-read step 153.
+    // It creates `content` object with pt, en, es, fr keys.
+    // It uses `WHATSAPP_MESSAGES.general[currentLang]`.
+    // It DOES NOT use any external data like posts or tours.
+    // So AboutPreview might NOT be broken!
+    // Wait, let's verify WHATSAPP_MESSAGES again (step 126).
+    // WHATSAPP_MESSAGES.general supports pt, en, es, fr.
+    // WHATSAPP_MESSAGES.tourReservation supports pt, en, es, fr.
+    // So AboutPreview seems SAFE.
+    // I will SKIP updating AboutPreview unless I see a reason.
+    // Correction: I should check if I missed anything.
+    // It uses `locale` prop directly for static content labels in features list (lines 140-143).
+    // `label: locale === "pt-br" ? ...`
+    // The locale passed in might be just "pt" or "pt-BR".
+    // `getLang` logic normalized it to "pt".
+    // But lines 140-143 check `locale === "pt-br"`.
+    // If locale is "pt", this check fails and it defaults to English.
+    // I should fix this to use `currentLang === "pt"`.
+
+
     const content = {
         pt: {
             badge: "Quem Somos",
@@ -68,7 +93,7 @@ export function AboutPreview({ locale = "pt-br" }: AboutPreviewProps) {
     const t = content[currentLang];
 
     return (
-        <section className="section-padding bg-white overflow-hidden">
+        <section className="py-12 md:py-24 bg-white overflow-hidden">
             <div className="container-custom">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                     {/* Image Side */}
@@ -77,7 +102,7 @@ export function AboutPreview({ locale = "pt-br" }: AboutPreviewProps) {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
                         transition={{ duration: 0.6 }}
-                        className="relative"
+                        className="relative mb-8 lg:mb-0"
                     >
                         <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-soft-xl rotate-3 transition-transform duration-500 hover:rotate-0">
                             <Image
@@ -89,25 +114,25 @@ export function AboutPreview({ locale = "pt-br" }: AboutPreviewProps) {
                             />
                         </div>
 
-                        {/* Floating Stats Card */}
+                        {/* Floating Stats Card - Static on Mobile (No Overlap Risk), Floated on Desktop */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.3, duration: 0.5 }}
-                            className="absolute -bottom-6 -right-6 md:bottom-8 md:right-8 bg-white rounded-2xl shadow-soft-xl p-6 md:p-8"
+                            className="relative mt-6 mx-auto md:absolute md:mt-0 md:bottom-8 md:right-8 bg-white rounded-2xl shadow-soft-xl p-6 border border-neutral-100 min-w-[200px] text-center md:text-left z-20"
                         >
                             <p className="font-heading text-4xl md:text-5xl font-bold text-primary-500">
                                 {t.highlight.number}
                             </p>
-                            <p className="text-neutral-600 text-sm md:text-base">
+                            <p className="text-neutral-600 text-sm md:text-base font-medium">
                                 {t.highlight.label}
                             </p>
                         </motion.div>
 
                         {/* Decorative element */}
                         <div className="absolute -top-4 -left-4 w-24 h-24 bg-primary-100 rounded-full -z-10" />
-                        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-neutral-900 via-neutral-900/50 to-transparent" />
+                        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-neutral-900 via-neutral-900/50 to-transparent opacity-0 md:opacity-100 transition-opacity" />
                     </motion.div>
 
                     {/* Content Side */}
@@ -116,8 +141,9 @@ export function AboutPreview({ locale = "pt-br" }: AboutPreviewProps) {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
                         transition={{ duration: 0.6 }}
+                        className="text-center lg:text-left pt-6 md:pt-0"
                     >
-                        <span className="inline-block text-xs font-black text-orange-600 uppercase tracking-[0.3em] mb-5">
+                        <span className="inline-block text-[10px] md:text-xs font-black text-orange-600 uppercase tracking-[0.3em] mb-4 md:mb-5">
                             {t.badge}
                         </span>
 
@@ -137,10 +163,10 @@ export function AboutPreview({ locale = "pt-br" }: AboutPreviewProps) {
                         {/* Features */}
                         <div className="grid grid-cols-2 gap-4 mb-8">
                             {[
-                                { icon: "🏠", label: locale === "pt-br" ? "Guias locais" : "Local guides" },
-                                { icon: "🎨", label: locale === "pt-br" ? "Arte urbana" : "Street art" },
-                                { icon: "🛡️", label: locale === "pt-br" ? "Segurança" : "Safety" },
-                                { icon: "💚", label: locale === "pt-br" ? "Impacto social" : "Social impact" },
+                                { icon: "🏠", label: currentLang === "pt" ? "Guias locais" : "Local guides" },
+                                { icon: "🎨", label: currentLang === "pt" ? "Arte urbana" : "Street art" },
+                                { icon: "🛡️", label: currentLang === "pt" ? "Segurança" : "Safety" },
+                                { icon: "💚", label: currentLang === "pt" ? "Impacto social" : "Social impact" },
                             ].map((feature, index) => (
                                 <div key={index} className="flex items-center gap-3">
                                     <span className="text-2xl">{feature.icon}</span>
