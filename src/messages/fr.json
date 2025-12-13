@@ -1,0 +1,13 @@
+{
+    "HomePage": {
+        "title": "Favela-República Tour",
+        "description": "Tourisme Communautaire à Tavares Bastos"
+    },
+    "Navigation": {
+        "home": "Accueil",
+        "tours": "Visites",
+        "about": "À Propos",
+        "blog": "Blog",
+        "contact": "Contact"
+    }
+}
