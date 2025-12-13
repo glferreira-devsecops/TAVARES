@@ -9,5 +9,51 @@
         "about": "Quem Somos",
         "blog": "Blog",
         "contact": "Contato"
+    },
+    "tourCard": {
+        "insurance": "Seguro Incluso",
+        "smallGroups": "Grupos Pequenos",
+        "book": "Reservar"
+    },
+    "AboutPreview": {
+        "badge": "Quem Somos",
+        "title": "Muito mais que um tour",
+        "titleHighlight": "Uma imersão cultural",
+        "description_1": "Você vai pisar no cenário real que inspirou o game **FIFA Street**, foi palco do filme **O Incrível Hulk** e do clipe de **Snoop Dogg & Pharrell**. A Tavares Bastos não é apenas uma favela; é um ícone da cultura pop mundial.",
+        "description_2": "Aqui, a segurança é total e a experiência é autêntica. Guiado por quem nasceu e cresceu aqui, você vai descobrir a verdadeira alma do Rio de Janeiro, com vistas de tirar o fôlego e histórias que nenhum guia turístico comum pode contar.",
+        "description_impact": "Ao escolher a Favela-República, você reinveste diretamente na comunidade. Nosso turismo sustentável gera renda local, preserva nossa cultura e cria oportunidades reais para os moradores.",
+        "trustedTitle": "Reconhecido Mundialmente",
+        "trustedSubtitle": "Cenário do FIFA Street e avaliado com excelência:",
+        "highlights": {
+            "fifa": {
+                "title": "FIFA Street",
+                "subtitle": "Cenário Icônico"
+            },
+            "tripadvisor": {
+                "title": "TripAdvisor",
+                "subtitle": "5 Estrelas"
+            },
+            "reviewCount": "250+ avaliações",
+            "airbnb": {
+                "title": "Airbnb",
+                "subtitle": "Superhost"
+            },
+            "google": {
+                "title": "Google",
+                "subtitle": "4.9/5.0"
+            }
+        },
+        "stats": {
+            "value": "10+",
+            "label": "Anos de História"
+        },
+        "cta": "Conheça nossa história completa",
+        "ctaWhatsapp": "Agendar Visita",
+        "features": {
+            "local_guides": "Guias locais",
+            "street_art": "Arte urbana",
+            "safety": "Segurança",
+            "social_impact": "Impacto social"
+        }
     }
 }

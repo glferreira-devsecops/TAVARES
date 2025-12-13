@@ -1,5 +1,6 @@
 "use client";
 
+import { AirbnbLogo, GoogleLogo, TripAdvisorLogo } from "@/components/ui/brand-logos";
 import { getAverageRating, getFeaturedTestimonials, getTotalReviews } from "@/data/testimonials";
 import { AnimatePresence, motion, PanInfo } from "framer-motion";
 import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
@@ -105,8 +106,13 @@ export function Testimonials({ locale = "pt" }: TestimonialsProps) {
                                 {averageRating}
                             </span>
                             <span className="w-px h-4 bg-neutral-300" />
-                            <span className="text-neutral-500 font-medium">
-                                {totalReviews}+ avaliações
+                            <span className="text-neutral-500 font-medium flex items-center gap-3">
+                                {totalReviews}+ reviews no
+                                <div className="flex items-center gap-4 opacity-60 grayscale hover:grayscale-0 transition-all duration-300">
+                                    <TripAdvisorLogo className="h-6 w-auto" />
+                                    <AirbnbLogo className="h-6 w-auto" />
+                                    <GoogleLogo className="h-5 w-auto" />
+                                </div>
                             </span>
                         </div>
                     </div>

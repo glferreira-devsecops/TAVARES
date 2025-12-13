@@ -32,6 +32,11 @@ export function FeaturedTours({ locale = "pt", tours }: FeaturedToursProps) {
             cta: "Ver todos os tours",
             from: "a partir de",
             book: "Reservar",
+            tourCard: {
+                insurance: "Seguro Incluso",
+                smallGroups: "Grupos Pequenos",
+                book: "Reservar",
+            },
         },
         en: {
             badge: "Our Tours",
@@ -41,6 +46,11 @@ export function FeaturedTours({ locale = "pt", tours }: FeaturedToursProps) {
             cta: "See all tours",
             from: "from",
             book: "Book",
+            tourCard: {
+                insurance: "Insurance Included",
+                smallGroups: "Small Groups",
+                book: "Book",
+            },
         },
         es: {
             badge: "Nuestros Tours",
@@ -50,6 +60,11 @@ export function FeaturedTours({ locale = "pt", tours }: FeaturedToursProps) {
             cta: "Ver todos los tours",
             from: "desde",
             book: "Reservar",
+            tourCard: {
+                insurance: "Seguro Incluido",
+                smallGroups: "Grupos Pequeños",
+                book: "Reservar",
+            },
         },
         fr: {
             badge: "Nos Visites",
@@ -59,6 +74,11 @@ export function FeaturedTours({ locale = "pt", tours }: FeaturedToursProps) {
             cta: "Voir toutes les visites",
             from: "à partir de",
             book: "Réserver",
+            tourCard: {
+                insurance: "Assurance Incluse",
+                smallGroups: "Petits Groupes",
+                book: "Réserver",
+            },
         },
     };
 
@@ -153,6 +173,22 @@ export function FeaturedTours({ locale = "pt", tours }: FeaturedToursProps) {
                                     <p className="text-neutral-500 text-sm leading-relaxed mb-6 line-clamp-3 flex-1">
                                         {tour.shortDescription[contentLang]}
                                     </p>
+
+                                    {/* Trust Badges */}
+                                    <div className="flex items-center gap-3 mb-6">
+                                        <div className="flex items-center gap-1.5 text-xs font-medium text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-100/50">
+                                            <span>🛡️</span>
+                                            {t.tourCard.insurance}
+                                        </div>
+                                        <div className="flex items-center gap-1.5 text-xs font-medium text-blue-700 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-100/50">
+                                            <span>👥</span>
+                                            {t.tourCard.smallGroups}
+                                        </div>
+                                    </div>
+
+                                    <Button className="w-full bg-primary-600 hover:bg-primary-700 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary-600/20 transition-all hover:scale-[1.02] active:scale-[0.98]">
+                                        {t.tourCard.book}
+                                    </Button>
 
                                     {/* Footer */}
                                     <div className="pt-6 border-t border-neutral-100 flex items-end justify-between gap-4 mt-auto">

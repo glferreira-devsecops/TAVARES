@@ -2,7 +2,7 @@
 import { NewsletterForm } from "@/components/layout/newsletter-form";
 import { Link } from "@/i18n/navigation";
 import { CONTACT, NAV_ITEMS, SOCIAL_LINKS } from "@/lib/constants";
-import { ArrowUpRight, Code2, Heart, Instagram, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowUpRight, Code2, Heart, Instagram } from "lucide-react";
 
 interface FooterProps {
     locale?: string;
@@ -12,11 +12,7 @@ export function Footer({ locale = "pt" }: FooterProps) {
     const currentLang = locale === "pt" ? "pt" : "en";
     const currentYear = new Date().getFullYear();
 
-    // Helper to get localized path
-    const getLocalePath = (path: string) => {
-        const loc = locale.startsWith('pt') ? 'pt' : locale;
-        return `/${loc}${path}`;
-    };
+
 
     const content = {
         pt: {
@@ -136,54 +132,15 @@ export function Footer({ locale = "pt" }: FooterProps) {
                             ))}
                         </ul>
                     </div>
-
-                    {/* Contact */}
-                    <div>
-                        <h4 className="text-xs font-bold uppercase tracking-widest text-neutral-500 mb-6 font-heading">
-                            {t.contact}
-                        </h4>
-                        <ul className="space-y-4">
-                            <li>
-                                <a
-                                    href={`https://wa.me/${CONTACT.whatsapp.number}`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center gap-3 text-neutral-300 hover:text-green-400 transition-colors group"
-                                >
-                                    <div className="w-9 h-9 rounded-lg bg-green-500/10 flex items-center justify-center group-hover:bg-green-500/20 transition-colors">
-                                        <Phone className="w-4 h-4 text-green-500" />
-                                    </div>
-                                    <span className="text-sm font-medium">{CONTACT.whatsapp.displayNumber}</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href={`mailto:${CONTACT.email}`}
-                                    className="flex items-center gap-3 text-neutral-300 hover:text-primary-400 transition-colors group"
-                                >
-                                    <div className="w-9 h-9 rounded-lg bg-primary-500/10 flex items-center justify-center group-hover:bg-primary-500/20 transition-colors">
-                                        <Mail className="w-4 h-4 text-primary-500" />
-                                    </div>
-                                    <span className="text-sm font-medium">{CONTACT.email}</span>
-                                </a>
-                            </li>
-                            <li>
-                                <div className="flex items-start gap-3 text-neutral-300">
-                                    <div className="w-9 h-9 rounded-lg bg-blue-500/10 flex items-center justify-center shrink-0">
-                                        <MapPin className="w-4 h-4 text-blue-500" />
-                                    </div>
-                                    <span className="text-sm leading-relaxed">
-                                        {CONTACT.address.neighborhood}, {CONTACT.address.city}<br />
-                                        {CONTACT.address.state}, {CONTACT.address.country}
-                                    </span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+                    <span className="text-sm leading-relaxed">
+                        {CONTACT.address.neighborhood}, {CONTACT.address.city}<br />
+                        {CONTACT.address.state}, {CONTACT.address.country}
+                    </span>
                 </div>
 
+
                 {/* Newsletter Box */}
-                <div className="bg-gradient-to-br from-primary-900/10 to-transparent rounded-2xl p-6 md:p-10 border border-primary-500/10 mb-16 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-10 text-center md:text-left">
+                < div className="bg-gradient-to-br from-primary-900/10 to-transparent rounded-2xl p-6 md:p-10 border border-primary-500/10 mb-16 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-10 text-center md:text-left" >
                     <div className="max-w-md">
                         <h3 className="font-heading text-xl md:text-2xl font-bold text-white mb-2">
                             {t.newsletter}
@@ -207,7 +164,7 @@ export function Footer({ locale = "pt" }: FooterProps) {
             </div>
 
             {/* Bottom Bar */}
-            <div className="border-t border-neutral-800 bg-black/20 backdrop-blur-sm">
+            <div className="border-t border-neutral-800 bg-black/20 backdrop-blur-sm" >
                 <div className="container-custom py-6 flex flex-col md:flex-row items-center justify-between gap-4">
                     <div className="flex flex-col md:flex-row items-center gap-4 text-xs text-neutral-500">
                         <p>© {currentYear} Favela-República Tour. {t.rights}</p>
@@ -232,11 +189,10 @@ export function Footer({ locale = "pt" }: FooterProps) {
                             {[
                                 { href: "/seguranca", label: t.safety },
                                 { href: "/privacidade", label: t.privacy },
-                                { href: "/termos", label: t.terms },
                             ].map((link) => (
                                 <Link
                                     key={link.href}
-                                    href={getLocalePath(link.href)}
+                                    href={link.href}
                                     className="text-xs text-neutral-500 hover:text-neutral-300 transition-colors"
                                 >
                                     {link.label}
@@ -249,4 +205,3 @@ export function Footer({ locale = "pt" }: FooterProps) {
         </footer>
     );
 }
-

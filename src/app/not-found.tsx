@@ -1,119 +1,150 @@
 "use client";
 
 import { WhatsAppButton } from "@/components/ui/button";
+import { Link } from "@/i18n/navigation";
 import { CONTACT, WHATSAPP_MESSAGES } from "@/lib/constants";
-import { motion } from "framer-motion";
-import { ArrowLeft, Home, MapPin, MessageCircle } from "lucide-react";
-import Link from "next/link";
+import { motion, useMotionValue, useTransform } from "framer-motion";
+import { Home, MapPin, Search } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function NotFound() {
+    const mouseX = useMotionValue(0);
+    const mouseY = useMotionValue(0);
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+        const handleMouseMove = (e: MouseEvent) => {
+            const { clientX, clientY } = e;
+            const { innerWidth, innerHeight } = window;
+            const x = clientX / innerWidth;
+            const y = clientY / innerHeight;
+            mouseX.set(x);
+            mouseY.set(y);
+        };
+
+        window.addEventListener("mousemove", handleMouseMove);
+        return () => window.removeEventListener("mousemove", handleMouseMove);
+    }, [mouseX, mouseY]);
+
+    const xMove = useTransform(mouseX, [0, 1], [-20, 20]);
+    const yMove = useTransform(mouseY, [0, 1], [-20, 20]);
+
+    // Reverse movement for parallax depth
+    const xMoveBack = useTransform(mouseX, [0, 1], [10, -10]);
+    const yMoveBack = useTransform(mouseY, [0, 1], [10, -10]);
+
+    if (!mounted) return null;
+
     return (
-        <section className="min-h-screen flex items-center justify-center px-4 bg-gradient-to-br from-neutral-50 via-orange-50/30 to-neutral-50 overflow-hidden relative">
-            {/* Background Decorations */}
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-500/5 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/2" />
-            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[80px] pointer-events-none translate-y-1/2 -translate-x-1/2" />
+        <main className="relative min-h-screen w-full bg-neutral-950 overflow-hidden flex flex-col items-center justify-center p-6 sm:p-12">
+            {/* Ambient Background */}
+            <div className="absolute inset-0 z-0">
+                <div className="absolute top-[-20%] left-[-10%] w-[70vw] h-[70vw] rounded-full bg-blue-900/20 blur-[120px]" />
+                <div className="absolute bottom-[-20%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-orange-900/20 blur-[100px]" />
+                {/* Noise overlay */}
+                <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-[0.03] mix-blend-overlay pointer-events-none" />
+            </div>
 
-            <div className="max-w-lg text-center relative z-10">
-                {/* Animated 404 Number */}
+            <div className="relative z-10 w-full max-w-2xl mx-auto flex flex-col items-center text-center">
+                {/* Floating "404" with Glassmorphism */}
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="relative mb-8"
+                    className="relative"
+                    style={{ x: xMoveBack, y: yMoveBack }}
                 >
-                    <span className="text-[160px] md:text-[200px] font-heading font-bold bg-gradient-to-br from-orange-200 via-orange-100 to-orange-50 bg-clip-text text-transparent leading-none select-none">
-                        404
-                    </span>
-
-                    {/* Floating Icon */}
-                    <motion.div
-                        initial={{ y: 20, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ delay: 0.3, duration: 0.5 }}
-                        className="absolute inset-0 flex items-center justify-center"
+                    <motion.h1
+                        initial={{ opacity: 0, scale: 0.8, y: 50 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        transition={{ duration: 1, type: "spring" }}
+                        className="font-heading text-[120px] sm:text-[180px] md:text-[220px] leading-none font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white/10 to-transparent select-none z-0"
                     >
-                        <motion.div
-                            animate={{
-                                y: [0, -8, 0],
-                            }}
-                            transition={{
-                                duration: 3,
-                                repeat: Infinity,
-                                ease: "easeInOut",
-                            }}
-                            className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-xl shadow-orange-500/30"
-                        >
-                            <MapPin className="w-10 h-10 md:w-12 md:h-12 text-white" />
-                        </motion.div>
+                        404
+                    </motion.h1>
+
+                    {/* Foreground stylized text over the 404 */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.3, duration: 0.8 }}
+                        className="absolute inset-0 flex items-center justify-center z-10"
+                        style={{ x: xMove, y: yMove }}
+                    >
+                        <h2 className="font-heading text-4xl sm:text-6xl md:text-7xl font-bold bg-gradient-to-r from-orange-400 via-orange-200 to-white bg-clip-text text-transparent drop-shadow-2xl">
+                            Caminho <br /> Não Encontrado
+                        </h2>
                     </motion.div>
                 </motion.div>
 
-                {/* Content */}
+                {/* Subtitle & Description */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2, duration: 0.5 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.6, duration: 0.8 }}
+                    className="mt-8 md:mt-12 space-y-6 max-w-lg"
                 >
-                    <h1 className="font-heading text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
-                        Página não encontrada
-                    </h1>
-                    <p className="text-neutral-500 text-lg mb-8 leading-relaxed">
-                        Ops! Parece que você se perdeu nas vielas da Tavares Bastos.
-                        <br className="hidden sm:block" />
-                        Não se preocupe, nossos guias podem te ajudar!
+                    <p className="text-neutral-400 text-lg md:text-xl font-light leading-relaxed">
+                        Parece que você se aventurou por uma viela desconhecida.
+                        Na favela, todo caminho tem volta, e a gente te ajuda a encontrar o rumo.
                     </p>
-                </motion.div>
 
-                {/* Actions */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4, duration: 0.5 }}
-                    className="flex flex-col sm:flex-row items-center justify-center gap-4"
-                >
-                    <Link
-                        href="/pt"
-                        className="group inline-flex items-center justify-center font-semibold rounded-full transition-all duration-300 px-8 py-4 text-lg bg-neutral-900 text-white hover:bg-neutral-800 hover:scale-105 shadow-lg hover:shadow-xl relative overflow-hidden"
-                    >
-                        <Home className="w-5 h-5 mr-2" />
-                        Voltar ao início
-                        <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12" />
-                    </Link>
-                    <Link
-                        href="/pt/tours"
-                        className="inline-flex items-center justify-center font-semibold rounded-full transition-all duration-300 px-8 py-4 text-lg border-2 border-neutral-200 text-neutral-700 hover:border-orange-500 hover:text-orange-600 hover:bg-orange-50"
-                    >
-                        <ArrowLeft className="w-5 h-5 mr-2" />
-                        Ver tours
-                    </Link>
-                </motion.div>
+                    <div className="flex flex-col sm:flex-row gap-4 w-full justify-center pt-8">
+                        <Link
+                            href="/"
+                            className="group relative px-8 py-4 bg-white text-neutral-900 rounded-2xl font-bold overflow-hidden transition-all hover:scale-105 hover:shadow-xl hover:shadow-white/10"
+                        >
+                            <span className="relative z-10 flex items-center justify-center gap-2">
+                                <Home className="w-5 h-5 transition-transform group-hover:-translate-y-0.5" />
+                                Voltar ao Início
+                            </span>
+                        </Link>
 
-                {/* WhatsApp Help Card */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.6, duration: 0.5 }}
-                    className="mt-12 p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-neutral-100 shadow-sm"
-                >
-                    <div className="flex items-center justify-center gap-3 mb-3">
-                        <span className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
-                            <MessageCircle className="w-5 h-5 text-green-600" />
-                        </span>
-                        <span className="font-semibold text-neutral-900">Precisa de ajuda?</span>
+                        <Link
+                            href="/tours"
+                            className="group px-8 py-4 bg-neutral-900 border border-neutral-800 text-white rounded-2xl font-medium transition-all hover:border-orange-500/50 hover:bg-neutral-800"
+                        >
+                            <span className="flex items-center justify-center gap-2">
+                                <Search className="w-5 h-5 text-orange-500" />
+                                Ver Nossos Tours
+                            </span>
+                        </Link>
                     </div>
-                    <p className="text-sm text-neutral-500 mb-4">
-                        Fale conosco pelo WhatsApp e responderemos em poucos minutos!
-                    </p>
-                    <WhatsAppButton
-                        message={WHATSAPP_MESSAGES.general.pt}
-                        phone={CONTACT.whatsapp.number}
-                        size="sm"
-                        className="rounded-full"
-                    >
-                        Falar com a equipe
-                    </WhatsAppButton>
+                </motion.div>
+
+                {/* Help Section */}
+                <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.9, duration: 0.8 }}
+                    className="mt-16 md:mt-24 w-full glass-panel p-1 rounded-3xl bg-gradient-to-b from-white/5 to-transparent border border-white/5"
+                >
+                    <div className="bg-neutral-950/80 backdrop-blur-xl rounded-[20px] p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+                        <div className="flex items-center gap-4 text-left">
+                            <div className="p-3 bg-green-500/20 text-green-400 rounded-xl">
+                                <MapPin className="w-6 h-6" />
+                            </div>
+                            <div>
+                                <h3 className="text-white font-bold text-lg">Precisa de um guia?</h3>
+                                <p className="text-neutral-500 text-sm">Fale com a gente direto no WhatsApp</p>
+                            </div>
+                        </div>
+
+                        <WhatsAppButton
+                            message={WHATSAPP_MESSAGES.general.pt}
+                            phone={CONTACT.whatsapp.number}
+                            className="w-full md:w-auto bg-green-600 hover:bg-green-500 text-white px-6 py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-colors shadow-lg shadow-green-900/20"
+                        >
+                            Chamar no Zap
+                        </WhatsAppButton>
+                    </div>
                 </motion.div>
             </div>
-        </section>
+
+            {/* Footer decoration */}
+            <div className="fixed bottom-6 left-6 right-6 flex justify-between text-[10px] text-neutral-600 uppercase tracking-widest font-mono pointer-events-none">
+                <span>Favela-República</span>
+                <span>404 Error • Page Not Found</span>
+                <span>Rio de Janeiro</span>
+            </div>
+        </main>
     );
 }

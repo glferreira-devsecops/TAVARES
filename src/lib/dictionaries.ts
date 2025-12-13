@@ -2,7 +2,7 @@
 export type Locale = "pt" | "en" | "es" | "fr";
 
 const dictionaries = {
-    "pt": {
+    pt: {
         nav: {
             home: "Início",
             tours: "Tours",
@@ -28,6 +28,7 @@ const dictionaries = {
                 safety: "Base Policial",
                 local: "Guias Locais",
                 safeValue: "Seguro",
+                reviewCount: "250+ avaliações"
             },
         },
         footer: {
@@ -62,6 +63,36 @@ const dictionaries = {
                 handle: "@favelarepublica",
             }
         },
+        tourCard: {
+            insurance: "Seguro Incluso",
+            smallGroups: "Grupos Pequenos",
+            book: "Reservar"
+        },
+        AboutPreview: {
+            badge: "Quem Somos",
+            title: "Muito mais que um tour",
+            titleHighlight: "Uma imersão cultural",
+            description_1: "Você vai pisar no cenário real que inspirou o game **FIFA Street**, foi palco do filme **O Incrível Hulk** e do clipe de **Snoop Dogg & Pharrell**. A Tavares Bastos não é apenas uma favela; é um ícone da cultura pop mundial.",
+            description_2: "Aqui, a segurança é total e a experiência é autêntica. Guiado por quem nasceu e cresceu aqui, você vai descobrir a verdadeira alma do Rio de Janeiro, com vistas de tirar o fôlego e histórias que nenhum guia turístico comum pode contar.",
+            description_impact: "Ao escolher a Favela-República, você reinveste diretamente na comunidade. Nosso turismo sustentável gera renda local, preserva nossa cultura e cria oportunidades reais para os moradores.",
+            trustedTitle: "Reconhecido Mundialmente",
+            trustedSubtitle: "Cenário do FIFA Street e avaliado com excelência:",
+            highlights: {
+                fifa: { title: "FIFA Street", subtitle: "Cenário Icônico" },
+                tripadvisor: { title: "TripAdvisor", subtitle: "5 Estrelas" },
+                airbnb: { title: "Airbnb", subtitle: "Superhost" },
+                google: { title: "Google", subtitle: "4.9/5.0" }
+            },
+            stats: { value: "10+", label: "Anos de História" },
+            cta: "Conheça nossa história completa",
+            ctaWhatsapp: "Agendar Visita",
+            features: {
+                local_guides: "Guias locais",
+                street_art: "Arte urbana",
+                safety: "Segurança",
+                social_impact: "Impacto social"
+            }
+        }
     },
     en: {
         nav: {
@@ -89,6 +120,7 @@ const dictionaries = {
                 safety: "Police Base",
                 local: "Local Guides",
                 safeValue: "Safe",
+                reviewCount: "250+ reviews"
             },
         },
         footer: {
@@ -123,6 +155,36 @@ const dictionaries = {
                 handle: "@favelarepublica",
             }
         },
+        tourCard: {
+            insurance: "Insurance Included",
+            smallGroups: "Small Groups",
+            book: "Book Now"
+        },
+        AboutPreview: {
+            badge: "About Us",
+            title: "Much more than a tour",
+            titleHighlight: "A cultural immersion",
+            description_1: "You will step onto the real set that inspired **FIFA Street**, **The Incredible Hulk** movie, and **Snoop Dogg & Pharrell**'s music video. Tavares Bastos is not just a favela; it is a global pop culture icon.",
+            description_2: "Here, safety is absolute and the experience is authentic. Guided by locals, you will discover the true soul of Rio de Janeiro, with breathtaking views and stories no ordinary guide can tell.",
+            description_impact: "By choosing Favela-República, you reinvest directly in the community. Our sustainable tourism generates local income, preserves our culture, and creates real opportunities for residents.",
+            trustedTitle: "World Renowned",
+            trustedSubtitle: "Setting of FIFA Street and rated with excellence:",
+            highlights: {
+                fifa: { title: "FIFA Street", subtitle: "Iconic Setting" },
+                tripadvisor: { title: "TripAdvisor", subtitle: "5 Stars" },
+                airbnb: { title: "Airbnb", subtitle: "Superhost" },
+                google: { title: "Google", subtitle: "4.9/5.0" }
+            },
+            stats: { value: "10+", label: "Years of History" },
+            cta: "Learn our full story",
+            ctaWhatsapp: "Book Visit",
+            features: {
+                local_guides: "Local guides",
+                street_art: "Street art",
+                safety: "Safety",
+                social_impact: "Social impact"
+            }
+        }
     },
     es: {
         nav: {
@@ -150,6 +212,7 @@ const dictionaries = {
                 safety: "Base Policial",
                 local: "Guías Locales",
                 safeValue: "Seguro",
+                reviewCount: "250+ evaluaciones"
             },
         },
         footer: {
@@ -184,6 +247,36 @@ const dictionaries = {
                 handle: "@favelarepublica",
             }
         },
+        tourCard: {
+            insurance: "Seguro Incluido",
+            smallGroups: "Grupos Pequeños",
+            book: "Reservar"
+        },
+        AboutPreview: {
+            badge: "Quiénes Somos",
+            title: "Mucho más que un tour",
+            titleHighlight: "Una inmersión cultural",
+            description_1: "Pisarás el escenario real que inspiró el juego **FIFA Street**, la película **El Increíble Hulk** y el video de **Snoop Dogg & Pharrell**. Tavares Bastos no es solo una favela; es un ícono de la cultura pop mundial.",
+            description_2: "Aquí, la seguridad es total y la experiencia es auténtica. Guiado por locales, descubrirás la verdadera alma de Río de Janeiro, con vistas impresionantes e historias que ningún guía común puede contar.",
+            description_impact: "Al elegir Favela-República, reinviertes directamente en la comunidad. Nuestro turismo sostenible genera ingresos locales, preserva nuestra cultura y crea oportunidades reales para los residentes.",
+            trustedTitle: "Reconocido Mundialmente",
+            trustedSubtitle: "Escenario de FIFA Street y calificado con excelencia:",
+            highlights: {
+                fifa: { title: "FIFA Street", subtitle: "Escenario Icónico" },
+                tripadvisor: { title: "TripAdvisor", subtitle: "5 Estrelas" },
+                airbnb: { title: "Airbnb", subtitle: "Superhost" },
+                google: { title: "Google", subtitle: "4.9/5.0" }
+            },
+            stats: { value: "10+", label: "Años de Historia" },
+            cta: "Conoce nuestra historia completa",
+            ctaWhatsapp: "Reservar Visita",
+            features: {
+                local_guides: "Guías locales",
+                street_art: "Arte urbano",
+                safety: "Seguridad",
+                social_impact: "Impacto social"
+            }
+        }
     },
     fr: {
         nav: {
@@ -211,6 +304,7 @@ const dictionaries = {
                 safety: "Base de Police",
                 local: "Guides Locaux",
                 safeValue: "Sûr",
+                reviewCount: "250+ avis"
             },
         },
         about: {
@@ -237,6 +331,11 @@ const dictionaries = {
                 handle: "@favelarepublica",
             }
         },
+        tourCard: {
+            insurance: "Assurance Incluse",
+            smallGroups: "Petits Groupes",
+            book: "Réserver"
+        },
         footer: {
             about: "À Propos",
             description: "Tourisme communautaire authentique dans la Favela Tavares Bastos. Sécurité, culture et vues incroyables.",
@@ -245,6 +344,31 @@ const dictionaries = {
             followUs: "Suivez-nous",
             rights: "Tous droits réservés.",
         },
+        AboutPreview: {
+            badge: "Qui Sommes-Nous",
+            title: "Bien plus qu'une visite",
+            titleHighlight: "Une immersion culturelle",
+            description_1: "Vous marcherez sur le décor réel qui a inspiré le jeu **FIFA Street**, le film **L'Incroyable Hulk** et le clip de **Snoop Dogg & Pharrell**. Tavares Bastos n'est pas seulement une favela; c'est une icône de la culture pop mondiale.",
+            description_2: "Ici, la sécurité est totale et l'expérience est authentique. Guidé par des locaux, vous découvrirez la véritable âme de Rio de Janeiro, avec des vues à couper le souffle et des histoires qu'aucun guide ordinaire ne peut raconter.",
+            description_impact: "En choisissant Favela-República, vous réinvestissez directement dans la communauté. Notre tourisme durable génère des revenus locaux, préserve notre culture et crée de vraies opportunités pour les habitants.",
+            trustedTitle: "Reconnu Mondialement",
+            trustedSubtitle: "Décor de FIFA Street et noté avec excellence:",
+            highlights: {
+                fifa: { title: "FIFA Street", subtitle: "Décor Emblématique" },
+                tripadvisor: { title: "TripAdvisor", subtitle: "5 Étoiles" },
+                airbnb: { title: "Airbnb", subtitle: "Superhost" },
+                google: { title: "Google", subtitle: "4.9/5.0" }
+            },
+            stats: { value: "10+", label: "Ans d'Histoire" },
+            cta: "Découvrez notre histoire complète",
+            ctaWhatsapp: "Réserver Visite",
+            features: {
+                local_guides: "Guides locaux",
+                street_art: "Art urbain",
+                safety: "Sécurité",
+                social_impact: "Impact social"
+            }
+        }
     },
 } as const;
 

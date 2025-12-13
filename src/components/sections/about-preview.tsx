@@ -1,7 +1,9 @@
 "use client";
 
+import { AirbnbLogo, GameControllerLogo, GoogleLogo, TripAdvisorLogo } from "@/components/ui/brand-logos";
 import { Button, WhatsAppButton } from "@/components/ui/button";
 import { CONTACT, WHATSAPP_MESSAGES } from "@/lib/constants";
+import { useDictionary } from "@/lib/dictionaries";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
@@ -43,54 +45,18 @@ export function AboutPreview({ locale = "pt-br" }: AboutPreviewProps) {
     // I should fix this to use `currentLang === "pt"`.
 
 
-    const content = {
-        pt: {
-            badge: "Quem Somos",
-            title: "Turismo que transforma vidas",
-            paragraphs: [
-                "A Favela-República nasce na Tavares Bastos com o objetivo de contar a história da nossa comunidade, valorizar a arte urbana e receber visitantes com hospitalidade genuína.",
-                "Somos uma iniciativa de turismo comunitário — guiada por moradores, segura, responsável e profundamente cultural. Cada tour que você faz contribui diretamente para a economia local e o desenvolvimento da comunidade.",
-            ],
-            highlight: { number: "10+", label: "anos de história" },
-            cta: "Conheça nossa história",
-            ctaWhatsapp: "Fale conosco",
-        },
-        en: {
-            badge: "About Us",
-            title: "Tourism that transforms lives",
-            paragraphs: [
-                "Favela-República was born in Tavares Bastos with the goal of telling the story of our community, valuing urban art and welcoming visitors with genuine hospitality.",
-                "We are a community tourism initiative — guided by residents, safe, responsible and deeply cultural. Every tour you take directly contributes to the local economy and community development.",
-            ],
-            highlight: { number: "10+", label: "years of history" },
-            cta: "Learn our story",
-            ctaWhatsapp: "Talk to us",
-        },
-        es: {
-            badge: "Quiénes Somos",
-            title: "Turismo que transforma vidas",
-            paragraphs: [
-                "Favela-República nace en Tavares Bastos con el objetivo de contar la historia de nuestra comunidad, valorar el arte urbano y recibir visitantes con hospitalidad genuina.",
-                "Somos una iniciativa de turismo comunitario — guiada por residentes, segura, responsable y profundamente cultural. Cada tour que haces contribuye directamente a la economía local y al desarrollo de la comunidad.",
-            ],
-            highlight: { number: "10+", label: "años de historia" },
-            cta: "Conoce nuestra historia",
-            ctaWhatsapp: "Habla con nosotros",
-        },
-        fr: {
-            badge: "Qui Sommes-Nous",
-            title: "Tourisme qui transforme des vies",
-            paragraphs: [
-                "Favela-República est née à Tavares Bastos avec l'objectif de raconter l'histoire de notre communauté, valoriser l'art urbain et accueillir les visiteurs avec une hospitalité authentique.",
-                "Nous sommes une initiative de tourisme communautaire — guidée par des résidents, sûre, responsable et profondément culturelle. Chaque visite que vous faites contribue directement à l'économie locale et au développement de la communauté.",
-            ],
-            highlight: { number: "10+", label: "ans d'histoire" },
-            cta: "Découvrez notre histoire",
-            ctaWhatsapp: "Contactez-nous",
-        },
-    };
 
-    const t = content[currentLang];
+    const dict = useDictionary(locale);
+    const t = dict.AboutPreview;
+
+    // Helper function to render text with bold parts
+    const renderWithEmphasis = (text: string) => {
+        return text.split(/(\*\*.*?\*\*)/).map((part, i) =>
+            part.startsWith('**') && part.endsWith('**') ?
+                <strong key={i} className="font-bold text-neutral-900">{part.slice(2, -2)}</strong> :
+                part
+        );
+    };
 
     return (
         <section className="py-12 md:py-24 bg-white overflow-hidden">
@@ -104,15 +70,17 @@ export function AboutPreview({ locale = "pt-br" }: AboutPreviewProps) {
                         transition={{ duration: 0.6 }}
                         className="relative mb-8 lg:mb-0"
                     >
-                        <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-soft-xl rotate-3 transition-transform duration-500 hover:rotate-0">
+                        <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl rotate-2 transition-transform duration-500 hover:rotate-0">
                             <Image
                                 src="/images/about-community.png"
-                                alt="Comunidade Tavares Bastos"
+                                alt="Comunidade Tavares Bastos - Cenário do FIFA Street"
                                 fill
                                 className="object-cover"
                                 sizes="(max-width: 1024px) 100vw, 50vw"
                             />
+                            {/* Overlay Gradient for Text readability if needed, but keeping it clean for now */}
                         </div>
+
 
                         {/* Floating Stats Card - Static on Mobile (No Overlap Risk), Floated on Desktop */}
                         <motion.div
@@ -123,16 +91,15 @@ export function AboutPreview({ locale = "pt-br" }: AboutPreviewProps) {
                             className="relative mt-6 mx-auto md:absolute md:mt-0 md:bottom-8 md:right-8 bg-white rounded-2xl shadow-soft-xl p-6 border border-neutral-100 min-w-[200px] text-center md:text-left z-20"
                         >
                             <p className="font-heading text-4xl md:text-5xl font-bold text-primary-500">
-                                {t.highlight.number}
+                                {t.stats.value}
                             </p>
                             <p className="text-neutral-600 text-sm md:text-base font-medium">
-                                {t.highlight.label}
+                                {t.stats.label}
                             </p>
                         </motion.div>
 
                         {/* Decorative element */}
-                        <div className="absolute -top-4 -left-4 w-24 h-24 bg-primary-100 rounded-full -z-10" />
-                        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-neutral-900 via-neutral-900/50 to-transparent opacity-0 md:opacity-100 transition-opacity" />
+                        <div className="absolute -top-10 -left-10 w-40 h-40 bg-orange-500/10 rounded-full blur-3xl -z-10" />
                     </motion.div>
 
                     {/* Content Side */}
@@ -147,32 +114,76 @@ export function AboutPreview({ locale = "pt-br" }: AboutPreviewProps) {
                             {t.badge}
                         </span>
 
-                        <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-6 tracking-tight leading-[1.1]">
-                            <span className="block">Turismo que</span>
-                            <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">transforma vidas</span>
+                        <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 tracking-tight leading-[1.05]">
+                            <span className="block">{t.title}</span>
+                            <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">{t.titleHighlight}</span>
                         </h2>
 
-                        <div className="space-y-5 mb-10">
-                            {t.paragraphs.map((paragraph, index) => (
-                                <p key={index} className="text-neutral-500 text-lg leading-relaxed font-light">
-                                    {paragraph}
+                        <div className="space-y-6 mb-12">
+                            <p className="text-neutral-600 text-lg md:text-xl leading-relaxed font-light">
+                                {renderWithEmphasis(t.description_1)}
+                            </p>
+                            <p className="text-neutral-600 text-lg md:text-xl leading-relaxed font-light">
+                                {renderWithEmphasis(t.description_2)}
+                            </p>
+                            <div className="bg-primary-50 p-4 rounded-xl border-l-4 border-primary-500">
+                                <p className="text-primary-800 text-base md:text-lg leading-relaxed font-medium">
+                                    {t.description_impact}
                                 </p>
-                            ))}
+                            </div>
                         </div>
 
                         {/* Features */}
                         <div className="grid grid-cols-2 gap-4 mb-8">
                             {[
-                                { icon: "🏠", label: currentLang === "pt" ? "Guias locais" : "Local guides" },
-                                { icon: "🎨", label: currentLang === "pt" ? "Arte urbana" : "Street art" },
-                                { icon: "🛡️", label: currentLang === "pt" ? "Segurança" : "Safety" },
-                                { icon: "💚", label: currentLang === "pt" ? "Impacto social" : "Social impact" },
+                                { icon: "🏠", label: t.features.local_guides },
+                                { icon: "🎨", label: t.features.street_art },
+                                { icon: "🛡️", label: t.features.safety },
+                                { icon: "💚", label: t.features.social_impact },
                             ].map((feature, index) => (
                                 <div key={index} className="flex items-center gap-3">
                                     <span className="text-2xl">{feature.icon}</span>
                                     <span className="text-neutral-700 font-medium">{feature.label}</span>
                                 </div>
                             ))}
+                        </div>
+
+                        {/* World Renowned Grid */}
+                        <div className="mb-10">
+                            <div className="mb-6">
+                                <h3 className="text-xl font-bold text-neutral-900">{t.trustedTitle}</h3>
+                                <p className="text-neutral-500 text-sm">{t.trustedSubtitle}</p>
+                            </div>
+
+                            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                                {/* FIFA Street */}
+                                <div className="bg-neutral-50 p-4 rounded-xl border border-neutral-100 flex flex-col items-center justify-center text-center hover:bg-neutral-100 transition-colors">
+                                    <GameControllerLogo className="w-8 h-8 text-neutral-800 mb-2" />
+                                    <div className="font-bold text-neutral-900 text-sm">{t.highlights.fifa.title}</div>
+                                    <div className="text-[10px] uppercase tracking-wide text-neutral-500 font-bold mt-1">{t.highlights.fifa.subtitle}</div>
+                                </div>
+
+                                {/* TripAdvisor */}
+                                <div className="bg-neutral-50 p-4 rounded-xl border border-neutral-100 flex flex-col items-center justify-center text-center hover:bg-neutral-100 transition-colors">
+                                    <TripAdvisorLogo className="w-8 h-8 text-green-600 mb-2" />
+                                    <div className="font-bold text-neutral-900 text-sm">{t.highlights.tripadvisor.title}</div>
+                                    <div className="text-[10px] uppercase tracking-wide text-neutral-500 font-bold mt-1">{t.highlights.tripadvisor.subtitle}</div>
+                                </div>
+
+                                {/* Airbnb */}
+                                <div className="bg-neutral-50 p-4 rounded-xl border border-neutral-100 flex flex-col items-center justify-center text-center hover:bg-neutral-100 transition-colors">
+                                    <AirbnbLogo className="w-8 h-8 text-[#FF5A5F] mb-2" />
+                                    <div className="font-bold text-neutral-900 text-sm">{t.highlights.airbnb.title}</div>
+                                    <div className="text-[10px] uppercase tracking-wide text-neutral-500 font-bold mt-1">{t.highlights.airbnb.subtitle}</div>
+                                </div>
+
+                                {/* Google */}
+                                <div className="bg-neutral-50 p-4 rounded-xl border border-neutral-100 flex flex-col items-center justify-center text-center hover:bg-neutral-100 transition-colors">
+                                    <GoogleLogo className="w-8 h-8 text-[#4285F4] mb-2" />
+                                    <div className="font-bold text-neutral-900 text-sm">{t.highlights.google.title}</div>
+                                    <div className="text-[10px] uppercase tracking-wide text-neutral-500 font-bold mt-1">{t.highlights.google.subtitle}</div>
+                                </div>
+                            </div>
                         </div>
 
                         {/* CTAs */}
@@ -183,7 +194,7 @@ export function AboutPreview({ locale = "pt-br" }: AboutPreviewProps) {
                                 href="/quem-somos"
                                 icon={<ArrowRight className="w-5 h-5" />}
                                 iconPosition="right"
-                                className="bg-gradient-to-r from-orange-500 to-red-500 text-white hover:from-orange-600 hover:to-red-600 shadow-xl shadow-orange-500/30 border-none font-bold tracking-wide"
+                                className="bg-neutral-900 text-white hover:bg-neutral-800 shadow-xl border-none font-bold tracking-wide py-6 px-8 rounded-full"
                             >
                                 {t.cta}
                             </Button>
@@ -191,7 +202,7 @@ export function AboutPreview({ locale = "pt-br" }: AboutPreviewProps) {
                                 message={WHATSAPP_MESSAGES.general[currentLang]}
                                 phone={CONTACT.whatsapp.number}
                                 size="lg"
-                                className="bg-green-600 text-white hover:bg-green-700 shadow-xl shadow-green-600/30 border-none font-bold"
+                                className="bg-green-600 text-white hover:bg-green-700 shadow-xl shadow-green-600/30 border-none font-bold py-6 px-8 rounded-full"
                             >
                                 {t.ctaWhatsapp}
                             </WhatsAppButton>

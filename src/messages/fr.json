@@ -9,5 +9,53 @@
         "about": "À Propos",
         "blog": "Blog",
         "contact": "Contact"
+    },
+    "tourCard": {
+        "insurance": "Assurance Incluse",
+        "smallGroups": "Petits Groupes",
+        "book": "Réserver"
+    },
+    "AboutPreview": {
+        "badge": "Qui Sommes-Nous",
+        "title": "Bien plus qu'une visite",
+        "titleHighlight": "Une immersion culturelle",
+        "description_1": "Vous marcherez sur le décor réel qui a inspiré le jeu **FIFA Street**, le film **L'Incroyable Hulk** et le clip de **Snoop Dogg & Pharrell**. Tavares Bastos n'est pas seulement une favela; c'est une icône de la culture pop mondiale.",
+        "description_2": "Ici, la sécurité est totale et l'expérience est authentique. Guidé par des locaux, vous découvrirez la véritable âme de Rio de Janeiro, avec des vues à couper le souffle et des histoires qu'aucun guide ordinaire ne peut raconter.",
+        "description_impact": "En choisissant Favela-República, vous réinvestissez directement dans la communauté. Notre tourisme durable génère des revenus locaux, préserve notre culture et crée de vraies opportunités pour les habitants.",
+        "trustedTitle": "Reconnu Mondialement",
+        "trustedSubtitle": "Décor de FIFA Street et noté avec excellence:",
+        "highlights": {
+            "fifa": {
+                "title": "FIFA Street",
+                "subtitle": "Décor Emblématique"
+            },
+            "tripadvisor": {
+                "title": "TripAdvisor",
+                "safety": "Base de Police",
+                "local": "Guides Locaux",
+                "safeValue": "Sûr"
+            },
+            "reviewCount": "250+ avis",
+            "airbnb": {
+                "title": "Airbnb",
+                "subtitle": "Superhost"
+            },
+            "google": {
+                "title": "Google",
+                "subtitle": "4.9/5.0"
+            }
+        },
+        "stats": {
+            "value": "10+",
+            "label": "Ans d'Histoire"
+        },
+        "cta": "Découvrez notre histoire complète",
+        "ctaWhatsapp": "Réserver Visite",
+        "features": {
+            "local_guides": "Guides locaux",
+            "street_art": "Art urbain",
+            "safety": "Sécurité",
+            "social_impact": "Impact social"
+        }
     }
 }
