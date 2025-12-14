@@ -1,48 +1,77 @@
-export default function JsonLd() {
-    const jsonLd = {
+import { CONTACT, LOCATION, SEO_DEFAULTS } from "@/lib/constants";
+
+export function JsonLd({ locale }: { locale: string }) {
+    // Schema.org: Organization (The Business Brand)
+    const organizationSchema = {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Favela República",
-        "image": "https://favelarepublica.com.br/images/hero-bg.jpg",
-        "description": "Turismo de base comunitária na Favela Tavares Bastos. Tours autênticos, seguros e culturais no Rio de Janeiro.",
-        "address": {
+        "@type": "Organization",
+        name: SEO_DEFAULTS.siteName,
+        url: SEO_DEFAULTS.siteUrl,
+        logo: `${SEO_DEFAULTS.siteUrl}/images/logo.png`, // Valid absolute URL
+        sameAs: [
+            CONTACT.instagramUrl,
+            `https://wa.me/${CONTACT.whatsapp.number}`,
+        ],
+        contactPoint: {
+            "@type": "ContactPoint",
+            telephone: CONTACT.whatsapp.displayNumber,
+            contactType: "customer service",
+            availableLanguage: ["Portuguese", "English", "Spanish", "French"],
+        },
+    };
+
+    // Schema.org: LocalBusiness (The Physical Tour Location)
+    const localBusinessSchema = {
+        "@context": "https://schema.org",
+        "@type": "TravelAgency",
+        name: "Favela-República Tour",
+        image: [
+            `${SEO_DEFAULTS.siteUrl}/images/hero-tavares-bastos.png`,
+            `${SEO_DEFAULTS.siteUrl}/images/gallery/street-art-1.jpg`
+        ],
+        "@id": SEO_DEFAULTS.siteUrl,
+        url: `${SEO_DEFAULTS.siteUrl}/${locale}`,
+        telephone: CONTACT.whatsapp.displayNumber,
+        priceRange: "$$",
+        address: {
             "@type": "PostalAddress",
-            "streetAddress": "Rua Tavares Bastos",
-            "addressLocality": "Rio de Janeiro",
-            "addressRegion": "RJ",
-            "postalCode": "22221-030",
-            "addressCountry": "BR"
+            streetAddress: CONTACT.address.street,
+            addressLocality: CONTACT.address.city,
+            addressRegion: CONTACT.address.state,
+            postalCode: CONTACT.address.postalCode,
+            addressCountry: "BR",
         },
-        "geo": {
+        geo: {
             "@type": "GeoCoordinates",
-            "latitude": -22.9246,
-            "longitude": -43.1932
+            latitude: LOCATION.coordinates.lat,
+            longitude: LOCATION.coordinates.lng,
         },
-        "url": "https://favelarepublica.com.br",
-        "telephone": "+5521999999999",
-        "priceRange": "$$",
-        "openingHoursSpecification": [
-            {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": [
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday",
-                    "Sunday"
-                ],
-                "opens": "09:00",
-                "closes": "18:00"
-            }
-        ]
+        openingHoursSpecification: {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+            ],
+            opens: "08:00",
+            closes: "20:00",
+        },
     };
 
     return (
-        <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+            />
+        </>
     );
 }

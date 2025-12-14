@@ -1,6 +1,7 @@
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { WhatsAppFloatingButton } from "@/components/layout/whatsapp-button";
+import { JsonLd } from "@/components/seo/json-ld";
 import { locales } from "@/i18n/request";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
@@ -115,6 +116,8 @@ export default async function LocaleLayout({
     // side is the easiest way to get started
     const messages = await getMessages();
 
+
+
     return (
         <html lang={locale} className={`${playfair.variable} ${inter.variable}`} suppressHydrationWarning>
             <body
@@ -126,6 +129,7 @@ export default async function LocaleLayout({
                     lineHeight: 1.6
                 }}
             >
+                <JsonLd locale={locale} />
                 <NextIntlClientProvider messages={messages}>
                     <Header locale={locale} />
                     <main id="main-content">
