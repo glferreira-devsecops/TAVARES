@@ -105,34 +105,38 @@ export function Header({ locale = "pt" }: HeaderProps) {
     };
 
     // Route Detection for Header Style
-    const isHome = pathname === "/" || pathname === `/${locale}`;
-    const isTourDetail = pathname?.includes("/tours/") && pathname.split("/").length > 3; // /pt/tours/slug
-    // All these pages have a Dark Hero section, so they need a TRANSPARENT header initially
-    const isSafety = pathname?.includes("/seguranca");
-    const isBlog = pathname?.includes("/blog"); // Blog Index has dark hero
-    const isAbout = pathname?.includes("/quem-somos");
+    // Note: usePathname from next-intl returns the path WITHOUT the locale prefix (e.g., "/tours", not "/pt/tours")
+    const isHome = pathname === "/";
+
+    // Tour Detail: usually /tours/slug - checking if we are deep in tours structure
+    const isTourDetail = pathname?.startsWith("/tours/") && pathname.split("/").length > 2;
+
+    // Pages with Dark Hero sections (require Transparent Header initially)
+    const isSafety = pathname === "/seguranca";
+    const isBlog = pathname?.startsWith("/blog"); // Matches /blog and /blog/slug
+    const isAbout = pathname === "/quem-somos";
 
     // We only want transparent header on pages with Dark Hero Images
-    // All other pages (Contact, FAQ, 404s) should have solid header for contrast
+    // All other pages (Contact, FAQ, 404s, Tours Index) should have solid header for contrast
     const isDarkHeroPage = isHome || isTourDetail || isSafety || isBlog || isAbout;
     const shouldForceSolid = !isDarkHeroPage || isScrolled;
 
     // Derived styles
     const headerClasses = cn(
-        "fixed top-0 left-0 right-0 z-fixed transition-all duration-500 ease-in-out",
+        "fixed top-0 left-0 right-0 z-[1000] transition-all duration-500 ease-in-out", // z-[1000] ensures it's above everything
         isHidden ? "-translate-y-full" : "translate-y-0",
         shouldForceSolid
-            ? "bg-white/90 backdrop-blur-xl border-b border-white/20 shadow-sm py-4"
-            : "bg-transparent py-6"
+            ? "bg-white/95 backdrop-blur-xl border-b border-neutral-200/50 shadow-sm py-4"
+            : "bg-gradient-to-b from-black/60 to-transparent py-6 border-b border-transparent" // Gradient guarantees contrast
     );
 
     // Text color: Dark if solid header (scrolled or light page), White if transparent (dark hero)
-    const logoTextClasses = shouldForceSolid ? "text-neutral-900" : "text-white";
+    const logoTextClasses = shouldForceSolid ? "text-neutral-900" : "text-white drop-shadow-md";
 
-    // Improved Desktop Nav Container: More elegant glassmorphism
+    // Improved Desktop Nav Container
     const navContainerClasses = shouldForceSolid
-        ? "bg-neutral-100/50 backdrop-blur-md border border-neutral-200/50 shadow-inner" // Subtle inset shadow for depth
-        : "bg-black/20 backdrop-blur-lg border border-white/10 shadow-lg";
+        ? "bg-neutral-100/80 backdrop-blur-md border border-neutral-200/50 shadow-inner"
+        : "bg-white/10 backdrop-blur-md border border-white/20 shadow-lg"; // Lighter glass on dark for better visibility
 
     // Explicit text colors for states
     const navLinkActiveClasses = "text-neutral-900 bg-white shadow-sm font-semibold";
@@ -143,8 +147,8 @@ export function Header({ locale = "pt" }: HeaderProps) {
         active
             ? navLinkActiveClasses
             : shouldForceSolid
-                ? "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-200/50"
-                : "text-white/90 hover:text-white hover:bg-white/15"
+                ? "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-200/60"
+                : "text-white hover:text-white hover:bg-white/20 font-medium drop-shadow-sm"
     );
 
     return (
