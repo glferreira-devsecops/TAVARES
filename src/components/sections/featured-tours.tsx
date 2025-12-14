@@ -170,7 +170,7 @@ export function FeaturedTours({ locale = "pt", tours }: FeaturedToursProps) {
                                     <h3 className="font-heading text-xl md:text-2xl font-bold text-neutral-900 mb-3 group-hover:text-orange-600 transition-colors leading-tight tracking-tight">
                                         {tour.title[contentLang]}
                                     </h3>
-                                    <p className="text-neutral-500 text-sm leading-relaxed mb-6 line-clamp-3 flex-1">
+                                    <p className="text-neutral-600 text-sm leading-relaxed mb-6 line-clamp-3 flex-1 font-medium">
                                         {tour.shortDescription[contentLang]}
                                     </p>
 

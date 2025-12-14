@@ -145,6 +145,12 @@ export function Hero({ locale = "pt" }: HeroProps) {
                 >
                     {dict.hero.subtitle}
                 </motion.p>
+                {/* Text Shadow for extreme readability */}
+                <style jsx global>{`
+                    .text-shadow-hero {
+                        text-shadow: 0 2px 10px rgba(0,0,0,0.5), 0 0 30px rgba(0,0,0,0.3);
+                    }
+                `}</style>
 
                 {/* CTAs */}
                 <motion.div
@@ -198,8 +204,8 @@ export function Hero({ locale = "pt" }: HeroProps) {
                                 <stat.icon className="w-4 h-4 md:w-6 md:h-6" />
                             </div>
                             <div className="text-center md:text-left">
-                                <div className="text-sm md:text-xl font-bold text-white leading-none mb-1">{stat.value}</div>
-                                <div className="text-[10px] md:text-xs text-white/60 uppercase tracking-wider font-medium">{stat.label}</div>
+                                <div className="text-sm md:text-xl font-bold text-white leading-none mb-1 drop-shadow-md">{stat.value}</div>
+                                <div className="text-[10px] md:text-xs text-white/80 uppercase tracking-wider font-medium drop-shadow-sm">{stat.label}</div>
                             </div>
                         </motion.div>
                     ))}

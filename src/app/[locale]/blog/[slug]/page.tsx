@@ -81,11 +81,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                             </Badge>
                         </div>
 
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 leading-tight text-shadow-sm">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 leading-tight drop-shadow-lg text-shadow-sm">
                             {post.title[lang]}
                         </h1>
 
-                        <div className="flex flex-wrap items-center gap-6 text-white/90 text-sm sm:text-base font-medium">
+                        <div className="flex flex-wrap items-center gap-6 text-white text-sm sm:text-base font-medium drop-shadow-md">
                             <div className="flex items-center gap-2">
                                 <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-primary-400" />
                                 {formatDate(post.publishedAt, locale === "pt" ? "pt-BR" : "en-US")}

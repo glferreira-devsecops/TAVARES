@@ -65,7 +65,7 @@ export function Footer({ locale = "pt" }: FooterProps) {
                                 <span className="text-white">-República</span>
                             </span>
                         </Link>
-                        <p className="text-neutral-400 text-sm leading-relaxed mb-8">
+                        <p className="text-neutral-300 text-sm leading-relaxed mb-8">
                             {t.tagline}
                         </p>
 
