@@ -55,5 +55,14 @@
             "safety": "Safety",
             "social_impact": "Social impact"
         }
+    },
+    "NotFound": {
+        "title": "Path Not Found",
+        "description": "It seems you have wandered into an unknown alley. In the favela, every path has a return, and we will help you find your way.",
+        "backButton": "Back to Home",
+        "toursButton": "See Our Tours",
+        "helpTitle": "Need a guide?",
+        "helpSubtitle": "Talk to us directly on WhatsApp",
+        "whatsappButton": "Chat on WhatsApp"
     }
 }

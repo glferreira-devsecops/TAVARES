@@ -55,5 +55,14 @@
             "safety": "Segurança",
             "social_impact": "Impacto social"
         }
+    },
+    "NotFound": {
+        "title": "Caminho Não Encontrado",
+        "description": "Parece que você se aventurou por uma viela desconhecida. Na favela, todo caminho tem volta, e a gente te ajuda a encontrar o rumo.",
+        "backButton": "Voltar ao Início",
+        "toursButton": "Ver Nossos Tours",
+        "helpTitle": "Precisa de um guia?",
+        "helpSubtitle": "Fale com a gente direto no WhatsApp",
+        "whatsappButton": "Chamar no Zap"
     }
 }

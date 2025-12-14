@@ -3,59 +3,74 @@
 import { WhatsAppButton } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { CONTACT, WHATSAPP_MESSAGES } from "@/lib/constants";
-import { motion, useMotionValue, useTransform } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { Home, MapPin, Search } from "lucide-react";
 import { useEffect, useState } from "react";
 
 interface NotFoundScreenProps {
     isRoot?: boolean;
+    content?: {
+        title: string;
+        description: string;
+        backButton: string;
+        toursButton: string;
+        helpTitle: string;
+        helpSubtitle: string;
+        whatsappButton: string;
+    };
 }
 
-export function NotFoundScreen({ isRoot = false }: NotFoundScreenProps) {
-    const mouseX = useMotionValue(0);
-    const mouseY = useMotionValue(0);
+// Default content for Root usage (fallback)
+const defaultContent = {
+    title: "Caminho Não Encontrado",
+    description: "Parece que você se aventurou por uma viela desconhecida. Na favela, todo caminho tem volta, e a gente te ajuda a encontrar o rumo.",
+    backButton: "Voltar ao Início",
+    toursButton: "Ver Nossos Tours",
+    helpTitle: "Precisa de um guia?",
+    helpSubtitle: "Fale com a gente direto no WhatsApp",
+    whatsappButton: "Chamar no Zap"
+};
+
+export function NotFoundScreen({ isRoot = false, content = defaultContent }: NotFoundScreenProps) {
+    const mouseX = useMotionValue(0.5);
+    const mouseY = useMotionValue(0.5);
     const [mounted, setMounted] = useState(false);
+
+    // Smooth mouse for parallax
+    const smoothX = useSpring(mouseX, { damping: 50, stiffness: 400 });
+    const smoothY = useSpring(mouseY, { damping: 50, stiffness: 400 });
 
     useEffect(() => {
         setMounted(true);
         const handleMouseMove = (e: MouseEvent) => {
             const { clientX, clientY } = e;
             const { innerWidth, innerHeight } = window;
-            const x = clientX / innerWidth;
-            const y = clientY / innerHeight;
-            mouseX.set(x);
-            mouseY.set(y);
+            mouseX.set(clientX / innerWidth);
+            mouseY.set(clientY / innerHeight);
         };
 
         window.addEventListener("mousemove", handleMouseMove);
         return () => window.removeEventListener("mousemove", handleMouseMove);
     }, [mouseX, mouseY]);
 
-    const xMove = useTransform(mouseX, [0, 1], [-20, 20]);
-    const yMove = useTransform(mouseY, [0, 1], [-20, 20]);
-
-    // Reverse movement for parallax depth (slower)
-    const xMoveBack = useTransform(mouseX, [0, 1], [10, -10]);
-    const yMoveBack = useTransform(mouseY, [0, 1], [10, -10]);
+    const xMove = useTransform(smoothX, [0, 1], [-30, 30]);
+    const yMove = useTransform(smoothY, [0, 1], [-30, 30]);
+    const xMoveBack = useTransform(smoothX, [0, 1], [15, -15]);
+    const yMoveBack = useTransform(smoothY, [0, 1], [15, -15]);
 
     if (!mounted) return null;
-
-    // Helper for navigation links (handles root vs locale context implicitly via the Link component or <a>)
-    // If isRoot is true, we might want to default to standard <a> tags if the Link context is missing,
-    // but usually Next-Intl Link works if configured correctly even in root layout if providers are present.
-    // Ideally, root not-found means we are outside the [locale], so we should force a hard reload to a default locale or just use <a>.
 
     const HomeButton = () => (
         isRoot ? (
             // eslint-disable-next-line @next/next/no-html-link-for-pages
             <a href="/" className="group relative px-8 py-4 bg-white text-neutral-900 rounded-2xl font-bold overflow-hidden transition-all hover:scale-105 hover:shadow-xl hover:shadow-white/10 flex items-center justify-center gap-2">
                 <Home className="w-5 h-5" />
-                <span>Voltar ao Início</span>
+                <span>{content.backButton}</span>
             </a>
         ) : (
             <Link href="/" className="group relative px-8 py-4 bg-white text-neutral-900 rounded-2xl font-bold overflow-hidden transition-all hover:scale-105 hover:shadow-xl hover:shadow-white/10 flex items-center justify-center gap-2">
                 <Home className="w-5 h-5 transition-transform group-hover:-translate-y-0.5" />
-                <span>Voltar ao Início</span>
+                <span>{content.backButton}</span>
             </Link>
         )
     );
@@ -64,9 +79,15 @@ export function NotFoundScreen({ isRoot = false }: NotFoundScreenProps) {
         <main className="relative min-h-screen w-full bg-neutral-950 overflow-hidden flex flex-col items-center justify-center p-6 sm:p-12">
             {/* Ambient Background */}
             <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-[-20%] left-[-10%] w-[70vw] h-[70vw] rounded-full bg-blue-900/20 blur-[80px] sm:blur-[120px]" />
-                <div className="absolute bottom-[-20%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-orange-900/20 blur-[60px] sm:blur-[100px]" />
-                <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-[0.03] mix-blend-overlay" />
+                <motion.div
+                    style={{ x: xMoveBack, y: yMoveBack }}
+                    className="absolute top-[-20%] left-[-10%] w-[70vw] h-[70vw] rounded-full bg-blue-900/20 blur-[80px] sm:blur-[120px]"
+                />
+                <motion.div
+                    style={{ x: xMove, y: yMove }}
+                    className="absolute bottom-[-20%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-orange-900/20 blur-[60px] sm:blur-[100px]"
+                />
+                <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-[0.04] mix-blend-overlay" />
             </div>
 
             <div className="relative z-10 w-full max-w-2xl mx-auto flex flex-col items-center text-center px-4">
@@ -91,9 +112,12 @@ export function NotFoundScreen({ isRoot = false }: NotFoundScreenProps) {
                         transition={{ delay: 0.3, duration: 0.8 }}
                         className="absolute inset-0 flex items-center justify-center z-10"
                         style={{ x: xMove, y: yMove }}
+                    // Subtle glitch shudder on hover could go here, but stick to smooth for now
                     >
-                        <h2 className="font-heading text-4xl sm:text-6xl md:text-7xl font-bold bg-gradient-to-r from-orange-400 via-orange-200 to-white bg-clip-text text-transparent drop-shadow-2xl">
-                            Caminho <br /> Não Encontrado
+                        <h2 className="font-heading text-4xl sm:text-6xl md:text-7xl font-bold bg-gradient-to-r from-orange-400 via-orange-200 to-white bg-clip-text text-transparent drop-shadow-2xl text-balance">
+                            {content.title.split(' ').map((word, i) => (
+                                <span key={i} className="inline-block mx-2">{word}</span>
+                            ))}
                         </h2>
                     </motion.div>
                 </motion.div>
@@ -106,8 +130,7 @@ export function NotFoundScreen({ isRoot = false }: NotFoundScreenProps) {
                     className="mt-8 md:mt-12 space-y-6 max-w-lg"
                 >
                     <p className="text-neutral-400 text-lg md:text-xl font-light leading-relaxed">
-                        Parece que você se aventurou por uma viela desconhecida.
-                        Na favela, todo caminho tem volta, e a gente te ajuda a encontrar o rumo.
+                        {content.description}
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 w-full justify-center pt-8">
@@ -119,7 +142,7 @@ export function NotFoundScreen({ isRoot = false }: NotFoundScreenProps) {
                                 className="group px-8 py-4 bg-neutral-900 border border-neutral-800 text-white rounded-2xl font-medium transition-all hover:border-orange-500/50 hover:bg-neutral-800 flex items-center justify-center gap-2"
                             >
                                 <Search className="w-5 h-5 text-orange-500" />
-                                <span>Ver Nossos Tours</span>
+                                <span>{content.toursButton}</span>
                             </Link>
                         )}
                     </div>
@@ -138,17 +161,17 @@ export function NotFoundScreen({ isRoot = false }: NotFoundScreenProps) {
                                 <MapPin className="w-6 h-6" />
                             </div>
                             <div>
-                                <h3 className="text-white font-bold text-lg">Precisa de um guia?</h3>
-                                <p className="text-neutral-500 text-sm">Fale com a gente direto no WhatsApp</p>
+                                <h3 className="text-white font-bold text-lg">{content.helpTitle}</h3>
+                                <p className="text-neutral-500 text-sm">{content.helpSubtitle}</p>
                             </div>
                         </div>
 
                         <WhatsAppButton
-                            message={WHATSAPP_MESSAGES.general.pt}
+                            message={WHATSAPP_MESSAGES.general.pt} // Could localize this too, but keeping it simpler for logic
                             phone={CONTACT.whatsapp.number}
                             className="w-full md:w-auto bg-green-600 hover:bg-green-500 text-white px-6 py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-colors shadow-lg shadow-green-900/20"
                         >
-                            Chamar no Zap
+                            {content.whatsappButton}
                         </WhatsAppButton>
                     </div>
                 </motion.div>

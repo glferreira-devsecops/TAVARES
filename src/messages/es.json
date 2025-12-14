@@ -55,5 +55,14 @@
             "safety": "Seguridad",
             "social_impact": "Impacto social"
         }
+    },
+    "NotFound": {
+        "title": "Camino No Encontrado",
+        "description": "Parece que te has aventurado por un callejón desconocido. En la favela, todo camino tiene vuelta, y te ayudaremos a encontrar el rumbo.",
+        "backButton": "Volver al Inicio",
+        "toursButton": "Ver Nuestros Tours",
+        "helpTitle": "¿Necesitas un guía?",
+        "helpSubtitle": "Habla con nosotros directamente en WhatsApp",
+        "whatsappButton": "Hablar en WhatsApp"
     }
 }

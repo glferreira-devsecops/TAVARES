@@ -57,5 +57,14 @@
             "safety": "Sécurité",
             "social_impact": "Impact social"
         }
+    },
+    "NotFound": {
+        "title": "Chemin Non Trouvé",
+        "description": "Il semble que vous vous soyez aventuré dans une ruelle inconnue. Dans la favela, chaque chemin a un retour, et nous vous aiderons à retrouver votre voie.",
+        "backButton": "Retour à l'Accueil",
+        "toursButton": "Voir Nos Tours",
+        "helpTitle": "Besoin d'un guide ?",
+        "helpSubtitle": "Parlez-nous directement sur WhatsApp",
+        "whatsappButton": "Discuter sur WhatsApp"
     }
 }
