@@ -140,7 +140,7 @@ export function Footer({ locale = "pt" }: FooterProps) {
 
 
                 {/* Newsletter Box */}
-                < div className="bg-gradient-to-br from-primary-900/10 to-transparent rounded-2xl p-6 md:p-10 border border-primary-500/10 mb-16 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-10 text-center md:text-left" >
+                <div className="bg-gradient-to-br from-primary-900/10 to-transparent rounded-2xl p-6 md:p-10 border border-primary-500/10 mb-16 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-10 text-center md:text-left">
                     <div className="max-w-md">
                         <h3 className="font-heading text-xl md:text-2xl font-bold text-white mb-2">
                             {t.newsletter}
