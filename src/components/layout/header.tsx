@@ -107,9 +107,14 @@ export function Header({ locale = "pt" }: HeaderProps) {
     // Route Detection for Header Style
     const isHome = pathname === "/" || pathname === `/${locale}`;
     const isTourDetail = pathname?.includes("/tours/") && pathname.split("/").length > 3; // /pt/tours/slug
-    // We only want transparent header on Home and Tour Details (Dark Hero Images)
-    // All other pages (Contact, Blog, Tours Index, 404s) should have solid header for contrast
-    const isDarkHeroPage = isHome || isTourDetail;
+    // All these pages have a Dark Hero section, so they need a TRANSPARENT header initially
+    const isSafety = pathname?.includes("/seguranca");
+    const isBlog = pathname?.includes("/blog"); // Blog Index has dark hero
+    const isAbout = pathname?.includes("/quem-somos");
+
+    // We only want transparent header on pages with Dark Hero Images
+    // All other pages (Contact, FAQ, 404s) should have solid header for contrast
+    const isDarkHeroPage = isHome || isTourDetail || isSafety || isBlog || isAbout;
     const shouldForceSolid = !isDarkHeroPage || isScrolled;
 
     // Derived styles
