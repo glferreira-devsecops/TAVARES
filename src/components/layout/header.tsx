@@ -113,7 +113,7 @@ export function Header({ locale = "pt" }: HeaderProps) {
             : "bg-transparent py-6"
     );
 
-    const logoTextClasses = isScrolled ? "text-neutral-900" : "text-white!";
+    const logoTextClasses = isScrolled ? "text-neutral-900" : "text-white";
 
     // Improved Desktop Nav Container: More elegant glassmorphism
     const navContainerClasses = isScrolled
@@ -130,7 +130,7 @@ export function Header({ locale = "pt" }: HeaderProps) {
             ? navLinkActiveClasses
             : isScrolled
                 ? "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-200/50"
-                : "text-white/90! hover:text-white! hover:bg-white/15"
+                : "text-white/90 hover:text-white hover:bg-white/15"
     );
 
     return (
@@ -155,7 +155,7 @@ export function Header({ locale = "pt" }: HeaderProps) {
                                 )}
                                 style={!isScrolled ? { textShadow: '0 2px 10px rgba(0,0,0,0.5)' } : undefined}
                             >
-                                <span className={cn("transition-colors", isScrolled ? "text-primary-600" : "text-white!")}>Favela</span>
+                                <span className={cn("transition-colors", isScrolled ? "text-primary-600" : "text-white")}>Favela</span>
                                 <span>-República</span>
                             </span>
                         </Link>
