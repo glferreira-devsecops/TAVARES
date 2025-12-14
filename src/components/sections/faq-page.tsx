@@ -57,7 +57,7 @@ export function FAQPageClient({ locale }: FAQPageClientProps) {
     const t = content[currentLang];
 
     return (
-        <main className="min-h-screen bg-neutral-50 pt-20 pb-12">
+        <main id="faq" className="min-h-screen bg-neutral-50 py-24 scroll-mt-24">
             <div className="container mx-auto px-4">
                 {/* Header */}
                 <motion.div

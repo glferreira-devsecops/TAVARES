@@ -64,5 +64,18 @@
         "helpTitle": "¿Necesitas un guía?",
         "helpSubtitle": "Habla con nosotros directamente en WhatsApp",
         "whatsappButton": "Hablar en WhatsApp"
+    },
+    "BookingModal": {
+        "title": "Reservar Experiencia",
+        "subtitle": "¡Ya casi! Completa los detalles para personalizar tu tour.",
+        "step1": "¿Cuándo vienes?",
+        "step2": "¿Quién eres?",
+        "dateLabel": "Fecha del Tour",
+        "guestsLabel": "Número de Personas",
+        "nameLabel": "Tu Nombre Completo",
+        "next": "Continuar",
+        "confirm": "Confirmar en WhatsApp",
+        "back": "Volver",
+        "guestUnit": "persona(s)"
     }
 }

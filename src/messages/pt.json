@@ -64,5 +64,18 @@
         "helpTitle": "Precisa de um guia?",
         "helpSubtitle": "Fale com a gente direto no WhatsApp",
         "whatsappButton": "Chamar no Zap"
+    },
+    "BookingModal": {
+        "title": "Agendar Experiência",
+        "subtitle": "Você está quase lá! Preencha os detalhes para personalizar seu tour.",
+        "step1": "Quando você vem?",
+        "step2": "Quem é você?",
+        "dateLabel": "Data do Tour",
+        "guestsLabel": "Número de Pessoas",
+        "nameLabel": "Seu Nome Completo",
+        "next": "Continuar",
+        "confirm": "Confirmar no WhatsApp",
+        "back": "Voltar",
+        "guestUnit": "pessoa(s)"
     }
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, WhatsAppButton } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { CONTACT, WHATSAPP_MESSAGES } from "@/lib/constants";
 import type { Tour } from "@/types";
@@ -23,7 +23,11 @@ interface TourDetailClientProps {
     lang: "pt" | "en" | "es" | "fr";
 }
 
+import { BookingModal } from "@/components/booking/booking-modal";
+import { useState } from "react";
+
 export function TourDetailClient({ tour, lang }: TourDetailClientProps) {
+    const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
     const contentLang = (lang === "pt" ? "pt" : "en") as "pt" | "en";
     const content = {
         pt: {
@@ -353,14 +357,14 @@ export function TourDetailClient({ tour, lang }: TourDetailClientProps) {
 
                                     {/* CTA Buttons */}
                                     <div className="space-y-3">
-                                        <WhatsAppButton
-                                            phone={CONTACT.whatsapp.number}
-                                            message={WHATSAPP_MESSAGES.tour[lang].replace("{tour}", tour.title[contentLang])}
+                                        <Button
+                                            variant="whatsapp"
                                             fullWidth
                                             size="lg"
+                                            onClick={() => setIsBookingModalOpen(true)}
                                         >
                                             {t.bookNow}
-                                        </WhatsAppButton>
+                                        </Button>
 
                                         <Button
                                             variant="outline"
@@ -386,6 +390,13 @@ export function TourDetailClient({ tour, lang }: TourDetailClientProps) {
                     </div>
                 </div>
             </section>
-        </main>
+
+            <BookingModal
+                isOpen={isBookingModalOpen}
+                onClose={() => setIsBookingModalOpen(false)}
+                tourTitle={tour.title[contentLang]}
+                locale={lang}
+            />
+        </main >
     );
 }

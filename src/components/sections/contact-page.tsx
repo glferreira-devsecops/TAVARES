@@ -106,7 +106,7 @@ export function ContactPageClient({ locale }: ContactPageClientProps) {
     const t = content[lang];
 
     return (
-        <main className="min-h-screen bg-neutral-50 pt-24 pb-16">
+        <main id="contact" className="min-h-screen bg-neutral-50 pt-24 pb-16 scroll-mt-24">
             <div className="container mx-auto px-4">
                 {/* Header */}
                 <motion.div

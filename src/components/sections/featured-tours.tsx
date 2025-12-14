@@ -91,7 +91,7 @@ export function FeaturedTours({ locale = "pt", tours }: FeaturedToursProps) {
     };
 
     return (
-        <section className="py-12 md:py-24 bg-white relative overflow-hidden">
+        <section id="tours" className="py-24 bg-neutral-950 relative overflow-hidden scroll-mt-24">
             {/* Decorative blob */}
             <div className="absolute top-40 right-0 w-[600px] h-[600px] bg-orange-500/5 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/2" />
 

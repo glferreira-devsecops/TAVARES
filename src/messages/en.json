@@ -64,5 +64,18 @@
         "helpTitle": "Need a guide?",
         "helpSubtitle": "Talk to us directly on WhatsApp",
         "whatsappButton": "Chat on WhatsApp"
+    },
+    "BookingModal": {
+        "title": "Book Experience",
+        "subtitle": "Almost there! Fill in the details to customize your tour.",
+        "step1": "When are you coming?",
+        "step2": "Who are you?",
+        "dateLabel": "Tour Date",
+        "guestsLabel": "Number of Guests",
+        "nameLabel": "Your Full Name",
+        "next": "Continue",
+        "confirm": "Confirm on WhatsApp",
+        "back": "Back",
+        "guestUnit": "person(s)"
     }
 }

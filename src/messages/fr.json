@@ -66,5 +66,18 @@
         "helpTitle": "Besoin d'un guide ?",
         "helpSubtitle": "Parlez-nous directement sur WhatsApp",
         "whatsappButton": "Discuter sur WhatsApp"
+    },
+    "BookingModal": {
+        "title": "Réserver l'Expérience",
+        "subtitle": "Presque là! Remplissez les détails pour personnaliser votre visite.",
+        "step1": "Quand venez-vous?",
+        "step2": "Qui êtes-vous?",
+        "dateLabel": "Date de la visite",
+        "guestsLabel": "Nombre de personnes",
+        "nameLabel": "Votre nom complet",
+        "next": "Continuer",
+        "confirm": "Confirmer sur WhatsApp",
+        "back": "Retour",
+        "guestUnit": "personne(s)"
     }
 }
