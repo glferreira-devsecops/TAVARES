@@ -67,7 +67,7 @@ export function TrustBadges({ locale = "pt" }: TrustBadgesProps) {
     };
 
     return (
-        <section className="py-24 bg-white border-b border-neutral-100">
+        <section className="py-12 md:py-24 bg-white border-b border-neutral-100">
             <div className="container-custom">
                 <div className="text-center mb-16">
                     <motion.div

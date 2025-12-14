@@ -59,7 +59,7 @@ export function AboutPreview({ locale = "pt-br" }: AboutPreviewProps) {
     };
 
     return (
-        <section id="about" className="py-24 relative overflow-hidden bg-neutral-900 scroll-mt-24">
+        <section id="about" className="py-12 md:py-24 relative overflow-hidden bg-neutral-900 scroll-mt-24">
             <div className="container-custom">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                     {/* Image Side */}

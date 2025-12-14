@@ -60,7 +60,7 @@ export function BlogPreview({ locale = "pt", posts }: BlogPreviewProps) {
     const t = content[currentLang];
 
     return (
-        <section className="section-padding bg-neutral-50">
+        <section className="py-12 md:py-24 bg-neutral-50 relative overflow-hidden">
             <div className="container-custom">
                 {/* Header */}
                 <motion.div
