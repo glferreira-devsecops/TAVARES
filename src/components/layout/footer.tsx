@@ -51,7 +51,7 @@ export function Footer({ locale = "pt" }: FooterProps) {
     const t = content[currentLang];
 
     return (
-        <footer className="relative overflow-hidden bg-gradient-to-b from-neutral-950 to-neutral-900 text-white">
+        <footer className="relative overflow-hidden bg-gradient-to-b from-neutral-900 to-black text-white">
             {/* Ambient Background Effects */}
             <div className="absolute -top-[50%] -left-[10%] w-[500px] h-[500px] bg-orange-500/10 rounded-full blur-[100px] pointer-events-none" />
             <div className="absolute -bottom-[30%] -right-[10%] w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[80px] pointer-events-none" />

@@ -122,10 +122,9 @@ export function Hero({ locale = "pt" }: HeroProps) {
                             variants={fadeInUp}
                         >
                             <span
-                                className="bg-gradient-to-r from-orange-300 via-orange-500 to-red-500 bg-clip-text text-transparent"
+                                className="text-gradient-gold block pb-2"
                                 style={{
-                                    filter: "drop-shadow(0 8px 20px rgba(249,115,22,0.4))",
-                                    WebkitBackgroundClip: "text"
+                                    filter: "drop-shadow(0 8px 20px rgba(249,115,22,0.4))"
                                 }}
                             >
                                 {dict.hero.titleHighlight}
@@ -198,7 +197,7 @@ export function Hero({ locale = "pt" }: HeroProps) {
                         <motion.div
                             key={i}
                             variants={fadeInUp}
-                            className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 p-3 md:p-4 rounded-xl md:rounded-2xl bg-black/40 md:bg-black/20 backdrop-blur-md border border-white/10 hover:bg-white/5 transition-colors cursor-default group"
+                            className="glass-panel-dark flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 p-3 md:p-4 rounded-xl md:rounded-2xl transition-colors cursor-default group hover:bg-white/5"
                         >
                             <div className={`p-1.5 md:p-3 rounded-full bg-white/5 group-hover:scale-110 transition-transform duration-300 ${stat.color}`}>
                                 <stat.icon className="w-4 h-4 md:w-6 md:h-6" />

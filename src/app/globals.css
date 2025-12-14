@@ -172,4 +172,41 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  /* Premium Glass Effect */
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-panel-dark {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Text Gradients */
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #FFFFFF 0%, #FDBA74 50%, #FFFFFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% auto;
+    animation: shimmer 5s linear infinite;
+  }
+
+  @keyframes shimmer {
+    to {
+      background-position: 200% center;
+    }
+  }
+}
+
+/* Custom Selection */
+::selection {
+  background-color: oklch(var(--color-primary-500) / 0.3);
+  color: oklch(var(--color-primary-900));
 }
