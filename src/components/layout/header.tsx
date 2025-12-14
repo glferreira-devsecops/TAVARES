@@ -104,19 +104,28 @@ export function Header({ locale = "pt" }: HeaderProps) {
         return false;
     };
 
+    // Route Detection for Header Style
+    const isHome = pathname === "/" || pathname === `/${locale}`;
+    const isTourDetail = pathname?.includes("/tours/") && pathname.split("/").length > 3; // /pt/tours/slug
+    // We only want transparent header on Home and Tour Details (Dark Hero Images)
+    // All other pages (Contact, Blog, Tours Index, 404s) should have solid header for contrast
+    const isDarkHeroPage = isHome || isTourDetail;
+    const shouldForceSolid = !isDarkHeroPage || isScrolled;
+
     // Derived styles
     const headerClasses = cn(
         "fixed top-0 left-0 right-0 z-fixed transition-all duration-500 ease-in-out",
         isHidden ? "-translate-y-full" : "translate-y-0",
-        isScrolled
+        shouldForceSolid
             ? "bg-white/90 backdrop-blur-xl border-b border-white/20 shadow-sm py-4"
             : "bg-transparent py-6"
     );
 
-    const logoTextClasses = isScrolled ? "text-neutral-900" : "text-white";
+    // Text color: Dark if solid header (scrolled or light page), White if transparent (dark hero)
+    const logoTextClasses = shouldForceSolid ? "text-neutral-900" : "text-white";
 
     // Improved Desktop Nav Container: More elegant glassmorphism
-    const navContainerClasses = isScrolled
+    const navContainerClasses = shouldForceSolid
         ? "bg-neutral-100/50 backdrop-blur-md border border-neutral-200/50 shadow-inner" // Subtle inset shadow for depth
         : "bg-black/20 backdrop-blur-lg border border-white/10 shadow-lg";
 
@@ -128,7 +137,7 @@ export function Header({ locale = "pt" }: HeaderProps) {
         "relative text-sm font-medium transition-all duration-300 px-4 py-2 rounded-full",
         active
             ? navLinkActiveClasses
-            : isScrolled
+            : shouldForceSolid
                 ? "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-200/50"
                 : "text-white/90 hover:text-white hover:bg-white/15"
     );
@@ -153,9 +162,9 @@ export function Header({ locale = "pt" }: HeaderProps) {
                                     "font-heading text-xl md:text-2xl font-bold transition-colors",
                                     logoTextClasses
                                 )}
-                                style={!isScrolled ? { textShadow: '0 2px 10px rgba(0,0,0,0.5)' } : undefined}
+                                style={!shouldForceSolid ? { textShadow: '0 2px 10px rgba(0,0,0,0.5)' } : undefined}
                             >
-                                <span className={cn("transition-colors", isScrolled ? "text-primary-600" : "text-white")}>Favela</span>
+                                <span className={cn("transition-colors", shouldForceSolid ? "text-primary-600" : "text-white")}>Favela</span>
                                 <span>-República</span>
                             </span>
                         </Link>
@@ -202,7 +211,7 @@ export function Header({ locale = "pt" }: HeaderProps) {
                                         onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
                                         className={cn(
                                             "flex items-center gap-2 transition-all p-1.5 pr-3 rounded-full border",
-                                            isScrolled
+                                            shouldForceSolid
                                                 ? "border-neutral-200 bg-white/50 hover:bg-neutral-50 hover:border-neutral-300"
                                                 : "border-white/20 bg-black/20 hover:bg-black/30 hover:border-white/40 text-white"
                                         )}
@@ -280,7 +289,7 @@ export function Header({ locale = "pt" }: HeaderProps) {
                                 size="sm"
                                 className={cn(
                                     "shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all overflow-hidden relative group font-bold px-6",
-                                    !isScrolled && "bg-white text-primary-600 hover:bg-neutral-50"
+                                    !shouldForceSolid && "bg-white text-primary-600 hover:bg-neutral-50"
                                 )}
                             >
                                 <span className="absolute inset-0 overflow-hidden rounded-xl pointer-events-none">
@@ -295,7 +304,7 @@ export function Header({ locale = "pt" }: HeaderProps) {
                             onClick={() => setIsMobileMenuOpen(true)}
                             className={cn(
                                 "lg:hidden p-2 -mr-2 transition-colors relative z-50",
-                                isMobileMenuOpen ? "text-neutral-900" : isScrolled ? "text-neutral-900" : "text-white"
+                                isMobileMenuOpen ? "text-neutral-900" : shouldForceSolid ? "text-neutral-900" : "text-white"
                             )}
                             aria-label={dict.nav.openMenu}
                             aria-expanded={isMobileMenuOpen}
