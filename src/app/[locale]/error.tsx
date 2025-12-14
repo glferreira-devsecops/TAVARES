@@ -3,7 +3,7 @@
 import { ErrorScreen } from "@/components/screens/error-screen";
 import { useEffect } from "react";
 
-export default function Error({
+export default function LocalizedError({
     error,
     reset,
 }: {
@@ -11,7 +11,7 @@ export default function Error({
     reset: () => void;
 }) {
     useEffect(() => {
-        console.error(error);
+        console.error("Localized Error Caught:", error);
     }, [error]);
 
     return <ErrorScreen digest={error.digest} reset={reset} />;
