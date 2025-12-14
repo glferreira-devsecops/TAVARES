@@ -104,15 +104,15 @@ export function FeaturedTours({ locale = "pt", tours }: FeaturedToursProps) {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="text-center mb-10 md:mb-20"
                 >
-                    <span className="inline-block text-[10px] md:text-xs font-black text-orange-600 uppercase tracking-[0.3em] mb-3 md:mb-5">
+                    <span className="inline-block text-[10px] md:text-xs font-black text-orange-500 uppercase tracking-[0.3em] mb-3 md:mb-5">
                         {t.badge}
                     </span>
-                    <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold text-neutral-900 leading-[1.1] mb-4 md:mb-6 tracking-tight">
+                    <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-4 md:mb-6 tracking-tight">
                         {t.title}
                         <br />
-                        <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">{t.subtitle}</span>
+                        <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">{t.subtitle}</span>
                     </h2>
-                    <p className="text-base md:text-xl text-neutral-500 max-w-2xl mx-auto font-light leading-relaxed px-4 md:px-0">
+                    <p className="text-base md:text-xl text-neutral-400 max-w-2xl mx-auto font-light leading-relaxed px-4 md:px-0">
                         {t.description}
                     </p>
                 </motion.div>
@@ -129,7 +129,7 @@ export function FeaturedTours({ locale = "pt", tours }: FeaturedToursProps) {
                         >
                             <Link
                                 href={`/tours/${tour.slug}`}
-                                className="group h-full bg-white rounded-3xl overflow-hidden border border-neutral-200 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col"
+                                className="group h-full bg-neutral-900/50 backdrop-blur-sm rounded-3xl overflow-hidden border border-white/10 hover:border-orange-500/50 hover:shadow-2xl hover:shadow-orange-500/10 hover:-translate-y-2 transition-all duration-500 flex flex-col"
                             >
                                 {/* Image Container */}
                                 <div className="relative aspect-[4/3] overflow-hidden">
@@ -155,11 +155,11 @@ export function FeaturedTours({ locale = "pt", tours }: FeaturedToursProps) {
 
                                     {/* Quick Stats on Image */}
                                     <div className="absolute bottom-4 left-4 right-4 flex items-center gap-2">
-                                        <span className="flex items-center gap-1.5 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-full text-sm font-medium text-neutral-800 shadow-sm">
+                                        <span className="flex items-center gap-1.5 bg-white/10 backdrop-blur-md border border-white/20 px-3 py-1.5 rounded-full text-sm font-medium text-white shadow-sm">
                                             <Clock className="w-3.5 h-3.5" />
                                             {tour.duration}
                                         </span>
-                                        <span className={`inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium shadow-sm backdrop-blur-md ${difficultyLabels[tour.difficulty].color.replace('bg-', 'bg-white/95 ')}`}>
+                                        <span className={`inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium shadow-sm backdrop-blur-md ${difficultyLabels[tour.difficulty].color.replace('bg-', 'bg-white/10 border border-white/20 text-white ')}`}>
                                             {difficultyLabels[tour.difficulty][currentLang]}
                                         </span>
                                     </div>
@@ -167,43 +167,43 @@ export function FeaturedTours({ locale = "pt", tours }: FeaturedToursProps) {
 
                                 {/* Content */}
                                 <div className="p-6 md:p-8 flex flex-col flex-1">
-                                    <h3 className="font-heading text-xl md:text-2xl font-bold text-neutral-900 mb-3 group-hover:text-orange-600 transition-colors leading-tight tracking-tight">
+                                    <h3 className="font-heading text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-orange-500 transition-colors leading-tight tracking-tight">
                                         {tour.title[contentLang]}
                                     </h3>
-                                    <p className="text-neutral-600 text-sm leading-relaxed mb-6 line-clamp-3 flex-1 font-medium">
+                                    <p className="text-neutral-400 text-sm leading-relaxed mb-6 line-clamp-3 flex-1 font-medium">
                                         {tour.shortDescription[contentLang]}
                                     </p>
 
                                     {/* Trust Badges */}
                                     <div className="flex items-center gap-3 mb-6">
-                                        <div className="flex items-center gap-1.5 text-xs font-medium text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-100/50">
+                                        <div className="flex items-center gap-1.5 text-xs font-medium text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">
                                             <span>🛡️</span>
                                             {t.tourCard.insurance}
                                         </div>
-                                        <div className="flex items-center gap-1.5 text-xs font-medium text-blue-700 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-100/50">
+                                        <div className="flex items-center gap-1.5 text-xs font-medium text-blue-400 bg-blue-500/10 px-2.5 py-1 rounded-full border border-blue-500/20">
                                             <span>👥</span>
                                             {t.tourCard.smallGroups}
                                         </div>
                                     </div>
 
-                                    <Button className="w-full bg-primary-600 hover:bg-primary-700 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary-600/20 transition-all hover:scale-[1.02] active:scale-[0.98]">
+                                    <Button className="w-full bg-white text-neutral-950 font-bold py-4 rounded-xl shadow-lg hover:bg-neutral-200 transition-all hover:scale-[1.02] active:scale-[0.98]">
                                         {t.tourCard.book}
                                     </Button>
 
                                     {/* Footer */}
-                                    <div className="pt-6 border-t border-neutral-100 flex items-end justify-between gap-4 mt-auto">
+                                    <div className="pt-6 border-t border-white/10 flex items-end justify-between gap-4 mt-auto">
                                         <div>
-                                            <span className="block text-xs font-medium text-neutral-400 uppercase tracking-wider mb-1">
+                                            <span className="block text-xs font-medium text-neutral-500 uppercase tracking-wider mb-1">
                                                 {t.from}
                                             </span>
                                             <div className="flex items-baseline gap-0.5">
-                                                <span className="text-[10px] text-neutral-400 font-semibold uppercase">R$</span>
-                                                <span className="text-2xl font-black text-orange-600 tracking-tight">
+                                                <span className="text-[10px] text-neutral-500 font-semibold uppercase">R$</span>
+                                                <span className="text-2xl font-black text-white tracking-tight">
                                                     {tour.priceFrom.toLocaleString("pt-BR")}
                                                 </span>
                                             </div>
                                         </div>
-                                        <span className="flex items-center gap-2 px-5 py-2.5 bg-neutral-900 text-white rounded-full text-sm font-bold group-hover:bg-gradient-to-r group-hover:from-orange-500 group-hover:to-red-500 transition-all duration-300 shadow-lg">
+                                        <span className="flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 text-white rounded-full text-sm font-bold group-hover:bg-orange-500 group-hover:border-orange-500 transition-all duration-300">
                                             {t.book}
                                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                         </span>
@@ -228,7 +228,7 @@ export function FeaturedTours({ locale = "pt", tours }: FeaturedToursProps) {
                         href={`/${locale === 'pt' ? 'pt' : locale}/tours`}
                         icon={<ArrowRight className="w-5 h-5" />}
                         iconPosition="right"
-                        className="rounded-full px-8 py-6 text-lg border-neutral-200 hover:border-primary-500 hover:text-primary-600 hover:bg-white"
+                        className="rounded-full px-8 py-6 text-lg border-white/20 text-white hover:text-neutral-950 hover:bg-white hover:border-white"
                     >
                         {t.cta}
                     </Button>

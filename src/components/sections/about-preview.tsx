@@ -53,7 +53,7 @@ export function AboutPreview({ locale = "pt-br" }: AboutPreviewProps) {
     const renderWithEmphasis = (text: string) => {
         return text.split(/(\*\*.*?\*\*)/).map((part, i) =>
             part.startsWith('**') && part.endsWith('**') ?
-                <strong key={i} className="font-bold text-neutral-900">{part.slice(2, -2)}</strong> :
+                <strong key={i} className="font-bold text-white">{part.slice(2, -2)}</strong> :
                 part
         );
     };
@@ -88,12 +88,12 @@ export function AboutPreview({ locale = "pt-br" }: AboutPreviewProps) {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.3, duration: 0.5 }}
-                            className="relative mt-6 mx-auto md:absolute md:mt-0 md:bottom-8 md:right-8 bg-white rounded-2xl shadow-soft-xl p-6 border border-neutral-100 min-w-[200px] text-center md:text-left z-20"
+                            className="relative mt-6 mx-auto md:absolute md:mt-0 md:bottom-8 md:right-8 bg-neutral-800 rounded-2xl shadow-soft-xl p-6 border border-neutral-700 min-w-[200px] text-center md:text-left z-20"
                         >
                             <p className="font-heading text-4xl md:text-5xl font-bold text-primary-500">
                                 {t.stats.value}
                             </p>
-                            <p className="text-neutral-600 text-sm md:text-base font-medium">
+                            <p className="text-neutral-300 text-sm md:text-base font-medium">
                                 {t.stats.label}
                             </p>
                         </motion.div>
@@ -110,24 +110,24 @@ export function AboutPreview({ locale = "pt-br" }: AboutPreviewProps) {
                         transition={{ duration: 0.6 }}
                         className="text-center lg:text-left pt-6 md:pt-0"
                     >
-                        <span className="inline-block text-[10px] md:text-xs font-black text-orange-600 uppercase tracking-[0.3em] mb-4 md:mb-5">
+                        <span className="inline-block text-[10px] md:text-xs font-black text-orange-500 uppercase tracking-[0.3em] mb-4 md:mb-5">
                             {t.badge}
                         </span>
 
-                        <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 tracking-tight leading-[1.05]">
+                        <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-[1.05]">
                             <span className="block">{t.title}</span>
                             <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">{t.titleHighlight}</span>
                         </h2>
 
                         <div className="space-y-6 mb-12">
-                            <p className="text-neutral-600 text-lg md:text-xl leading-relaxed font-light">
+                            <p className="text-neutral-400 text-lg md:text-xl leading-relaxed font-light">
                                 {renderWithEmphasis(t.description_1)}
                             </p>
-                            <p className="text-neutral-600 text-lg md:text-xl leading-relaxed font-light">
+                            <p className="text-neutral-400 text-lg md:text-xl leading-relaxed font-light">
                                 {renderWithEmphasis(t.description_2)}
                             </p>
-                            <div className="bg-primary-50 p-4 rounded-xl border-l-4 border-primary-500">
-                                <p className="text-primary-800 text-base md:text-lg leading-relaxed font-medium">
+                            <div className="bg-primary-900/20 p-4 rounded-xl border-l-4 border-primary-500">
+                                <p className="text-primary-200 text-base md:text-lg leading-relaxed font-medium">
                                     {t.description_impact}
                                 </p>
                             </div>
@@ -143,7 +143,7 @@ export function AboutPreview({ locale = "pt-br" }: AboutPreviewProps) {
                             ].map((feature, index) => (
                                 <div key={index} className="flex items-center gap-3">
                                     <span className="text-2xl">{feature.icon}</span>
-                                    <span className="text-neutral-700 font-medium">{feature.label}</span>
+                                    <span className="text-neutral-300 font-medium">{feature.label}</span>
                                 </div>
                             ))}
                         </div>
@@ -151,34 +151,34 @@ export function AboutPreview({ locale = "pt-br" }: AboutPreviewProps) {
                         {/* World Renowned Grid */}
                         <div className="mb-10">
                             <div className="mb-6">
-                                <h3 className="text-xl font-bold text-neutral-900">{t.trustedTitle}</h3>
-                                <p className="text-neutral-500 text-sm">{t.trustedSubtitle}</p>
+                                <h3 className="text-xl font-bold text-white">{t.trustedTitle}</h3>
+                                <p className="text-neutral-400 text-sm">{t.trustedSubtitle}</p>
                             </div>
 
                             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                                 {/* FIFA Street */}
-                                <div className="bg-neutral-50 p-4 rounded-xl border border-neutral-100 flex flex-col items-center justify-center text-center hover:bg-neutral-100 transition-colors">
+                                <div className="bg-white p-4 rounded-xl border border-neutral-100 flex flex-col items-center justify-center text-center hover:bg-neutral-50 transition-colors">
                                     <GameControllerLogo className="w-8 h-8 text-neutral-800 mb-2" />
                                     <div className="font-bold text-neutral-900 text-sm">{t.highlights.fifa.title}</div>
                                     <div className="text-[10px] uppercase tracking-wide text-neutral-500 font-bold mt-1">{t.highlights.fifa.subtitle}</div>
                                 </div>
 
                                 {/* TripAdvisor */}
-                                <div className="bg-neutral-50 p-4 rounded-xl border border-neutral-100 flex flex-col items-center justify-center text-center hover:bg-neutral-100 transition-colors">
+                                <div className="bg-white p-4 rounded-xl border border-neutral-100 flex flex-col items-center justify-center text-center hover:bg-neutral-50 transition-colors">
                                     <TripAdvisorLogo className="w-8 h-8 text-green-600 mb-2" />
                                     <div className="font-bold text-neutral-900 text-sm">{t.highlights.tripadvisor.title}</div>
                                     <div className="text-[10px] uppercase tracking-wide text-neutral-500 font-bold mt-1">{t.highlights.tripadvisor.subtitle}</div>
                                 </div>
 
                                 {/* Airbnb */}
-                                <div className="bg-neutral-50 p-4 rounded-xl border border-neutral-100 flex flex-col items-center justify-center text-center hover:bg-neutral-100 transition-colors">
+                                <div className="bg-white p-4 rounded-xl border border-neutral-100 flex flex-col items-center justify-center text-center hover:bg-neutral-50 transition-colors">
                                     <AirbnbLogo className="w-8 h-8 text-[#FF5A5F] mb-2" />
                                     <div className="font-bold text-neutral-900 text-sm">{t.highlights.airbnb.title}</div>
                                     <div className="text-[10px] uppercase tracking-wide text-neutral-500 font-bold mt-1">{t.highlights.airbnb.subtitle}</div>
                                 </div>
 
                                 {/* Google */}
-                                <div className="bg-neutral-50 p-4 rounded-xl border border-neutral-100 flex flex-col items-center justify-center text-center hover:bg-neutral-100 transition-colors">
+                                <div className="bg-white p-4 rounded-xl border border-neutral-100 flex flex-col items-center justify-center text-center hover:bg-neutral-50 transition-colors">
                                     <GoogleLogo className="w-8 h-8 text-[#4285F4] mb-2" />
                                     <div className="font-bold text-neutral-900 text-sm">{t.highlights.google.title}</div>
                                     <div className="text-[10px] uppercase tracking-wide text-neutral-500 font-bold mt-1">{t.highlights.google.subtitle}</div>
@@ -194,7 +194,7 @@ export function AboutPreview({ locale = "pt-br" }: AboutPreviewProps) {
                                 href="/quem-somos"
                                 icon={<ArrowRight className="w-5 h-5" />}
                                 iconPosition="right"
-                                className="bg-neutral-900 text-white hover:bg-neutral-800 shadow-xl border-none font-bold tracking-wide py-6 px-8 rounded-full"
+                                className="bg-white text-neutral-900 hover:bg-neutral-100 shadow-xl border-none font-bold tracking-wide py-6 px-8 rounded-full"
                             >
                                 {t.cta}
                             </Button>

@@ -1,3 +1,4 @@
+"use client";
 
 import { NewsletterForm } from "@/components/layout/newsletter-form";
 import { Link } from "@/i18n/navigation";
@@ -69,6 +70,21 @@ export function Footer({ locale = "pt" }: FooterProps) {
                             {t.tagline}
                         </p>
 
+                        {/* Location moved here to avoid overlap with FAB */}
+                        <div className="mb-8">
+                            <h5 className="text-xs font-bold uppercase tracking-widest text-neutral-500 mb-4 font-heading">
+                                {currentLang === 'pt' ? 'Localização' : 'Location'}
+                            </h5>
+                            <span className="text-sm leading-relaxed text-neutral-300 block mb-2">
+                                {CONTACT.address.neighborhood}, {CONTACT.address.city}<br />
+                                {CONTACT.address.state}, {CONTACT.address.country}
+                            </span>
+                            <div className="flex items-center gap-2 text-xs text-neutral-500">
+                                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                                <span>{currentLang === 'pt' ? 'Aberto todos os dias' : 'Open every day'}</span>
+                            </div>
+                        </div>
+
                         <div className="flex gap-3">
                             {SOCIAL_LINKS.map((social) => (
                                 <a
@@ -132,12 +148,7 @@ export function Footer({ locale = "pt" }: FooterProps) {
                             ))}
                         </ul>
                     </div>
-                    <span className="text-sm leading-relaxed">
-                        {CONTACT.address.neighborhood}, {CONTACT.address.city}<br />
-                        {CONTACT.address.state}, {CONTACT.address.country}
-                    </span>
                 </div>
-
 
                 {/* Newsletter Box */}
                 <div className="bg-gradient-to-br from-primary-900/10 to-transparent rounded-2xl p-6 md:p-10 border border-primary-500/10 mb-16 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-10 text-center md:text-left">
@@ -164,7 +175,7 @@ export function Footer({ locale = "pt" }: FooterProps) {
             </div>
 
             {/* Bottom Bar */}
-            <div className="border-t border-neutral-800 bg-black/20 backdrop-blur-sm" >
+            <div className="border-t border-neutral-800 bg-black/20 backdrop-blur-sm">
                 <div className="container-custom py-6 flex flex-col md:flex-row items-center justify-between gap-4">
                     <div className="flex flex-col md:flex-row items-center gap-4 text-xs text-neutral-500">
                         <p>© {currentYear} Favela-República Tour. {t.rights}</p>
