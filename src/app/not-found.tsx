@@ -39,14 +39,14 @@ export default function NotFound() {
     return (
         <main className="relative min-h-screen w-full bg-neutral-950 overflow-hidden flex flex-col items-center justify-center p-6 sm:p-12">
             {/* Ambient Background */}
-            <div className="absolute inset-0 z-0">
-                <div className="absolute top-[-20%] left-[-10%] w-[70vw] h-[70vw] rounded-full bg-blue-900/20 blur-[120px]" />
-                <div className="absolute bottom-[-20%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-orange-900/20 blur-[100px]" />
+            <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+                <div className="absolute top-[-20%] left-[-10%] w-[70vw] h-[70vw] rounded-full bg-blue-900/20 blur-[80px] sm:blur-[120px]" />
+                <div className="absolute bottom-[-20%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-orange-900/20 blur-[60px] sm:blur-[100px]" />
                 {/* Noise overlay */}
-                <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-[0.03] mix-blend-overlay pointer-events-none" />
+                <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-[0.03] mix-blend-overlay" />
             </div>
 
-            <div className="relative z-10 w-full max-w-2xl mx-auto flex flex-col items-center text-center">
+            <div className="relative z-10 w-full max-w-2xl mx-auto flex flex-col items-center text-center px-4">
                 {/* Floating "404" with Glassmorphism */}
                 <motion.div
                     className="relative"
@@ -56,7 +56,7 @@ export default function NotFound() {
                         initial={{ opacity: 0, scale: 0.8, y: 50 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         transition={{ duration: 1, type: "spring" }}
-                        className="font-heading text-[120px] sm:text-[180px] md:text-[220px] leading-none font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white/10 to-transparent select-none z-0"
+                        className="font-heading text-[100px] sm:text-[180px] md:text-[220px] leading-none font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white/10 to-transparent select-none z-0"
                     >
                         404
                     </motion.h1>
