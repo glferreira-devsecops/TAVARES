@@ -66,7 +66,7 @@ Mais do que um passeio, o Favela-República promove turismo responsável, troca 
             address: "Rua do Catete, 153 - Bairro Catete",
             coordinates: { lat: -22.9259, lng: -43.1764 },
         },
-        images: ["/images/tours/favela-tour-completo.jpg"]
+        images: ["/images/tours/IMG_7268_v1.webp"]
     },
     {
         id: "futebol-na-favela",
