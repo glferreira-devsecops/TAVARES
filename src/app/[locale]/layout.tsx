@@ -128,9 +128,9 @@ export default async function LocaleLayout({
                     fontFamily: 'var(--font-body), Inter, system-ui, -apple-system, sans-serif',
                 }}
             >
-                <SkipLink />
                 <JsonLd locale={locale} />
                 <NextIntlClientProvider locale={locale} messages={messages}>
+                    <SkipLink />
                     <SmoothScroller>
                         <Header locale={locale} />
                         <main id="main-content">
