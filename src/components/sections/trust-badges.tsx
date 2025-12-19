@@ -45,7 +45,7 @@ export function TrustBadges({ locale = "pt" }: TrustBadgesProps) {
             bg: "bg-rose-500/10",
             border: "group-hover:border-rose-500/50",
             shadow: "group-hover:shadow-rose-500/20",
-            title: "Guias Locais",
+            title: "Condutores",
             subtitle: "Da Comunidade"
         }
     ];

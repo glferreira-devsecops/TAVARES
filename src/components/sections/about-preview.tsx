@@ -48,7 +48,7 @@ export function AboutPreview({ locale = "pt-br" }: AboutPreviewProps) {
                         <div className="space-y-6 text-lg text-neutral-600 mb-10">
                             <div className="leading-relaxed">
                                 <ReactMarkdown components={{
-                                    strong: ({ node, ...props }) => <span className="font-bold text-neutral-900" {...props} />
+                                    strong: ({ ...props }) => <span className="font-bold text-neutral-900" {...props} />
                                 }}>
                                     {t.description_1}
                                 </ReactMarkdown>

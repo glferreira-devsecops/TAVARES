@@ -1,9 +1,10 @@
 "use client";
 
-import { NewsletterForm } from "@/components/layout/newsletter-form";
+
 import { Link } from "@/i18n/navigation";
 import { CONTACT, NAV_ITEMS, SOCIAL_LINKS } from "@/lib/constants";
 import { ArrowUpRight, Code2, Heart, Instagram, Mail } from "lucide-react";
+import Image from "next/image";
 
 // Custom TikTok Icon
 const TikTokIcon = ({ className }: { className?: string }) => (
@@ -34,9 +35,7 @@ export function Footer({ locale = "pt" }: FooterProps) {
             navigation: "Navegação",
             tours: "Nossos Tours",
             contact: "Contato",
-            newsletter: "Newsletter",
-            newsletterDesc: "Receba novidades e dicas sobre turismo comunitário no Rio.",
-            subscribe: "Inscreva-se",
+
             rights: "Todos os direitos reservados.",
             madeWith: "Feito com",
             inRio: "no Rio de Janeiro",
@@ -49,9 +48,7 @@ export function Footer({ locale = "pt" }: FooterProps) {
             navigation: "Navigation",
             tours: "Our Tours",
             contact: "Contact",
-            newsletter: "Newsletter",
-            newsletterDesc: "Get news and tips about community tourism in Rio.",
-            subscribe: "Subscribe",
+
             rights: "All rights reserved.",
             madeWith: "Made with",
             inRio: "in Rio de Janeiro",
@@ -73,10 +70,18 @@ export function Footer({ locale = "pt" }: FooterProps) {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-20">
                     {/* Brand Column */}
                     <div className="max-w-xs">
-                        <Link href="/" className="flex items-center gap-2 mb-4 group">
-                            <span className="font-heading text-2xl md:text-3xl font-bold">
-                                <span className="text-primary-500 transition-colors group-hover:text-primary-400">Favela</span>
-                                <span className="text-primary-500 font-light">-República</span>
+                        <Link href="/" className="flex items-center gap-3 mb-6 group">
+                            <div className="relative w-16 h-16">
+                                <Image
+                                    src="/images/logo_v1.webp"
+                                    alt="Favela República"
+                                    fill
+                                    className="object-contain"
+                                    sizes="64px"
+                                />
+                            </div>
+                            <span className="font-heading text-2xl md:text-3xl font-bold text-white">
+                                Favela-República Tour
                             </span>
                         </Link>
                         <p className="text-neutral-300 text-sm leading-relaxed mb-8">
@@ -174,28 +179,7 @@ export function Footer({ locale = "pt" }: FooterProps) {
                     </div>
                 </div>
 
-                {/* Newsletter Box */}
-                <div className="bg-gradient-to-br from-primary-900/10 to-transparent rounded-2xl p-6 md:p-10 border border-primary-500/10 mb-16 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-10 text-center md:text-left">
-                    <div className="max-w-md">
-                        <h3 className="font-heading text-xl md:text-2xl font-bold text-white mb-2">
-                            {t.newsletter}
-                        </h3>
-                        <p className="text-neutral-400 text-sm">
-                            {t.newsletterDesc}
-                        </p>
-                    </div>
-                    <NewsletterForm
-                        labels={{
-                            placeholder: "seu@email.com",
-                            button: t.subscribe,
-                            successTitle: currentLang === 'pt' ? "Inscrito com sucesso!" : "Successfully subscribed!",
-                            successMessage: currentLang === 'pt'
-                                ? "Bem-vindo à nossa comunidade."
-                                : "Welcome to our community.",
-                            error: currentLang === 'pt' ? "Erro ao inscrever" : "Error subscribing"
-                        }}
-                    />
-                </div>
+
             </div>
 
             {/* Bottom Bar */}

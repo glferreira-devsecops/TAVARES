@@ -50,12 +50,12 @@ export function Hero({ locale = "pt" }: HeroProps) {
                     transition={{ duration: 10, ease: "linear" }} // Subtle zoom out
                 >
                     <Image
-                        src="/images/hero/hero-main_v1.webp"
-                        alt="Favela-República Vista"
+                        src="/images/hero/hero-principal_v1.webp"
+                        alt="Favela República - Rio de Janeiro"
                         fill
-                        className="object-cover"
+                        className="object-cover object-center"
                         priority
-                        quality={95}
+                        quality={90}
                         sizes="100vw"
                     />
                 </motion.div>

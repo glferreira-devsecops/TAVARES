@@ -10,6 +10,7 @@ import { useDictionary } from "@/lib/dictionaries";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { ChevronDown, Menu, X } from "lucide-react";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 interface HeaderProps {
@@ -167,15 +168,24 @@ export function Header({ locale = "pt" }: HeaderProps) {
                             href="/"
                             className="group flex items-center gap-2 relative z-50"
                         >
+                            <div className="relative w-12 h-12 md:w-16 md:h-16">
+                                <Image
+                                    src="/images/logo_v1.webp"
+                                    alt="Favela República"
+                                    fill
+                                    className="object-contain"
+                                    sizes="(max-width: 768px) 48px, 64px"
+                                    priority
+                                />
+                            </div>
                             <span
                                 className={cn(
-                                    "font-heading text-xl md:text-2xl font-bold transition-colors",
+                                    "font-heading text-lg md:text-xl font-bold transition-colors uppercase tracking-tight hidden sm:block",
                                     logoTextClasses
                                 )}
                                 style={!shouldForceSolid ? { textShadow: '0 2px 10px rgba(0,0,0,0.5)' } : undefined}
                             >
-                                <span className={cn("transition-colors", shouldForceSolid ? "text-primary-600" : "text-white")}>Favela</span>
-                                <span className={cn("transition-colors", shouldForceSolid ? "text-primary-600" : "text-white")}>-República</span>
+                                Favela-República Tour
                             </span>
                         </Link>
 
