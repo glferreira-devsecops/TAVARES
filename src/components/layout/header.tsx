@@ -126,10 +126,9 @@ export function Header({ locale = "pt" }: HeaderProps) {
     // Derived styles
     const headerClasses = cn(
         "fixed top-0 left-0 right-0 z-[1000] transition-all duration-500 ease-in-out", // z-[1000] ensures it's above everything
-        isHidden ? "-translate-y-full" : "translate-y-0",
         shouldForceSolid
             ? "bg-white/95 backdrop-blur-xl border-b border-neutral-200/50 shadow-sm py-4"
-            : "bg-gradient-to-b from-black/60 to-transparent py-6 border-b border-transparent" // Gradient guarantees contrast
+            : "bg-gradient-to-b from-black/80 via-black/40 to-transparent py-6" // No border here to avoid rendering artifacts
     );
 
     // Text color: Yellow (primary-600) if solid header, White if transparent
