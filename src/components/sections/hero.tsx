@@ -50,13 +50,14 @@ export function Hero({ locale = "pt" }: HeroProps) {
                     transition={{ duration: 10, ease: "linear" }} // Subtle zoom out
                 >
                     <Image
-                        src="/images/hero-tavares-bastos.png"
-                        alt="Favela Tavares Bastos Vista"
+                        src="/images/hero/hero-main.jpg"
+                        alt="Favela-República Vista"
                         fill
                         className="object-cover"
                         priority
                         quality={95}
                         sizes="100vw"
+                        unoptimized
                     />
                 </motion.div>
 
@@ -87,7 +88,7 @@ export function Hero({ locale = "pt" }: HeroProps) {
                     variants={fadeInUp}
                     className="mb-6 md:mb-8 flex justify-center"
                 >
-                    <span className="inline-flex items-center gap-2.5 px-4 py-1.5 md:px-5 md:py-2 bg-white/10 backdrop-blur-xl rounded-full border border-white/25 text-white text-[10px] md:text-xs font-bold tracking-[0.25em] uppercase shadow-2xl">
+                    <span className="inline-flex items-center gap-2.5 px-4 py-1.5 md:px-5 md:py-2 bg-white/10 backdrop-blur-xl rounded-full border border-white/20 text-white text-[10px] md:text-xs font-bold tracking-[0.25em] uppercase shadow-lg hover:bg-white/15 transition-colors duration-300">
                         <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-gradient-to-r from-orange-400 to-red-500 animate-pulse shadow-lg shadow-orange-500/50" />
                         {dict.hero.eyebrow}
                     </span>
@@ -118,7 +119,7 @@ export function Hero({ locale = "pt" }: HeroProps) {
                     {/* Highlight Line */}
                     <div className="p-1">
                         <motion.span
-                            className="block text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black tracking-[-0.03em] leading-[1.05]"
+                            className="block text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black tracking-[-0.03em] leading-[1.05]"
                             variants={fadeInUp}
                         >
                             <span
@@ -144,12 +145,7 @@ export function Hero({ locale = "pt" }: HeroProps) {
                 >
                     {dict.hero.subtitle}
                 </motion.p>
-                {/* Text Shadow for extreme readability */}
-                <style jsx global>{`
-                    .text-shadow-hero {
-                        text-shadow: 0 2px 10px rgba(0,0,0,0.5), 0 0 30px rgba(0,0,0,0.3);
-                    }
-                `}</style>
+                {/* Text Shadow for extreme readability */}\n
 
                 {/* CTAs */}
                 <motion.div

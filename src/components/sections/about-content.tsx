@@ -2,7 +2,7 @@
 
 import { MotionBox } from "@/components/ui/motion-box";
 import { useDictionary } from "@/lib/dictionaries";
-import { ExternalLink, Heart, Instagram, Palette, Shield, Users } from "lucide-react";
+import { ExternalLink, Heart, Instagram, MessageCircle, Palette, Shield, Users } from "lucide-react";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 
@@ -45,6 +45,14 @@ export default function AboutContent({ locale: initialLocale = "pt" }: { locale?
             bg: "bg-orange-50",
             border: "border-orange-100"
         },
+        {
+            icon: MessageCircle,
+            title: t.values.list[4].title,
+            desc: t.values.list[4].desc,
+            color: "text-emerald-500",
+            bg: "bg-emerald-50",
+            border: "border-emerald-100"
+        },
     ];
 
     return (
@@ -53,8 +61,8 @@ export default function AboutContent({ locale: initialLocale = "pt" }: { locale?
             <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/images/about-community.png"
-                        alt="Favela Tavares Bastos"
+                        src="/images/social/IMG_0546.jpg"
+                        alt="Nossa Favela"
                         fill
                         className="object-cover scale-105"
                         priority
@@ -186,10 +194,10 @@ export default function AboutContent({ locale: initialLocale = "pt" }: { locale?
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
                         {/* Mock Grid - In a real app, fetch from IG API */}
                         {[
-                            '/images/tours/tour-completo-hero.png',
-                            '/images/hero-tavares-bastos.png',
-                            '/images/about-community.png',
-                            '/images/tours/sunset-hero.png'
+                            '/images/social/IMG_0540.jpg',
+                            '/images/social/IMG_0593.jpg',
+                            '/images/social/PHOTO-2022-09-20-14-10-30.jpeg',
+                            '/images/social/PHOTO-2024-05-13-15-54-41.jpeg'
                         ].map((src, i) => (
                             <MotionBox key={i} delay={0.2 + (i * 0.1)}>
                                 <div className="aspect-square relative rounded-2xl overflow-hidden bg-neutral-900 group cursor-pointer border border-white/5 hover:border-white/20 transition-colors">

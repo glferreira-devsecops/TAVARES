@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
     title: "Segurança | Favela-República Tour",
-    description: "Conheça as medidas de segurança que tornam a Tavares Bastos a comunidade mais segura do Rio de Janeiro para turismo.",
+    description: "Conheça as medidas de segurança que tornam a Favela a comunidade mais segura do Rio de Janeiro para turismo.",
 };
 
 export function generateStaticParams() {
@@ -20,8 +20,8 @@ export default async function SegurancaPage({ params }: { params: Promise<{ loca
         badge: isPt ? "Sua Segurança" : "Your Safety",
         title: isPt ? "A comunidade mais segura do Rio" : "Rio's Safest Community",
         subtitle: isPt
-            ? "A Tavares Bastos é sede da UPP (Unidade de Polícia Pacificadora) desde 2010, tornando-a um dos destinos mais seguros para turismo no Rio de Janeiro."
-            : "Tavares Bastos has been home to the UPP (Pacifying Police Unit) since 2010, making it one of the safest tourism destinations in Rio de Janeiro.",
+            ? "A Favela é sede da UPP (Unidade de Polícia Pacificadora) desde 2010, tornando-a um dos destinos mais seguros para turismo no Rio de Janeiro."
+            : "Favela has been home to the UPP (Pacifying Police Unit) since 2010, making it one of the safest tourism destinations in Rio de Janeiro.",
         features: isPt ? [
             {
                 icon: Shield,

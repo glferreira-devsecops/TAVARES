@@ -9,39 +9,48 @@ export default {
     ],
     theme: {
         extend: {
-            // Brand Colors
+            // Brand Colors - Premium Black & Yellow "Favela-República"
             colors: {
                 primary: {
-                    50: "oklch(var(--color-primary-50))",
-                    100: "oklch(var(--color-primary-100))",
-                    200: "oklch(var(--color-primary-200))",
-                    300: "oklch(var(--color-primary-300))",
-                    400: "oklch(var(--color-primary-400))",
-                    500: "oklch(var(--color-primary-500))",
-                    600: "oklch(var(--color-primary-600))",
-                    700: "oklch(var(--color-primary-700))",
-                    800: "oklch(var(--color-primary-800))",
-                    900: "oklch(var(--color-primary-900))",
+                    50: "#FFF9E6",
+                    100: "#FFF0BF",
+                    200: "#FFE080",
+                    300: "#FFD140",
+                    400: "#FFC400", // Brand Yellow
+                    500: "#FFB000", // Brand Main
+                    600: "#FF9100",
+                    700: "#FF6D00",
+                    800: "#E65100",
+                    900: "#BF360C",
+                    950: "#5D1A00",
                 },
                 neutral: {
-                    50: "oklch(var(--color-neutral-50))",
-                    100: "oklch(var(--color-neutral-100))",
-                    200: "oklch(var(--color-neutral-200))",
-                    300: "oklch(var(--color-neutral-300))",
-                    400: "oklch(var(--color-neutral-400))",
-                    500: "oklch(var(--color-neutral-500))",
-                    600: "oklch(var(--color-neutral-600))",
-                    700: "oklch(var(--color-neutral-700))",
-                    800: "oklch(var(--color-neutral-800))",
-                    900: "oklch(var(--color-neutral-900))",
+                    50: "#FAFAFA",
+                    100: "#F5F5F5",
+                    200: "#E5E5E5",
+                    300: "#D4D4D4",
+                    400: "#A3A3A3",
+                    500: "#737373",
+                    600: "#525252",
+                    700: "#404040",
+                    800: "#262626", // Rich Dark
+                    900: "#171717", // Almost Black
+                    950: "#0A0A0A", // True Black
                 },
                 accent: {
-                    500: "#f59e0b", // Golden/amber for stars
+                    500: "#FFD700", // Gold
+                    purple: "#7C3AED", // For creative touches
+                    blue: "#2563EB", // For trust
                 },
                 whatsapp: "#25D366",
-                success: "var(--color-success)",
-                warning: "var(--color-warning)",
-                error: "var(--color-error)",
+                surface: {
+                    50: "#FFFFFF",
+                    100: "#FAFAFA",
+                    900: "#121212", // Dark surface
+                },
+                success: "#10B981",
+                warning: "#F59E0B",
+                error: "#EF4444",
             },
 
             // Typography
@@ -51,9 +60,11 @@ export default {
             },
 
             fontSize: {
-                "display-lg": ["4rem", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
-                "display-md": ["3rem", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
-                "display-sm": ["2.25rem", { lineHeight: "1.2", letterSpacing: "-0.02em" }],
+                "display-2xl": ["5.5rem", { lineHeight: "1", letterSpacing: "-0.03em" }],
+                "display-xl": ["4.5rem", { lineHeight: "1", letterSpacing: "-0.02em" }],
+                "display-lg": ["3.75rem", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
+                "display-md": ["3rem", { lineHeight: "1.1", letterSpacing: "-0.01em" }],
+                "display-sm": ["2.25rem", { lineHeight: "1.2", letterSpacing: "-0.01em" }],
             },
 
             // Spacing
@@ -65,7 +76,8 @@ export default {
 
             // Border Radius
             borderRadius: {
-                "4xl": "2rem",
+                "4xl": "2.5rem",
+                "5xl": "3rem",
             },
 
             // Box Shadows
@@ -74,6 +86,8 @@ export default {
                 "soft-md": "0 2px 15px -3px rgb(0 0 0 / 0.07), 0 10px 20px -2px rgb(0 0 0 / 0.04)",
                 "soft-lg": "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
                 "soft-xl": "0 25px 50px -12px rgb(0 0 0 / 0.15)",
+                "glow": "0 0 20px rgba(255, 176, 0, 0.5)", // Yellow Glow
+                "glow-sm": "0 0 10px rgba(255, 176, 0, 0.3)",
             },
 
             // Z-Index
@@ -89,11 +103,11 @@ export default {
 
             // Animations
             animation: {
-                "fade-in": "fadeIn 0.5s ease forwards",
-                "fade-in-up": "fadeInUp 0.6s ease forwards",
-                "scale-in": "scaleIn 0.4s ease forwards",
-                "float": "float 3s ease-in-out infinite",
-                "pulse-soft": "pulseSoft 2s ease-in-out infinite",
+                "fade-in": "fadeIn 0.5s ease-out forwards",
+                "fade-in-up": "fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+                "scale-in": "scaleIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+                "float": "float 6s ease-in-out infinite",
+                "shimmer": "shimmer 2.5s linear infinite",
             },
 
             keyframes: {
@@ -102,20 +116,19 @@ export default {
                     "100%": { opacity: "1" },
                 },
                 fadeInUp: {
-                    "0%": { opacity: "0", transform: "translateY(20px)" },
+                    "0%": { opacity: "0", transform: "translateY(30px)" },
                     "100%": { opacity: "1", transform: "translateY(0)" },
                 },
                 scaleIn: {
-                    "0%": { opacity: "0", transform: "scale(0.95)" },
+                    "0%": { opacity: "0", transform: "scale(0.9)" },
                     "100%": { opacity: "1", transform: "scale(1)" },
                 },
                 float: {
                     "0%, 100%": { transform: "translateY(0)" },
-                    "50%": { transform: "translateY(-10px)" },
+                    "50%": { transform: "translateY(-15px)" },
                 },
-                pulseSoft: {
-                    "0%, 100%": { opacity: "1" },
-                    "50%": { opacity: "0.7" },
+                shimmer: {
+                    "100%": { transform: "translateX(100%)" },
                 },
             },
 
@@ -127,6 +140,7 @@ export default {
             // Transitions
             transitionDuration: {
                 "400": "400ms",
+                "600": "600ms",
             },
 
             // Container
@@ -136,7 +150,14 @@ export default {
                     DEFAULT: "1rem",
                     sm: "2rem",
                     lg: "4rem",
-                    xl: "5rem",
+                    xl: "6rem",
+                },
+                screens: {
+                    sm: "640px",
+                    md: "768px",
+                    lg: "1024px",
+                    xl: "1280px",
+                    "2xl": "1440px", // Max width constraint for better reading
                 },
             },
         },

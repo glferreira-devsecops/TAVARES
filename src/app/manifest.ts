@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
     return {
         name: "Favela-República Tour",
         short_name: "Favela Tour",
-        description: "Tour guiado na Favela Tavares Bastos. Uma experiência autêntica, segura e inesquecível no Rio de Janeiro.",
+        description: "Experiência autêntica com o Favela-República Tour no Rio de Janeiro. Segurança, cultura e história.",
         start_url: "/",
         display: "standalone",
         background_color: "#fafafa",

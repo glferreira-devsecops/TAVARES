@@ -1,10 +1,11 @@
 "use client";
 
 import { MobileMenu } from "@/components/layout/mobile-menu";
+import { GmailLogo, TikTokLogo } from "@/components/ui/brand-logos";
 import { WhatsAppButton } from "@/components/ui/button";
 import { Flag } from "@/components/ui/flag";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
-import { CONTACT, NAV_ITEMS, WHATSAPP_MESSAGES } from "@/lib/constants";
+import { CONTACT, WHATSAPP_MESSAGES } from "@/lib/constants";
 import { useDictionary } from "@/lib/dictionaries";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
@@ -130,13 +131,13 @@ export function Header({ locale = "pt" }: HeaderProps) {
             : "bg-gradient-to-b from-black/60 to-transparent py-6 border-b border-transparent" // Gradient guarantees contrast
     );
 
-    // Text color: Dark if solid header (scrolled or light page), White if transparent (dark hero)
-    const logoTextClasses = shouldForceSolid ? "text-neutral-900" : "text-white drop-shadow-md";
+    // Text color: Yellow (primary-600) if solid header, White if transparent
+    const logoTextClasses = shouldForceSolid ? "text-primary-600" : "text-white drop-shadow-md";
 
     // Improved Desktop Nav Container
     const navContainerClasses = shouldForceSolid
         ? "bg-neutral-100/80 backdrop-blur-md border border-neutral-200/50 shadow-inner"
-        : "bg-white/10 backdrop-blur-md border border-white/20 shadow-lg"; // Lighter glass on dark for better visibility
+        : "bg-white/10 backdrop-blur-md border border-white/20 shadow-soft-lg"; // Lighter glass on dark for better visibility
 
     // Explicit text colors for states
     const navLinkActiveClasses = "text-neutral-900 bg-white shadow-sm font-semibold";
@@ -174,7 +175,7 @@ export function Header({ locale = "pt" }: HeaderProps) {
                                 style={!shouldForceSolid ? { textShadow: '0 2px 10px rgba(0,0,0,0.5)' } : undefined}
                             >
                                 <span className={cn("transition-colors", shouldForceSolid ? "text-primary-600" : "text-white")}>Favela</span>
-                                <span>-República</span>
+                                <span className={cn("transition-colors", shouldForceSolid ? "text-primary-600" : "text-white")}>-República</span>
                             </span>
                         </Link>
 
@@ -183,7 +184,14 @@ export function Header({ locale = "pt" }: HeaderProps) {
                             "hidden lg:flex items-center gap-1.5 px-2 py-1.5 rounded-full transition-all duration-300",
                             navContainerClasses
                         )}>
-                            {NAV_ITEMS.map((item) => {
+                            {[
+                                { label: dict.nav.home, href: "/" },
+                                { label: dict.nav.tours, href: "/tours" },
+                                { label: dict.nav.about, href: "/quem-somos" },
+                                { label: dict.nav.social, href: "/projeto-social" },
+                                { label: dict.nav.faq, href: "/faq" },
+                                { label: dict.nav.contact, href: "/contato" }
+                            ].map((item) => {
                                 const active = isActive(item.href);
                                 return (
                                     <Link
@@ -194,7 +202,7 @@ export function Header({ locale = "pt" }: HeaderProps) {
                                     >
                                         {/* Hover Effect: Subtle shimmer or indicator */}
                                         <span className="relative z-10">
-                                            {dict.nav[item.labelKey as keyof typeof dict.nav]}
+                                            {item.label}
                                         </span>
 
                                         {/* Active State Indicator */}
@@ -212,6 +220,36 @@ export function Header({ locale = "pt" }: HeaderProps) {
 
                         {/* Right Side Actions */}
                         <div className="hidden lg:flex items-center gap-4">
+                            {/* Social Icons */}
+                            <div className="flex items-center gap-2">
+                                <a
+                                    href="https://www.tiktok.com/@favelarepublica"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={cn(
+                                        "p-2 rounded-full transition-colors",
+                                        shouldForceSolid
+                                            ? "text-neutral-600 hover:bg-neutral-100 hover:text-black"
+                                            : "text-white/80 hover:bg-white/20 hover:text-white"
+                                    )}
+                                    aria-label="TikTok"
+                                >
+                                    <TikTokLogo className="w-5 h-5" />
+                                </a>
+                                <a
+                                    href={`mailto:${CONTACT.email}`}
+                                    className={cn(
+                                        "p-2 rounded-full transition-colors",
+                                        shouldForceSolid
+                                            ? "text-neutral-600 hover:bg-neutral-100 hover:text-red-500"
+                                            : "text-white/80 hover:bg-white/20 hover:text-white"
+                                    )}
+                                    aria-label="Email"
+                                >
+                                    <GmailLogo className="w-5 h-5" />
+                                </a>
+                            </div>
+
                             {/* Language Switcher */}
                             <div className="relative" ref={langMenuRef}>
                                 {/* Language Selector - Premium Flag Style */}
@@ -222,7 +260,7 @@ export function Header({ locale = "pt" }: HeaderProps) {
                                             "flex items-center gap-2 transition-all p-1.5 pr-3 rounded-full border",
                                             shouldForceSolid
                                                 ? "border-neutral-200 bg-white/50 hover:bg-neutral-50 hover:border-neutral-300"
-                                                : "border-white/20 bg-black/20 hover:bg-black/30 hover:border-white/40 text-white"
+                                                : "border-white/20 bg-black/10 backdrop-blur-md hover:bg-black/20 hover:border-white/40 text-white shadow-sm"
                                         )}
                                         aria-expanded={isLangMenuOpen}
                                         aria-haspopup="true"
@@ -297,7 +335,7 @@ export function Header({ locale = "pt" }: HeaderProps) {
                                 phone={CONTACT.whatsapp.number}
                                 size="sm"
                                 className={cn(
-                                    "shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all overflow-hidden relative group font-bold px-6",
+                                    "shadow-soft-lg hover:shadow-soft-xl hover:-translate-y-0.5 transition-all overflow-hidden relative group font-bold px-6",
                                     !shouldForceSolid && "bg-white text-primary-600 hover:bg-neutral-50"
                                 )}
                             >

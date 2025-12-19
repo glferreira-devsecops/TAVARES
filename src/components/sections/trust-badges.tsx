@@ -1,140 +1,103 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
-import { Globe, Home, Star, Trophy } from "lucide-react";
+import { MotionBox } from "@/components/ui/motion-box";
+import { useDictionary } from "@/lib/dictionaries";
+import { MapPin, Star, Trophy, Users } from "lucide-react";
 
 interface TrustBadgesProps {
     locale?: string;
 }
 
 export function TrustBadges({ locale = "pt" }: TrustBadgesProps) {
-    const currentLang = locale.startsWith("pt") ? "pt" : "en";
-    const t = {
-        title: currentLang === "pt" ? "Reconhecido mundialmente" : "World renowned",
-        subtitle: currentLang === "pt"
-            ? "Cenário do FIFA Street e avaliado com excelência no TripAdvisor e Airbnb"
-            : "Setting of FIFA Street and rated with excellence on TripAdvisor and Airbnb",
-    };
+    const dict = useDictionary(locale);
 
     const badges = [
         {
-            name: "FIFA Street",
-            label: locale === "pt" ? "Cenário Icônico" : "Iconic Setting",
             icon: Trophy,
-            color: "text-orange-500",
-            bg: "bg-orange-500/10",
-            border: "border-orange-500/20"
+            color: "text-yellow-400",
+            bg: "bg-yellow-500/10",
+            border: "group-hover:border-yellow-500/50",
+            shadow: "group-hover:shadow-yellow-500/20",
+            title: dict.AboutPreview.highlights.fifa.title || "FIFA Street",
+            subtitle: dict.AboutPreview.highlights.fifa.subtitle || "Cenário Real"
         },
         {
-            name: "TripAdvisor",
-            label: locale === "pt" ? "5 Estrelas" : "5 Stars",
             icon: Star,
-            color: "text-green-500",
-            bg: "bg-green-500/10",
-            border: "border-green-500/20"
+            color: "text-amber-400",
+            bg: "bg-amber-500/10",
+            border: "group-hover:border-amber-500/50",
+            shadow: "group-hover:shadow-amber-500/20",
+            title: "Google",
+            subtitle: "5 Estrelas"
         },
         {
-            name: "Airbnb",
-            label: "Superhost",
-            icon: Home,
-            color: "text-rose-500",
+            icon: Users,
+            color: "text-emerald-400",
+            bg: "bg-emerald-500/10",
+            border: "group-hover:border-emerald-500/50",
+            shadow: "group-hover:shadow-emerald-500/20",
+            title: "1000+",
+            subtitle: "Visitantes"
+        },
+        {
+            icon: MapPin,
+            color: "text-rose-400",
             bg: "bg-rose-500/10",
-            border: "border-rose-500/20"
-        },
-        {
-            name: "Google",
-            label: "4.9/5.0",
-            icon: Globe,
-            color: "text-blue-500",
-            bg: "bg-blue-500/10",
-            border: "border-blue-500/20"
-        },
+            border: "group-hover:border-rose-500/50",
+            shadow: "group-hover:shadow-rose-500/20",
+            title: "Guias Locais",
+            subtitle: "Da Comunidade"
+        }
     ];
 
-    const container: Variants = {
-        hidden: { opacity: 0 },
-        show: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.1
-            }
-        }
-    };
-
-    const item: Variants = {
-        hidden: { opacity: 0, y: 20 },
-        show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
-    };
-
     return (
-        <section className="py-12 md:py-24 bg-white border-b border-neutral-100">
-            <div className="container-custom">
-                <div className="text-center mb-16">
-                    <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5 }}
-                    >
-                        <p className="text-sm font-bold tracking-[0.2em] text-orange-600 uppercase mb-4">
-                            {t.title}
-                        </p>
-                        <h3 className="text-3xl md:text-4xl font-heading font-bold text-neutral-900 max-w-3xl mx-auto leading-tight">
-                            {t.subtitle}
-                        </h3>
-                    </motion.div>
-                </div>
+        <section className="py-20 bg-neutral-950 border-y border-white/5 relative overflow-hidden">
+            {/* Cinematic Background Elements */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-full bg-primary-500/5 blur-[120px] pointer-events-none" />
+            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] mix-blend-overlay pointer-events-none" />
 
-                <motion.div
-                    variants={container}
-                    initial="hidden"
-                    whileInView="show"
-                    viewport={{ once: true, margin: "-100px" }}
-                    className="grid grid-cols-2 md:grid-cols-4 gap-6"
-                >
-                    {badges.map((badge, i) => {
-                        const Icon = badge.icon;
-                        return (
-                            <motion.div
-                                key={i}
-                                variants={item}
-                                className={`group flex flex-col items-center gap-5 p-8 rounded-3xl bg-white border ${badge.border} hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden`}
-                            >
-                                <div className={`w-20 h-20 rounded-2xl ${badge.bg} flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3`}>
-                                    <Icon className={`w-10 h-10 ${badge.color}`} />
+            <div className="container-custom relative z-10">
+                <div className="flex flex-wrap justify-center gap-6 md:gap-10">
+                    {badges.map((badge, index) => (
+                        <MotionBox key={index} delay={index * 0.1}>
+                            <div className={`
+                                group relative w-[160px] md:w-[220px] aspect-square
+                                flex flex-col items-center justify-center text-center p-4
+                                bg-white/5 backdrop-blur-md rounded-3xl
+                                border border-white/10 ${badge.border}
+                                transition-all duration-500 ease-out
+                                hover:-translate-y-2 hover:bg-white/[0.07]
+                                hover:shadow-2xl ${badge.shadow}
+                            `}>
+                                {/* Icon Container with Glow */}
+                                <div className={`
+                                    mb-4 p-4 rounded-2xl ${badge.bg}
+                                    transition-all duration-500 group-hover:scale-110
+                                    ring-1 ring-white/10 group-hover:ring-white/30
+                                `}>
+                                    <badge.icon className={`w-8 h-8 md:w-10 md:h-10 ${badge.color}`} strokeWidth={1.5} />
                                 </div>
-                                <div className="text-center relative z-10">
-                                    <div className="font-bold text-neutral-900 text-xl mb-1 group-hover:text-primary-600 transition-colors">
-                                        {badge.name}
+
+                                {/* Text Content */}
+                                <div className="space-y-1">
+                                    <div className="font-heading font-bold text-white text-lg md:text-2xl tracking-tight">
+                                        {badge.title}
                                     </div>
-                                    <div className="text-sm font-medium text-neutral-500 uppercase tracking-wide">
-                                        {badge.label}
+                                    <div className="text-xs md:text-sm text-neutral-300 font-medium uppercase tracking-wider group-hover:text-white/80 transition-colors">
+                                        {badge.subtitle}
                                     </div>
                                 </div>
-                                {/* Subtle Hover Gradient */}
-                                <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 ${badge.bg}`} />
-                            </motion.div>
-                        );
-                    })}
-                </motion.div>
+
+                                {/* Shine Effect on Hover */}
+                                <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none overflow-hidden">
+                                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent skew-x-12 translate-x-[-100%] group-hover:animate-shine" />
+                                </div>
+                            </div>
+                        </MotionBox>
+                    ))}
+                </div>
             </div>
         </section>
-    );
-}
-
-export function TrustStrip() {
-    return (
-        <div className="flex items-center gap-6 text-sm font-medium text-neutral-600 bg-neutral-50 px-6 py-2 rounded-full border border-neutral-200">
-            <span className="flex items-center gap-2">
-                <Star className="w-4 h-4 fill-green-500 text-green-500" />
-                <span>TripAdvisor Excellence</span>
-            </span>
-            <span className="w-1 h-1 rounded-full bg-neutral-300" />
-            <span className="flex items-center gap-2">
-                <Home className="w-4 h-4 fill-rose-500 text-rose-500" />
-                <span>Airbnb Superhost</span>
-            </span>
-        </div>
     );
 }
 

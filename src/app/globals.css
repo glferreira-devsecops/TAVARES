@@ -2,211 +2,80 @@
 @tailwind components;
 @tailwind utilities;
 
-/* OKLCH Color Palette - Tavares Authentic */
-
 @layer base {
   :root {
-    /*
-      TAVARES AUTHENTIC PALETTE (OKLCH)
-      Based on: Brick/Terracotta (Favela Architecture), Mosaic Teal (The Maze), Sunny Yellow (Rio Sun)
-    */
+    --font-heading: 'Inter', serif;
+    --font-body: 'Inter', sans-serif;
 
-    /* Primary: Terracotta/Brick (Warmth, Community) */
-    --color-primary-50: 97% 0.01 50;
-    /* oklch(97% 0.01 50) */
-    --color-primary-100: 92% 0.03 50;
-    /* oklch(92% 0.03 50) */
-    --color-primary-200: 84% 0.06 50;
-    /* oklch(84% 0.06 50) */
-    --color-primary-300: 74% 0.10 50;
-    /* oklch(74% 0.10 50) */
-    --color-primary-400: 64% 0.15 45;
-    /* oklch(64% 0.15 45) */
-    --color-primary-500: 55% 0.18 45;
-    /* oklch(55% 0.18 45) - Main Brand Color (Deep Terracotta) */
-    --color-primary-600: 48% 0.16 45;
-    /* oklch(48% 0.16 45) */
-    --color-primary-700: 40% 0.13 45;
-    /* oklch(40% 0.13 45) */
-    --color-primary-800: 32% 0.10 45;
-    /* oklch(32% 0.10 45) */
-    --color-primary-900: 24% 0.08 45;
-    /* oklch(24% 0.08 45) */
+    /* Semantic Colors mapping to Tailwind config if needed for inline styles */
+    --color-primary: #FFB000;
+    --color-surface: #FAFAFA;
+  }
 
-    /* Secondary: Mosaic Teal (The Maze, Art, Ocean View) */
-    --color-secondary-50: 96% 0.01 200;
-    --color-secondary-100: 90% 0.04 200;
-    --color-secondary-200: 80% 0.08 200;
-    --color-secondary-300: 70% 0.12 200;
-    --color-secondary-400: 60% 0.15 200;
-    --color-secondary-500: 50% 0.16 200;
-    /* Vibrant Teal */
-    --color-secondary-600: 40% 0.14 200;
-    --color-secondary-700: 30% 0.11 200;
-    --color-secondary-800: 25% 0.09 200;
-    --color-secondary-900: 20% 0.07 200;
+  html {
+    @apply scroll-smooth antialiased;
+    font-size: 16px;
+  }
 
-    /* Accent: Sunny Yellow (Highlight, Warmth) */
-    --color-accent-500: 85% 0.18 90;
-    /* Bright warm yellow */
-    --color-accent-600: 75% 0.20 85;
-    /* Deep golden yellow */
+  body {
+    @apply bg-neutral-900 text-neutral-50 font-body selection:bg-primary-500 selection:text-black;
+    /* Premium dark theme base */
+  }
 
-    /* Neutrals: Warm Sand/Stone (Not cold gray) */
-    --color-neutral-50: 98% 0.005 80;
-    /* Warm white */
-    --color-neutral-100: 95% 0.01 80;
-    /* Sand tint */
-    --color-neutral-200: 90% 0.01 80;
-    --color-neutral-300: 80% 0.015 80;
-    --color-neutral-400: 70% 0.02 80;
-    --color-neutral-500: 60% 0.02 80;
-    --color-neutral-600: 50% 0.02 80;
-    --color-neutral-700: 40% 0.02 80;
-    --color-neutral-800: 30% 0.02 80;
-    --color-neutral-900: 15% 0.02 80;
-    /* Warm black */
-
-    /* Specific UI Colors */
-    --background: var(--color-neutral-50);
-    --foreground: var(--color-neutral-900);
-    --whatsapp: 65% 0.18 150;
-    /* Specific WhatsApp Green in OKLCH approx */
-
-    /* Fluid Typography - Editorial Scale */
-    --font-size-xs: clamp(0.75rem, 0.7vw, 0.8rem);
-    --font-size-sm: clamp(0.875rem, 0.85vw, 0.95rem);
-    --font-size-base: clamp(1rem, 1vw, 1.125rem);
-    --font-size-lg: clamp(1.125rem, 1.2vw, 1.25rem);
-    --font-size-xl: clamp(1.25rem, 1.5vw, 1.5rem);
-    --font-size-2xl: clamp(1.5rem, 2vw, 1.875rem);
-    --font-size-3xl: clamp(2rem, 2.5vw, 2.5rem);
-    --font-size-4xl: clamp(2.5rem, 3.5vw, 3.5rem);
-    --font-size-5xl: clamp(3rem, 5vw, 5rem);
-    --font-size-6xl: clamp(3.5rem, 7vw, 6rem);
+  /* Typography Enhancements */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading tracking-tight;
   }
 }
 
-/* Base Styles with Texture */
-body {
-  background-color: rgb(var(--background));
-  color: rgb(var(--foreground));
-  font-feature-settings: "ss01", "ss02", "cv01", "cv02";
-  -webkit-font-smoothing: antialiased;
-  /* Subtle texture overlay for paper feel */
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-primary-600;
+  }
+
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#FFD700] via-[#FFC400] to-[#FFB000];
+    text-shadow: 0 0 20px rgba(255, 176, 0, 0.3);
+  }
+
+  /* Custom Container for large screens */
+  .container-custom {
+    @apply w-full mx-auto px-4 sm:px-6 lg:px-8 max-w-[1440px];
+  }
+
+  /* Glassmorphism */
+  .glass-panel {
+    @apply bg-white/10 backdrop-blur-xl border border-white/20 shadow-soft-xl;
+  }
+
+  .glass-panel-dark {
+    @apply bg-black/40 backdrop-blur-xl border border-white/10 shadow-soft-xl;
+  }
+
+  /* Noise Texture for premium feel */
+  .bg-noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+  }
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: oklch(var(--color-neutral-100));
+  @apply bg-neutral-900;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: oklch(var(--color-primary-300));
-  border-radius: 6px;
-  border: 3px solid oklch(var(--color-neutral-100));
+  @apply bg-neutral-700 rounded-full border-2 border-neutral-900;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: oklch(var(--color-primary-500));
-}
-
-@layer components {
-
-  /* Manual CSS implementation to replace @apply variants which were causing build errors */
-  .section-padding {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-  }
-
-  @media (min-width: 768px) {
-    .section-padding {
-      padding-top: 6rem;
-      padding-bottom: 6rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .section-padding {
-      padding-top: 8rem;
-      padding-bottom: 8rem;
-    }
-  }
-
-  .container-custom {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    max-width: 80rem;
-    /* max-w-7xl */
-  }
-
-  @media (min-width: 768px) {
-    .container-custom {
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
-  }
-
-  /* Editorial Card Style - Expanded CSS */
-  .card-editorial {
-    position: relative;
-    overflow: hidden;
-    background-color: white;
-    transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.4s cubic-bezier(0.2, 0, 0, 1);
-  }
-
-  .card-editorial:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px -8px oklch(var(--color-neutral-900) / 0.15);
-  }
-
-  /* Typography Utilities */
-  .text-balance {
-    text-wrap: balance;
-  }
-
-  /* Premium Glass Effect */
-  .glass-panel {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .glass-panel-dark {
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  /* Text Gradients */
-  .text-gradient-gold {
-    background: linear-gradient(135deg, #FFFFFF 0%, #FDBA74 50%, #FFFFFF 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    background-size: 200% auto;
-    animation: shimmer 5s linear infinite;
-  }
-
-  @keyframes shimmer {
-    to {
-      background-position: 200% center;
-    }
-  }
-}
-
-/* Custom Selection */
-::selection {
-  background-color: oklch(var(--color-primary-500) / 0.3);
-  color: oklch(var(--color-primary-900));
+  @apply bg-primary-600;
 }

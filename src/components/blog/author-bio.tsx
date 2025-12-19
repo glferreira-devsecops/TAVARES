@@ -26,8 +26,8 @@ export function AuthorBio({ locale }: AuthorBioProps) {
 
                 <p className="text-neutral-600 leading-relaxed max-w-2xl">
                     {isPt
-                        ? "Somos um coletivo de guias locais, historiadores e moradores apaixonados pela Tavares Bastos. Nosso objetivo é compartilhar a verdadeira história e cultura da nossa comunidade com o mundo."
-                        : "We are a collective of local guides, historians, and residents passionate about Tavares Bastos. Our goal is to share the true history and culture of our community with the world."}
+                        ? "Somos um coletivo de guias locais, historiadores e moradores apaixonados pela Favela. Nosso objetivo é compartilhar a verdadeira história e cultura da nossa comunidade com o mundo."
+                        : "We are a collective of local guides, historians, and residents passionate about Favela. Our goal is to share the true history and culture of our community with the world."}
                 </p>
             </div>
         </div>

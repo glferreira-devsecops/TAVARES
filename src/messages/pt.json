@@ -1,14 +1,33 @@
 {
     "HomePage": {
         "title": "Favela-República Tour",
-        "description": "Turismo Comunitário em Tavares Bastos"
+        "description": "Turismo Comunitário na Favela"
     },
     "Navigation": {
         "home": "Início",
         "tours": "Tours",
         "about": "Quem Somos",
+        "social": "Projeto Social",
         "blog": "Blog",
-        "contact": "Contato"
+        "faq": "FAQ",
+        "contact": "Contato",
+        "language": "Idioma",
+        "book": "Reservar Agora",
+        "openMenu": "Abrir Menu"
+    },
+    "hero": {
+        "eyebrow": "EXPERIÊNCIA ÚNICA NO RIO",
+        "title": "Turismo autêntico",
+        "titleHighlight": "na Favela",
+        "subtitle": "Turismo comunitário autêntico na favela do Rio de Janeiro. Experiências culturais, seguras e responsáveis.",
+        "ctaMain": "Agendar Agora",
+        "ctaSecondary": "Ver Roteiros",
+        "stats": {
+            "rating": "Excelente",
+            "safeValue": "100%",
+            "safety": "Seguro",
+            "local": "Local"
+        }
     },
     "tourCard": {
         "insurance": "Seguro Incluso",
@@ -19,7 +38,7 @@
         "badge": "Quem Somos",
         "title": "Muito mais que um tour",
         "titleHighlight": "Uma imersão cultural",
-        "description_1": "Você vai pisar no cenário real que inspirou o game **FIFA Street**, foi palco do filme **O Incrível Hulk** e do clipe de **Snoop Dogg & Pharrell**. A Tavares Bastos não é apenas uma favela; é um ícone da cultura pop mundial.",
+        "description_1": "Você vai pisar no cenário real que inspirou o game **FIFA Street**, foi palco do filme **O Incrível Hulk** e do clipe de **Snoop Dogg & Pharrell**. Nossa favela não é apenas uma comunidade; é um ícone da cultura pop mundial.",
         "description_2": "Aqui, a segurança é total e a experiência é autêntica. Guiado por quem nasceu e cresceu aqui, você vai descobrir a verdadeira alma do Rio de Janeiro, com vistas de tirar o fôlego e histórias que nenhum guia turístico comum pode contar.",
         "description_impact": "Ao escolher a Favela-República, você reinveste diretamente na comunidade. Nosso turismo sustentável gera renda local, preserva nossa cultura e cria oportunidades reais para os moradores.",
         "trustedTitle": "Reconhecido Mundialmente",
@@ -53,7 +72,64 @@
             "local_guides": "Guias locais",
             "street_art": "Arte urbana",
             "safety": "Segurança",
-            "social_impact": "Impacto social"
+            "social_impact": "Impacto social",
+            "interaction": "Interação com Moradores"
+        }
+    },
+    "Testimonials": {
+        "eyebrow": "Depoimentos",
+        "title": "O que dizem nossos visitantes",
+        "subtitle": "Mais de 1000 visitantes já viveram essa experiência"
+    },
+    "FAQ": {
+        "eyebrow": "Dúvidas Frequentes",
+        "title": "Perguntas Frequentes",
+        "subtitle": "Tire suas dúvidas sobre o tour e a visita à favela.",
+        "questions": {
+            "q1": {
+                "question": "É seguro visitar a favela?",
+                "answer": "Sim, você estará sempre acompanhado de um guia local. Ele garantirá que a sua experiência seja segura e incrível."
+            },
+            "q2": {
+                "question": "Como faço para reservar um tour?",
+                "answer": "A forma mais rápida é pelo WhatsApp. Basta clicar no botão verde em qualquer página do site e enviar uma mensagem informando: data desejada, horário preferido, número de pessoas e tour de interesse. Nossa equipe responde em poucos minutos durante o horário comercial."
+            },
+            "q3": {
+                "question": "Quais formas de pagamento são aceitas?",
+                "answer": "Aceitamos: PIX (preferencial), dinheiro (reais), dólar, cartões de crédito e débito, wise. O pagamento pode ser feito no dia do tour ou antecipadamente."
+            },
+            "q4": {
+                "question": "Posso levar minha câmera e celular?",
+                "answer": "Sim, você pode levar câmera e celular para registrar o tour, é muito seguro. Para fotografar moradores, especialmente crianças, sempre peça permissão primeiro. Nossos guias orientam sobre isso durante o tour."
+            },
+            "q5": {
+                "question": "O preço inclui tudo?",
+                "answer": "O preço inclui: guia local bilíngue, transporte de ida e volta do ponto de encontro para a favela, vídeo 360°, fotos feitas pela equipe. Não inclui: refeições, bebidas e gorjetas (opcionais)."
+            },
+            "q6": {
+                "question": "Em quais idiomas vocês oferecem os tours?",
+                "answer": "Nossos guias falam Português, Inglês, Espanhol e Francês. Informe seu idioma preferido ao reservar para garantirmos um guia adequado."
+            },
+            "q7": {
+                "question": "O que devo vestir e levar?",
+                "answer": "Recomendamos: calçados confortáveis, roupas leves, protetor solar, dinheiro ou cartão, câmera/celular para registrar sua experiência."
+            },
+            "q8": {
+                "question": "Posso comprar algo dos moradores durante o tour?",
+                "answer": "Sim, temos vários pontos de economia local no trajeto! Você pode comprar blusas, comidas e bebidas, dentre outras coisas. Nossos guias indicam os melhores lugares. Leve dinheiro ou cartão."
+            },
+            "q9": {
+                "question": "Qual é o tamanho mínimo e máximo do grupo?",
+                "answer": "O mínimo é de 2 pessoas por tour. O máximo varia, podendo chegar a 40 pessoas."
+            },
+            "q10": {
+                "question": "O tour acontece se chover?",
+                "answer": "Tours leves funcionam normalmente com garoa. Em caso de chuva forte ou tempestade, entraremos em contato para remarcar sem custo adicional."
+            },
+            "q11": {
+                "question": "Onde é o ponto de encontro?",
+                "answer": "O ponto de encontro é na Rua do Catete, 153 - Bairro Catete (Em frente ao Museu da República). É fácil chegar de Uber/táxi ou metrô (estação Catete). Enviamos a localização exata por WhatsApp após a confirmação da reserva, junto com instruções detalhadas de como chegar."
+            }
         }
     },
     "NotFound": {

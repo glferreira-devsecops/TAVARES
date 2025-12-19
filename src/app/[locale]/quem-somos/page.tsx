@@ -3,7 +3,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "Quem Somos | Favela-República",
-    description: "Conheça a história da Favela-República e nossa missão de turismo comunitário responsável na Tavares Bastos.",
+    description: "Conheça a história da Favela-República e nossa missão de turismo comunitário responsável na Favela.",
 };
 
 interface PageProps {

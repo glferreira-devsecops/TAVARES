@@ -26,7 +26,7 @@ export function BlogPreview({ locale = "pt", posts }: BlogPreviewProps) {
         pt: {
             subtitle: "Blog",
             title: "Histórias e curiosidades",
-            description: "Descubra mais sobre a Tavares Bastos, sua história, cultura e as pessoas que fazem nossa comunidade única.",
+            description: "Descubra mais sobre a Favela, sua história, cultura e as pessoas que fazem nossa comunidade única.",
             cta: "Ver todos os artigos",
             readMore: "Ler artigo",
             minRead: "min de leitura",
@@ -34,7 +34,7 @@ export function BlogPreview({ locale = "pt", posts }: BlogPreviewProps) {
         en: {
             subtitle: "Blog",
             title: "Stories and curiosities",
-            description: "Discover more about Tavares Bastos, its history, culture, and the people who make our community unique.",
+            description: "Discover more about Favela, its history, culture, and the people who make our community unique.",
             cta: "View all articles",
             readMore: "Read article",
             minRead: "min read",
@@ -42,7 +42,7 @@ export function BlogPreview({ locale = "pt", posts }: BlogPreviewProps) {
         es: {
             subtitle: "Blog",
             title: "Historias y curiosidades",
-            description: "Descubre más sobre Tavares Bastos, su historia, cultura y las personas que hacen única nuestra comunidad.",
+            description: "Descubre más sobre Favela, su historia, cultura y las personas que hacen única nuestra comunidad.",
             cta: "Ver todos los artículos",
             readMore: "Leer artículo",
             minRead: "min de lectura",
@@ -50,7 +50,7 @@ export function BlogPreview({ locale = "pt", posts }: BlogPreviewProps) {
         fr: {
             subtitle: "Blog",
             title: "Histoires et curiosités",
-            description: "Découvrez Tavares Bastos, son histoire, sa culture et les personnes qui rendent notre communauté unique.",
+            description: "Découvrez Favela, son histoire, sa culture et les personnes qui rendent notre communauté unique.",
             cta: "Voir tous les articles",
             readMore: "Lire l'article",
             minRead: "min de lecture",

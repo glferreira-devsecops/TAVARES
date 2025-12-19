@@ -35,6 +35,7 @@ export function Button({
         "disabled:opacity-50 disabled:cursor-not-allowed",
         // Motion effects via CSS
         "hover:scale-[1.02] active:scale-[0.98]",
+        "focus:outline-none focus:ring-4 focus:ring-primary-500/20",
         {
             // Sizes
             "px-4 py-2 text-sm": size === "sm",
@@ -43,14 +44,14 @@ export function Button({
             "w-full": fullWidth,
 
             // Variants
-            "bg-primary-500 text-white hover:bg-primary-600 shadow-md hover:shadow-lg":
+            "bg-primary-500 text-white hover:bg-primary-600 shadow-soft-md hover:shadow-soft-lg":
                 variant === "primary",
-            "bg-secondary-500 text-white hover:bg-secondary-600 shadow-md hover:shadow-lg":
+            "bg-secondary-500 text-white hover:bg-secondary-600 shadow-soft-md hover:shadow-soft-lg":
                 variant === "secondary",
-            "border-2 border-primary-500 text-primary-500 hover:bg-primary-50":
+            "border-2 border-primary-500 text-primary-500 hover:bg-primary-50 focus:ring-primary-500/10":
                 variant === "outline",
             "text-neutral-600 hover:bg-neutral-100": variant === "ghost",
-            "bg-green-600 text-white hover:bg-green-700 shadow-md hover:shadow-lg":
+            "bg-green-600 text-white hover:bg-green-700 shadow-soft-md hover:shadow-soft-lg":
                 variant === "whatsapp",
         },
         className
@@ -121,7 +122,7 @@ interface WhatsAppButtonProps {
 
 export function WhatsAppButton({
     phone,
-    message = "Olá! Gostaria de saber mais sobre os tours na Favela Tavares Bastos.",
+    message = "Olá! Gostaria de saber mais sobre os tours na Favela-República.",
     label = "Agendar no WhatsApp",
     className,
     size = "md",

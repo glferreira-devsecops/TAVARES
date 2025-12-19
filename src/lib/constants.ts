@@ -1,27 +1,29 @@
 // Favela-República Constants
 
 // Contact Information
+
 export const CONTACT = {
     whatsapp: {
-        number: "5521999999999", // TODO: Replace with actual number
-        displayNumber: "+55 21 99999-9999",
+        number: "5521986259544",
+        displayNumber: "+55 (21) 98625-9544",
     },
-    email: "contato@favelarepublicatour.com",
+    email: "contato@favelarepublica.com",
     instagram: "favelarepublica",
     instagramUrl: "https://www.instagram.com/favelarepublica",
+    tiktokUrl: "https://www.tiktok.com/@favelarepublica",
     address: {
-        street: "Ladeira dos Tabajaras",
-        neighborhood: "Catete",
+        street: "Rua do Catete, 153",
+        neighborhood: "Catete", // Em frente ao Museu da República
         city: "Rio de Janeiro",
         state: "RJ",
         country: "Brasil",
-        postalCode: "22210-070",
+        postalCode: "22220-000",
     },
 } as const;
 
-// Location - Tavares Bastos coordinates
+// Location - Favela coordinates
 export const LOCATION = {
-    name: "Favela Tavares Bastos",
+    name: "Favela",
     coordinates: {
         lat: -22.9308,
         lng: -43.1817,
@@ -32,10 +34,10 @@ export const LOCATION = {
 // WhatsApp message templates
 export const WHATSAPP_MESSAGES = {
     general: {
-        pt: "Olá! Gostaria de mais informações sobre os tours na Tavares Bastos.",
-        en: "Hello! I would like more information about the tours in Tavares Bastos.",
-        es: "¡Hola! Me gustaría más información sobre los tours en Tavares Bastos.",
-        fr: "Bonjour! Je voulais plus d'informations sur les visites à Tavares Bastos.",
+        pt: "Olá! Gostaria de mais informações sobre os tours na favela.",
+        en: "Hello! I would like more information about the tours in the favela.",
+        es: "¡Hola! Me gustaría más información sobre los tours en la favela.",
+        fr: "Bonjour! Je voulais plus d'informations sur les visites à la favela.",
     },
     tourReservation: (tourName: string) => ({
         pt: `Olá! Quero reservar o tour "${tourName}". Quantas vagas disponíveis?`,
@@ -75,9 +77,9 @@ export const NAV_ITEMS = [
         href: "/quem-somos",
     },
     {
-        label: { pt: "Blog", en: "Blog", es: "Blog", fr: "Blog" },
-        labelKey: "blog",
-        href: "/blog",
+        label: { pt: "Projeto Social", en: "Social Project", es: "Proyecto Social", fr: "Projet Social" },
+        labelKey: "social",
+        href: "/projeto-social",
     },
     {
         label: { pt: "FAQ", en: "FAQ", es: "Preguntas", fr: "FAQ" },
@@ -102,6 +104,16 @@ export const SOCIAL_LINKS = [
         platform: "whatsapp" as const,
         url: getWhatsAppLink(WHATSAPP_MESSAGES.general.pt),
         label: "WhatsApp",
+    },
+    {
+        platform: "tiktok" as const,
+        url: "https://www.tiktok.com/@favelarepublica",
+        label: "TikTok",
+    },
+    {
+        platform: "email" as const,
+        url: `mailto:${CONTACT.email}`,
+        label: "Email",
     },
 ] as const;
 
@@ -178,53 +190,53 @@ export const SEO_DEFAULTS = {
     siteName: "Favela-República Tour",
     siteUrl: "https://favelarepublicatour.com",
     defaultTitle: {
-        pt: "Favela-República Tour | Turismo Comunitário em Tavares Bastos",
-        en: "Favela-República Tour | Community Tourism in Tavares Bastos",
-        es: "Favela-República Tour | Turismo Comunitario en Tavares Bastos",
-        fr: "Favela-República Tour | Tourisme Communautaire à Tavares Bastos",
+        pt: "Favela-República Tour | Turismo na Favela do Rio (FIFA Street)",
+        en: "Favela-República Tour | Rio Favela Tour (FIFA Street)",
+        es: "Favela-República Tour | Turismo en la Favela de Río (FIFA Street)",
+        fr: "Favela-República Tour | Tourisme dans la Favela de Rio (FIFA Street)",
     },
     defaultDescription: {
-        pt: "Descubra a cultura autêntica da favela Tavares Bastos no Rio de Janeiro. Tours seguros, responsáveis e imersivos com guias locais. Arte urbana, história e vistas panorâmicas.",
-        en: "Discover the authentic culture of Tavares Bastos favela in Rio de Janeiro. Safe, responsible, and immersive tours with local guides. Street art, history, and panoramic views.",
-        es: "Descubre la cultura auténtica de la favela Tavares Bastos en Río de Janeiro. Tours seguros, responsables e inmersivos con guías locales. Arte urbano, historia y vistas panorámicas.",
-        fr: "Découvrez la culture authentique de la favela Tavares Bastos à Rio de Janeiro. Visites sûres, responsables et immersives avec des guides locaux. Art urbain, histoire et vues panoramiques.",
+        pt: "Conheça a famosa quadra do FIFA Street e viva uma experiência autêntica na favela. Condutores locais, cultura, arte e segurança. Agende seu tour!",
+        en: "Visit the famous FIFA Street court and live an authentic favela experience. Local conductors, culture, art, and safety. Book your tour!",
+        es: "Visita la famosa cancha de FIFA Street y vive una experiencia auténtica en la favela. Conductores locales, cultura y seguridad. ¡Reserva tu tour!",
+        fr: "Visitez le célèbre terrain FIFA Street et vivez une expérience authentique dans la favela. Conducteurs locaux, culture et sécurité. Réservez votre visite !",
     },
     defaultKeywords: {
         pt: [
+            "fifa street real life",
+            "quadra fifa street",
             "tour favela rio",
-            "turismo comunitário rio",
-            "tavares bastos tour",
-            "favela tour seguro",
-            "arte urbana rio de janeiro",
-            "turismo responsável",
-            "tour guiado favela",
+            "turismo comunitário",
+            "favela do catete",
+            "arte urbana rio",
+            "tour seguro favela"
         ],
         en: [
+            "fifa street real life",
+            "fifa street court",
             "favela tour rio",
-            "community tourism rio",
-            "tavares bastos tour",
-            "safe favela tour",
-            "street art rio de janeiro",
-            "responsible tourism",
-            "guided favela tour",
+            "community tourism",
+            "favela do catete",
+            "street art rio",
+            "safe favela tour"
         ],
         es: [
+            "fifa street vida real",
+            "cancha fifa street",
             "tour favela rio",
-            "turismo comunitario rio",
-            "tavares bastos tour",
-            "tour favela seguro",
-            "arte urbano río de janeiro",
-            "turismo responsable",
-            "tour guiado favela",
+            "turismo comunitario",
+            "favela do catete",
+            "arte urbano rio",
+            "tour seguro favela"
         ],
         fr: [
+            "fifa street vie réelle",
+            "terrain fifa street",
             "visite favela rio",
-            "tourisme communautaire rio",
-            "tavares bastos visite",
-            "tour favela sûr",
-            "art urbain rio de janeiro",
-            "tourisme responsable",
-            "visite guidée favela",
+            "tourisme communautaire",
+            "favela do catete",
+            "art urbain rio",
+            "visite favela sûre"
         ],
     },
 } as const;

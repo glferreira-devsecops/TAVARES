@@ -2,6 +2,8 @@ import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { WhatsAppFloatingButton } from "@/components/layout/whatsapp-button";
 import { JsonLd } from "@/components/seo/json-ld";
+import { SkipLink } from "@/components/ui/skip-link";
+import { SmoothScroller } from "@/components/ui/smooth-scroller";
 import { locales } from "@/i18n/request";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
@@ -29,7 +31,7 @@ import { SEO_DEFAULTS } from "@/lib/constants";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
     const { locale } = await params;
-    const lang = (locales.includes(locale as any) ? locale : "pt") as keyof typeof SEO_DEFAULTS.defaultTitle;
+    const lang = (locales.includes(locale as typeof locales[number]) ? locale : "pt") as keyof typeof SEO_DEFAULTS.defaultTitle;
 
     const url = `${SEO_DEFAULTS.siteUrl}/${locale}`;
 
@@ -74,7 +76,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
             siteName: SEO_DEFAULTS.siteName,
             images: [
                 {
-                    url: "/images/hero-tavares-bastos.png", // Default OG Image
+                    url: "/images/hero/hero-main.jpg", // Default OG Image
                     width: 1200,
                     height: 630,
                     alt: SEO_DEFAULTS.defaultTitle[lang],
@@ -85,7 +87,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
             card: "summary_large_image",
             title: SEO_DEFAULTS.defaultTitle[lang],
             description: SEO_DEFAULTS.defaultDescription[lang],
-            images: ["/images/hero-tavares-bastos.png"],
+            images: ["/images/hero/hero-main.jpg"],
             creator: "@devferreirag", // Optional
         },
         icons: {
@@ -121,22 +123,22 @@ export default async function LocaleLayout({
     return (
         <html lang={locale} className={`${playfair.variable} ${inter.variable}`} suppressHydrationWarning>
             <body
-                className={`${inter.className} antialiased overflow-x-hidden`}
+                className={`${inter.className} antialiased overflow-x-hidden bg-neutral-950 text-neutral-50`}
                 style={{
                     fontFamily: 'var(--font-body), Inter, system-ui, -apple-system, sans-serif',
-                    backgroundColor: '#fafafa',
-                    color: '#27272a',
-                    lineHeight: 1.6
                 }}
             >
+                <SkipLink />
                 <JsonLd locale={locale} />
                 <NextIntlClientProvider messages={messages}>
-                    <Header locale={locale} />
-                    <main id="main-content">
-                        {children}
-                    </main>
-                    <Footer locale={locale} />
-                    <WhatsAppFloatingButton locale={locale} />
+                    <SmoothScroller>
+                        <Header locale={locale} />
+                        <main id="main-content">
+                            {children}
+                        </main>
+                        <Footer locale={locale} />
+                        <WhatsAppFloatingButton locale={locale} />
+                    </SmoothScroller>
                     <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} />
                 </NextIntlClientProvider>
             </body>

@@ -2,95 +2,95 @@ import type { BlogPost } from "@/types";
 
 export const blogPosts: BlogPost[] = [
     {
-        id: "historia-tavares-bastos",
-        slug: "historia-completa-favela-tavares-bastos",
+        id: "historia-favela",
+        slug: "historia-completa-favela",
         title: {
-            pt: "A História Completa da Favela Tavares Bastos: De 1931 aos Dias Atuais",
-            en: "The Complete History of Tavares Bastos Favela: From 1931 to Present Day",
+            pt: "A História Completa da Favela: De 1931 aos Dias Atuais",
+            en: "The Complete History of Favela: From 1931 to Present Day",
         },
         excerpt: {
-            pt: "Descubra a fascinante história de quase um século da comunidade Tavares Bastos, desde suas origens em terras de uma antiga fazenda até se tornar um dos destinos culturais mais vibrantes do Rio de Janeiro.",
-            en: "Discover the fascinating nearly century-old history of the Tavares Bastos community, from its origins on old farmland to becoming one of Rio de Janeiro's most vibrant cultural destinations.",
+            pt: "Descubra a fascinante história de quase um século da comunidade Favela, desde suas origens em terras de uma antiga fazenda até se tornar um dos destinos culturais mais vibrantes do Rio de Janeiro.",
+            en: "Discover the fascinating nearly century-old history of the Favela community, from its origins on old farmland to becoming one of Rio de Janeiro's most vibrant cultural destinations.",
         },
         content: {
             pt: `## As Origens (1931)
 
-A favela Tavares Bastos nasceu por volta de 1931, ocupando terras que pertenciam a uma antiga fazenda localizada entre os bairros do Catete e Flamengo, no coração da Zona Sul do Rio de Janeiro. Como muitas comunidades cariocas, surgiu da necessidade de moradia de trabalhadores que buscavam viver próximos às áreas centrais da cidade.
+A favela nasceu por volta de 1931, ocupando terras que pertenciam a uma antiga fazenda localizada entre os bairros do Catete e Flamengo, no coração da Zona Sul do Rio de Janeiro. Como muitas comunidades cariocas, surgiu da necessidade de moradia de trabalhadores que buscavam viver próximos às áreas centrais da cidade.
 
-O nome "Tavares Bastos" é uma homenagem ao político e abolicionista Aureliano Cândido Tavares Bastos, figura importante na história do Brasil imperial. A comunidade cresceu organicamente ao longo das décadas, desenvolvendo uma identidade cultural única.
+O nome "Favela" é uma homenagem ao político e abolicionista Aureliano Cândido Favela, figura importante na história do Brasil imperial. A comunidade cresceu organicamente ao longo das décadas, desenvolvendo uma identidade cultural única.
 
 ## A Chegada do BOPE (2000)
 
-O ano 2000 marcou uma transformação significativa na história da Tavares Bastos. A instalação da sede do BOPE (Batalhão de Operações Policiais Especiais) na comunidade criou uma situação única: entre 2000 e 2008, a Tavares Bastos foi a única grande comunidade do Rio sem presença de tráfico de drogas ou milícias.
+O ano 2000 marcou uma transformação significativa na história da Favela. A instalação da sede do BOPE (Batalhão de Operações Policiais Especiais) na comunidade criou uma situação única: entre 2000 e 2008, a Favela foi a única grande comunidade do Rio sem presença de tráfico de drogas ou milícias.
 
-Essa condição de segurança permitiu que a comunidade florescesse culturalmente, atraindo artistas, empreendedores e visitantes de todo o mundo. A paz relativa transformou a Tavares Bastos em um laboratório de turismo comunitário responsável.
+Essa condição de segurança permitiu que a comunidade florescesse culturalmente, atraindo artistas, empreendedores e visitantes de todo o mundo. A paz relativa transformou a Favela em um laboratório de turismo comunitário responsável.
 
 ## Cenário de Produções Internacionais
 
-A beleza cênica e a segurança tornaram a Tavares Bastos um local procurado por produções audiovisuais:
+A beleza cênica e a segurança tornaram a Favela um local procurado por produções audiovisuais:
 
-- **O Incrível Hulk (2008)**: Cenas do filme hollywoodiano foram gravadas nas vielas da comunidade
+- **O Incrível Hulk (2008)**: Cenas do filme hollywoodiano foram grFavela vielas da comunidade
 - **Tropa de Elite (2007)**: O icônico filme brasileiro utilizou a favela como locação
-- **Clipe "Beautiful" (2003)**: Snoop Dogg e Pharrell escolheram a Tavares Bastos para gravar o videoclipe
+- **Clipe "Beautiful" (2003)**: Snoop Dogg e Pharrell escolheram a Favela para gravar o videoclipe
 
 ## A Era Cultural
 
-A partir dos anos 2000, a Tavares Bastos viveu uma efervescência cultural sem precedentes. Artistas de todo o mundo passaram a visitar e contribuir para a comunidade:
+A partir dos anos 2000, a Favela viveu uma efervescência cultural sem precedentes. Artistas de todo o mundo passaram a visitar e contribuir para a comunidade:
 
 ### The Maze (1981-presente)
-O jornalista e artista britânico Bob Nadkarni chegou à Tavares Bastos em 1981 e transformou sua casa em um labirinto de mosaicos e arte. O espaço se tornou um dos mais importantes pontos culturais do Rio, reconhecido pela revista Downbeat como uma das 150 melhores casas de jazz do mundo.
+O jornalista e artista britânico Bob Nadkarni chegou à Favela em 1981 e transformou sua casa em um labirinto de mosaicos e arte. O espaço se tornou um dos mais importantes pontos culturais do Rio, reconhecido pela revista Downbeat como uma das 150 melhores casas de jazz do mundo.
 
 ### Museu Vivo NAMI (2010-presente)
 A artista Panmela Castro fundou a Rede NAMI em 2010, criando um circuito de mais de 200 murais feitos por mulheres artistas. O projeto usa o grafite como ferramenta de transformação social e combate à violência doméstica.
 
 ## A Quadra do FIFA Street
 
-Poucos sabem que a famosa quadra de futebol da Tavares Bastos foi a inspiração para o videogame FIFA Street. O campo colorido, encravado entre as casas da comunidade, representa a essência do futebol de rua brasileiro e continua sendo um local vibrante onde moradores e visitantes jogam juntos.
+Poucos sabem que a famosa quadra de futebol da Favela foi a inspiração para o videogame FIFA Street. O campo colorido, encravado entre as casas da comunidade, representa a essência do futebol de rua brasileiro e continua sendo um local vibrante onde moradores e visitantes jogam juntos.
 
-## Tavares Bastos Hoje
+## Favela Hoje
 
-Atualmente, a Tavares Bastos é reconhecida como um modelo de turismo comunitário responsável. A comunidade recebe visitantes do mundo inteiro que buscam experiências autênticas, arte urbana de qualidade e vistas deslumbrantes da Baía de Guanabara e do Pão de Açúcar.
+Atualmente, a Favela é reconhecida como um modelo de turismo comunitário responsável. A comunidade recebe visitantes do mundo inteiro que buscam experiências autênticas, arte urbana de qualidade e vistas deslumbrantes da Baía de Guanabara e do Pão de Açúcar.
 
-O sucesso da Tavares Bastos mostra que é possível desenvolver turismo que beneficia diretamente as comunidades, valorizando sua cultura e história sem exploração ou estereótipos.`,
+O sucesso da Favela mostra que é possível desenvolver turismo que beneficia diretamente as comunidades, valorizando sua cultura e história sem exploração ou estereótipos.`,
             en: `## The Origins (1931)
 
-The Tavares Bastos favela was born around 1931, occupying land that belonged to an old farm located between the Catete and Flamengo neighborhoods, in the heart of Rio de Janeiro's South Zone. Like many Rio communities, it arose from the housing needs of workers who sought to live close to the city's central areas.
+The Favela-República born around 1931, occupying land that belonged to an old farm located between the Catete and Flamengo neighborhoods, in the heart of Rio de Janeiro's South Zone. Like many Rio communities, it arose from the housing needs of workers who sought to live close to the city's central areas.
 
-The name "Tavares Bastos" is a tribute to the politician and abolitionist Aureliano Cândido Tavares Bastos, an important figure in the history of imperial Brazil. The community grew organically over the decades, developing a unique cultural identity.
+The name "Favela" is a tribute to the politician and abolitionist Aureliano Cândido Favela, an important figure in the history of imperial Brazil. The community grew organically over the decades, developing a unique cultural identity.
 
 ## The Arrival of BOPE (2000)
 
-The year 2000 marked a significant transformation in Tavares Bastos's history. The installation of BOPE (Special Police Operations Battalion) headquarters in the community created a unique situation: between 2000 and 2008, Tavares Bastos was the only major Rio community without drug trafficking or militia presence.
+The year 2000 marked a significant transformation in Favela's history. The installation of BOPE (Special Police Operations Battalion) headquarters in the community created a unique situation: between 2000 and 2008, Favela was the only major Rio community without drug trafficking or militia presence.
 
-This security condition allowed the community to flourish culturally, attracting artists, entrepreneurs, and visitors from around the world. The relative peace transformed Tavares Bastos into a laboratory for responsible community tourism.
+This security condition allowed the community to flourish culturally, attracting artists, entrepreneurs, and visitors from around the world. The relative peace transformed Favela into a laboratory for responsible community tourism.
 
 ## Location for International Productions
 
-The scenic beauty and safety made Tavares Bastos a sought-after location for audiovisual productions:
+The scenic beauty and safety made Favela a sought-after location for audiovisual productions:
 
 - **The Incredible Hulk (2008)**: Scenes from the Hollywood film were shot in the community's alleys
 - **Elite Squad (2007)**: The iconic Brazilian film used the favela as a location
-- **"Beautiful" Music Video (2003)**: Snoop Dogg and Pharrell chose Tavares Bastos to record their video
+- **"Beautiful" Music Video (2003)**: Snoop Dogg and Pharrell chose Favela to record their video
 
 ## The Cultural Era
 
-From the 2000s onwards, Tavares Bastos experienced unprecedented cultural effervescence. Artists from around the world began visiting and contributing to the community:
+From the 2000s onwards, Favela experienced unprecedented cultural effervescence. Artists from around the world began visiting and contributing to the community:
 
 ### The Maze (1981-present)
-British journalist and artist Bob Nadkarni arrived in Tavares Bastos in 1981 and transformed his home into a labyrinth of mosaics and art. The space became one of Rio's most important cultural spots, recognized by Downbeat magazine as one of the 150 best jazz houses in the world.
+British journalist and artist Bob Nadkarni arrived in Favela in 1981 and transformed his home into a labyrinth of mosaics and art. The space became one of Rio's most important cultural spots, recognized by Downbeat magazine as one of the 150 best jazz houses in the world.
 
 ### Living Museum NAMI (2010-present)
 Artist Panmela Castro founded Rede NAMI in 2010, creating a circuit of over 200 murals made by women artists. The project uses graffiti as a tool for social transformation and combating domestic violence.
 
 ## The FIFA Street Court
 
-Few know that the famous Tavares Bastos football court was the inspiration for the FIFA Street video game. The colorful field, nestled among the community's houses, represents the essence of Brazilian street football and remains a vibrant place where residents and visitors play together.
+Few know that the famous Favela football court was the inspiration for the FIFA Street video game. The colorful field, nestled among the community's houses, represents the essence of Brazilian street football and remains a vibrant place where residents and visitors play together.
 
-## Tavares Bastos Today
+## Favela Today
 
-Today, Tavares Bastos is recognized as a model of responsible community tourism. The community welcomes visitors from around the world who seek authentic experiences, quality street art, and stunning views of Guanabara Bay and Sugarloaf Mountain.
+Today, Favela is recognized as a model of responsible community tourism. The community welcomes visitors from around the world who seek authentic experiences, quality street art, and stunning views of Guanabara Bay and Sugarloaf Mountain.
 
-The success of Tavares Bastos shows that it is possible to develop tourism that directly benefits communities, valuing their culture and history without exploitation or stereotypes.`,
+The success of Favela shows that it is possible to develop tourism that directly benefits communities, valuing their culture and history without exploitation or stereotypes.`,
         },
         author: "Favela-República",
         publishedAt: "2024-11-15",
@@ -103,7 +103,7 @@ The success of Tavares Bastos shows that it is possible to develop tourism that 
             pt: ["história", "favela", "cultura", "rio de janeiro", "turismo"],
             en: ["history", "favela", "culture", "rio de janeiro", "tourism"],
         },
-        image: "/images/tours/tour-completo-hero.png",
+        image: "/images/tours/IMG_7268.jpg",
         readTime: 8,
         featured: true,
     },
@@ -115,17 +115,17 @@ The success of Tavares Bastos shows that it is possible to develop tourism that 
             en: "The Maze Rio: The Incredible Story of Bob Nadkarni and His Jazz House in the Favela",
         },
         excerpt: {
-            pt: "Conheça a história do jornalista britânico que transformou uma casa na Tavares Bastos em um dos espaços culturais mais únicos do mundo, reconhecido como uma das 150 melhores casas de jazz do planeta.",
-            en: "Discover the story of the British journalist who transformed a house in Tavares Bastos into one of the most unique cultural spaces in the world, recognized as one of the 150 best jazz houses on the planet.",
+            pt: "Conheça a história do jornalista britânico que transformou uma casa na Favela em um dos espaços culturais mais únicos do mundo, reconhecido como uma das 150 melhores casas de jazz do planeta.",
+            en: "Discover the story of the British journalist who transformed a house in Favela into one of the most unique cultural spaces in the world, recognized as one of the 150 best jazz houses on the planet.",
         },
         content: {
             pt: `## Quem é Bob Nadkarni
 
 Robert "Bob" Nadkarni nasceu na Inglaterra e trabalhou como correspondente para a BBC e outros veículos internacionais. Sua vida mudou completamente quando, no final dos anos 1970, ele deixou Londres em busca de novas experiências e acabou encontrando seu destino em uma pequena favela carioca.
 
-## A Chegada à Tavares Bastos (1981)
+## A Chegada à Favela (1981)
 
-Em 1981, Bob Nadkarni chegou à Tavares Bastos. Inicialmente, ele buscava apenas um espaço para criar um ateliê de arte. O que começou como um simples estúdio foi crescendo, sala por sala, escadaria por escadaria, transformando-se em um verdadeiro labirinto arquitetônico.
+Em 1981, Bob Nadkarni chegou à Favela. Inicialmente, ele buscava apenas um espaço para criar um ateliê de arte. O que começou como um simples estúdio foi crescendo, sala por sala, escadaria por escadaria, transformando-se em um verdadeiro labirinto arquitetônico.
 
 ## A Construção do Labirinto
 
@@ -153,7 +153,7 @@ Bob Nadkarni não era apenas um artista estrangeiro vivendo na favela — ele se
 1. **Emprego local**: Contratou moradores para trabalhar no Maze
 2. **Projetos sociais**: Apoiou iniciativas educacionais e culturais
 3. **Turismo responsável**: Ajudou a pavimentar o caminho para o turismo comunitário
-4. **Preservação cultural**: Documentou e promoveu a história da Tavares Bastos
+4. **Preservação cultural**: Documentou e promoveu a história da Favela
 
 ## Desafios e Resiliência
 
@@ -163,20 +163,20 @@ Como qualquer empreendimento de longa data, The Maze enfrentou desafios:
 - **Pandemia**: As noites de jazz foram suspensas durante a COVID-19
 - **Infraestrutura**: Manter uma construção orgânica em uma favela requer constante atenção
 
-Apesar dos desafios, o espírito do Maze permanece vivo, e o espaço continua sendo um dos pontos mais icônicos da Tavares Bastos.
+Apesar dos desafios, o espírito do Maze permanece vivo, e o espaço continua sendo um dos pontos mais icônicos da Favela.
 
 ## Visitando The Maze Hoje
 
-Atualmente, o Maze pode ser visitado como parte dos tours pela Tavares Bastos. Mesmo sem os eventos regulares de jazz, o espaço impressiona pela arquitetura única, pelos mosaicos e pela vista incomparável.
+Atualmente, o Maze pode ser visitado como parte dos tours pela Favela. Mesmo sem os eventos regulares de jazz, o espaço impressiona pela arquitetura única, pelos mosaicos e pela vista incomparável.
 
 Bob Nadkarni criou mais do que uma casa — ele criou um legado que mostra como a arte pode transformar comunidades e conectar culturas.`,
             en: `## Who is Bob Nadkarni
 
 Robert "Bob" Nadkarni was born in England and worked as a correspondent for the BBC and other international outlets. His life changed completely when, in the late 1970s, he left London in search of new experiences and ended up finding his destiny in a small Rio favela.
 
-## Arrival in Tavares Bastos (1981)
+## Arrival in Favela (1981)
 
-In 1981, Bob Nadkarni arrived in Tavares Bastos. Initially, he was just looking for a space to create an art studio. What started as a simple studio grew, room by room, staircase by staircase, transforming into a true architectural labyrinth.
+In 1981, Bob Nadkarni arrived in Favela. Initially, he was just looking for a space to create an art studio. What started as a simple studio grew, room by room, staircase by staircase, transforming into a true architectural labyrinth.
 
 ## Building the Labyrinth
 
@@ -204,7 +204,7 @@ Bob Nadkarni was not just a foreign artist living in the favela — he fully int
 1. **Local employment**: Hired residents to work at the Maze
 2. **Social projects**: Supported educational and cultural initiatives
 3. **Responsible tourism**: Helped pave the way for community tourism
-4. **Cultural preservation**: Documented and promoted the history of Tavares Bastos
+4. **Cultural preservation**: Documented and promoted the history of Favela
 
 ## Challenges and Resilience
 
@@ -214,11 +214,11 @@ Like any long-standing venture, The Maze faced challenges:
 - **Pandemic**: Jazz nights were suspended during COVID-19
 - **Infrastructure**: Maintaining an organic construction in a favela requires constant attention
 
-Despite the challenges, the spirit of the Maze remains alive, and the space continues to be one of Tavares Bastos's most iconic spots.
+Despite the challenges, the spirit of the Maze remains alive, and the space continues to be one of Favela's most iconic spots.
 
 ## Visiting The Maze Today
 
-Currently, the Maze can be visited as part of Tavares Bastos tours. Even without regular jazz events, the space impresses with its unique architecture, mosaics, and unparalleled views.
+Currently, the Maze can be visited as part of Favela tours. Even without regular jazz events, the space impresses with its unique architecture, mosaics, and unparalleled views.
 
 Bob Nadkarni created more than a house — he created a legacy that shows how art can transform communities and connect cultures.`,
         },
@@ -232,7 +232,7 @@ Bob Nadkarni created more than a house — he created a legacy that shows how ar
             pt: ["the maze", "bob nadkarni", "jazz", "arte", "cultura"],
             en: ["the maze", "bob nadkarni", "jazz", "art", "culture"],
         },
-        image: "/images/tours/sunset-hero.png",
+        image: "/images/tours/IMG_0417.jpg",
         readTime: 6,
         featured: true,
     },
@@ -244,8 +244,8 @@ Bob Nadkarni created more than a house — he created a legacy that shows how ar
             en: "Living Museum NAMI: How Panmela Castro Created 200 Women's Art Murals in the Favela",
         },
         excerpt: {
-            pt: "A história da artista conhecida como 'Rainha do Grafite do Brasil' e como ela transformou 1km da Tavares Bastos em uma galeria a céu aberto com foco em direitos das mulheres.",
-            en: "The story of the artist known as 'Brazil's Graffiti Queen' and how she transformed 1km of Tavares Bastos into an open-air gallery focused on women's rights.",
+            pt: "A história da artista conhecida como 'Rainha do Grafite do Brasil' e como ela transformou 1km da Favela em uma galeria a céu aberto com foco em direitos das mulheres.",
+            en: "The story of the artist known as 'Brazil's Graffiti Queen' and how she transformed 1km of Favela into an open-air gallery focused on women's rights.",
         },
         content: {
             pt: `## Quem é Panmela Castro
@@ -269,9 +269,9 @@ Em 2010, Panmela fundou a Rede NAMI, uma organização sem fins lucrativos dedic
 - **Combater a violência de gênero**: Usar a arte como ferramenta de advocacy
 - **Promover arte decolonial**: Questionar estruturas de poder e dar voz a grupos marginalizados
 
-## O Museu Vivo NAMI na Tavares Bastos
+## O Museu Vivo NAMI na Favela
 
-A sede da Rede NAMI está localizada na Tavares Bastos, e a comunidade se tornou o lar do **Museu Vivo NAMI** — um circuito de mais de 200 murais espalhados por aproximadamente 1 quilômetro de vielas e escadarias.
+A sede da Rede NAMI está localizada na Favela, e a comunidade se tornou o lar do **Museu Vivo NAMI** — um circuito de mais de 200 murais espalhados por aproximadamente 1 quilômetro de vielas e escadarias.
 
 ### O que você encontra no Museu Vivo:
 
@@ -301,7 +301,7 @@ Diferente de museus tradicionais, o Museu Vivo NAMI é:
 
 ## Visitando o Museu Vivo NAMI
 
-O Museu Vivo NAMI é uma parada obrigatória em qualquer tour pela Tavares Bastos. Nossos guias locais conhecem a história de cada mural e podem explicar o significado das obras e o impacto do projeto na comunidade.
+O Museu Vivo NAMI é uma parada obrigatória em qualquer tour pela Favela. Nossos guias locais conhecem a história de cada mural e podem explicar o significado das obras e o impacto do projeto na comunidade.
 
 Panmela Castro provou que a arte pode nascer da dor e se transformar em cura — não apenas para o artista, mas para toda uma comunidade.`,
             en: `## Who is Panmela Castro
@@ -325,9 +325,9 @@ In 2010, Panmela founded Rede NAMI, a non-profit organization dedicated to:
 - **Fighting gender-based violence**: Using art as an advocacy tool
 - **Promoting decolonial art**: Questioning power structures and giving voice to marginalized groups
 
-## The Living Museum NAMI in Tavares Bastos
+## The Living Museum NAMI in Favela
 
-Rede NAMI's headquarters is located in Tavares Bastos, and the community has become home to the **Living Museum NAMI** — a circuit of over 200 murals spread across approximately 1 kilometer of alleys and staircases.
+Rede NAMI's headquarters is located in Favela, and the community has become home to the **Living Museum NAMI** — a circuit of over 200 murals spread across approximately 1 kilometer of alleys and staircases.
 
 ### What you'll find in the Living Museum:
 
@@ -357,7 +357,7 @@ Unlike traditional museums, the Living Museum NAMI is:
 
 ## Visiting the Living Museum NAMI
 
-The Living Museum NAMI is a must-stop on any Tavares Bastos tour. Our local guides know the history of each mural and can explain the meaning of the works and the project's impact on the community.
+The Living Museum NAMI is a must-stop on any Favela tour. Our local guides know the history of each mural and can explain the meaning of the works and the project's impact on the community.
 
 Panmela Castro proved that art can be born from pain and transform into healing — not just for the artist, but for an entire community.`,
         },
@@ -371,20 +371,20 @@ Panmela Castro proved that art can be born from pain and transform into healing 
             pt: ["museu vivo nami", "panmela castro", "grafite", "arte feminina", "rede nami"],
             en: ["living museum nami", "panmela castro", "graffiti", "women's art", "rede nami"],
         },
-        image: "/images/tours/arte-urbana-hero.png",
+        image: "/images/tours/IMG_2991.jpg",
         readTime: 7,
         featured: true,
     },
     {
         id: "quadra-fifa-street",
-        slug: "quadra-fifa-street-tavares-bastos-historia",
+        slug: "quadra-fifa-street-historia",
         title: {
             pt: "A Quadra que Inspirou o FIFA Street: Como um Campo de Favela Virou Videogame",
             en: "The Court That Inspired FIFA Street: How a Favela Field Became a Video Game",
         },
         excerpt: {
-            pt: "A história real por trás do jogo que marcou uma geração: como a quadra colorida da Tavares Bastos se tornou cenário de um dos videogames mais populares do mundo.",
-            en: "The real story behind the game that marked a generation: how Tavares Bastos's colorful court became the setting for one of the world's most popular video games.",
+            pt: "A história real por trás do jogo que marcou uma geração: como a quadra colorida da Favela se tornou cenário de um dos videogames mais populares do mundo.",
+            en: "The real story behind the game that marked a generation: how Favela's colorful court became the setting for one of the world's most popular video games.",
         },
         content: {
             pt: `## O Fenômeno FIFA Street
@@ -397,11 +397,11 @@ O jogo vendeu milhões de cópias em todo o mundo e marcou uma geração de joga
 
 O Brasil, terra do futebol arte, foi naturalmente uma das inspirações principais do jogo. E foi em uma pequena favela do Rio de Janeiro que os desenvolvedores encontraram a essência do que queriam transmitir.
 
-A quadra da Tavares Bastos, encravada entre casas coloridas, com sua vista para o morro e sua atmosfera de comunidade, representava perfeitamente o espírito do futebol de rua brasileiro.
+A quadra da Favela, encravada entre casas coloridas, com sua vista para o morro e sua atmosfera de comunidade, representava perfeitamente o espírito do futebol de rua brasileiro.
 
 ## A Quadra Real
 
-A quadra da Tavares Bastos existe desde os primeiros anos da comunidade. Ao longo das décadas, ela foi:
+A quadra da Favela existe desde os primeiros anos da comunidade. Ao longo das décadas, ela foi:
 
 - **Espaço de socialização**: Onde moradores de todas as idades se encontram
 - **Escola de futebol**: Onde talentos locais desenvolvem suas habilidades
@@ -410,7 +410,7 @@ A quadra da Tavares Bastos existe desde os primeiros anos da comunidade. Ao long
 
 ## A Experiência de Jogar na Quadra
 
-Quando você visita a Tavares Bastos, pode realmente jogar na quadra que inspirou o FIFA Street. A experiência é única:
+Quando você visita a Favela, pode realmente jogar na quadra que inspirou o FIFA Street. A experiência é única:
 
 1. **O ambiente**: Casas coloridas ao redor, vista panorâmica
 2. **Os moradores**: Frequentemente, locais se juntam para uma pelada
@@ -427,7 +427,7 @@ Embora os jogos da série FIFA Street tenham sido descontinuados, seu legado per
 
 - **Popularização do futebol de rua**: O jogo levou milhões de pessoas a se interessarem pelo estilo livre
 - **Valorização de espaços urbanos**: Mostrou que o futebol mais bonito muitas vezes acontece nas ruas
-- **Turismo na Tavares Bastos**: A conexão com o jogo atrai fãs de todo o mundo
+- **Turismo na Favela**: A conexão com o jogo atrai fãs de todo o mundo
 
 ## Visitando a Quadra Hoje
 
@@ -444,11 +444,11 @@ The game sold millions of copies worldwide and marked a generation of players wh
 
 Brazil, the land of artistic football, was naturally one of the main inspirations for the game. And it was in a small Rio de Janeiro favela that the developers found the essence of what they wanted to convey.
 
-The Tavares Bastos court, nestled among colorful houses, with its view of the hill and its community atmosphere, perfectly represented the spirit of Brazilian street football.
+The Favela court, nestled among colorful houses, with its view of the hill and its community atmosphere, perfectly represented the spirit of Brazilian street football.
 
 ## The Real Court
 
-The Tavares Bastos court has existed since the community's early years. Over the decades, it has been:
+The Favela court has existed since the community's early years. Over the decades, it has been:
 
 - **Socialization space**: Where residents of all ages meet
 - **Football school**: Where local talents develop their skills
@@ -457,7 +457,7 @@ The Tavares Bastos court has existed since the community's early years. Over the
 
 ## The Experience of Playing on the Court
 
-When you visit Tavares Bastos, you can actually play on the court that inspired FIFA Street. The experience is unique:
+When you visit Favela, you can actually play on the court that inspired FIFA Street. The experience is unique:
 
 1. **The environment**: Colorful houses around, panoramic view
 2. **The residents**: Often, locals join in for a pickup game
@@ -474,7 +474,7 @@ Although the FIFA Street game series has been discontinued, its legacy remains:
 
 - **Street football popularization**: The game led millions of people to become interested in freestyle
 - **Urban space appreciation**: Showed that the most beautiful football often happens on the streets
-- **Tourism in Tavares Bastos**: The game connection attracts fans from around the world
+- **Tourism in Favela**: The game connection attracts fans from around the world
 
 ## Visiting the Court Today
 
@@ -492,7 +492,7 @@ It's the chance to leave the virtual and live the real experience of Brazilian s
             pt: ["fifa street", "futebol", "quadra", "videogame", "esporte"],
             en: ["fifa street", "football", "court", "video game", "sports"],
         },
-        image: "/images/tours/tour-completo-hero.png",
+        image: "/images/tours/IMG_5965.jpg",
         readTime: 5,
         featured: false,
     },
@@ -548,7 +548,7 @@ Quando feito da maneira certa, o turismo comunitário:
 - **Valoriza a cultura**: A história e tradições locais ganham reconhecimento
 - **Fortalece o orgulho local**: Moradores veem sua comunidade valorizada
 
-## O Modelo da Tavares Bastos
+## O Modelo da Favela
 
 Nossa abordagem na Favela-República segue princípios claros:
 
@@ -609,7 +609,7 @@ When done the right way, community tourism:
 - **Values culture**: Local history and traditions gain recognition
 - **Strengthens local pride**: Residents see their community valued
 
-## The Tavares Bastos Model
+## The Favela Model
 
 Our approach at Favela-República follows clear principles:
 
@@ -641,7 +641,7 @@ Favela tourism can be a positive and transformative force. The key is in the cho
             pt: ["turismo responsável", "turismo comunitário", "favela", "ética"],
             en: ["responsible tourism", "community tourism", "favela", "ethics"],
         },
-        image: "/images/about-community.png",
+        image: "/images/social/IMG_0546.jpg",
         readTime: 6,
         featured: false,
     },

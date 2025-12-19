@@ -5,12 +5,12 @@ export const faqs: FAQ[] = [
     {
         id: "seguranca-1",
         question: {
-            pt: "É seguro visitar a Tavares Bastos?",
-            en: "Is it safe to visit Tavares Bastos?",
+            pt: "É seguro visitar a Favela?",
+            en: "Is it safe to visit Favela?",
         },
         answer: {
-            pt: "Sim, a Tavares Bastos é considerada uma das favelas mais seguras do Rio de Janeiro. Desde 2000, a comunidade abriga a sede do BOPE (Batalhão de Operações Policiais Especiais), o que contribuiu para mais de duas décadas sem presença de tráfico ou milícias. Além disso, nossos guias são moradores locais que conhecem profundamente a comunidade e garantem uma visita tranquila.",
-            en: "Yes, Tavares Bastos is considered one of the safest favelas in Rio de Janeiro. Since 2000, the community has housed the BOPE (Special Police Operations Battalion) headquarters, which has contributed to more than two decades without drug trafficking or militia presence. Additionally, our guides are local residents who deeply know the community and ensure a peaceful visit.",
+            pt: "Sim, a Favela é considerada uma das favelas mais seguras do Rio de Janeiro. Desde 2000, a comunidade abriga a sede do BOPE (Batalhão de Operações Policiais Especiais), o que contribuiu para mais de duas décadas sem presença de tráfico ou milícias. Além disso, nossos condutors são moradores locais que conhecem profundamente a comunidade e garantem uma visita tranquila.",
+            en: "Yes, Favela is considered one of the safest favelas in Rio de Janeiro. Since 2000, the community has housed the BOPE (Special Police Operations Battalion) headquarters, which has contributed to more than two decades without drug trafficking or militia presence. Additionally, our guides are local residents who deeply know the community and ensure a peaceful visit.",
         },
         category: "seguranca",
         order: 1,
@@ -22,7 +22,7 @@ export const faqs: FAQ[] = [
             en: "Can I bring my camera and phone?",
         },
         answer: {
-            pt: "Sim, você pode levar câmera e celular para registrar o tour. Recomendamos que os guarde em bolsos ou bolsas quando não estiver usando, como precaução normal em qualquer área turística. Para fotografar moradores, especialmente crianças, sempre peça permissão primeiro. Nossos guias orientam sobre isso durante o tour.",
+            pt: "Sim, você pode levar câmera e celular para registrar o tour. Recomendamos que os guarde em bolsos ou bolsas quando não estiver usando, como precaução normal em qualquer área turística. Para fotografar moradores, especialmente crianças, sempre peça permissão primeiro. Nossos condutors orientam sobre isso durante o tour.",
             en: "Yes, you can bring your camera and phone to record the tour. We recommend keeping them in pockets or bags when not in use, as a normal precaution in any tourist area. To photograph residents, especially children, always ask permission first. Our guides provide guidance on this during the tour.",
         },
         category: "seguranca",
@@ -89,7 +89,7 @@ export const faqs: FAQ[] = [
             en: "What is the minimum and maximum group size?",
         },
         answer: {
-            pt: "O mínimo é de 2 pessoas por tour. O máximo varia: Tour Completo (10 pessoas), Arte Urbana (12 pessoas), Sunset (8 pessoas). Para grupos maiores, podemos organizar tours privativos ou dividir em grupos menores com guias diferentes.",
+            pt: "O mínimo é de 2 pessoas por tour. O máximo varia: Tour Completo (10 pessoas), Arte Urbana (12 pessoas), Sunset (8 pessoas). Para grupos maiores, podemos organizar tours privativos ou dividir em grupos menores com condutors diferentes.",
             en: "The minimum is 2 people per tour. The maximum varies: Complete Tour (10 people), Street Art (12 people), Sunset (8 people). For larger groups, we can organize private tours or split into smaller groups with different guides.",
         },
         category: "reservas",
@@ -117,7 +117,7 @@ export const faqs: FAQ[] = [
             en: "Does the price include everything?",
         },
         answer: {
-            pt: "O preço inclui: guia local bilíngue, transporte dentro da comunidade (quando necessário), água mineral e seguro. Não inclui: transporte até a comunidade (podemos indicar como chegar), refeições e gorjetas (opcionais). Alguns tours incluem itens adicionais — verifique os detalhes de cada um.",
+            pt: "O preço inclui: condutor local bilíngue, transporte dentro da comunidade (quando necessário), água mineral e seguro. Não inclui: transporte até a comunidade (podemos indicar como chegar), refeições e gorjetas (opcionais). Alguns tours incluem itens adicionais — verifique os detalhes de cada um.",
             en: "The price includes: bilingual local guide, transport within the community (when needed), mineral water, and insurance. It does not include: transport to the community (we can advise how to get there), meals, and tips (optional). Some tours include additional items — check the details of each one.",
         },
         category: "pagamento",
@@ -158,7 +158,7 @@ export const faqs: FAQ[] = [
             en: "In which languages do you offer tours?",
         },
         answer: {
-            pt: "Nossos guias falam Português, Inglês, Espanhol e Francês. Informe seu idioma preferido ao reservar para garantirmos um guia adequado. Para outros idiomas, consulte-nos — podemos tentar acomodar ou providenciar um intérprete.",
+            pt: "Nossos condutors falam Português, Inglês, Espanhol e Francês. Informe seu idioma preferido ao reservar para garantirmos um condutor adequado. Para outros idiomas, consulte-nos — podemos tentar acomodar ou providenciar um intérprete.",
             en: "Our guides speak Portuguese, English, Spanish, and French. Let us know your preferred language when booking to ensure we assign an appropriate guide. For other languages, consult us — we may be able to accommodate or provide an interpreter.",
         },
         category: "tour",
@@ -208,12 +208,12 @@ export const faqs: FAQ[] = [
     {
         id: "comunidade-1",
         question: {
-            pt: "Por que a Tavares Bastos é diferente de outras favelas?",
-            en: "Why is Tavares Bastos different from other favelas?",
+            pt: "Por que a Favela é diferente de outras favelas?",
+            en: "Why is Favela different from other favelas?",
         },
         answer: {
-            pt: "A Tavares Bastos se destaca por vários motivos:\n\n• **Segurança**: Sede do BOPE desde 2000\n• **Cultura**: Abriga The Maze, Museu NAMI e a quadra do FIFA Street\n• **Localização**: No coração da Zona Sul, com vistas panorâmicas\n• **História**: Cenário de filmes e clipes internacionais\n• **Turismo organizado**: Comunidade pioneira em turismo responsável",
-            en: "Tavares Bastos stands out for several reasons:\n\n• **Safety**: BOPE headquarters since 2000\n• **Culture**: Home to The Maze, NAMI Museum, and FIFA Street court\n• **Location**: In the heart of the South Zone, with panoramic views\n• **History**: Setting for international films and music videos\n• **Organized tourism**: Pioneer community in responsible tourism",
+            pt: "A Favela se destaca por vários motivos:\n\n• **Segurança**: Sede do BOPE desde 2000\n• **Cultura**: Abriga The Maze, Museu NAMI e a quadra do FIFA Street\n• **Localização**: No coração da Zona Sul, com vistas panorâmicas\n• **História**: Cenário de filmes e clipes internacionais\n• **Turismo organizado**: Comunidade pioneira em turismo responsável",
+            en: "Favela stands out for several reasons:\n\n• **Safety**: BOPE headquarters since 2000\n• **Culture**: Home to The Maze, NAMI Museum, and FIFA Street court\n• **Location**: In the heart of the South Zone, with panoramic views\n• **History**: Setting for international films and music videos\n• **Organized tourism**: Pioneer community in responsible tourism",
         },
         category: "comunidade",
         order: 1,
@@ -225,8 +225,8 @@ export const faqs: FAQ[] = [
             en: "Does the tour money stay in the community?",
         },
         answer: {
-            pt: "Sim! Somos um negócio 100% comunitário. Todo o nosso time é formado por moradores da Tavares Bastos. Os guias, coordenadores e parceiros são pessoas que vivem e trabalham na comunidade. Além disso, indicamos comércios locais e apoiamos projetos sociais como a Rede NAMI.",
-            en: "Yes! We are a 100% community business. Our entire team is made up of Tavares Bastos residents. The guides, coordinators, and partners are people who live and work in the community. Additionally, we recommend local businesses and support social projects like Rede NAMI.",
+            pt: "Sim! Somos um negócio 100% comunitário. Todo o nosso time é formado por moradores da Favela. Os condutors, coordenadores e parceiros são pessoas que vivem e trabalham na comunidade. Além disso, indicamos comércios locais e apoiamos projetos sociais como a Rede NAMI.",
+            en: "Yes! We are a 100% community business. Our entire team is made up of Favela residents. The guides, coordinators, and partners are people who live and work in the community. Additionally, we recommend local businesses and support social projects like Rede NAMI.",
         },
         category: "comunidade",
         order: 2,
@@ -238,7 +238,7 @@ export const faqs: FAQ[] = [
             en: "Can I buy something from residents during the tour?",
         },
         answer: {
-            pt: "Sim, temos vários pontos de economia local no trajeto! Você pode comprar artesanato, comidas típicas (acarajé, açaí, sucos), lembranças e até obras de arte de artistas locais. Nossos guias indicam os melhores lugares. Leve dinheiro ou PIX — nem todos aceitam cartão.",
+            pt: "Sim, temos vários pontos de economia local no trajeto! Você pode comprar artesanato, comidas típicas (acarajé, açaí, sucos), lembranças e até obras de arte de artistas locais. Nossos condutors indicam os melhores lugares. Leve dinheiro ou PIX — nem todos aceitam cartão.",
             en: "Yes, we have various local economy spots along the route! You can buy handicrafts, typical foods (acarajé, açaí, juices), souvenirs, and even artwork from local artists. Our guides point out the best places. Bring cash or PIX — not everyone accepts cards.",
         },
         category: "comunidade",

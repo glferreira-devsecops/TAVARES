@@ -3,7 +3,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "FAQ | Favela-República",
-    description: "Perguntas frequentes sobre os tours na Tavares Bastos. Segurança, preços, horários e mais.",
+    description: "Perguntas frequentes sobre os tours na Favela. Segurança, preços, horários e mais.",
 };
 
 interface PageProps {

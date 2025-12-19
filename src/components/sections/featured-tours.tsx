@@ -27,7 +27,7 @@ export function FeaturedTours({ locale = "pt", tours }: FeaturedToursProps) {
         pt: {
             badge: "Nossos Tours",
             title: "Experiências autênticas",
-            subtitle: "na Tavares Bastos",
+            subtitle: "na Favela",
             description: "Escolha o tour ideal para você. Todos incluem guia local, seguro e uma imersão cultural única.",
             cta: "Ver todos os tours",
             from: "a partir de",
@@ -41,7 +41,7 @@ export function FeaturedTours({ locale = "pt", tours }: FeaturedToursProps) {
         en: {
             badge: "Our Tours",
             title: "Authentic experiences",
-            subtitle: "in Tavares Bastos",
+            subtitle: "in Favela",
             description: "Choose the ideal tour for you. All include local guide, insurance and a unique cultural immersion.",
             cta: "See all tours",
             from: "from",
@@ -55,7 +55,7 @@ export function FeaturedTours({ locale = "pt", tours }: FeaturedToursProps) {
         es: {
             badge: "Nuestros Tours",
             title: "Experiencias auténticas",
-            subtitle: "en Tavares Bastos",
+            subtitle: "en Favela",
             description: "Elige el tour ideal para ti. Todos incluyen guía local, seguro y una inmersión cultural única.",
             cta: "Ver todos los tours",
             from: "desde",
@@ -69,7 +69,7 @@ export function FeaturedTours({ locale = "pt", tours }: FeaturedToursProps) {
         fr: {
             badge: "Nos Visites",
             title: "Expériences authentiques",
-            subtitle: "à Tavares Bastos",
+            subtitle: "à Favela",
             description: "Choisissez la visite idéale pour vous. Toutes incluent guide local, assurance et une immersion culturelle unique.",
             cta: "Voir toutes les visites",
             from: "à partir de",
@@ -134,12 +134,13 @@ export function FeaturedTours({ locale = "pt", tours }: FeaturedToursProps) {
                                 {/* Image Container */}
                                 <div className="relative aspect-[4/3] overflow-hidden">
                                     <Image
-                                        src={tour.images[0]?.src || "/images/tours/tour-completo-hero.png"}
+                                        src={tour.images[0] || "/images/tours/tour-completo-hero.png"}
                                         alt={tour.title[contentLang]}
                                         fill
                                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                         className="object-cover transition-transform duration-700 group-hover:scale-110"
                                         priority={index === 0}
+                                        unoptimized
                                     />
                                     {/* Overlay - Enhanced for Awwwards contrast */}
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-80 group-hover:opacity-70 transition-opacity duration-500" />
@@ -170,40 +171,27 @@ export function FeaturedTours({ locale = "pt", tours }: FeaturedToursProps) {
                                     <h3 className="font-heading text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-orange-500 transition-colors leading-tight tracking-tight">
                                         {tour.title[contentLang]}
                                     </h3>
-                                    <p className="text-neutral-400 text-sm leading-relaxed mb-6 line-clamp-3 flex-1 font-medium">
+                                    <p className="text-neutral-300 text-sm leading-relaxed mb-6 line-clamp-3 flex-1 font-medium">
                                         {tour.shortDescription[contentLang]}
                                     </p>
 
-                                    {/* Trust Badges */}
-                                    <div className="flex items-center gap-3 mb-6">
+                                    {/* Trust Badges - Hidden as requested */}
+                                    {/* <div className="flex items-center gap-3 mb-6">
                                         <div className="flex items-center gap-1.5 text-xs font-medium text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">
                                             <span>🛡️</span>
                                             {t.tourCard.insurance}
                                         </div>
-                                        <div className="flex items-center gap-1.5 text-xs font-medium text-blue-400 bg-blue-500/10 px-2.5 py-1 rounded-full border border-blue-500/20">
-                                            <span>👥</span>
-                                            {t.tourCard.smallGroups}
-                                        </div>
-                                    </div>
+                                    </div> */}
 
                                     <Button className="w-full bg-white text-neutral-950 font-bold py-4 rounded-xl shadow-lg hover:bg-neutral-200 transition-all hover:scale-[1.02] active:scale-[0.98]">
                                         {t.tourCard.book}
                                     </Button>
 
                                     {/* Footer */}
-                                    <div className="pt-6 border-t border-white/10 flex items-end justify-between gap-4 mt-auto">
-                                        <div>
-                                            <span className="block text-xs font-medium text-neutral-500 uppercase tracking-wider mb-1">
-                                                {t.from}
-                                            </span>
-                                            <div className="flex items-baseline gap-0.5">
-                                                <span className="text-[10px] text-neutral-500 font-semibold uppercase">R$</span>
-                                                <span className="text-2xl font-black text-white tracking-tight">
-                                                    {tour.priceFrom.toLocaleString("pt-BR")}
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <span className="flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 text-white rounded-full text-sm font-bold group-hover:bg-orange-500 group-hover:border-orange-500 transition-all duration-300">
+                                    <div className="pt-6 border-t border-white/10 flex items-center justify-between gap-4 mt-auto">
+                                        {/* Removed Price Display as requested */}
+                                        <div />
+                                        <span className="flex items-center gap-2 px-5 py-2.5 bg-white text-neutral-950 border border-white text-sm font-bold group-hover:bg-orange-500 group-hover:border-orange-500 group-hover:text-white transition-all duration-300 rounded-full shadow-lg">
                                             {t.book}
                                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                         </span>
