@@ -12,17 +12,17 @@ export default {
             // Brand Colors - Premium Black & Yellow "Favela-República"
             colors: {
                 primary: {
-                    50: "#FFF9E6",
-                    100: "#FFF0BF",
-                    200: "#FFE080",
-                    300: "#FFD140",
-                    400: "#FFC400", // Brand Yellow
-                    500: "#FFB000", // Brand Main
-                    600: "#FF9100",
-                    700: "#FF6D00",
-                    800: "#E65100",
-                    900: "#BF360C",
-                    950: "#5D1A00",
+                    50: "#FAF6EB",
+                    100: "#F5ECD6",
+                    200: "#EBD9AD",
+                    300: "#E3C67B",
+                    400: "#D9B360",
+                    500: "#D2AC5C", // Brand Main (Gold)
+                    600: "#B8934A",
+                    700: "#94763B",
+                    800: "#755D33",
+                    900: "#594229", // Brand Dark (Brown)
+                    950: "#362616",
                 },
                 neutral: {
                     50: "#FAFAFA",
