@@ -14,12 +14,7 @@ interface AboutPreviewProps {
 }
 
 export function AboutPreview({ locale = "pt-br" }: AboutPreviewProps) {
-    const currentLang = (() => {
-        if (locale.startsWith("pt")) return "pt";
-        if (locale.startsWith("es")) return "es";
-        if (locale.startsWith("fr")) return "fr";
-        return "en";
-    })();
+    const currentLang = (["en", "es", "fr"].includes(locale) ? locale : "pt") as "pt" | "en" | "es" | "fr";
 
     const dict = useDictionary(locale);
     const t = dict.AboutPreview;

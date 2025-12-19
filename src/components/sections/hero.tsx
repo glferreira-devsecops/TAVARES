@@ -13,12 +13,7 @@ interface HeroProps {
 }
 
 export function Hero({ locale = "pt" }: HeroProps) {
-    const currentLang = (() => {
-        if (locale.startsWith("pt")) return "pt";
-        if (locale.startsWith("es")) return "es";
-        if (locale.startsWith("fr")) return "fr";
-        return "en";
-    })() as "pt" | "en" | "es" | "fr";
+    const currentLang = (["en", "es", "fr"].includes(locale) ? locale : "pt") as "pt" | "en" | "es" | "fr";
     const dict = useDictionary(locale);
     const containerRef = useRef<HTMLElement>(null);
     const { scrollY } = useScroll();

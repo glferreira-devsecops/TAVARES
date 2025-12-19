@@ -15,7 +15,7 @@ export function WhatsAppFloatingButton({ locale = "pt" }: WhatsAppFloatingButton
     const [isTooltipVisible, setIsTooltipVisible] = useState(false);
     const [showPulse, setShowPulse] = useState(true);
 
-    const currentLang = locale === "pt" ? "pt" : "en";
+    const currentLang = (["en", "es", "fr"].includes(locale) ? locale : "pt") as "pt" | "en" | "es" | "fr";
     const message = WHATSAPP_MESSAGES.general[currentLang];
     const whatsappUrl = `https://wa.me/${CONTACT.whatsapp.number}?text=${encodeURIComponent(message)}`;
 
@@ -80,12 +80,15 @@ export function WhatsAppFloatingButton({ locale = "pt" }: WhatsAppFloatingButton
                                     </div>
                                     <div>
                                         <p className="font-semibold text-neutral-900 text-sm mb-1">
-                                            {locale === "pt" ? "Fale conosco!" : "Talk to us!"}
+                                            {locale === "pt" ? "Fale conosco!" :
+                                                locale === "es" ? "¡Hable con nosotros!" :
+                                                    locale === "fr" ? "Parlez-nous!" : "Talk to us!"}
                                         </p>
                                         <p className="text-neutral-600 text-xs leading-relaxed">
-                                            {locale === "pt"
-                                                ? "Tire suas dúvidas e reserve seu tour pelo WhatsApp."
-                                                : "Ask questions and book your tour via WhatsApp."}
+                                            {locale === "pt" ? "Tire suas dúvidas e reserve seu tour pelo WhatsApp." :
+                                                locale === "es" ? "Resuelve tus dudas y reserva tu tour por WhatsApp." :
+                                                    locale === "fr" ? "Posez vos questions et réservez votre visite via WhatsApp." :
+                                                        "Ask questions and book your tour via WhatsApp."}
                                         </p>
                                     </div>
                                 </div>

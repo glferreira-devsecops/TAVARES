@@ -8,37 +8,38 @@ interface TourPageProps {
 }
 
 export async function generateStaticParams() {
-    const tours = await TourService.getAll();
-    return tours.map((tour) => ({ slug: tour.slug }));
+    const tours = await TourService.getAll(); // Changed to TourService based on import
+    return tours.map((tour) => ({
+        slug: tour.slug,
+    }));
 }
 
 export async function generateMetadata({ params }: TourPageProps): Promise<Metadata> {
-    const { slug, locale } = await params;
-    const tour = await TourService.getBySlug(slug);
-    const lang = locale.startsWith("pt") ? "pt" : "en";
+    const { locale, slug } = await params;
+    const tour = await TourService.getBySlug(slug); // Changed to TourService based on import
 
-    if (!tour) {
-        return { title: "Tour não encontrado" };
-    }
+    if (!tour) return {};
+
+    const lang = (["en", "es", "fr"].includes(locale) ? locale : "pt") as "pt" | "en" | "es" | "fr";
+
     return {
         title: `${tour.title[lang]} | Favela-República`,
         description: tour.shortDescription[lang],
         openGraph: {
-            title: tour.title[lang],
-            description: tour.shortDescription[lang],
-            images: [tour.images[0] || "/images/tours/IMG_7268_v1.webp"],
+            images: tour.images.length > 0 ? [tour.images[0]] : [],
         },
     };
 }
 
 export default async function TourPage({ params }: TourPageProps) {
-    const { slug, locale } = await params;
-    const tour = await TourService.getBySlug(slug);
-    const lang = (locale.startsWith("pt") ? "pt" : "en") as "pt" | "en";
+    const { locale, slug } = await params;
+    const tour = await TourService.getBySlug(slug); // Changed to TourService based on import
 
     if (!tour) {
         notFound();
     }
+
+    const lang = (["en", "es", "fr"].includes(locale) ? locale : "pt") as "pt" | "en" | "es" | "fr";
 
     return <TourDetailClient tour={tour} lang={lang} />;
 }

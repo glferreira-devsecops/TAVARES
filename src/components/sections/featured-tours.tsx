@@ -14,14 +14,7 @@ interface FeaturedToursProps {
 
 
 export function FeaturedTours({ locale = "pt", tours }: FeaturedToursProps) {
-    const currentLang = (() => {
-        if (locale.startsWith("pt")) return "pt";
-        if (locale.startsWith("es")) return "es";
-        if (locale.startsWith("fr")) return "fr";
-        return "en";
-    })() as "pt" | "en" | "es" | "fr";
-
-    const contentLang = (currentLang === "pt" ? "pt" : "en") as "pt" | "en";
+    const currentLang = (["en", "es", "fr"].includes(locale) ? locale : "pt") as "pt" | "en" | "es" | "fr";
 
     const content = {
         pt: {
@@ -149,7 +142,7 @@ export function FeaturedTours({ locale = "pt", tours }: FeaturedToursProps) {
                                 <div className="relative aspect-[4/3] overflow-hidden">
                                     <Image
                                         src={tour.images[0] || "/images/tours/IMG_7268_v1.webp"}
-                                        alt={tour.title[contentLang]}
+                                        alt={tour.title[currentLang]}
                                         fill
                                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                         className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -182,10 +175,10 @@ export function FeaturedTours({ locale = "pt", tours }: FeaturedToursProps) {
                                 {/* Content */}
                                 <div className="p-6 md:p-8 flex flex-col flex-1">
                                     <h3 className="font-heading text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-orange-500 transition-colors leading-tight tracking-tight">
-                                        {tour.title[contentLang]}
+                                        {tour.title[currentLang]}
                                     </h3>
                                     <p className="text-neutral-300 text-sm leading-relaxed mb-6 line-clamp-3 flex-1 font-medium">
-                                        {tour.shortDescription[contentLang]}
+                                        {tour.shortDescription[currentLang]}
                                     </p>
 
                                     {/* Trust Badges - Hidden as requested */}

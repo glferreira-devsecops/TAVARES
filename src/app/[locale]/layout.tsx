@@ -130,7 +130,7 @@ export default async function LocaleLayout({
             >
                 <SkipLink />
                 <JsonLd locale={locale} />
-                <NextIntlClientProvider messages={messages}>
+                <NextIntlClientProvider locale={locale} messages={messages}>
                     <SmoothScroller>
                         <Header locale={locale} />
                         <main id="main-content">

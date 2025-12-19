@@ -22,7 +22,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
     const { slug, locale } = await params;
     const post = await BlogService.getBySlug(slug);
-    const lang = locale.startsWith("pt") ? "pt" : "en";
+    const lang = (["en", "es", "fr"].includes(locale) ? locale : "pt") as "pt" | "en" | "es" | "fr";
 
     if (!post) {
         return { title: "Artigo não encontrado" };
@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
     const { slug, locale } = await params;
     const post = await BlogService.getBySlug(slug);
-    const lang = locale.startsWith("pt") ? "pt" : "en";
+    const lang = (["en", "es", "fr"].includes(locale) ? locale : "pt") as "pt" | "en" | "es" | "fr";
 
 
     if (!post) {
@@ -72,7 +72,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                             className="inline-flex items-center text-white/80 hover:text-white mb-6 transition-colors font-medium group"
                         >
                             <ArrowLeft className="w-5 h-5 mr-2 transition-transform group-hover:-translate-x-1" />
-                            {locale.startsWith("pt") ? "Voltar para o Blog" : "Back to Blog"}
+                            {locale === "pt" ? "Voltar para o Blog" : locale === "es" ? "Volver al Blog" : locale === "fr" ? "Retour au Blog" : "Back to Blog"}
                         </Link>
 
                         <div className="flex gap-2 mb-6">
@@ -92,7 +92,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                             </div>
                             <div className="flex items-center gap-2">
                                 <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-primary-400" />
-                                {post.readTime} min {locale.startsWith("pt") ? "de leitura" : "read"}
+                                {post.readTime} min {locale === "pt" ? "de leitura" : locale === "es" ? "de lectura" : locale === "fr" ? "de lecture" : "read"}
                             </div>
                         </div>
                     </div>
