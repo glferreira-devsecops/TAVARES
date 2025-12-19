@@ -173,7 +173,7 @@ export function AboutPreview({ locale = "pt-br" }: AboutPreviewProps) {
 
                             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                                 <div className="order-2 lg:order-1">
-                                    <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border-4 border-white/10 shadow-2xl rotate-1 hover:rotate-0 transition-transform duration-500">
+                                    <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border-4 border-white/10 shadow-2xl transition-transform duration-500">
                                         <Image
                                             src="/images/social/PHOTO-2022-09-20-13-10-53.webp"
                                             alt="Centro Social Dona Irene"
