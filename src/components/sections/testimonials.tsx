@@ -61,7 +61,7 @@ export function Testimonials({ locale = "pt" }: TestimonialsProps) {
     return (
         <section className="py-20 md:py-32 bg-neutral-900 relative overflow-hidden text-white">
             {/* Noise Texture */}
-            <div className="absolute inset-0 opacity-10 bg-[url('/images/noise.png')] mix-blend-overlay pointer-events-none z-0" />
+            <div className="absolute inset-0 opacity-10 bg-noise mix-blend-overlay pointer-events-none z-0" />
 
             {/* Background decoration */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[100px] pointer-events-none translate-x-1/2 -translate-y-1/2 z-0" />

@@ -34,7 +34,7 @@ export function MobileMenu({ onClose, locale, isActive }: MobileMenuProps) {
             className="fixed inset-0 z-modal bg-neutral-900/95 backdrop-blur-3xl lg:hidden flex flex-col overflow-hidden"
         >
             {/* Noise texture overlay */}
-            <div className="absolute inset-0 opacity-20 bg-[url('/images/noise.png')] pointer-events-none mix-blend-overlay" />
+            <div className="absolute inset-0 opacity-20 bg-noise pointer-events-none mix-blend-overlay" />
 
             {/* Close Button */}
             <div className="absolute top-6 right-4 z-50">

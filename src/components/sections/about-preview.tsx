@@ -112,7 +112,7 @@ export function AboutPreview({ locale = "pt-br" }: AboutPreviewProps) {
                                 className="col-span-2 relative aspect-[16/10] rounded-[2rem] overflow-hidden shadow-2xl"
                             >
                                 <Image
-                                    src="/images/social/IMG_0551.jpg"
+                                    src="/images/social/IMG_0551.webp"
                                     alt="Favela República Panorâmica"
                                     fill
                                     className="object-cover hover:scale-105 transition-transform duration-700"
@@ -130,7 +130,7 @@ export function AboutPreview({ locale = "pt-br" }: AboutPreviewProps) {
                                 className="relative aspect-square rounded-[2rem] overflow-hidden shadow-xl"
                             >
                                 <Image
-                                    src="/images/tours/IMG_0499.jpg"
+                                    src="/images/tours/IMG_0499.webp"
                                     alt="Futebol na Favela"
                                     fill
                                     className="object-cover hover:scale-110 transition-transform duration-700"
@@ -168,14 +168,14 @@ export function AboutPreview({ locale = "pt-br" }: AboutPreviewProps) {
                     <div className="relative z-10">
                         <div className="bg-neutral-900 rounded-[3rem] p-8 md:p-16 text-white overflow-hidden relative shadow-2xl">
                             {/* Background Pattern & Noise */}
-                            <div className="absolute inset-0 opacity-20 bg-[url('/images/noise.png')] mix-blend-overlay pointer-events-none" />
+                            <div className="absolute inset-0 opacity-20 bg-noise mix-blend-overlay pointer-events-none" />
                             <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-neutral-800/50 to-neutral-900 pointer-events-none" />
 
                             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                                 <div className="order-2 lg:order-1">
                                     <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border-4 border-white/10 shadow-2xl rotate-1 hover:rotate-0 transition-transform duration-500">
                                         <Image
-                                            src="/images/social/PHOTO-2022-09-20-13-10-53.jpeg"
+                                            src="/images/social/PHOTO-2022-09-20-13-10-53.webp"
                                             alt="Centro Social Dona Irene"
                                             fill
                                             className="object-cover"

@@ -134,13 +134,12 @@ export function FeaturedTours({ locale = "pt", tours }: FeaturedToursProps) {
                                 {/* Image Container */}
                                 <div className="relative aspect-[4/3] overflow-hidden">
                                     <Image
-                                        src={tour.images[0] || "/images/tours/tour-completo-hero.png"}
+                                        src={tour.images[0] || "/images/tours/IMG_7268.webp"}
                                         alt={tour.title[contentLang]}
                                         fill
                                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                         className="object-cover transition-transform duration-700 group-hover:scale-110"
                                         priority={index === 0}
-                                        unoptimized
                                     />
                                     {/* Overlay - Enhanced for Awwwards contrast */}
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-80 group-hover:opacity-70 transition-opacity duration-500" />

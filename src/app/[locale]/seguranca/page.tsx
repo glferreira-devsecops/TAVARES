@@ -92,7 +92,7 @@ export default async function SegurancaPage({ params }: { params: Promise<{ loca
         <main className="min-h-screen bg-neutral-50">
             {/* Hero Section */}
             <section className="relative py-12 md:py-24 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white overflow-hidden">
-                <div className="absolute inset-0 bg-[url('/images/about-community.png')] bg-cover bg-center opacity-10" />
+                <div className="absolute inset-0 bg-[url('/images/social/IMG_0546.webp')] bg-cover bg-center opacity-10" />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent" />
 
                 <div className="container-custom relative z-10 text-center">

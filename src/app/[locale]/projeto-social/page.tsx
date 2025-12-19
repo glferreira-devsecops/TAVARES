@@ -18,22 +18,19 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 const SOCIAL_IMAGES = [
-    "jiu-jitsu.png",
-    "capoeira.png",
-    "percussao.png",
-    "ritmos.png",
-    "samba.png",
-    "PHOTO-2022-09-20-13-10-53.jpeg",
-    "PHOTO-2022-09-20-13-43-22.jpeg",
-    "PHOTO-2024-05-13-15-54-41.jpeg",
-    "PHOTO-2022-09-20-13-15-24.jpeg",
-    "PHOTO-2022-09-20-13-29-49.jpeg",
-    "PHOTO-2022-09-20-13-52-41.jpeg",
-    "PHOTO-2022-09-20-13-54-16.jpeg",
-    "PHOTO-2022-09-20-14-05-06.jpeg",
-    "PHOTO-2022-09-20-14-10-30.jpeg",
-    "IMG_3699.PNG",
-    "IMG_3701.PNG"
+    "IMG_0540.webp",
+    "IMG_0546.webp",
+    "IMG_0551.webp",
+    "IMG_0593.webp",
+    "PHOTO-2022-09-20-13-10-53.webp",
+    "PHOTO-2022-09-20-13-43-22.webp",
+    "PHOTO-2024-05-13-15-54-41.webp",
+    "PHOTO-2022-09-20-13-15-24.webp",
+    "PHOTO-2022-09-20-13-29-49.webp",
+    "PHOTO-2022-09-20-13-52-41.webp",
+    "PHOTO-2022-09-20-13-54-16.webp",
+    "PHOTO-2022-09-20-14-05-06.webp",
+    "PHOTO-2022-09-20-14-10-30.webp"
 ];
 
 export default async function SocialProjectPage({ params }: PageProps) {
@@ -59,7 +56,7 @@ export default async function SocialProjectPage({ params }: PageProps) {
                     {SOCIAL_IMAGES.map((img, i) => (
                         <div key={i} className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
                             <Image
-                                src={`/images/social-project/${img}`}
+                                src={`/images/social/${img}`}
                                 alt={`Projeto Social Favela-República ${i + 1}`}
                                 fill
                                 className="object-cover group-hover:scale-105 transition-transform duration-500"

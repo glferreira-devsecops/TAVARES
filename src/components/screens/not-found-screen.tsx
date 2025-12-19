@@ -87,7 +87,7 @@ export function NotFoundScreen({ isRoot = false, content = defaultContent }: Not
                     style={{ x: xMove, y: yMove }}
                     className="absolute bottom-[-20%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-orange-900/20 blur-[60px] sm:blur-[100px]"
                 />
-                <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-[0.04] mix-blend-overlay" />
+                <div className="absolute inset-0 bg-noise opacity-[0.04] mix-blend-overlay" />
             </div>
 
             <div className="relative z-10 w-full max-w-2xl mx-auto flex flex-col items-center text-center px-4">

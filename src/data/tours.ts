@@ -66,7 +66,7 @@ Mais do que um passeio, o Favela-República promove turismo responsável, troca 
             address: "Rua do Catete, 153 - Bairro Catete",
             coordinates: { lat: -22.9259, lng: -43.1764 },
         },
-        images: ["/images/tours/IMG_7268.jpg"]
+        images: ["/images/tours/IMG_7268.webp"]
     },
     {
         id: "futebol-na-favela",
@@ -122,7 +122,7 @@ Explore a favela além dos estereótipos, um território cheio de história, art
             address: "Rua do Catete, 153 - Bairro Catete",
             coordinates: { lat: -22.9259, lng: -43.1764 },
         },
-        images: ["/images/tours/IMG_5965.jpg"]
+        images: ["/images/tours/IMG_5965.webp"]
     },
     {
         id: "samba-na-favela",
@@ -176,7 +176,7 @@ Durante o tour, explore os becos e vielas da comunidade acompanhado por um condu
             address: "Rua do Catete, 153 - Bairro Catete",
             coordinates: { lat: -22.9259, lng: -43.1764 },
         },
-        images: ["/images/tours/IMG_9641.jpg"]
+        images: ["/images/tours/IMG_9641.webp"]
     },
     {
         id: "jiu-jitsu-na-favela",
@@ -230,7 +230,7 @@ Durante o tour, vivencie o espírito do esporte dentro da favela, conheça hist�
             address: "Rua do Catete, 153 - Bairro Catete",
             coordinates: { lat: -22.9259, lng: -43.1764 },
         },
-        images: ["/images/tours/IMG_7835.jpg", "/images/tours/IMG_7837.jpg", "/images/tours/IMG_7838.jpg"]
+        images: ["/images/tours/IMG_7835.webp", "/images/tours/IMG_7837.webp", "/images/tours/IMG_7838.webp"]
     },
     {
         id: "percussao-na-favela",
@@ -284,7 +284,7 @@ Durante o tour, vivencie a energia contagiante das batidas que embalam o carnava
             address: "Rua do Catete, 153 - Bairro Catete",
             coordinates: { lat: -22.9259, lng: -43.1764 },
         },
-        images: ["/images/tours/IMG_8882.jpg", "/images/tours/IMG_9593.jpg", "/images/tours/IMG_9641.jpg"]
+        images: ["/images/tours/IMG_8882.webp", "/images/tours/IMG_9593.webp", "/images/tours/IMG_9641.webp"]
     },
     {
         id: "capoeira-na-favela",
@@ -338,7 +338,7 @@ Durante o tour, vivencie a energia contagiante das batidas que embalam o carnava
             address: "Rua do Catete, 153 - Bairro Catete",
             coordinates: { lat: -22.9259, lng: -43.1764 },
         },
-        images: ["/images/tours/IMG_6258.jpg"]
+        images: ["/images/tours/IMG_6258.webp"]
     },
     {
         id: "dancas-brasileiras-na-favela",
@@ -392,7 +392,7 @@ Aqui você vive tudo de perto, aprende passos simples, sente o ritmo no corpo e 
             address: "Rua do Catete, 153 - Bairro Catete",
             coordinates: { lat: -22.9259, lng: -43.1764 },
         },
-        images: ["/images/tours/IMG_0440.jpg"]
+        images: ["/images/tours/IMG_0440.webp"]
     }
 ];
 

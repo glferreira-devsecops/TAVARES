@@ -26,8 +26,8 @@ export function JsonLd({ locale }: { locale: string }) {
         "@type": "TravelAgency",
         name: "Favela-República Tour",
         image: [
-            `${SEO_DEFAULTS.siteUrl}/images/hero/hero-main.jpg`,
-            `${SEO_DEFAULTS.siteUrl}/images/social/IMG_0546.jpg`
+            `${SEO_DEFAULTS.siteUrl}/images/hero/hero-main.webp`,
+            `${SEO_DEFAULTS.siteUrl}/images/social/IMG_0546.webp`
         ],
         "@id": SEO_DEFAULTS.siteUrl,
         url: `${SEO_DEFAULTS.siteUrl}/${locale}`,
