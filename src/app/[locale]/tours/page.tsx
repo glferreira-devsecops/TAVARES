@@ -1,11 +1,17 @@
 import { FeaturedTours } from "@/components/sections/featured-tours";
+import { PAGE_METADATA } from "@/lib/constants";
 import { TourService } from "@/services/tour-service";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-    title: "Nossos Tours | Favela-República",
-    description: "Explore todos os nossos tours guiados na favela Favela.",
-};
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+    const { locale } = await params;
+    const lang = (["en", "es", "fr"].includes(locale) ? locale : "pt") as "pt" | "en" | "es" | "fr";
+
+    return {
+        title: PAGE_METADATA.tours.title[lang],
+        description: PAGE_METADATA.tours.description[lang],
+    };
+}
 
 interface PageProps {
     params: Promise<{ locale: string }>;

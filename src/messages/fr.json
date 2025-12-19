@@ -7,8 +7,26 @@
         "home": "Accueil",
         "tours": "Visites",
         "about": "À Propos",
-        "blog": "Blog",
-        "contact": "Contact"
+        "social": "Projet Social",
+        "faq": "FAQ",
+        "contact": "Contact",
+        "language": "Langue",
+        "book": "Réserver Maintenant",
+        "openMenu": "Ouvrir le Menu"
+    },
+    "hero": {
+        "eyebrow": "EXPÉRIENCE UNIQUE À RIO",
+        "title": "Tourisme authentique",
+        "titleHighlight": "dans la Favela",
+        "subtitle": "Tourisme communautaire authentique dans la favela de Rio de Janeiro. Expériences culturelles, sûres et responsables.",
+        "ctaMain": "Réserver Maintenant",
+        "ctaSecondary": "Voir les Circuits",
+        "stats": {
+            "rating": "Excellent",
+            "safeValue": "100%",
+            "safety": "Sûr",
+            "local": "Local"
+        }
     },
     "tourCard": {
         "insurance": "Assurance Incluse",
@@ -31,9 +49,7 @@
             },
             "tripadvisor": {
                 "title": "TripAdvisor",
-                "safety": "Base de Police",
-                "local": "Guides Locaux",
-                "safeValue": "Sûr"
+                "subtitle": "5 Étoiles"
             },
             "reviewCount": "250+ avis",
             "airbnb": {
@@ -55,7 +71,64 @@
             "local_guides": "Guides locaux",
             "street_art": "Art urbain",
             "safety": "Sécurité",
-            "social_impact": "Impact social"
+            "social_impact": "Impact social",
+            "interaction": "Interaction avec les habitants"
+        }
+    },
+    "Testimonials": {
+        "eyebrow": "Témoignages",
+        "title": "Ce que disent nos visiteurs",
+        "subtitle": "Plus de 1000 visiteurs ont déjà vécu cette expérience"
+    },
+    "FAQ": {
+        "eyebrow": "FAQ",
+        "title": "Foire Aux Questions",
+        "subtitle": "Réponses à vos questions sur la visite de la favela.",
+        "questions": {
+            "q1": {
+                "question": "Est-il sûr de visiter la favela ?",
+                "answer": "Oui, vous serez toujours accompagné d'un guide local. Il veillera à ce que votre expérience soit sûre et incroyable."
+            },
+            "q2": {
+                "question": "Comment réserver une visite ?",
+                "answer": "Le plus rapide est par WhatsApp. Cliquez sur le bouton vert et envoyez : date, heure, nombre de personnes et circuit. Notre équipe répond rapidement."
+            },
+            "q3": {
+                "question": "Quels modes de paiement sont acceptés ?",
+                "answer": "Nous acceptons : PIX, espèces (reals), dollars, cartes de crédit/débit et Wise. Paiement possible le jour même ou à l'avance."
+            },
+            "q4": {
+                "question": "Puis-je apporter mon appareil photo et mon téléphone ?",
+                "answer": "Oui, c'est très sûr. Pour photographier les habitants, demandez toujours la permission d'abord. Nos guides vous conseilleront."
+            },
+            "q5": {
+                "question": "Le prix comprend-il tout ?",
+                "answer": "Le prix comprend : guide bilingue, transport aller-retour, vidéo 360°, photos de l'équipe. Hors : repas, boissons, pourboires (optionnels)."
+            },
+            "q6": {
+                "question": "Quelles langues parlez-vous ?",
+                "answer": "Nos guides parlent portugais, anglais, espagnol et français. Précisez votre langue lors de la réservation."
+            },
+            "q7": {
+                "question": "Que dois-je porter et apporter ?",
+                "answer": "Conseillé : chaussures confortables, vêtements légers, crème solaire, argent/carte et appareil photo."
+            },
+            "q8": {
+                "question": "Puis-je acheter quelque chose aux habitants ?",
+                "answer": "Oui, il y a plusieurs boutiques locales ! T-shirts, nourriture, boissons... Nos guides vous indiqueront les meilleurs endroits."
+            },
+            "q9": {
+                "question": "Taille du groupe ?",
+                "answer": "Minimum 2 personnes. Maximum jusqu'à 40 personnes."
+            },
+            "q10": {
+                "question": "S'il pleut ?",
+                "answer": "Fonctionne normalement sous une petite bruine. En cas d'orage, nous vous contacterons pour reprogrammer gratuitement."
+            },
+            "q11": {
+                "question": "Point de rencontre ?",
+                "answer": "Rua do Catete, 153 - Catete (Devant le Musée de la République). Accessible en Uber/taxi ou métro (station Catete)."
+            }
         }
     },
     "NotFound": {

@@ -163,6 +163,8 @@ export interface Testimonial {
     quote: {
         pt: string;
         en: string;
+        es: string;
+        fr: string;
     };
     tourSlug?: string;
     date: string;
@@ -200,10 +202,14 @@ export interface FAQ {
     question: {
         pt: string;
         en: string;
+        es: string;
+        fr: string;
     };
     answer: {
         pt: string;
         en: string;
+        es: string;
+        fr: string;
     };
     category: string;
     order: number;
@@ -216,10 +222,14 @@ export interface TeamMember {
     role: {
         pt: string;
         en: string;
+        es: string;
+        fr: string;
     };
     bio: {
         pt: string;
         en: string;
+        es: string;
+        fr: string;
     };
     image: string;
     languages: string[];
@@ -233,14 +243,20 @@ export interface BlogPost {
     title: {
         pt: string;
         en: string;
+        es: string;
+        fr: string;
     };
     excerpt: {
         pt: string;
         en: string;
+        es: string;
+        fr: string;
     };
     content: {
         pt: string;
         en: string;
+        es: string;
+        fr: string;
     };
     author: string;
     publishedAt: string;
@@ -248,10 +264,14 @@ export interface BlogPost {
     category: {
         pt: string;
         en: string;
+        es: string;
+        fr: string;
     };
     tags: {
         pt: string[];
         en: string[];
+        es: string[];
+        fr: string[];
     };
     image: string;
     readTime: number;
@@ -275,6 +295,8 @@ export interface NavItem {
     label: {
         pt: string;
         en: string;
+        es: string;
+        fr: string;
     };
     href: string;
     children?: NavItem[];

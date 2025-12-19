@@ -96,23 +96,37 @@ export function FeaturedTours({ locale = "pt", tours }: FeaturedToursProps) {
             <div className="absolute top-40 right-0 w-[600px] h-[600px] bg-orange-500/5 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/2" />
 
             <div className="container-custom relative z-10">
+                {/* Background Decorative Element - Awwwards depth */}
+                <div className="absolute top-0 left-0 w-full h-full pointer-events-none select-none overflow-hidden -z-0 opacity-20">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 0.05, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1.5 }}
+                        className="absolute top-[10%] -left-[5%] text-[30vw] font-black text-white leading-none tracking-tighter"
+                        style={{ fontFamily: 'var(--font-heading)' }}
+                    >
+                        TOUR
+                    </motion.div>
+                </div>
+
                 {/* Section Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="text-center mb-10 md:mb-20"
+                    className="text-center mb-10 md:mb-20 relative z-10"
                 >
-                    <span className="inline-block text-[10px] md:text-xs font-black text-orange-500 uppercase tracking-[0.3em] mb-3 md:mb-5">
+                    <span className="inline-block text-[10px] md:text-xs font-black text-orange-500 uppercase tracking-[0.3em] mb-3 md:mb-5 bg-orange-500/10 px-4 py-1.5 rounded-full border border-orange-500/20">
                         {t.badge}
                     </span>
-                    <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-4 md:mb-6 tracking-tight">
+                    <h2 className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-4 md:mb-6 tracking-tight drop-shadow-2xl">
                         {t.title}
                         <br />
                         <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">{t.subtitle}</span>
                     </h2>
-                    <p className="text-base md:text-xl text-neutral-400 max-w-2xl mx-auto font-light leading-relaxed px-4 md:px-0">
+                    <p className="text-base md:text-xl text-neutral-400 max-w-2xl mx-auto font-medium leading-relaxed px-4 md:px-0 opacity-80">
                         {t.description}
                     </p>
                 </motion.div>

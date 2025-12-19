@@ -241,6 +241,140 @@ export const SEO_DEFAULTS = {
     },
 } as const;
 
+// Page specific metadata
+export const PAGE_METADATA = {
+    home: {
+        title: SEO_DEFAULTS.defaultTitle,
+        description: SEO_DEFAULTS.defaultDescription,
+    },
+    tours: {
+        title: {
+            pt: "Nossos Tours | Favela-República",
+            en: "Our Tours | Favela-República",
+            es: "Nuestros Tours | Favela-República",
+            fr: "Nos Visites | Favela-República",
+        },
+        description: {
+            pt: "Explore todos os nossos tours guiados na favela Favela. Experiências autênticas e seguras.",
+            en: "Explore all our guided tours in the Favela. Authentic and safe experiences.",
+            es: "Explora todos nuestros tours guiados en la favela Favela. Experiencias auténticas y seguras.",
+            fr: "Explorez toutes nos visites guidées dans la favela Favela. Expériences authentiques et sûres.",
+        },
+    },
+    about: {
+        title: {
+            pt: "Quem Somos | Favela-República",
+            en: "About Us | Favela-República",
+            es: "Quiénes Somos | Favela-República",
+            fr: "À Propos | Favela-República",
+        },
+        description: {
+            pt: "Conheça a história da Favela-República e nossa missão de turismo comunitário responsável.",
+            en: "Discover the history of Favela-República and our mission of responsible community tourism.",
+            es: "Conoce la historia de Favela-República y nuestra misión de turismo comunitario responsable.",
+            fr: "Découvrez l'histoire de Favela-República et notre mission de tourisme communautaire responsable.",
+        },
+    },
+    social: {
+        title: {
+            pt: "Projeto Social | Favela-República",
+            en: "Social Project | Favela-República",
+            es: "Proyecto Social | Favela-República",
+            fr: "Projet Social | Favela-República",
+        },
+        description: {
+            pt: "Conheça nossas iniciativas sociais e como o turismo impacta positivamente a comunidade.",
+            en: "Learn about our social initiatives and how tourism positively impacts the community.",
+            es: "Conoce nuestras iniciativas sociales y cómo el turismo impacta positivamente en la comunidad.",
+            fr: "Découvrez nos initiatives sociales et comment le tourisme impacte positivement la communauté.",
+        },
+    },
+    faq: {
+        title: {
+            pt: "FAQ | Favela-República",
+            en: "FAQ | Favela-República",
+            es: "Preguntas Frecuentes | Favela-República",
+            fr: "FAQ | Favela-República",
+        },
+        description: {
+            pt: "Perguntas frequentes sobre os tours na Favela. Segurança, preços, horários e mais.",
+            en: "Frequently asked questions about Favela tours. Safety, prices, times and more.",
+            es: "Preguntas frecuentes sobre los tours en la Favela. Seguridad, precios, horarios y más.",
+            fr: "Questions fréquemment posées sur les visites à Favela. Sécurité, prix, horaires et plus.",
+        },
+    },
+    contact: {
+        title: {
+            pt: "Contato | Favela-República",
+            en: "Contact | Favela-República",
+            es: "Contacto | Favela-República",
+            fr: "Contact | Favela-República",
+        },
+        description: {
+            pt: "Entre em contato conosco pelo WhatsApp, e-mail ou Instagram. Estamos prontos para ajudar!",
+            en: "Contact us via WhatsApp, email or Instagram. We are ready to help!",
+            es: "Contáctanos por WhatsApp, correo electrónico o Instagram. ¡Estamos listos para ayudar!",
+            fr: "Contactez-nous via WhatsApp, email or Instagram. Nous sommes prêts à vous aider !",
+        },
+    },
+    blog: {
+        title: {
+            pt: "Blog | Favela-República",
+            en: "Blog | Favela-República",
+            es: "Blog | Favela-República",
+            fr: "Blog | Favela-República",
+        },
+        description: {
+            pt: "Notícias, histórias e cultura da favela Favela. Conheça o Rio de Janeiro por outra perspectiva.",
+            en: "News, stories and culture from the Favela. Experience Rio de Janeiro from another perspective.",
+            es: "Noticias, historias y cultura de la favela Favela. Conoce Río de Janeiro desde otra perspectiva.",
+            fr: "Nouvelles, histoires et culture de la favela Favela. Découvrez Rio de Janeiro d'un autre point de vue.",
+        },
+    },
+    security: {
+        title: {
+            pt: "Segurança | Favela-República",
+            en: "Safety | Favela-República",
+            es: "Seguridad | Favela-República",
+            fr: "Sécurité | Favela-República",
+        },
+        description: {
+            pt: "Conheça as medidas de segurança que tornam a Favela a comunidade mais segura do Rio para turismo.",
+            en: "Learn about the safety measures that make Favela the safest community in Rio for tourism.",
+            es: "Conoce las medidas de seguridad que hacen de la Favela la comunidad más segura de Río para el turismo.",
+            fr: "Découvrez les mesures de sécurité qui font de Favela la communauté la plus sûre de Rio pour le tourisme.",
+        },
+    },
+    terms: {
+        title: {
+            pt: "Termos de Uso | Favela-República",
+            en: "Terms of Use | Favela-República",
+            es: "Términos de Uso | Favela-República",
+            fr: "Conditions d'Utilisation | Favela-República",
+        },
+        description: {
+            pt: "Termos e condições de uso dos serviços da Favela-República Tour.",
+            en: "Terms and conditions of use for Favela-República Tour services.",
+            es: "Términos y condiciones de uso de los servicios de Favela-República Tour.",
+            fr: "Conditions d'utilisation des services de Favela-República Tour.",
+        },
+    },
+    privacy: {
+        title: {
+            pt: "Privacidade | Favela-República",
+            en: "Privacy | Favela-República",
+            es: "Privacidad | Favela-República",
+            fr: "Confidentialité | Favela-República",
+        },
+        description: {
+            pt: "Política de privacidade da Favela-República Tour. Saiba como protegemos seus dados pessoais.",
+            en: "Favela-República Tour privacy policy. Learn how we protect your personal data.",
+            es: "Política de privacidad de Favela-República Tour. Conoce cómo protegemos tus datos personales.",
+            fr: "Politique de confidentialité de Favela-República Tour. Découvrez comment nous protégeons vos données personnelles.",
+        },
+    },
+} as const;
+
 // Animation durations (in seconds)
 export const ANIMATION = {
     fast: 0.15,

@@ -20,7 +20,7 @@ export function FAQPageClient({ locale }: FAQPageClientProps) {
         return "en";
     })() as "pt" | "en" | "es" | "fr";
 
-    const contentLang = (currentLang === "pt" ? "pt" : "en") as "pt" | "en";
+    const contentLang = currentLang as "pt" | "en" | "es" | "fr";
     const faqs = getAllFaqs();
 
     const content = {

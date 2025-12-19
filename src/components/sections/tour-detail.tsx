@@ -27,7 +27,7 @@ import { useState } from "react";
 
 export function TourDetailClient({ tour, lang }: TourDetailClientProps) {
     const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
-    const contentLang = (lang === "pt" ? "pt" : "en") as "pt" | "en";
+    const contentLang = lang as "pt" | "en" | "es" | "fr";
     const content = {
         pt: {
             backToTours: "Voltar aos Tours",
@@ -168,7 +168,7 @@ export function TourDetailClient({ tour, lang }: TourDetailClientProps) {
                 {/* Ambient Background */}
                 <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary-500/5 rounded-full blur-[150px] pointer-events-none translate-x-1/2 -translate-y-1/2" />
 
-                <div className="container mx-auto px-4 relative z-10">
+                <div className="container mx-auto px-4 relative z-10 pt-8 lg:pt-0">
                     <div className="grid lg:grid-cols-3 gap-8 lg:gap-16">
                         {/* Left Column - Main Content */}
                         <div className="lg:col-span-2 space-y-16">
@@ -324,7 +324,7 @@ export function TourDetailClient({ tour, lang }: TourDetailClientProps) {
                                         {t.meetingPoint}
                                     </h2>
                                     <div className="bg-gradient-to-br from-neutral-900 to-neutral-900/50 rounded-3xl p-8 border border-white/10 shadow-2xl relative overflow-hidden">
-                                        <div className="absolute top-0 right-0 w-full h-full bg-[url('/images/map-pattern.svg')] opacity-5" />
+                                        <div className="absolute top-0 right-0 w-full h-full opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 10px 10px, rgba(255,255,255,0.2) 1px, transparent 0)', backgroundSize: '40px 40px' }} />
                                         <div className="flex items-start gap-6 relative z-10">
                                             <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary-500 to-red-500 flex items-center justify-center flex-shrink-0 shadow-lg shadow-primary-500/20">
                                                 <MapPin className="w-8 h-8 text-white" />

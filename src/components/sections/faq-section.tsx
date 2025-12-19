@@ -22,8 +22,21 @@ export function FAQSection({ locale = "pt" }: FAQSectionProps) {
 
     return (
         <section className="py-24 md:py-32 bg-neutral-950 relative overflow-hidden" id="faq">
-            {/* Background elements */}
+            {/* Background elements - Awwwards Depth */}
             <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
+                <motion.div
+                    initial={{ opacity: 0, y: 100 }}
+                    whileInView={{ opacity: 0.02, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 2 }}
+                    className="text-[40vw] font-black text-white leading-none tracking-tighter"
+                    style={{ fontFamily: 'var(--font-heading)' }}
+                >
+                    FAQ
+                </motion.div>
+            </div>
 
             <div className="container-custom relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">

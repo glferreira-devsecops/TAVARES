@@ -11,7 +11,32 @@ interface ShareButtonsProps {
 
 export function ShareButtons({ title, url, locale }: ShareButtonsProps) {
     const [copied, setCopied] = useState(false);
-    const isPt = locale.startsWith("pt");
+    const currentLang = (["en", "es", "fr"].includes(locale) ? locale : "pt") as "pt" | "en" | "es" | "fr";
+
+    const content = {
+        pt: {
+            share: "Compartilhar artigo",
+            copy: "Copiar Link",
+            copied: "Copiado!"
+        },
+        en: {
+            share: "Share article",
+            copy: "Copy Link",
+            copied: "Copied!"
+        },
+        es: {
+            share: "Compartir artículo",
+            copy: "Copiar Link",
+            copied: "¡Copiado!"
+        },
+        fr: {
+            share: "Partager l'article",
+            copy: "Copier le lien",
+            copied: "Copié !"
+        }
+    };
+
+    const t = content[currentLang];
 
     const handleCopy = () => {
         navigator.clipboard.writeText(url);
@@ -46,7 +71,7 @@ export function ShareButtons({ title, url, locale }: ShareButtonsProps) {
     return (
         <div className="flex flex-col gap-4 py-8 border-y border-neutral-100 my-8">
             <span className="text-sm font-bold text-neutral-900 uppercase tracking-wider text-center md:text-left">
-                {isPt ? "Compartilhar artigo" : "Share article"}
+                {t.share}
             </span>
 
             <div className="flex flex-wrap gap-2 justify-center md:justify-start">
@@ -56,7 +81,7 @@ export function ShareButtons({ title, url, locale }: ShareButtonsProps) {
                     aria-label="Copy link"
                 >
                     {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
-                    {copied ? (isPt ? "Copiado!" : "Copied!") : (isPt ? "Copiar Link" : "Copy Link")}
+                    {copied ? t.copied : t.copy}
                 </button>
 
                 {shareLinks.map((link) => (

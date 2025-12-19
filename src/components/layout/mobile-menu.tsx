@@ -36,12 +36,12 @@ export function MobileMenu({ onClose, locale, isActive }: MobileMenuProps) {
             {/* Noise texture overlay */}
             <div className="absolute inset-0 opacity-20 bg-noise pointer-events-none mix-blend-overlay" />
 
-            {/* Close Button */}
-            <div className="absolute top-6 right-4 z-50">
+            {/* Close Button - Premium Position aligned with Header */}
+            <div className="absolute top-6 right-4 z-[60]">
                 <button
                     onClick={onClose}
-                    className="p-3 text-white bg-white/10 rounded-full hover:bg-white/20 transition-all active:scale-95 border border-white/10 backdrop-blur-md"
-                    aria-label="Close menu"
+                    className="p-3 text-white bg-white/5 rounded-full hover:bg-white/10 transition-all active:scale-90 border border-white/20 backdrop-blur-2xl shadow-xl"
+                    aria-label={dict.nav.openMenu}
                 >
                     <X className="w-6 h-6" />
                 </button>
@@ -62,9 +62,9 @@ export function MobileMenu({ onClose, locale, isActive }: MobileMenuProps) {
                             return (
                                 <motion.li
                                     key={item.href}
-                                    initial={{ opacity: 0, x: -30 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: 0.1 + index * 0.1, duration: 0.5, ease: "easeOut" }}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.2 + index * 0.08, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                                 >
                                     <Link
                                         href={item.href}
@@ -140,7 +140,7 @@ export function MobileMenu({ onClose, locale, isActive }: MobileMenuProps) {
                     size="lg"
                     className="shadow-xl bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-white border-0 py-6 text-lg"
                 >
-                    Reservar agora
+                    {dict.nav.book}
                 </WhatsAppButton>
             </motion.div>
         </motion.div >

@@ -4,7 +4,28 @@ interface AuthorBioProps {
 }
 
 export function AuthorBio({ locale }: AuthorBioProps) {
-    const isPt = locale.startsWith("pt");
+    const currentLang = (["en", "es", "fr"].includes(locale) ? locale : "pt") as "pt" | "en" | "es" | "fr";
+
+    const content = {
+        pt: {
+            writtenBy: "Escrito por",
+            bio: "Somos um coletivo de guias locais, historiadores e moradores apaixonados pela Favela. Nosso objetivo é compartilhar a verdadeira história e cultura da nossa comunidade com o mundo."
+        },
+        en: {
+            writtenBy: "Written by",
+            bio: "We are a collective of local guides, historians, and residents passionate about Favela. Our goal is to share the true history and culture of our community with the world."
+        },
+        es: {
+            writtenBy: "Escrito por",
+            bio: "Somos un colectivo de guías locales, historiadores y residentes apasionados por la Favela. Nuestro objetivo es compartir la verdadera historia y cultura de nuestra comunidad con el mundo."
+        },
+        fr: {
+            writtenBy: "Écrit par",
+            bio: "Nous sommes un collectif de guides locaux, d'historiens et d'habitants passionnés par Favela. Notre objectif est de partager la véritable histoire et la culture de notre communauté avec le monde."
+        }
+    };
+
+    const t = content[currentLang];
 
     return (
         <div className="bg-neutral-50 rounded-2xl p-8 flex flex-col md:flex-row gap-6 items-center md:items-start text-center md:text-left border border-neutral-100 my-12">
@@ -17,7 +38,7 @@ export function AuthorBio({ locale }: AuthorBioProps) {
             <div className="flex-1">
                 <div className="mb-2">
                     <span className="text-xs font-bold uppercase tracking-wider text-primary-600">
-                        {isPt ? "Escrito por" : "Written by"}
+                        {t.writtenBy}
                     </span>
                     <h3 className="text-xl font-heading font-bold text-neutral-900 mt-1">
                         Favela-República Team
@@ -25,9 +46,7 @@ export function AuthorBio({ locale }: AuthorBioProps) {
                 </div>
 
                 <p className="text-neutral-600 leading-relaxed max-w-2xl">
-                    {isPt
-                        ? "Somos um coletivo de guias locais, historiadores e moradores apaixonados pela Favela. Nosso objetivo é compartilhar a verdadeira história e cultura da nossa comunidade com o mundo."
-                        : "We are a collective of local guides, historians, and residents passionate about Favela. Our goal is to share the true history and culture of our community with the world."}
+                    {t.bio}
                 </p>
             </div>
         </div>

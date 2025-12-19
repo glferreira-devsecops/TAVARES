@@ -1,6 +1,7 @@
 "use client";
 
 
+import { tours } from "@/data/tours";
 import { Link } from "@/i18n/navigation";
 import { CONTACT, NAV_ITEMS, SOCIAL_LINKS } from "@/lib/constants";
 import { ArrowUpRight, Code2, Heart, Instagram, Mail } from "lucide-react";
@@ -24,10 +25,8 @@ interface FooterProps {
 }
 
 export function Footer({ locale = "pt" }: FooterProps) {
-    const currentLang = locale === "pt" ? "pt" : "en";
+    const currentLang = (locale === "pt" || locale === "en" || locale === "es" || locale === "fr") ? locale : "pt";
     const currentYear = new Date().getFullYear();
-
-
 
     const content = {
         pt: {
@@ -35,36 +34,74 @@ export function Footer({ locale = "pt" }: FooterProps) {
             navigation: "Navegação",
             tours: "Nossos Tours",
             contact: "Contato",
-
             rights: "Todos os direitos reservados.",
             madeWith: "Feito com",
             inRio: "no Rio de Janeiro",
             safety: "Segurança",
             privacy: "Privacidade",
             terms: "Termos",
+            location: "Localização",
+            openDaily: "Aberto todos os dias",
         },
         en: {
             tagline: "Authentic community tourism in the favela of Rio de Janeiro. Cultural, safe, and responsible experiences.",
             navigation: "Navigation",
             tours: "Our Tours",
             contact: "Contact",
-
             rights: "All rights reserved.",
             madeWith: "Made with",
             inRio: "in Rio de Janeiro",
             safety: "Safety",
             privacy: "Privacy",
             terms: "Terms",
+            location: "Location",
+            openDaily: "Open every day",
+        },
+        es: {
+            tagline: "Turismo comunitario auténtico en la favela de Río de Janeiro. Experiencias culturales, seguras y responsables.",
+            navigation: "Navegación",
+            tours: "Nuestros Tours",
+            contact: "Contacto",
+            rights: "Todos los derechos reservados.",
+            madeWith: "Hecho con",
+            inRio: "en Río de Janeiro",
+            safety: "Seguridad",
+            privacy: "Privacidad",
+            terms: "Términos",
+            location: "Ubicación",
+            openDaily: "Abierto todos los días",
+        },
+        fr: {
+            tagline: "Tourisme communautaire authentique dans la favela de Rio de Janeiro. Expériences culturelles, sûres et responsables.",
+            navigation: "Navigation",
+            tours: "Nos Tours",
+            contact: "Contact",
+            rights: "Tous droits réservés.",
+            madeWith: "Fait avec",
+            inRio: "à Rio de Janeiro",
+            safety: "Sécurité",
+            privacy: "Confidentialité",
+            terms: "Conditions",
+            location: "Localisation",
+            openDaily: "Ouvert tous les jours",
         },
     };
 
     const t = content[currentLang];
+    const footerTours = tours.slice(0, 3);
 
     return (
         <footer className="relative overflow-hidden bg-gradient-to-b from-neutral-900 to-black text-white">
             {/* Ambient Background Effects */}
             <div className="absolute -top-[50%] -left-[10%] w-[500px] h-[500px] bg-primary-500/10 rounded-full blur-[100px] pointer-events-none" />
             <div className="absolute -bottom-[30%] -right-[10%] w-[400px] h-[400px] bg-yellow-500/5 rounded-full blur-[80px] pointer-events-none" />
+
+            {/* Awwwards Large Typography Background */}
+            <div className="absolute inset-0 flex items-center justify-center opacity-[0.02] select-none pointer-events-none">
+                <span className="text-[15vw] font-black uppercase tracking-tightest whitespace-nowrap leading-none">
+                    Favela República
+                </span>
+            </div>
 
             <div className="container-custom relative z-10 py-16 md:py-24">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-20">
@@ -91,7 +128,7 @@ export function Footer({ locale = "pt" }: FooterProps) {
                         {/* Location moved here to avoid overlap with FAB */}
                         <div className="mb-8">
                             <h5 className="text-xs font-bold uppercase tracking-widest text-neutral-500 mb-4 font-heading">
-                                {currentLang === 'pt' ? 'Localização' : 'Location'}
+                                {t.location}
                             </h5>
                             <span className="text-sm leading-relaxed text-neutral-300 block mb-2">
                                 {CONTACT.address.neighborhood}, {CONTACT.address.city}<br />
@@ -99,7 +136,7 @@ export function Footer({ locale = "pt" }: FooterProps) {
                             </span>
                             <div className="flex items-center gap-2 text-xs text-neutral-500">
                                 <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                                <span>{currentLang === 'pt' ? 'Aberto todos os dias' : 'Open every day'}</span>
+                                <span>{t.openDaily}</span>
                             </div>
 
                         </div>
@@ -160,17 +197,13 @@ export function Footer({ locale = "pt" }: FooterProps) {
                             {t.tours}
                         </h4>
                         <ul className="space-y-3">
-                            {[
-                                { href: "/tours/tour-completo-favela", label: "Tour Completo" },
-                                { href: "/tours/tour-arte-urbana-grafite", label: "Arte Urbana & Grafite" },
-                                { href: "/tours/tour-sunset-mirante", label: "Sunset no Mirante" },
-                            ].map((tour) => (
-                                <li key={tour.href}>
+                            {footerTours.map((tour) => (
+                                <li key={tour.id}>
                                     <Link
-                                        href={tour.href}
+                                        href={`/tours/${tour.slug}`}
                                         className="inline-flex items-center gap-1.5 text-neutral-300 hover:text-primary-400 hover:translate-x-1 transition-all duration-200 text-sm font-medium"
                                     >
-                                        {tour.label}
+                                        {tour.title[currentLang]}
                                         <ArrowUpRight className="w-3 h-3 opacity-50" />
                                     </Link>
                                 </li>

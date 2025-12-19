@@ -51,13 +51,13 @@ export function TrustBadges({ locale = "pt" }: TrustBadgesProps) {
     ];
 
     return (
-        <section className="py-20 bg-neutral-950 border-y border-white/5 relative overflow-hidden">
+        <section className="relative z-20 -mt-16 md:-mt-24 pb-20 overflow-hidden">
             {/* Cinematic Background Elements */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-full bg-primary-500/5 blur-[120px] pointer-events-none" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-full bg-orange-500/10 blur-[150px] pointer-events-none opacity-50" />
             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] mix-blend-overlay pointer-events-none" />
 
             <div className="container-custom relative z-10">
-                <div className="flex flex-wrap justify-center gap-6 md:gap-10">
+                <div className="flex flex-wrap justify-center gap-4 md:gap-8">
                     {badges.map((badge, index) => (
                         <MotionBox key={index} delay={index * 0.1}>
                             <div className={`

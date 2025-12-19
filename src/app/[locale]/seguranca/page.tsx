@@ -1,92 +1,95 @@
 import { Button } from "@/components/ui/button";
+import { PAGE_METADATA } from "@/lib/constants";
 import { CheckCircle, Clock, MapPin, Phone, Shield, Users } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-    title: "Segurança | Favela-República Tour",
-    description: "Conheça as medidas de segurança que tornam a Favela a comunidade mais segura do Rio de Janeiro para turismo.",
-};
+interface PageProps {
+    params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+    const { locale } = await params;
+    const lang = (["en", "es", "fr"].includes(locale) ? locale : "pt") as "pt" | "en" | "es" | "fr";
+
+    return {
+        title: PAGE_METADATA.security.title[lang],
+        description: PAGE_METADATA.security.description[lang],
+    };
+}
 
 export function generateStaticParams() {
     return [{ locale: "pt" }, { locale: "en" }, { locale: "es" }, { locale: "fr" }];
 }
 
-export default async function SegurancaPage({ params }: { params: Promise<{ locale: string }> }) {
+export default async function SegurancaPage({ params }: PageProps) {
     const { locale } = await params;
-    const isPt = locale === "pt" || locale === "es" || locale === "fr";
+    const currentLang = (["en", "es", "fr"].includes(locale) ? locale : "pt") as "pt" | "en" | "es" | "fr";
 
     const content = {
-        badge: isPt ? "Sua Segurança" : "Your Safety",
-        title: isPt ? "A comunidade mais segura do Rio" : "Rio's Safest Community",
-        subtitle: isPt
-            ? "A Favela é sede da UPP (Unidade de Polícia Pacificadora) desde 2010, tornando-a um dos destinos mais seguros para turismo no Rio de Janeiro."
-            : "Favela has been home to the UPP (Pacifying Police Unit) since 2010, making it one of the safest tourism destinations in Rio de Janeiro.",
-        features: isPt ? [
-            {
-                icon: Shield,
-                title: "Base da UPP",
-                description: "A comunidade abriga uma base permanente da Polícia Militar, garantindo segurança 24 horas por dia.",
-            },
-            {
-                icon: Users,
-                title: "Guias Locais",
-                description: "Todos os nossos guias são moradores da comunidade, conhecem cada viela e garantem sua segurança durante todo o tour.",
-            },
-            {
-                icon: MapPin,
-                title: "Rotas Seguras",
-                description: "Seguimos apenas rotas pré-estabelecidas e conhecidas, evitando qualquer área de risco.",
-            },
-            {
-                icon: Phone,
-                title: "Comunicação Direta",
-                description: "Mantemos contato direto com a base policial e temos acesso imediato em caso de qualquer necessidade.",
-            },
-            {
-                icon: Clock,
-                title: "Horários Adequados",
-                description: "Nossos tours acontecem em horários estratégicos, sempre durante o dia, para máxima segurança.",
-            },
-            {
-                icon: CheckCircle,
-                title: "Seguro Incluso",
-                description: "Todos os participantes são cobertos por seguro durante o tour, para sua total tranquilidade.",
-            },
-        ] : [
-            {
-                icon: Shield,
-                title: "UPP Police Base",
-                description: "The community houses a permanent Military Police base, ensuring 24-hour security.",
-            },
-            {
-                icon: Users,
-                title: "Local Guides",
-                description: "All our guides are community residents who know every alley and ensure your safety throughout the tour.",
-            },
-            {
-                icon: MapPin,
-                title: "Safe Routes",
-                description: "We follow only pre-established and known routes, avoiding any risk areas.",
-            },
-            {
-                icon: Phone,
-                title: "Direct Communication",
-                description: "We maintain direct contact with the police base and have immediate access in case of any need.",
-            },
-            {
-                icon: Clock,
-                title: "Appropriate Hours",
-                description: "Our tours take place at strategic times, always during the day, for maximum safety.",
-            },
-            {
-                icon: CheckCircle,
-                title: "Insurance Included",
-                description: "All participants are covered by insurance during the tour, for your complete peace of mind.",
-            },
-        ],
-        cta: isPt ? "Reservar Tour Seguro" : "Book Safe Tour",
+        pt: {
+            badge: "Sua Segurança",
+            title: "A comunidade mais segura do Rio",
+            subtitle: "A Favela é sede da UPP (Unidade de Polícia Pacificadora) desde 2010, tornando-a um dos destinos mais seguros para turismo no Rio de Janeiro.",
+            cta: "Reservar Tour Seguro",
+            ctaReady: "Pronto para uma experiência segura?",
+            features: [
+                { icon: Shield, title: "Base da UPP", description: "A comunidade abriga uma base permanente da Polícia Militar, garantindo segurança 24 horas por dia." },
+                { icon: Users, title: "Guias Locais", description: "Todos os nossos guias são moradores da comunidade, conhecem cada viela e garantem sua segurança durante todo o tour." },
+                { icon: MapPin, title: "Rotas Seguras", description: "Seguimos apenas rotas pré-estabelecidas e conhecidas, evitando qualquer área de risco." },
+                { icon: Phone, title: "Comunicação Direta", description: "Mantemos contato direto com a base policial e temos acesso imediato em caso de qualquer necessidade." },
+                { icon: Clock, title: "Horários Adequados", description: "Nossos tours acontecem em horários estratégicos, sempre durante o dia, para máxima segurança." },
+                { icon: CheckCircle, title: "Seguro Incluso", description: "Todos os participantes são cobertos por seguro durante o tour, para sua total tranquilidade." },
+            ]
+        },
+        en: {
+            badge: "Your Safety",
+            title: "Rio's Safest Community",
+            subtitle: "Favela has been home to the UPP (Pacifying Police Unit) since 2010, making it one of the safest tourism destinations in Rio de Janeiro.",
+            cta: "Book Safe Tour",
+            ctaReady: "Ready for a safe experience?",
+            features: [
+                { icon: Shield, title: "UPP Police Base", description: "The community houses a permanent Military Police base, ensuring 24-hour security." },
+                { icon: Users, title: "Local Guides", description: "All our guides are community residents who know every alley and ensure your safety throughout the tour." },
+                { icon: MapPin, title: "Safe Routes", description: "We follow only pre-established and known routes, avoiding any risk areas." },
+                { icon: Phone, title: "Direct Communication", description: "We maintain direct contact with the police base and have immediate access in case of any need." },
+                { icon: Clock, title: "Appropriate Hours", description: "Our tours take place at strategic times, always during the day, for maximum safety." },
+                { icon: CheckCircle, title: "Insurance Included", description: "All participants are covered by insurance during the tour, for your complete peace of mind." },
+            ]
+        },
+        es: {
+            badge: "Tu Seguridad",
+            title: "La comunidad más segura de Río",
+            subtitle: "La Favela es sede de la UPP (Unidad de Policía Pacificadora) desde 2010, lo que la convierte en uno de los destinos turísticos más seguros de Río de Janeiro.",
+            cta: "Reservar Tour Seguro",
+            ctaReady: "Pronto para una experiencia segura?",
+            features: [
+                { icon: Shield, title: "Base de la UPP", description: "La comunidad alberga una base permanente de la Policía Militar, garantizando seguridad las 24 horas del día." },
+                { icon: Users, title: "Guías Locales", description: "Todos nuestros guías son residentes de la comunidad, conocen cada callejón y garantizan su seguridad durante todo el tour." },
+                { icon: MapPin, title: "Rutas Seguras", description: "Seguimos solo rutas preestablecidas y conocidas, evitando cualquier área de riesgo." },
+                { icon: Phone, title: "Comunicación Directa", description: "Mantenemos contacto directo con la base policial y tenemos acceso inmediato en caso de cualquier necesidad." },
+                { icon: Clock, title: "Horarios Adecuados", description: "Nuestros tours ocurren en horarios estratégicos, siempre durante el día, para máxima seguridad." },
+                { icon: CheckCircle, title: "Seguro Incluido", description: "Todos los participantes están cubiertos por un seguro durante el tour, para su total tranquilidad." },
+            ]
+        },
+        fr: {
+            badge: "Votre Sécurité",
+            title: "La communauté la plus sûre de Rio",
+            subtitle: "La Favela abrite l'UPP (Unité de Police Pacificatrice) depuis 2010, ce qui en fait l'une des destinations touristiques les plus sûres de Rio de Janeiro.",
+            cta: "Réserver une Visite Sûre",
+            ctaReady: "Prêt pour une expérience en toute sécurité ?",
+            features: [
+                { icon: Shield, title: "Base de l'UPP", description: "La communauté abrite une base permanente de la police militaire, assurant une sécurité 24h/24." },
+                { icon: Users, title: "Guides Locaux", description: "Tous nos guides sont des résidents de la communauté, connaissent chaque ruelle et assurent votre sécurité tout au long de la visite." },
+                { icon: MapPin, title: "Itinéraires Sûrs", description: "Nous ne suivons que des itinéraires préétablis et connus, évitant toute zone à risque." },
+                { icon: Phone, title: "Communication Directe", description: "Nous maintenons un contact direct avec la base de police et avons un accès immédiat en cas de besoin." },
+                { icon: Clock, title: "Horaires Appropriés", description: "Nos visites ont lieu à des moments stratégiques, toujours pendant la journée, pour une sécurité maximale." },
+                { icon: CheckCircle, title: "Assurance Incluse", description: "Tous les participants sont couverts par une assurance pendant la visite, pour votre totale tranquillité d'esprit." },
+            ]
+        }
     };
+
+    const t = content[currentLang];
 
     return (
         <main className="min-h-screen bg-neutral-50">
@@ -98,13 +101,13 @@ export default async function SegurancaPage({ params }: { params: Promise<{ loca
                 <div className="container-custom relative z-10 text-center">
                     <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-sm font-semibold uppercase tracking-wider mb-6">
                         <Shield className="w-4 h-4" />
-                        {content.badge}
+                        {t.badge}
                     </span>
                     <h1 className="font-heading text-3xl md:text-5xl lg:text-7xl font-bold mb-6 leading-tight">
-                        {content.title}
+                        {t.title}
                     </h1>
                     <p className="text-lg md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-                        {content.subtitle}
+                        {t.subtitle}
                     </p>
                 </div>
             </section>
@@ -113,7 +116,7 @@ export default async function SegurancaPage({ params }: { params: Promise<{ loca
             <section className="py-12 md:py-24">
                 <div className="container-custom">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {content.features.map((feature, index) => {
+                        {t.features.map((feature, index) => {
                             const Icon = feature.icon;
                             return (
                                 <div
@@ -140,11 +143,11 @@ export default async function SegurancaPage({ params }: { params: Promise<{ loca
             <section className="py-12 md:py-20 bg-neutral-900">
                 <div className="container-custom text-center">
                     <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-6">
-                        {isPt ? "Pronto para uma experiência segura?" : "Ready for a safe experience?"}
+                        {t.ctaReady}
                     </h2>
                     <Link href={`/${locale}/tours`}>
                         <Button variant="primary" size="lg" className="rounded-full px-10">
-                            {content.cta}
+                            {t.cta}
                         </Button>
                     </Link>
                 </div>

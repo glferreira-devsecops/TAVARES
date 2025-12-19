@@ -60,12 +60,24 @@ export function Hero({ locale = "pt" }: HeroProps) {
                     />
                 </motion.div>
 
+                {/* Monumental Typography Overlay - Awwwards Style */}
+                <div className="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none select-none">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 0.1, scale: 1 }}
+                        transition={{ duration: 2, delay: 0.5 }}
+                        className="text-[20vw] font-black text-white leading-none tracking-tighter whitespace-nowrap opacity-10"
+                        style={{ fontFamily: 'var(--font-heading)' }}
+                    >
+                        FAVELA REPUBLICA
+                    </motion.div>
+                </div>
+
                 {/* Gradient Overlays for Cinematic Depth - Awwwards Style */}
                 <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/10 to-black/90" />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40" />
                 <div className="absolute inset-0 bg-black/15" /> {/* General tint */}
 
-                {/* Film Grain Texture for Tactile Feel */}
                 {/* Film Grain Texture for Tactile Feel */}
                 <div className="absolute inset-0 opacity-[0.05] pointer-events-none mix-blend-overlay"
                     style={{

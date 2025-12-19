@@ -63,9 +63,23 @@ export function Testimonials({ locale = "pt" }: TestimonialsProps) {
             {/* Noise Texture */}
             <div className="absolute inset-0 opacity-10 bg-noise mix-blend-overlay pointer-events-none z-0" />
 
-            {/* Background decoration */}
+            {/* Background decoration - Awwwards depth */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[100px] pointer-events-none translate-x-1/2 -translate-y-1/2 z-0" />
             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-orange-500/10 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 translate-y-1/2 z-0" />
+
+            {/* Monumental background text */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 0.03, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1.5 }}
+                    className="text-[35vw] font-black text-white leading-none tracking-tighter"
+                    style={{ fontFamily: 'var(--font-heading)' }}
+                >
+                    REVIEWS
+                </motion.div>
+            </div>
 
             <div className="container-custom relative z-10">
                 <motion.div

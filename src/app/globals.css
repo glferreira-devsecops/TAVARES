@@ -15,6 +15,7 @@
   html {
     @apply scroll-smooth antialiased;
     font-size: 16px;
+    scrollbar-gutter: stable;
   }
 
   body {
@@ -54,7 +55,13 @@
   }
 
   .glass-panel-dark {
-    @apply bg-black/40 backdrop-blur-xl border border-white/10 shadow-soft-xl;
+    @apply bg-black/60 backdrop-blur-2xl border border-white/10 shadow-soft-xl relative overflow-hidden;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-panel-dark::before {
+    content: "";
+    @apply absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none;
   }
 
   /* Noise Texture for premium feel */

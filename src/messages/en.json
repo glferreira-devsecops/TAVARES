@@ -7,8 +7,26 @@
         "home": "Home",
         "tours": "Tours",
         "about": "About Us",
-        "blog": "Blog",
-        "contact": "Contact"
+        "social": "Social Project",
+        "faq": "FAQ",
+        "contact": "Contact",
+        "language": "Language",
+        "book": "Book Now",
+        "openMenu": "Open Menu"
+    },
+    "hero": {
+        "eyebrow": "UNIQUE EXPERIENCE IN RIO",
+        "title": "Authentic Tourism",
+        "titleHighlight": "in the Favela",
+        "subtitle": "Authentic community tourism in Rio de Janeiro's favela. Cultural, safe and responsible experiences.",
+        "ctaMain": "Book Now",
+        "ctaSecondary": "See Tours",
+        "stats": {
+            "rating": "Excellent",
+            "safeValue": "100%",
+            "safety": "Safe",
+            "local": "Local"
+        }
     },
     "tourCard": {
         "insurance": "Insurance Included",
@@ -53,7 +71,64 @@
             "local_guides": "Local guides",
             "street_art": "Street art",
             "safety": "Safety",
-            "social_impact": "Social impact"
+            "social_impact": "Social impact",
+            "interaction": "Interaction with Residents"
+        }
+    },
+    "Testimonials": {
+        "eyebrow": "Testimonials",
+        "title": "What our visitors say",
+        "subtitle": "More than 1000 visitors have lived this experience"
+    },
+    "FAQ": {
+        "eyebrow": "FAQ",
+        "title": "Frequently Asked Questions",
+        "subtitle": "Find answers about the tour and visiting the favela.",
+        "questions": {
+            "q1": {
+                "question": "Is it safe to visit the favela?",
+                "answer": "Yes, you will always be accompanied by a local guide. They will ensure your experience is safe and amazing."
+            },
+            "q2": {
+                "question": "How do I book a tour?",
+                "answer": "The fastest way is via WhatsApp. Just click the green button on any page and send a message with: your desired date, preferred time, number of people, and the tour you're interested in. Our team responds in a few minutes during business hours."
+            },
+            "q3": {
+                "question": "What payment methods are accepted?",
+                "answer": "We accept: PIX (preferential), cash (reals), dollars, credit and debit cards, and Wise. Payment can be made on the day of the tour or in advance."
+            },
+            "q4": {
+                "question": "Can I bring my camera and phone?",
+                "answer": "Yes, you can bring a camera and phone to record the tour; it is very safe. To take photos of residents, especially children, always ask for permission first. Our guides will help you with this during the tour."
+            },
+            "q5": {
+                "question": "Does the price include everything?",
+                "answer": "The price includes: a bilingual local guide, round-trip transport from the meeting point to the favela, 360° video, and photos taken by the team. It does not include: meals, drinks, or tips (optional)."
+            },
+            "q6": {
+                "question": "What languages do you offer the tours in?",
+                "answer": "Our guides speak Portuguese, English, Spanish, and French. Let us know your preferred language when booking so we can ensure an appropriate guide."
+            },
+            "q7": {
+                "question": "What should I wear and bring?",
+                "answer": "We recommend: comfortable shoes, light clothes, sunscreen, cash or card, and a camera/phone to record your experience."
+            },
+            "q8": {
+                "question": "Can I buy something from residents during the tour?",
+                "answer": "Yes, there are several local shops along the way! You can buy shirts, food, drinks, and other things. Our guides will show you the best places. Bring cash or a card."
+            },
+            "q9": {
+                "question": "What is the minimum and maximum group size?",
+                "answer": "The minimum is 2 people per tour. The maximum varies and can reach up to 40 people."
+            },
+            "q10": {
+                "question": "Does the tour happen if it rains?",
+                "answer": "Light tours operate normally with drizzle. In case of heavy rain or storms, we will contact you to reschedule at no additional cost."
+            },
+            "q11": {
+                "question": "Where is the meeting point?",
+                "answer": "The meeting point is at Rua do Catete, 153 - Catete (In front of the Museum of the Republic). It's easy to get there by Uber/taxi or metro (Catete station). We send the exact location via WhatsApp after booking confirmation, along with detailed instructions on how to get there."
+            }
         }
     },
     "NotFound": {
