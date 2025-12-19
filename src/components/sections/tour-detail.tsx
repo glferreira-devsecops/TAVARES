@@ -112,7 +112,7 @@ export function TourDetailClient({ tour, lang }: TourDetailClientProps) {
             <section className="relative h-[85vh] min-h-[600px]">
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src={heroImage || "/images/tours/IMG_7268.webp"}
+                        src={heroImage || "/images/tours/IMG_7268_v1.webp"}
                         alt={tour.title[contentLang]}
                         fill
                         className="object-cover"

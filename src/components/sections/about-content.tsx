@@ -61,7 +61,7 @@ export default function AboutContent({ locale: initialLocale = "pt" }: { locale?
             <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/images/social/IMG_0546.webp"
+                        src="/images/social/IMG_0546_v1.webp"
                         alt="Nossa Favela"
                         fill
                         className="object-cover scale-105"
@@ -194,10 +194,10 @@ export default function AboutContent({ locale: initialLocale = "pt" }: { locale?
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
                         {/* Mock Grid - In a real app, fetch from IG API */}
                         {[
-                            '/images/social/IMG_0540.webp',
-                            '/images/social/IMG_0593.webp',
-                            '/images/social/PHOTO-2022-09-20-14-10-30.webp',
-                            '/images/social/PHOTO-2024-05-13-15-54-41.webp'
+                            '/images/social/IMG_0540_v1.webp',
+                            '/images/social/IMG_0593_v1.webp',
+                            '/images/social/PHOTO-2022-09-20-14-10-30_v1.webp',
+                            '/images/social/PHOTO-2024-05-13-15-54-41_v1.webp'
                         ].map((src, i) => (
                             <MotionBox key={i} delay={0.2 + (i * 0.1)}>
                                 <div className="aspect-square relative rounded-2xl overflow-hidden bg-neutral-900 group cursor-pointer border border-white/5 hover:border-white/20 transition-colors">

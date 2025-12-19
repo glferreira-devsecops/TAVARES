@@ -134,7 +134,7 @@ export function FeaturedTours({ locale = "pt", tours }: FeaturedToursProps) {
                                 {/* Image Container */}
                                 <div className="relative aspect-[4/3] overflow-hidden">
                                     <Image
-                                        src={tour.images[0] || "/images/tours/IMG_7268.webp"}
+                                        src={tour.images[0] || "/images/tours/IMG_7268_v1.webp"}
                                         alt={tour.title[contentLang]}
                                         fill
                                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

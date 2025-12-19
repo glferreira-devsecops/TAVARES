@@ -112,7 +112,7 @@ export function AboutPreview({ locale = "pt-br" }: AboutPreviewProps) {
                                 className="col-span-2 relative aspect-[16/10] rounded-[2rem] overflow-hidden shadow-2xl"
                             >
                                 <Image
-                                    src="/images/social/IMG_0551.webp"
+                                    src="/images/social/IMG_0551_v1.webp"
                                     alt="Favela República Panorâmica"
                                     fill
                                     className="object-cover hover:scale-105 transition-transform duration-700"
@@ -130,7 +130,7 @@ export function AboutPreview({ locale = "pt-br" }: AboutPreviewProps) {
                                 className="relative aspect-square rounded-[2rem] overflow-hidden shadow-xl"
                             >
                                 <Image
-                                    src="/images/tours/IMG_0499.webp"
+                                    src="/images/tours/IMG_0499_v1.webp"
                                     alt="Futebol na Favela"
                                     fill
                                     className="object-cover hover:scale-110 transition-transform duration-700"
@@ -175,7 +175,7 @@ export function AboutPreview({ locale = "pt-br" }: AboutPreviewProps) {
                                 <div className="order-2 lg:order-1">
                                     <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border-4 border-white/10 shadow-2xl transition-transform duration-500">
                                         <Image
-                                            src="/images/social/PHOTO-2022-09-20-13-10-53.webp"
+                                            src="/images/social/PHOTO-2022-09-20-13-10-53_v1.webp"
                                             alt="Centro Social Dona Irene"
                                             fill
                                             className="object-cover"

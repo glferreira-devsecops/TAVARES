@@ -18,19 +18,19 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 const SOCIAL_IMAGES = [
-    "IMG_0540.webp",
-    "IMG_0546.webp",
-    "IMG_0551.webp",
-    "IMG_0593.webp",
-    "PHOTO-2022-09-20-13-10-53.webp",
-    "PHOTO-2022-09-20-13-43-22.webp",
-    "PHOTO-2024-05-13-15-54-41.webp",
-    "PHOTO-2022-09-20-13-15-24.webp",
-    "PHOTO-2022-09-20-13-29-49.webp",
-    "PHOTO-2022-09-20-13-52-41.webp",
-    "PHOTO-2022-09-20-13-54-16.webp",
-    "PHOTO-2022-09-20-14-05-06.webp",
-    "PHOTO-2022-09-20-14-10-30.webp"
+    "IMG_0540_v1.webp",
+    "IMG_0546_v1.webp",
+    "IMG_0551_v1.webp",
+    "IMG_0593_v1.webp",
+    "PHOTO-2022-09-20-13-10-53_v1.webp",
+    "PHOTO-2022-09-20-13-43-22_v1.webp",
+    "PHOTO-2024-05-13-15-54-41_v1.webp",
+    "PHOTO-2022-09-20-13-15-24_v1.webp",
+    "PHOTO-2022-09-20-13-29-49_v1.webp",
+    "PHOTO-2022-09-20-13-52-41_v1.webp",
+    "PHOTO-2022-09-20-13-54-16_v1.webp",
+    "PHOTO-2022-09-20-14-05-06_v1.webp",
+    "PHOTO-2022-09-20-14-10-30_v1.webp"
 ];
 
 export default async function SocialProjectPage({ params }: PageProps) {

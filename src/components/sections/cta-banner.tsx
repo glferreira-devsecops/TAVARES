@@ -52,7 +52,7 @@ export function CTABanner({ locale = "pt" }: CTABannerProps) {
             {/* Background Image with Fixed Parallax */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="/images/hero/hero-main.webp"
+                    src="/images/hero/hero-main_v1.webp"
                     alt="Sunset at Favela-República"
                     fill
                     className="object-cover"

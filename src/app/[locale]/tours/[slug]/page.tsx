@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: TourPageProps): Promise<Metad
         openGraph: {
             title: tour.title[lang],
             description: tour.shortDescription[lang],
-            images: [tour.images[0] || "/images/tours/IMG_7268.webp"],
+            images: [tour.images[0] || "/images/tours/IMG_7268_v1.webp"],
         },
     };
 }

@@ -76,7 +76,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
             siteName: SEO_DEFAULTS.siteName,
             images: [
                 {
-                    url: "/images/hero/hero-main.webp", // Default OG Image
+                    url: "/images/hero/hero-main_v1.webp", // Default OG Image
                     width: 1200,
                     height: 630,
                     alt: SEO_DEFAULTS.defaultTitle[lang],
@@ -87,7 +87,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
             card: "summary_large_image",
             title: SEO_DEFAULTS.defaultTitle[lang],
             description: SEO_DEFAULTS.defaultDescription[lang],
-            images: ["/images/hero/hero-main.webp"],
+            images: ["/images/hero/hero-main_v1.webp"],
             creator: "@devferreirag", // Optional
         },
         icons: {
