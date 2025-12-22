@@ -151,7 +151,7 @@ export function Hero({ locale = "pt" }: HeroProps) {
                 >
                     {dict.hero.subtitle}
                 </motion.p>
-                {/* Text Shadow for extreme readability */}\n
+                {/* Text Shadow for extreme readability */}
 
                 {/* CTAs */}
                 <motion.div
