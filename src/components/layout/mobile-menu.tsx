@@ -47,85 +47,87 @@ export function MobileMenu({ onClose, locale, isActive }: MobileMenuProps) {
                 </button>
             </div>
 
-            <div className="flex-1 flex flex-col justify-center px-8 relative z-10">
-                <nav className="mb-12">
-                    <ul className="space-y-4">
-                        {[
-                            { label: dict.nav.home, href: "/" },
-                            { label: dict.nav.tours, href: "/tours" },
-                            { label: dict.nav.about, href: "/quem-somos" },
-                            { label: dict.nav.social, href: "/projeto-social" },
-                            { label: dict.nav.faq, href: "/faq" },
-                            { label: dict.nav.contact, href: "/contato" }
-                        ].map((item, index) => {
-                            const active = isActive(item.href);
-                            return (
-                                <motion.li
-                                    key={item.href}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.2 + index * 0.08, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                                >
-                                    <Link
-                                        href={item.href}
-                                        onClick={onClose}
-                                        aria-current={active ? "page" : undefined}
-                                        className={cn(
-                                            "block text-3xl md:text-5xl font-heading font-bold transition-all duration-300",
-                                            active
-                                                ? "text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-600 scale-105 origin-left"
-                                                : "text-neutral-400 hover:text-white hover:pl-4"
-                                        )}
+            <div className="flex-1 relative z-10 overflow-y-auto overflow-x-hidden">
+                <div className="min-h-full flex flex-col justify-center px-8 py-24">
+                    <nav className="mb-12">
+                        <ul className="space-y-4">
+                            {[
+                                { label: dict.nav.home, href: "/" },
+                                { label: dict.nav.tours, href: "/tours" },
+                                { label: dict.nav.about, href: "/quem-somos" },
+                                { label: dict.nav.social, href: "/projeto-social" },
+                                { label: dict.nav.faq, href: "/faq" },
+                                { label: dict.nav.contact, href: "/contato" }
+                            ].map((item, index) => {
+                                const active = isActive(item.href);
+                                return (
+                                    <motion.li
+                                        key={item.href}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: 0.2 + index * 0.08, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                                     >
-                                        {item.label}
-                                    </Link>
-                                </motion.li>
-                            );
-                        })}
-                    </ul>
-                </nav>
+                                        <Link
+                                            href={item.href}
+                                            onClick={onClose}
+                                            aria-current={active ? "page" : undefined}
+                                            className={cn(
+                                                "block text-3xl md:text-5xl font-heading font-bold transition-all duration-300",
+                                                active
+                                                    ? "text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-600 scale-105 origin-left"
+                                                    : "text-neutral-400 hover:text-white hover:pl-4"
+                                            )}
+                                        >
+                                            {item.label}
+                                        </Link>
+                                    </motion.li>
+                                );
+                            })}
+                        </ul>
+                    </nav>
 
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.4 }}
-                    className="space-y-6"
-                >
-                    <p className="text-neutral-500 font-medium uppercase tracking-widest text-xs mb-4">
-                        Selecione seu idioma
-                    </p>
-                    <div className="grid grid-cols-2 gap-3">
-                        {[
-                            { code: 'pt', label: 'Português', country: 'pt' },
-                            { code: 'en', label: 'English', country: 'en' },
-                            { code: 'es', label: 'Español', country: 'es' },
-                            { code: 'fr', label: 'Français', country: 'fr' }
-                        ].map((lang) => (
-                            <button
-                                key={lang.code}
-                                className={cn(
-                                    "flex items-center gap-3 p-3 rounded-xl transition-all border group",
-                                    locale === lang.code
-                                        ? "bg-orange-500/10 border-orange-500/50 shadow-lg shadow-orange-500/10"
-                                        : "bg-white/5 border-white/5 hover:bg-white/10 hover:border-white/10"
-                                )}
-                                onClick={() => {
-                                    if (onClose) onClose();
-                                    router.replace(pathname, { locale: lang.code });
-                                }}
-                            >
-                                <Flag country={lang.country as "pt" | "en" | "es" | "fr"} size="md" className="shadow-sm group-hover:scale-110 transition-transform" />
-                                <span className={cn(
-                                    "text-sm font-semibold transition-colors",
-                                    locale === lang.code ? "text-orange-400" : "text-neutral-400 group-hover:text-white"
-                                )}>
-                                    {lang.label}
-                                </span>
-                            </button>
-                        ))}
-                    </div>
-                </motion.div>
-            </div >
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.4 }}
+                        className="space-y-6"
+                    >
+                        <p className="text-neutral-500 font-medium uppercase tracking-widest text-xs mb-4">
+                            Selecione seu idioma
+                        </p>
+                        <div className="grid grid-cols-2 gap-3">
+                            {[
+                                { code: 'pt', label: 'Português', country: 'pt' },
+                                { code: 'en', label: 'English', country: 'en' },
+                                { code: 'es', label: 'Español', country: 'es' },
+                                { code: 'fr', label: 'Français', country: 'fr' }
+                            ].map((lang) => (
+                                <button
+                                    key={lang.code}
+                                    className={cn(
+                                        "flex items-center gap-3 p-3 rounded-xl transition-all border group",
+                                        locale === lang.code
+                                            ? "bg-orange-500/10 border-orange-500/50 shadow-lg shadow-orange-500/10"
+                                            : "bg-white/5 border-white/5 hover:bg-white/10 hover:border-white/10"
+                                    )}
+                                    onClick={() => {
+                                        if (onClose) onClose();
+                                        router.replace(pathname, { locale: lang.code });
+                                    }}
+                                >
+                                    <Flag country={lang.country as "pt" | "en" | "es" | "fr"} size="md" className="shadow-sm group-hover:scale-110 transition-transform" />
+                                    <span className={cn(
+                                        "text-sm font-semibold transition-colors",
+                                        locale === lang.code ? "text-orange-400" : "text-neutral-400 group-hover:text-white"
+                                    )}>
+                                        {lang.label}
+                                    </span>
+                                </button>
+                            ))}
+                        </div>
+                    </motion.div>
+                </div>
+            </div>
 
             <motion.div
                 initial={{ opacity: 0, y: 20 }}

@@ -357,7 +357,7 @@ export function Header({ locale = "pt" }: HeaderProps) {
 
                         {/* Mobile Menu Button */}
                         <button
-                            onClick={() => setIsMobileMenuOpen(true)}
+                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                             className={cn(
                                 "lg:hidden p-2 -mr-2 transition-colors relative z-50",
                                 isMobileMenuOpen ? "text-neutral-900" : shouldForceSolid ? "text-neutral-900" : "text-white"
