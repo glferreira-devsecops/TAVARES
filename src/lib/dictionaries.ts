@@ -401,7 +401,52 @@ const dictionaries: Record<Locale, Dictionary> = {
             eyebrow: "FAQ",
             title: "Frequently Asked Questions",
             subtitle: "Get answers about the tour and visiting the favela.",
-            questions: {},
+            questions: {
+                q1: {
+                    question: "Is it safe to visit the favela?",
+                    answer: "Yes, you will always be accompanied by a local conductor. They will ensure your experience is safe and incredible."
+                },
+                q2: {
+                    question: "How do I book a tour?",
+                    answer: "The fastest way is via WhatsApp. Just click the green button on any page of the site and send a message with: desired date, preferred time, number of people, and tour of interest. Our team responds within minutes during business hours."
+                },
+                q3: {
+                    question: "What payment methods are accepted?",
+                    answer: "We accept: PIX (preferred), cash (BRL), USD, credit and debit cards, Wise. Payment can be made on the day of the tour or in advance."
+                },
+                q4: {
+                    question: "Can I bring my camera and phone?",
+                    answer: "Yes, you can bring your camera and phone to record the tour, it is very safe. To photograph residents, especially children, always ask for permission first. Our conductors provide guidance on this during the tour."
+                },
+                q5: {
+                    question: "Does the price include everything?",
+                    answer: "The price includes: bilingual local conductor, round-trip transportation from the meeting point to the favela, 360° video, photos taken by the team. Does not include: meals, drinks, and tips (optional)."
+                },
+                q6: {
+                    question: "What languages do you offer tours in?",
+                    answer: "Our conductors speak Portuguese, English, Spanish, and French. Please state your preferred language when booking so we can guarantee a suitable conductor."
+                },
+                q7: {
+                    question: "What should I wear and bring?",
+                    answer: "We recommend: comfortable shoes, light clothing, sunscreen, cash or card, camera/phone to record your experience."
+                },
+                q8: {
+                    question: "Can I buy something from residents during the tour?",
+                    answer: "Yes, we have several local economy spots along the route! You can buy shirts, food, drinks, among other things. Our conductors point out the best places. Bring cash or card."
+                },
+                q9: {
+                    question: "What is the minimum and maximum group size?",
+                    answer: "The minimum is 2 people per tour. The maximum varies, up to 40 people."
+                },
+                q10: {
+                    question: "Does the tour happen if it rains?",
+                    answer: "Light tours operate normally with drizzle. In case of heavy rain or storms, we will contact you to reschedule at no additional cost."
+                },
+                q11: {
+                    question: "Where is the meeting point?",
+                    answer: "The meeting point is at Rua do Catete, 153 - Catete (In front of the Museum of the Republic). It is easy to get there by Uber/taxi or subway (Catete station). We send the exact location via WhatsApp after booking confirmation, along with detailed instructions on how to arrive."
+                }
+            },
         },
         NotFound: {
             title: "Page Not Found",
@@ -527,7 +572,52 @@ const dictionaries: Record<Locale, Dictionary> = {
             eyebrow: "Preguntas",
             title: "Preguntas Frecuentes",
             subtitle: "Resuelve tus dudas sobre el tour.",
-            questions: {},
+            questions: {
+                q1: {
+                    question: "¿Es seguro visitar la favela?",
+                    answer: "Sí, siempre estarás acompañado por un conductor local. Él garantizará que tu experiencia sea segura e increíble."
+                },
+                q2: {
+                    question: "¿Cómo reservo un tour?",
+                    answer: "La forma más rápida es por WhatsApp. Solo haz clic en el botón verde en cualquier página del sitio y envía un mensaje informando: fecha deseada, horario preferido, número de personas y tour de interés. Nuestro equipo responde en pocos minutos durante el horario comercial."
+                },
+                q3: {
+                    question: "¿Qué formas de pago aceptan?",
+                    answer: "Aceptamos: PIX (preferencial), efectivo (reales), dólares, tarjetas de crédito y débito, Wise. El pago se puede realizar el día del tour o por adelantado."
+                },
+                q4: {
+                    question: "¿Puedo llevar mi cámara y celular?",
+                    answer: "Sí, puedes llevar cámara y celular para registrar el tour, es muy seguro. Para fotografiar residentes, especialmente niños, siempre pide permiso primero. Nuestros conductores orientan sobre esto durante el tour."
+                },
+                q5: {
+                    question: "¿El precio incluye todo?",
+                    answer: "El precio incluye: conductor local bilingüe, transporte de ida y vuelta desde el punto de encuentro hasta la favela, video 360°, fotos tomadas por el equipo. No incluye: comidas, bebidas y propinas (opcionales)."
+                },
+                q6: {
+                    question: "¿En qué idiomas ofrecen los tours?",
+                    answer: "Nuestros conductores hablan Portugués, Inglés, Español y Francés. Informe su idioma preferido al reservar para garantice un conductor adecuado."
+                },
+                q7: {
+                    question: "¿Qué debo llevar y vestir?",
+                    answer: "Recomendamos: calzado cómodo, ropa ligera, protector solar, dinero o tarjeta, cámara/celular para registrar tu experiencia."
+                },
+                q8: {
+                    question: "¿Puedo comprar algo de los residentes durante el tour?",
+                    answer: "¡Sí, tenemos varios puntos de economía local en el trayecto! Puedes comprar camisetas, comidas y bebidas, entre otras cosas. Nuestros conductores indican los mejores lugares. Lleva dinero o tarjeta."
+                },
+                q9: {
+                    question: "¿Cuál es el tamaño mínimo y máximo del grupo?",
+                    answer: "El mínimo es de 2 personas por tour. El máximo varía, pudiendo llegar a 40 personas."
+                },
+                q10: {
+                    question: "¿El tour se realiza si llueve?",
+                    answer: "Los tours ligeros funcionan normalmente con llovizna. En caso de lluvia fuerte o tormenta, entraremos en contacto para reagendar sin costo adicional."
+                },
+                q11: {
+                    question: "¿Dónde es el punto de encuentro?",
+                    answer: "El punto de encuentro es en Rua do Catete, 153 - Barrio Catete (Frente al Museo de la República). Es fácil llegar en Uber/taxi o metro (estación Catete). Enviamos la ubicación exacta por WhatsApp después de la confirmación de la reserva, junto con instrucciones detalladas de cómo llegar."
+                }
+            },
         },
         NotFound: {
             title: "Página No Encontrada",
@@ -653,7 +743,52 @@ const dictionaries: Record<Locale, Dictionary> = {
             eyebrow: "FAQ",
             title: "Foire Aux Questions",
             subtitle: "Obtenez des réponses sur la visite.",
-            questions: {},
+            questions: {
+                q1: {
+                    question: "Est-ce sûr de visiter la favela ?",
+                    answer: "Oui, vous serez toujours accompagné d'un conducteur local. Il s'assurera que votre expérience est sûre et incroyable."
+                },
+                q2: {
+                    question: "Comment réserver une visite ?",
+                    answer: "Le moyen le plus rapide est via WhatsApp. Cliquez simplement sur le bouton vert sur n'importe quelle page du site et envoyez un message indiquant : la date souhaitée, l'heure préférée, le nombre de personnes et la visite qui vous intéresse. Notre équipe répond en quelques minutes pendant les heures de bureau."
+                },
+                q3: {
+                    question: "Quels moyens de paiement sont acceptés ?",
+                    answer: "Nous acceptons : PIX (préféré), espèces (réais), dollars, cartes de crédit et de débit, Wise. Le paiement peut être effectué le jour de la visite ou à l'avance."
+                },
+                q4: {
+                    question: "Puis-je apporter mon appareil photo et mon téléphone ?",
+                    answer: "Oui, vous pouvez apporter appareil photo et téléphone pour enregistrer la visite, c'est très sûr. Pour photographier les habitants, en particulier les enfants, demandez toujours la permission d'abord. Nos conducteurs donnent des conseils à ce sujet pendant la visite."
+                },
+                q5: {
+                    question: "Le prix inclut-il tout ?",
+                    answer: "Le prix comprend : conducteur local bilingue, transport aller-retour du point de rencontre à la favela, vidéo 360°, photos prises par l'équipe. Ne comprend pas : repas, boissons et pourboires (facultatifs)."
+                },
+                q6: {
+                    question: "Dans quelles langues proposez-vous les visites ?",
+                    answer: "Nos conducteurs parlent Portugais, Anglais, Espagnol et Français. Veuillez indiquer votre langue préférée lors de la réservation afin que nous puissions garantir un conducteur approprié."
+                },
+                q7: {
+                    question: "Que dois-je porter et apporter ?",
+                    answer: "Nous recommandons : chaussures confortables, vêtements légers, crème solaire, argent ou carte, appareil photo/téléphone pour enregistrer votre expérience."
+                },
+                q8: {
+                    question: "Puis-je acheter quelque chose aux résidents pendant la visite ?",
+                    answer: "Oui, nous avons plusieurs points d'économie locale sur le trajet ! Vous pouvez acheter des t-shirts, de la nourriture et des boissons, entre autres choses. Nos conducteurs indiquent les meilleurs endroits. Apportez de l'argent ou une carte."
+                },
+                q9: {
+                    question: "Quelle est la taille minimale et maximale du groupe ?",
+                    answer: "Le minimum est de 2 personnes par visite. Le maximum varie, pouvant aller jusqu'à 40 personnes."
+                },
+                q10: {
+                    question: "La visite a-t-elle lieu s'il pleut ?",
+                    answer: "Les visites légères fonctionnent normalement avec de la bruine. En cas de forte pluie ou de tempête, nous vous contacterons pour reprogrammer sans frais supplémentaires."
+                },
+                q11: {
+                    question: "Où est le point de rencontre ?",
+                    answer: "Le point de rencontre est Rua do Catete, 153 - Quartier Catete (En face du Musée de la République). C'est facile d'arriver en Uber/taxi ou métro (station Catete). Nous envoyons l'emplacement exact par WhatsApp après la confirmation de la réservation, avec des instructions détaillées pour s'y rendre."
+                }
+            },
         },
         NotFound: {
             title: "Page Non Trouvée",
