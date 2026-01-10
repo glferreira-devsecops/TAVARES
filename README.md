@@ -33,7 +33,7 @@
 
   <br/>
 
-  [**🌐 Ver Plataforma Online**](https://favelarepublica.vercel.app/) • [**📜 Manifesto da Marca**](#-a-visão) • [**🏗️ Arquitetura**](#-arquitetura-do-sistema) • [**📄 Docs da API**](#-manual-de-engenharia)
+  [**🌐 Ver Plataforma Online**](https://favelarepublica.vercel.app/) • [**📜 Manifesto da Marca**](#-a-visão-branding--tech) • [**🏗️ Arquitetura**](#-arquitetura-do-sistema) • [**📄 Docs da API**](#-manual-de-engenharia)
 
 </div>
 
@@ -73,28 +73,28 @@ O desafio foi construir uma plataforma que transmitisse a essência vibrante, se
 
 ## 🌌 Arquitetura do Sistema
 
-Uma arquitetura modular estilo Monorepo, desenhada para **Vertical Slicing** e **Zero-Bundle-Size**, utilizando as tecnologias mais modernas do ecossistema React.
+Uma arquitetura modular estilo Monorepo, desenhada para **Vertical Slicing** e **Zero-Bundle-Size**, utilizando as tecnologias mais modernas do ecossistema React - **Next.js 15.5** e **React Server Components**.
 
 ### Mapa de Pastas
 
 ```bash
 src/
 ├── app/                  # NEXT.JS APP ROUTER (O Cérebro)
-│   ├── [locale]/         # 🌍 ROTEAMENTO INTERNACIONAL
+│   ├── [locale]/         # 🌍 ROTEAMENTO INTERNACIONAL (PT, EN, ES, FR)
 │   │   ├── tours/        # Catálogo de Experiências (SSG/ISR)
 │   │   ├── blog/         # Sistema de Blog via Markdown
 │   │   └── ...
-│   ├── api/              # Serverless Functions
+│   ├── api/              # Serverless Functions (Analytics, Formulários)
 │   └── not-found.tsx     # 🎨 Página 404 Premium
 │
 ├── components/           # BIBLIOTECA DE UI (Atomic Design)
-│   ├── ui/               # Átomos (Button, Badge, Card)
-│   ├── sections/         # Moléculas (Hero, Testimonials, FAQ)
-│   └── layout/           # Organismos (Footer, Navbar, MobileMenu)
+│   ├── ui/               # Átomos (Button, Badge, Card) - Reutilizáveis
+│   ├── sections/         # Moléculas (Hero, Testimonials, FAQ) - Blocos Lógicos
+│   └── layout/           # Organismos (Footer, Navbar, MobileMenu) - Estruturais
 │
 ├── lib/                  # LÓGICA CORE
 │   ├── dictionaries.ts   # 📖 Carregador de Tradução Type-Safe
-│   └── utils.ts          # Funções Utilitárias e Helpers
+│   └── utils.ts          # Funções Utilitárias e Helpers (Dry Code)
 │
 ├── messages/             # CAMADA DE CONTEÚDO (i18n)
 │   ├── en.json           # Dicionário Inglês
@@ -119,16 +119,16 @@ sequenceDiagram
     Edge->>Middleware: Intercepta Requisição
     Middleware->>Middleware: 1. Verifica Cookie de Locale
     Middleware->>Middleware: 2. Analisa Header Accept-Language
-    Middleware->>Middleware: 3. Reescreve URL (/pt/quem-somos)
+    Middleware->>Middleware: 3. Reescreve URL para /pt/quem-somos
     Middleware->>App: Encaminha Requisição Processada
-    App-->>User: Retorna HTML Estático (SSG)
+    App-->>User: Retorna HTML Estático (SSG) Ultra-Rápido
 ```
 
 ---
 
 ## 🎨 Design System & UI Gallery
 
-Mantemos um **Design System Atômico** rigoroso focado em micro-interações e acessibilidade.
+Mantemos um **Design System Atômico** rigoroso focado em micro-interações, acessibilidade e consistência visual.
 
 | Componente | Status | Tech | Fonte |
 |-----------|--------|------|--------|
@@ -137,62 +137,62 @@ Mantemos um **Design System Atômico** rigoroso focado em micro-interações e a
 | **Badge** | 🟢 Estável | `tailwind` | [`src/components/ui/badge.tsx`](src/components/ui/badge.tsx) |
 | **Flag** | 🟢 Estável | `svg` | [`src/components/ui/flag.tsx`](src/components/ui/flag.tsx) |
 
-### Tokens de Cor (OKLCH)
+### Tokens de Cor (OKLCH - High Dynamic Range)
 
 Utilizamos o espaço de cor **OKLCH** para uniformidade perceptual em telas modernas (HDR/OLED).
 
-- 🔴 `primary`: `oklch(0.623 0.214 28.5)` (Tijolo Favela Quente)
-- ⚫ `neutral`: `oklch(0.205 0 0)` (Asfalto Noturno)
-- 🟡 `accent`: `#f59e0b` (Sol/Ouro do Rio)
+- 🔴 `primary`: `oklch(0.623 0.214 28.5)` (Tijolo Favela Quente - Vibrante)
+- ⚫ `neutral`: `oklch(0.205 0 0)` (Asfalto Noturno - Profundo)
+- 🟡 `accent`: `#f59e0b` (Sol/Ouro do Rio - Destaque)
 
 ---
 
 ## ⚡ Engenharia de Performance (Core Web Vitals)
 
-Tratamos performance como feature essencial. Sites lentos perdem turistas. O objetivo é **Lighthouse 100**.
+Tratamos performance como feature essencial. Sites lentos perdem turistas. O objetivo é **Lighthouse 100** em todos os dispositivos.
 
-| Métrica | Orçamento | Real | Estratégia |
+| Métrica | Orçamento | Real | Estratégia de Engenharia |
 |--------|--------|--------|----------|
-| **FCP** (First Paint) | < 1.0s | **0.8s** | Critical CSS Inlining |
-| **LCP** (Largest Paint) | < 2.5s | **1.2s** | Imagens `priority` + Formato AVIF |
-| **CLS** (Shift) | 0.00 | **0.00** | Aspect Ratios Rígidos em Imagens |
-| **Bundles** | < 100kb | **78kb** | Server Components (RSC) |
+| **FCP** (First Paint) | < 1.0s | **0.8s** | Critical CSS Inlining & Edge Caching |
+| **LCP** (Largest Paint) | < 2.5s | **1.2s** | Imagens `priority`, Formato AVIF & Lazy Loading Inteligente |
+| **CLS** (Shift) | 0.00 | **0.00** | Aspect Ratios Rígidos em Imagens & Fontes Otimizadas (`swap`) |
+| **Bundles** | < 100kb | **78kb** | Server Components (Zero-JS) & Code Splitting |
 
-> **Nota Técnica**: Utilizamos `next/font` com estratégia `swap` para garantir visibilidade imediata do texto, sem layout shift.
+> **Nota Técnica**: Utilizamos `next/font` para garantir que a tipografia carregue instantaneamente sem layout shifts.
 
 ---
 
 ## 📱 Mobile-First Forensic Engineering
 
-Adotamos uma abordagem de **"Zero-Compromise"** para dispositivos móveis. O sistema não apenas "se adapta"; ele foi desenhado nativamente para o toque.
+Adotamos uma abordagem de **"Zero-Compromise"** para dispositivos móveis. O sistema não apenas "se adapta"; ele foi desenhado nativamente para o toque e telas pequenas.
 
 | Funcionalidade | Implementação (Técnica) | Benefício de UX |
 |---------------|-------------------------|-----------------|
 | **Anti-Zoom (iOS)** | `text-base` (16px) em inputs + `text-size-adjust: 100%` | Previne zoom indesejado em formulários no iPhone |
-| **Arquitetura Visual** | 3-Layer Z-Index Model (`Base 100` < `Menu 500` < `Modal 1050`) | Zero sobreposições ou menus cortados |
-| **Micro-Telas** | Layout fluido testado em **320px** (iPhone SE 1st Gen) | Legibilidade total até nos menores dispositivos |
-| **Toque Seguro** | Targets de clique de 44px+ Min | Navegação sem erros de "dedo gordo" |
-| **Break-Words** | `hyphens-auto` + `min-w-0` flex | Textos nunca "estouram" ou geram scroll horizontal |
+| **Arquitetura Visual** | 3-Layer Z-Index Model (`Base 100` < `Menu 500` < `Modal 1050`) | Zero sobreposições ou menus cortados em telas pequenas |
+| **Micro-Telas** | Layout fluido testado em **320px** (iPhone SE 1st Gen) | Legibilidade total até nos menores dispositivos disponíveis |
+| **Toque Seguro** | Targets de clique de 44px+ Min | Navegação fluida sem erros de clique ("dedo gordo") |
+| **Break-Words** | `hyphens-auto` + `min-w-0` flex | Textos nunca "estouram" ou geram scroll horizontal indesejado |
 
 ---
 
 ## 🔒 Protocolos de Segurança
 
-A plataforma implementa **Defense-in-Depth** via headers HTTP rigorosos em `next.config.ts`.
+A plataforma implementa **Defense-in-Depth** via headers HTTP rigorosos em `next.config.ts`, garantindo a integridade dos dados e do usuário.
 
 | Header | Valor | Propósito |
 |--------|-------|---------|
 | `X-DNS-Prefetch-Control` | `on` | Resolução DNS mais rápida |
-| `Strict-Transport-Security` | `max-age=63072000` | Força HTTPS sempre |
-| `X-Frame-Options` | `SAMEORIGIN` | Previne Clickjacking |
-| `X-Content-Type-Options` | `nosniff` | Previne MIME Sniffing |
-| `Permissions-Policy` | `camera=(), mic=()` | Privacidade de Hardware |
+| `Strict-Transport-Security` | `max-age=63072000` | Força HTTPS sempre (HSTS Preload) |
+| `X-Frame-Options` | `SAMEORIGIN` | Previne Clickjacking e embedding não autorizado |
+| `X-Content-Type-Options` | `nosniff` | Previne MIME Sniffing attacks |
+| `Permissions-Policy` | `camera=(), mic=()` | Privacidade de Hardware (Bloqueio de acesso não solicitado) |
 
 ---
 
 ## 🌍 Motor de Internacionalização (i18n)
 
-Suporte nativo para **4 Idiomas Globais** com detecção automática e zero atrito.
+Suporte nativo para **4 Idiomas Globais** com detecção automática e zero atrito para o turista.
 
 - 🇺🇸 **English** (`en`)
 - 🇧🇷 **Português** (`pt`) - *Idioma Padrão*
@@ -201,50 +201,51 @@ Suporte nativo para **4 Idiomas Globais** com detecção automática e zero atri
 
 **Como funciona a mágica**:
 
-1. **Detecção**: O Middleware escaneia os headers do navegador.
-2. **Roteamento**: Redireciona `/` automaticamente para `/{locale}`.
+1. **Detecção**: O Middleware escaneia os headers do navegador e a geolocalização IP.
+2. **Roteamento**: Redireciona `/` automaticamente para `/{locale}` correto.
 3. **Type-Safety**: O TypeScript valida cada chave de tradução. Se faltar uma chave no Inglês que existe no Português, o build quebra. **Zero erros de tradução em produção.**
 
 ---
 
-## 🛠️ Manual de Engenharia
+## 🛠️ Manual de Engenharia (Local Setup)
 
-Pronto para codar? Vamos rodar o "Favela Digital" na sua máquina.
+Para desenvolvedores e auditores que desejam inspecionar a qualidade do código.
 
 ### 1. Iniciar os Motores
 
 ```bash
-# Clone o repositório
+# Clone o repositório seguro
 git clone https://github.com/glferreira-devsecops/TAVARES.git
 
-# Entre na pasta
+# Entre na pasta do projeto
 cd TAVARES
 
 # Instale as dependências (Rápido com pnpm ou npm)
 npm install
 
-# Inicie o Servidor Local
+# Inicie o Servidor de Desenvolvimento Local
 npm run dev
 ```
 
-Acesse `http://localhost:3000` e veja a mágica acontecer.
+Acesse `http://localhost:3000` e veja a plataforma rodando.
 
 ### 2. Fluxo de Deployment (GitOps)
 
-Utilizamos um workflow profissional de **GitOps**.
+Utilizamos um workflow profissional de **GitOps** com integração contínua (CI/CD).
 
-- Push para `main` -> **Deploy de Produção** (Vercel)
-- Push para `dev` -> **Deploy de Preview** (Ambiente de Teste)
+- Commit na `main` -> **Deploy Automático de Produção** (Vercel Edge)
+- Preview Deployments -> Gerados automaticamente para cada Pull Request.
 
 ---
 
 <div align="center">
   <br/>
 
-  **Desenvolvido com Obsessão por Detalhes por [Gabriel Ferreira](https://github.com/glferreira-devsecops)**
+  **Designed & Engineered by [RET Tecnologia](https://rettecnologia.org)**
 
-  *Code is Poetry. Experience is Art. Impact is Everything.*
+  *Excellence in Code. Impact in Reality.*
 
-  [![LinkedIn](https://img.shields.io/badge/LinkedIn-Conectar-blue?style=flat&logo=linkedin)](https://linkedin.com/in/devferreirag)
+  [![LinkedIn](https://img.shields.io/badge/Connect-LinkedIn-blue?style=flat&logo=linkedin)](https://linkedin.com/in/devferreirag)
+  [![Website](https://img.shields.io/badge/Visit-RET_Tecnologia-black?style=flat&logo=vercel)](https://rettecnologia.org)
 
 </div>
