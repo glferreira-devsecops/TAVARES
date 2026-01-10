@@ -1,39 +1,29 @@
 <div align="center">
 
-  ![Favela República Banner](/public/images/logo_v1.webp)
+  <img src="/public/images/logo_v1.webp" alt="Favela República Logo" width="180" height="auto" />
+
+  <br />
 
 # 🌴 O Favela-República Digital Experience
 
-### **Muito Além do Turismo. Uma Plataforma de Imersão Cultural.**
+### **The Official Digital Embassy of Tavares Bastos**
 
   <p align="center">
-    <i>"Conectando a alma autêntica da favela Tavares Bastos (Rio de Janeiro) ao mundo através de tecnologia de alta performance, design premium e turismo de base para a favela."</i>
+    <i>"Connecting the authentic soul of Rio's safest favela to the world through high-performance technology, premium design, and forensic engineering."</i>
   </p>
 
   <br/>
 
-  <!-- ☢️ THE WALL OF AUTHORITY ☢️ -->
-  <!-- ROW 1: CORE STATS -->
+  <!-- 🏆 THE WALL OF AUTHORITY 🏆 -->
   [![Status](https://img.shields.io/badge/Production-Live-success?style=for-the-badge&logo=vercel&logoColor=white)](https://favelarepublica.vercel.app/)
   [![Lighthouse](https://img.shields.io/badge/Lighthouse-100%2F100-success?style=for-the-badge&logo=google+lighthouse&logoColor=white)](https://pagespeed.web.dev/)
-  [![SEO](https://img.shields.io/badge/SEO-Rank_1-blue?style=for-the-badge&logo=google&logoColor=white)](https://google.com)
-  [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](LICENSE)
-  [![Mobile](https://img.shields.io/badge/Mobile-Forensic_Verified-purple?style=for-the-badge&logo=apple&logoColor=white)](#-mobile-first-forensic-engineering)
-
-  <!-- ROW 2: TECH STACK -->
-  [![Framework](https://img.shields.io/badge/Next.js-15.5-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org)
-  [![Language](https://img.shields.io/badge/TypeScript-Strict-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://typescriptlang.org)
-  [![Styling](https://img.shields.io/badge/Tailwind-OKLCH-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
-  [![Animation](https://img.shields.io/badge/Framer_Motion-Power-FF0050?style=for-the-badge&logo=framer&logoColor=white)](https://framer.com/motion)
-
-  <!-- ROW 3: DEVOPS & SECURITY -->
-  [![CI/CD](https://img.shields.io/badge/CI%2FCD-Github_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)](.github/workflows)
-  [![Security](https://img.shields.io/badge/Security-Headers_Hardened-red?style=for-the-badge&logo=security&logoColor=white)](next.config.ts)
-  [![i18n](https://img.shields.io/badge/i18n-4_Idiomas-10B981?style=for-the-badge&logo=googletranslate&logoColor=white)](src/messages)
+  [![Role](https://img.shields.io/badge/Role-Official_Agency-blue?style=for-the-badge&logo=auth0&logoColor=white)](https://rettecnologia.org)
+  [![Security](https://img.shields.io/badge/Security-Forensic_Grade-red?style=for-the-badge&logo=security&logoColor=white)](next.config.ts)
 
   <br/>
+  <br/>
 
-  [**🌐 Ver Plataforma Online**](https://favelarepublica.vercel.app/) • [**📜 Manifesto da Marca**](#-a-visão-branding--tech) • [**🏗️ Arquitetura**](#-arquitetura-do-sistema) • [**📄 Docs da API**](#-manual-de-engenharia)
+  [**🌐 LIVE PLATFORM**](https://favelarepublica.vercel.app/) • [**🎨 DESIGN SYSTEM**](#-design-system--ui-gallery) • [**🏗️ ARCHITECTURE**](#-system-architecture) • [**📱 MOBILE ENG.**](#-mobile-first-forensic-engineering)
 
 </div>
 
@@ -41,211 +31,143 @@
 
 ---
 
-## 📑 Índice (O Ecossistema)
+## 🦅 The Vision (Beyond Code)
 
-- [💎 A Visão (Branding & Tech)](#-a-visão-branding--tech)
-- [🌌 Arquitetura do Sistema](#-arquitetura-do-sistema)
-  - [Mapa de Pastas](#mapa-de-pastas)
-  - [Fluxo de Middleware (Edge)](#fluxo-de-middleware-edge)
-- [🎨 Design System & UI Gallery](#-design-system--ui-gallery)
-- [⚡ Engenharia de Performance (Core Web Vitals)](#-engenharia-de-performance-core-web-vitals)
-- [🔒 Protocolos de Segurança](#-protocolos-de-segurança)
-- [🌍 Motor de Internacionalização (i18n)](#-motor-de-internacionalização-i18n)
-- [🛠️ Manual de Engenharia](#️-manual-de-engenharia)
+**This is not just a website. It is a socio-economic accelerator.**
 
----
+The **Favela-República Digital Experience** was engineered by **RET Tecnologia** to solve a complex challenge: *How to translate the vibrant, safe, and authentic reality of the Tavares Bastos favela into a premium digital product that competes with high-end global tourism platforms?*
 
-## 💎 A Visão (Branding & Tech)
+We didn't just build a page; we built a **Digital Embassy**.
 
-**Isto não é apenas um site.** É uma embaixada digital do Favela-República.
+### 🎯 Strategic Objectives Achieved
 
-O desafio foi construir uma plataforma que transmitisse a essência vibrante, segura e autêntica da Tavares Bastos, garantindo ao mesmo tempo uma experiência de usuário (UX) nível **Awwwards**.
+1. **Identity Reclamation**: We aggressively reclaimed the word "Favela", rebranding it from a stigma to a badge of honor and cultural potency.
+2. **Global SEO Dominance ("FIFA Street")**: The platform is architected to capture global traffic searching for the iconic "FIFA Street" court, funneling it into sustainable local tourism revenue.
+3. **Psychological Safety**: Through forensic UX design, we use layout, micro-interactions, and social proof to dismantle user bias and anxiety before the booking even happens.
 
-### Pilares do Projeto
-
-1. **Identidade "Favela"**: Assumimos com orgulho o termo "Favela", ressignificando-o como potência cultural e turística, não apenas "comunidade".
-2. **SEO Estratégico ("FIFA Street")**: A plataforma foi otimizada para dominar as buscas globais relacionadas à icônica quadra do jogo FIFA Street, localizada no território.
-3. **Segurança Psicológica**: Através de design limpo, FAQ inteligente e depoimentos reais, quebramos barreiras de preconceito antes mesmo da visita.
-
-> **"Não vendemos tours. Vendemos a quebra de preconceitos e a imersão na cultura real do Rio."**
+> **"We don't sell tours. We sell the deconstruction of prejudice."**
 
 ---
 
-## 🌌 Arquitetura do Sistema
+## ⚡ Key Features (Technological Superiority)
 
-Uma arquitetura modular estilo Monorepo, desenhada para **Vertical Slicing** e **Zero-Bundle-Size**, utilizando as tecnologias mais modernas do ecossistema React - **Next.js 15.5** e **React Server Components**.
+| Feature | Tech Stack | Impact |
+|:---|:---|:---|
+| **Hyper-Locales** | `next-intl` (Middleware) | **Instant Language Adaptation**: The system detects the user's country and serves PT, EN, ES, or FR instantly (Edge-computed). |
+| **Forensic SEO** | `Schema.org` + `JSON-LD` | **Google Knowledge Graph**: The site feeds Google structured data about "Tours", "LocalBusiness", and "Breadcrumbs", dominating search results. |
+| **Cinema UX** | `Framer Motion` | **Emotion-Led Design**: Animations aren't just flashy; they guide the eye and create a premium "App-like" feel on the web. |
+| **Zero-Load** | `React Server Components` | **Instant Interactive**: Heavy JS is stripped out. Use of `next/image` ensures visual assets load instantly even on 4G networks in the favela. |
 
-### Mapa de Pastas
+---
+
+## 🌌 System Architecture
+
+A modular, **Vertical Slicing** Monorepo designed for scale, maintainability, and auditability.
 
 ```bash
 src/
-├── app/                  # NEXT.JS APP ROUTER (O Cérebro)
-│   ├── [locale]/         # 🌍 ROTEAMENTO INTERNACIONAL (PT, EN, ES, FR)
-│   │   ├── tours/        # Catálogo de Experiências (SSG/ISR)
-│   │   ├── blog/         # Sistema de Blog via Markdown
+├── app/                  # THE BRAIN (Next.js 15.5 App Router)
+│   ├── [locale]/         # 🌍 Dynamic Locale Routes (Edge Middleware)
+│   │   ├── tours/        # SSG/ISR Travel Catalog
+│   │   ├── blog/         # High-Performance Content Engine
 │   │   └── ...
-│   ├── api/              # Serverless Functions (Analytics, Formulários)
-│   └── not-found.tsx     # 🎨 Página 404 Premium
+│   ├── api/              # Serverless Functions (Secure Proxies)
+│   └── manifest.ts       # Dynamic PWA Generation
 │
-├── components/           # BIBLIOTECA DE UI (Atomic Design)
-│   ├── ui/               # Átomos (Button, Badge, Card) - Reutilizáveis
-│   ├── sections/         # Moléculas (Hero, Testimonials, FAQ) - Blocos Lógicos
-│   └── layout/           # Organismos (Footer, Navbar, MobileMenu) - Estruturais
+├── components/           # UI LIBRARY (Atomic Design 2.0)
+│   ├── ui/               # Atoms: Reusable, dumb components (Buttons, Cards)
+│   ├── sections/         # Molecules: Business logic blocks (Hero, Booking)
+│   └── layout/           # Organisms: Structural shells (Header, Footer)
 │
-├── lib/                  # LÓGICA CORE
-│   ├── dictionaries.ts   # 📖 Carregador de Tradução Type-Safe
-│   └── utils.ts          # Funções Utilitárias e Helpers (Dry Code)
+├── lib/                  # CORE LOGIC
+│   ├── dictionaries.ts   # Type-Safe Translation Loader (Zero Runtime Error)
+│   └── utils.ts          # Forensic Utilities & Analytics
 │
-├── messages/             # CAMADA DE CONTEÚDO (i18n)
-│   ├── en.json           # Dicionário Inglês
-│   ├── es.json           # Dicionário Espanhol
-│   ├── fr.json           # Dicionário Francês
-│   ├── pt.json           # Dicionário Português
-│   └── ...
+└── messages/             # CONTENT LAYER (The Voice)
+    ├── en.json           # Native English
+    ├── pt.json           # Native Portuguese
+    ├── es.json           # Native Spanish
+    └── fr.json           # Native French
 ```
-
-### Fluxo de Middleware (Edge)
-
-Cada requisição passa por um pipeline rigoroso na Edge (Vercel) para garantir a entrega do idioma correto instantaneamente:
-
-```mermaid
-sequenceDiagram
-    participant User
-    participant Edge as Vercel Edge
-    participant Middleware as src/middleware.ts
-    participant App as Next.js App
-
-    User->>Edge: Requisita /quem-somos
-    Edge->>Middleware: Intercepta Requisição
-    Middleware->>Middleware: 1. Verifica Cookie de Locale
-    Middleware->>Middleware: 2. Analisa Header Accept-Language
-    Middleware->>Middleware: 3. Reescreve URL para /pt/quem-somos
-    Middleware->>App: Encaminha Requisição Processada
-    App-->>User: Retorna HTML Estático (SSG) Ultra-Rápido
-```
-
----
-
-## 🎨 Design System & UI Gallery
-
-Mantemos um **Design System Atômico** rigoroso focado em micro-interações, acessibilidade e consistência visual.
-
-| Componente | Status | Tech | Fonte |
-|-----------|--------|------|--------|
-| **Button** | 🟢 Estável | `framer-motion` | [`src/components/ui/button.tsx`](src/components/ui/button.tsx) |
-| **TourCard** | 🟢 Estável | `next/image` | [`src/components/ui/card.tsx`](src/components/ui/card.tsx) |
-| **Badge** | 🟢 Estável | `tailwind` | [`src/components/ui/badge.tsx`](src/components/ui/badge.tsx) |
-| **Flag** | 🟢 Estável | `svg` | [`src/components/ui/flag.tsx`](src/components/ui/flag.tsx) |
-
-### Tokens de Cor (OKLCH - High Dynamic Range)
-
-Utilizamos o espaço de cor **OKLCH** para uniformidade perceptual em telas modernas (HDR/OLED).
-
-- 🔴 `primary`: `oklch(0.623 0.214 28.5)` (Tijolo Favela Quente - Vibrante)
-- ⚫ `neutral`: `oklch(0.205 0 0)` (Asfalto Noturno - Profundo)
-- 🟡 `accent`: `#f59e0b` (Sol/Ouro do Rio - Destaque)
-
----
-
-## ⚡ Engenharia de Performance (Core Web Vitals)
-
-Tratamos performance como feature essencial. Sites lentos perdem turistas. O objetivo é **Lighthouse 100** em todos os dispositivos.
-
-| Métrica | Orçamento | Real | Estratégia de Engenharia |
-|--------|--------|--------|----------|
-| **FCP** (First Paint) | < 1.0s | **0.8s** | Critical CSS Inlining & Edge Caching |
-| **LCP** (Largest Paint) | < 2.5s | **1.2s** | Imagens `priority`, Formato AVIF & Lazy Loading Inteligente |
-| **CLS** (Shift) | 0.00 | **0.00** | Aspect Ratios Rígidos em Imagens & Fontes Otimizadas (`swap`) |
-| **Bundles** | < 100kb | **78kb** | Server Components (Zero-JS) & Code Splitting |
-
-> **Nota Técnica**: Utilizamos `next/font` para garantir que a tipografia carregue instantaneamente sem layout shifts.
 
 ---
 
 ## 📱 Mobile-First Forensic Engineering
 
-Adotamos uma abordagem de **"Zero-Compromise"** para dispositivos móveis. O sistema não apenas "se adapta"; ele foi desenhado nativamente para o toque e telas pequenas.
+We implemented a **"Zero-Compromise"** philosophy for mobile. This is where 80% of tourists will access the platform.
 
-| Funcionalidade | Implementação (Técnica) | Benefício de UX |
-|---------------|-------------------------|-----------------|
-| **Anti-Zoom (iOS)** | `text-base` (16px) em inputs + `text-size-adjust: 100%` | Previne zoom indesejado em formulários no iPhone |
-| **Arquitetura Visual** | 3-Layer Z-Index Model (`Base 100` < `Menu 500` < `Modal 1050`) | Zero sobreposições ou menus cortados em telas pequenas |
-| **Micro-Telas** | Layout fluido testado em **320px** (iPhone SE 1st Gen) | Legibilidade total até nos menores dispositivos disponíveis |
-| **Toque Seguro** | Targets de clique de 44px+ Min | Navegação fluida sem erros de clique ("dedo gordo") |
-| **Break-Words** | `hyphens-auto` + `min-w-0` flex | Textos nunca "estouram" ou geram scroll horizontal indesejado |
+### The "Thumb-Zone" Architecture
 
----
+User interface elements are mapped to the physical reach of a human thumb on a 6.5" screen.
 
-## 🔒 Protocolos de Segurança
+* **Bottom-Heavy Interaction**: Primary CTAs (Booking) move to the bottom or are sticky on mobile.
+* **Touch Targets**: Rigorous adherence to 44x44px minimum touch areas.
+* **Anti-Overlap**: Z-Index layering (`100` Header vs `200` Modal) verified against viewport shifts.
 
-A plataforma implementa **Defense-in-Depth** via headers HTTP rigorosos em `next.config.ts`, garantindo a integridade dos dados e do usuário.
+### Visual Integrity
 
-| Header | Valor | Propósito |
-|--------|-------|---------|
-| `X-DNS-Prefetch-Control` | `on` | Resolução DNS mais rápida |
-| `Strict-Transport-Security` | `max-age=63072000` | Força HTTPS sempre (HSTS Preload) |
-| `X-Frame-Options` | `SAMEORIGIN` | Previne Clickjacking e embedding não autorizado |
-| `X-Content-Type-Options` | `nosniff` | Previne MIME Sniffing attacks |
-| `Permissions-Policy` | `camera=(), mic=()` | Privacidade de Hardware (Bloqueio de acesso não solicitado) |
+* **Zoom Prevention**: `text-size-adjust: 100%` and `16px` base font size prevent iOS form-zoom.
+* **Safe Areas**: Respects the "Notch" and "Home Indicator" on iPhone X+ via `viewport-fit=cover`.
 
 ---
 
-## 🌍 Motor de Internacionalização (i18n)
+## ⚡ Performance Metrics (Core Web Vitals)
 
-Suporte nativo para **4 Idiomas Globais** com detecção automática e zero atrito para o turista.
+We treat performance as a feature. Slow sites lose trust.
 
-- 🇺🇸 **English** (`en`)
-- 🇧🇷 **Português** (`pt`) - *Idioma Padrão*
-- 🇪🇸 **Español** (`es`)
-- 🇫🇷 **Français** (`fr`)
+| Metric | Google Limit | **Favela-República** | Status |
+|:---|:---|:---:|:---:|
+| **FCP** (First Paint) | 1.8s | **0.8s** | 🚀 **ELITE** |
+| **LCP** (Largest Paint) | 2.5s | **1.2s** | 🚀 **ELITE** |
+| **CLS** (Shift) | 0.1 | **0.00** | 💎 **PERFECT** |
+| **SEO** | 90 | **100** | 👑 **KING** |
 
-**Como funciona a mágica**:
-
-1. **Detecção**: O Middleware escaneia os headers do navegador e a geolocalização IP.
-2. **Roteamento**: Redireciona `/` automaticamente para `/{locale}` correto.
-3. **Type-Safety**: O TypeScript valida cada chave de tradução. Se faltar uma chave no Inglês que existe no Português, o build quebra. **Zero erros de tradução em produção.**
+> *Verified via Google PageSpeed Insights (Mobile & Desktop)*
 
 ---
 
-## 🛠️ Manual de Engenharia (Local Setup)
+## 🛠️ Engineering Manual (Local Setup)
 
-Para desenvolvedores e auditores que desejam inspecionar a qualidade do código.
+For auditors and developers inspecting the code quality.
 
-### 1. Iniciar os Motores
+### 1. Ignite the Engine
 
 ```bash
-# Clone o repositório seguro
+# Clone the secure repository
 git clone https://github.com/glferreira-devsecops/TAVARES.git
 
-# Entre na pasta do projeto
+# Enter the mission control
 cd TAVARES
 
-# Instale as dependências (Rápido com pnpm ou npm)
+# Install forensic dependencies
 npm install
 
-# Inicie o Servidor de Desenvolvimento Local
+# Launch Development Environment
 npm run dev
 ```
 
-Acesse `http://localhost:3000` e veja a plataforma rodando.
+Visit `http://localhost:3000`.
 
-### 2. Fluxo de Deployment (GitOps)
+### 2. CI/CD GitOps Workflow
 
-Utilizamos um workflow profissional de **GitOps** com integração contínua (CI/CD).
+We utilize a rigorous **GitOps** pipeline.
 
-- Commit na `main` -> **Deploy Automático de Produção** (Vercel Edge)
-- Preview Deployments -> Gerados automaticamente para cada Pull Request.
+* `push main` → **Production Deploy** (Vercel Edge Network)
+* `push dev` → **Preview Deploy** (Isolated Sandbox)
 
 ---
 
 <div align="center">
   <br/>
 
-  **Designed & Engineered by [RET Tecnologia](https://rettecnologia.org)**
+### Engineered with Precision by
 
-  *Excellence in Code. Impact in Reality.*
+  [![RET Tecnologia](https://img.shields.io/badge/RET_Tecnologia-Systems_Engineering-black?style=for-the-badge&logo=vercel&logoColor=white)](https://rettecnologia.org)
 
-  [![LinkedIn](https://img.shields.io/badge/Connect-LinkedIn-blue?style=flat&logo=linkedin)](https://linkedin.com/in/devferreirag)
-  [![Website](https://img.shields.io/badge/Visit-RET_Tecnologia-black?style=flat&logo=vercel)](https://rettecnologia.org)
+  *Excellence is not an act, but a habit.*
+
+  <br/>
+
+  [![LinkedIn](https://img.shields.io/badge/Connect_on_LinkedIn-blue?style=flat-square&logo=linkedin)](https://linkedin.com/in/devferreirag)
 
 </div>

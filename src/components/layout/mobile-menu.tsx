@@ -29,7 +29,7 @@ export function MobileMenu({ onClose, isActive }: MobileMenuProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-modal bg-neutral-900/95 backdrop-blur-md lg:hidden flex flex-col overflow-hidden gpu-accelerated"
+            className="fixed inset-0 z-[200] bg-neutral-900/95 backdrop-blur-md lg:hidden flex flex-col overflow-hidden gpu-accelerated"
         >
             {/* Noise texture overlay */}
             <div className="absolute inset-0 opacity-20 bg-noise pointer-events-none mix-blend-overlay gpu-accelerated" />

@@ -163,7 +163,7 @@ export function TourDetailClient({ tour, lang }: TourDetailClientProps) {
             </section>
 
             {/* Main Content */}
-            <section className="pb-24 pt-12 relative overflow-hidden">
+            <section className="pb-24 pt-12 relative">
                 {/* Ambient Background */}
                 <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary-500/5 rounded-full blur-[150px] pointer-events-none translate-x-1/2 -translate-y-1/2" />
 
