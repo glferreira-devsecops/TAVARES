@@ -82,6 +82,10 @@
             "safety": "Safety",
             "social_impact": "Social impact",
             "interaction": "Interaction with Residents"
+        },
+        "gallery": {
+            "panoramicAlt": "The Favela-Republic Panoramic View",
+            "fifaStreetAlt": "Real setting of the FIFA Street court in Favela-Republic Rio de Janeiro"
         }
     },
     "Testimonials": {
@@ -298,6 +302,8 @@
         "titleHighlight": "Transforms Lives",
         "description_1": "The Dona Irene Social Center is the heart of our mission. A portion of the revenue from every tour goes directly to support educational, cultural, and sports projects for the children and youth of the favela.",
         "description_2": "It's not just charity, it's real community development. By visiting Favela-República, you help maintain music workshops, jiu-jitsu classes, and tutoring.",
+        "madeByResidents": "Made by residents, for residents",
+        "communityCenterAlt": "Dona Irene Social Center",
         "stats": {
             "residents": {
                 "value": "300+",

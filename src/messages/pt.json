@@ -85,6 +85,10 @@
             "safety": "A favela mais segura do Rio",
             "social_impact": "Impacto social",
             "interaction": "Interação com Moradores"
+        },
+        "gallery": {
+            "panoramicAlt": "O Favela-República Panorâmico",
+            "fifaStreetAlt": "Cenário real da quadra do FIFA Street no Favela-República Rio de Janeiro"
         }
     },
     "Testimonials": {
@@ -301,6 +305,8 @@
         "titleHighlight": "Transforma Vidas",
         "description_1": "O Centro Social Dona Irene é o coração da nossa missão. Parte da receita de cada tour é destinada diretamente para apoiar projetos educativos, culturais e esportivos para as crianças e jovens da favela.",
         "description_2": "Não é apenas caridade, é desenvolvimento comunitário real. Ao visitar o Favela-República, você ajuda a manter oficinas de música, jiu-jítsu e reforço escolar.",
+        "madeByResidents": "Feito por moradores, para moradores",
+        "communityCenterAlt": "Centro Social Dona Irene",
         "stats": {
             "residents": {
                 "value": "300+",

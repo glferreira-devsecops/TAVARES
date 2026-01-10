@@ -23,7 +23,7 @@ export function NewsletterForm({ labels }: NewsletterFormProps) {
         e.preventDefault();
 
         if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
-            toast.error("Por favor, insira um email válido.");
+            toast.error(labels.error);
             return;
         }
 

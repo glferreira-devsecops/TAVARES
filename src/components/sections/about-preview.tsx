@@ -5,14 +5,15 @@ import { Button, WhatsAppButton } from "@/components/ui/button";
 import { CONTACT, WHATSAPP_MESSAGES } from "@/lib/constants";
 import { motion } from "framer-motion";
 import { ArrowRight, Star } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 
 export function AboutPreview() {
     const t = useTranslations("AboutPreview");
     const tSocial = useTranslations("SocialProject");
-    // const locale = useLocale(); // If needed for WHATSAPP_MESSAGES, but let's see
+    const locale = useLocale();
+    const currentLang = (["en", "es", "fr"].includes(locale) ? locale : "pt") as "pt" | "en" | "es" | "fr";
 
     return (
         <section id="about" className="py-24 md:py-32 relative overflow-hidden bg-neutral-50 scroll-mt-24">
@@ -93,7 +94,7 @@ export function AboutPreview() {
                                 {t("cta")}
                             </Button>
                             <WhatsAppButton
-                                message={WHATSAPP_MESSAGES.general.pt} // Defaulting to PT for now as locale is gone, or we can use useLocale()
+                                message={WHATSAPP_MESSAGES.general[currentLang]}
                                 phone={CONTACT.whatsapp.number}
                                 size="lg"
                                 className="bg-[#25D366] hover:bg-[#128C7E] text-white border-none shadow-xl shadow-green-500/20 font-bold px-8"
@@ -116,7 +117,7 @@ export function AboutPreview() {
                             >
                                 <Image
                                     src="/images/social/IMG_0551_v1.webp"
-                                    alt="O Favela-República Panorâmico"
+                                    alt={t("gallery.panoramicAlt")}
                                     fill
                                     className="object-cover hover:scale-105 transition-transform duration-700"
                                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -134,7 +135,7 @@ export function AboutPreview() {
                             >
                                 <Image
                                     src="/images/tours/quadra-fifa-street-rio-de-janeiro.webp"
-                                    alt="Cenário real da quadra do FIFA Street no Favela-República Rio de Janeiro"
+                                    alt={t("gallery.fifaStreetAlt")}
                                     fill
                                     className="object-cover hover:scale-110 transition-transform duration-700"
                                     sizes="(max-width: 768px) 50vw, 25vw"
@@ -190,14 +191,14 @@ export function AboutPreview() {
                                 <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden border-8 border-white/5 shadow-2xl transition-transform duration-700 hover:scale-[1.02] group">
                                     <Image
                                         src="/images/social/PHOTO-2022-09-20-13-10-53_v1.webp"
-                                        alt="Centro Social Dona Irene"
+                                        alt={tSocial("communityCenterAlt")}
                                         fill
                                         className="object-cover group-hover:scale-105 transition-transform duration-1000"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60" />
                                 </div>
                                 <p className="mt-8 text-center text-xs text-neutral-400 font-bold tracking-[0.3em] uppercase opacity-80">
-                                    ❤️ Feito por moradores, para moradores
+                                    ❤️ {tSocial("madeByResidents")}
                                 </p>
                             </div>
 

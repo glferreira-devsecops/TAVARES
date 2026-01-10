@@ -217,9 +217,7 @@ export function Footer() {
             <div className="border-t border-neutral-800 bg-black/20 backdrop-blur-sm">
                 <div className="container-custom py-6 flex flex-col md:flex-row items-center justify-between gap-4">
                     <div className="flex flex-col md:flex-row items-center gap-4 text-xs text-neutral-500">
-                        <p className="text-xs text-neutral-500 font-medium">
-                            &copy; 2026 O Favela-República Tour. {t.rights}
-                        </p>
+                        &copy; 2026 Favela-República Tour. {t.rights}
                         <span className="hidden md:inline text-neutral-700">•</span>
                         <p className="flex items-center gap-1.5">
                             {t.madeWith} <Heart className="w-3.5 h-3.5 text-red-500 fill-red-500 animate-pulse" /> {t.inRio}

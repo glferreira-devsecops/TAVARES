@@ -46,7 +46,10 @@ export function TourDetailClient({ tour, lang }: TourDetailClientProps) {
             highlights: "Destaques",
             safetyBadge: "Tour seguro com condutor local credenciado",
             featured: "Destaque",
-            difficultyLabels: { easy: "Fácil", moderate: "Moderado", challenging: "Desafiador" }
+            difficultyLabels: { easy: "Fácil", moderate: "Moderado", challenging: "Desafiador" },
+            ratingLabel: "Avaliação",
+            safetyTitle: "Segurança Total",
+            safetyDesc: "Condutores locais credenciados nascidos e criados na favela"
         },
         en: {
             backToTours: "Back to Tours",
@@ -64,7 +67,10 @@ export function TourDetailClient({ tour, lang }: TourDetailClientProps) {
             highlights: "Highlights",
             safetyBadge: "Safe tour with accredited local conductor",
             featured: "Featured",
-            difficultyLabels: { easy: "Easy", moderate: "Moderate", challenging: "Challenging" }
+            difficultyLabels: { easy: "Easy", moderate: "Moderate", challenging: "Challenging" },
+            ratingLabel: "Rating",
+            safetyTitle: "Total Safety",
+            safetyDesc: "Accredited local conductors born and raised in the favela"
         },
         es: {
             backToTours: "Volver a los Tours",
@@ -82,7 +88,10 @@ export function TourDetailClient({ tour, lang }: TourDetailClientProps) {
             highlights: "Destacados",
             safetyBadge: "Tour seguro con conductor local acreditado",
             featured: "Destacado",
-            difficultyLabels: { easy: "Fácil", moderate: "Moderado", challenging: "Desafiante" }
+            difficultyLabels: { easy: "Fácil", moderate: "Moderado", challenging: "Desafiante" },
+            ratingLabel: "Valoración",
+            safetyTitle: "Seguridad Total",
+            safetyDesc: "Conductores locales acreditados nacidos y criados en la favela"
         },
         fr: {
             backToTours: "Retour aux Visites",
@@ -100,7 +109,10 @@ export function TourDetailClient({ tour, lang }: TourDetailClientProps) {
             highlights: "Points Forts",
             safetyBadge: "Visite sécurisée avec conducteur local accrédité",
             featured: "En Vedette",
-            difficultyLabels: { easy: "Facile", moderate: "Modéré", challenging: "Difficile" }
+            difficultyLabels: { easy: "Facile", moderate: "Modéré", challenging: "Difficile" },
+            ratingLabel: "Évaluation",
+            safetyTitle: "Sécurité Totale",
+            safetyDesc: "Conducteurs locaux accrédités nés et élevés dans la favela"
         }
     };
 
@@ -199,7 +211,7 @@ export function TourDetailClient({ tour, lang }: TourDetailClientProps) {
                                 </div>
                                 <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 border border-white/10 hover:border-white/20 transition-colors group">
                                     <Star className="w-6 h-6 text-amber-400 mb-3 group-hover:scale-110 transition-transform" />
-                                    <p className="text-sm text-neutral-300 font-medium mb-1">Avaliação</p>
+                                    <p className="text-sm text-neutral-300 font-medium mb-1">{t.ratingLabel}</p>
                                     <p className="font-bold text-white text-lg">5.0 (Google)</p>
                                 </div>
                             </motion.div>
@@ -364,11 +376,11 @@ export function TourDetailClient({ tour, lang }: TourDetailClientProps) {
                                     <div className="relative mb-8 p-5 bg-emerald-950/30 rounded-2xl border border-emerald-500/20">
                                         <div className="flex items-center gap-3 text-base font-bold text-emerald-400 mb-3">
                                             <Shield className="w-5 h-5" />
-                                            <span>Segurança Total</span>
+                                            <span>{t.safetyTitle}</span>
                                         </div>
                                         <div className="flex items-start gap-3 text-sm font-medium text-emerald-200/80 leading-relaxed">
                                             <Check className="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" />
-                                            <span>Condutores locais credenciados nascidos e criados na favela</span>
+                                            <span>{t.safetyDesc}</span>
                                         </div>
                                     </div>
 

@@ -82,6 +82,10 @@
             "safety": "Seguridad",
             "social_impact": "Impacto social",
             "interaction": "Interacción con Moradores"
+        },
+        "gallery": {
+            "panoramicAlt": "La Vista Panorámica de Favela-República",
+            "fifaStreetAlt": "Escenario real de la cancha de FIFA Street en Favela-República Río de Janeiro"
         }
     },
     "Testimonials": {
@@ -304,6 +308,8 @@
         "titleHighlight": "Transforma Vidas",
         "description_1": "El Centro Social Dona Irene es el corazón de nuestra misión. Parte de los ingresos de cada tour se destina directamente a apoyar proyectos educativos, culturales y deportivos para los niños y jóvenes de la favela.",
         "description_2": "No es solo caridad, es desarrollo comunitario real. Al visitar Favela-República, ayudas a mantener talleres de música, clases de jiu-jitsu y apoyo escolar.",
+        "madeByResidents": "Hecho por residentes, para residentes",
+        "communityCenterAlt": "Centro Social Dona Irene",
         "stats": {
             "residents": {
                 "value": "300+",
