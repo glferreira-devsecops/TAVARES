@@ -1,0 +1,292 @@
+{
+    "HomePage": {
+        "title": "Favela-República Tour",
+        "description": "Authentic Favela Tourism"
+    },
+    "Navigation": {
+        "home": "Home",
+        "tours": "Tours",
+        "about": "About Us",
+        "social": "Social Project",
+        "faq": "FAQ",
+        "contact": "Contact",
+        "language": "Language",
+        "book": "Book Now",
+        "openMenu": "Open Menu"
+    },
+    "hero": {
+        "eyebrow": "UNIQUE EXPERIENCE IN RIO",
+        "title": "Authentic Tourism",
+        "titleHighlight": "in Favela-República",
+        "subtitle": "Authentic favela tourism in Rio de Janeiro's favela. Cultural, safe and responsible experiences.",
+        "ctaMain": "Book Now",
+        "ctaSecondary": "See Tours",
+        "stats": {
+            "rating": "Excellent",
+            "safeValue": "FIFA Street Court",
+            "safety": "Real Setting",
+            "localTitle": "Local Conductors",
+            "localSubtitle": "Born in Favela"
+        }
+    },
+    "tourCard": {
+        "insurance": "Insurance Included",
+        "smallGroups": "Small Groups",
+        "book": "Book Now"
+    },
+    "AboutPreview": {
+        "badge": "About Us",
+        "title": "Much more than a tour",
+        "titleHighlight": "A cultural immersion",
+        "description_1": "You will step onto the real set that inspired **FIFA Street**, **The Incredible Hulk** movie, and **Snoop Dogg & Pharrell**'s music video. Favela is not just a favela; it is a global pop culture icon.",
+        "description_2": "Here, safety is absolute and the experience is authentic. Conducted by locals, you will discover the true soul of Rio de Janeiro, with breathtaking views and stories no ordinary conductor can tell.",
+        "description_impact": "By choosing Favela-República, you reinvest directly in the favela. Our sustainable tourism generates local income, preserves our culture, and creates real opportunities for residents.",
+        "trustedTitle": "World Renowned",
+        "trustedSubtitle": "Setting of FIFA Street and rated with excellence:",
+        "highlights": {
+            "fifa": {
+                "title": "FIFA Street",
+                "subtitle": "Iconic Setting"
+            },
+            "reviewCount": "250+ reviews",
+            "tripadvisor": {
+                "title": "TripAdvisor",
+                "subtitle": "5 Stars"
+            },
+            "airbnb": {
+                "title": "Airbnb",
+                "subtitle": "Superhost"
+            },
+            "google": {
+                "title": "Google",
+                "subtitle": "5.0/5.0"
+            }
+        },
+        "stats": {
+            "value": "10+",
+            "label": "Years of History"
+        },
+        "cta": "Learn our full story",
+        "ctaWhatsapp": "Book Visit",
+        "features": {
+            "local_conductors": "Local conductors",
+            "street_art": "Street art",
+            "safety": "Safety",
+            "social_impact": "Social impact",
+            "interaction": "Interaction with Residents"
+        }
+    },
+    "Testimonials": {
+        "eyebrow": "Testimonials",
+        "title": "What our visitors say",
+        "subtitle": "More than 1000 visitors have lived this experience"
+    },
+    "FAQ": {
+        "eyebrow": "FAQ",
+        "title": "Frequently Asked Questions",
+        "subtitle": "Find answers about the tour and visiting the favela.",
+        "questions": {
+            "q1": {
+                "question": "Is it safe to visit the favela?",
+                "answer": "Yes, you will always be accompanied by a local conductor. They will ensure your experience is safe and amazing."
+            },
+            "q2": {
+                "question": "How do I book a tour?",
+                "answer": "The fastest way is via WhatsApp. Just click the green button on any page and send a message with: your desired date, preferred time, number of people, and the tour you're interested in. Our team responds in a few minutes during business hours."
+            },
+            "q3": {
+                "question": "What payment methods are accepted?",
+                "answer": "We accept: PIX (preferential), cash (reals), dollars, credit and debit cards, and Wise. Payment can be made on the day of the tour or in advance."
+            },
+            "q4": {
+                "question": "Can I bring my camera and phone?",
+                "answer": "Yes, you can bring a camera and phone to record the tour; it is very safe. To take photos of residents, especially children, always ask for permission first. Our conductors will help you with this during the tour."
+            },
+            "q5": {
+                "question": "Does the price include everything?",
+                "answer": "The price includes: a bilingual local conductor, round-trip transport from the meeting point to the favela, 360° video, and photos taken by the team. It does not include: meals, drinks, or tips (optional)."
+            },
+            "q6": {
+                "question": "What languages do you offer the tours in?",
+                "answer": "Our conductors speak Portuguese, English, Spanish, and French. Let us know your preferred language when booking so we can ensure an appropriate conductor."
+            },
+            "q7": {
+                "question": "What should I wear and bring?",
+                "answer": "We recommend: comfortable shoes, light clothes, sunscreen, cash or card, and a camera/phone to record your experience."
+            },
+            "q8": {
+                "question": "Can I buy something from residents during the tour?",
+                "answer": "Yes, there are several local shops along the way! You can buy shirts, food, drinks, and other things. Our conductors will show you the best places. Bring cash or a card."
+            },
+            "q9": {
+                "question": "What is the minimum and maximum group size?",
+                "answer": "The minimum is 2 people per tour. The maximum varies and can reach up to 40 people."
+            },
+            "q10": {
+                "question": "Does the tour happen if it rains?",
+                "answer": "Light tours operate normally with drizzle. In case of heavy rain or storms, we will contact you to reschedule at no additional cost."
+            },
+            "q11": {
+                "question": "Where is the meeting point?",
+                "answer": "The meeting point is at Rua do Catete, 153 - Catete (In front of the Museum of the Republic). It's easy to get there by Uber/taxi or metro (Catete station). We send the exact location via WhatsApp after booking confirmation, along with detailed instructions on how to get there."
+            }
+        }
+    },
+    "NotFound": {
+        "title": "Path Not Found",
+        "description": "It seems you have wandered into an unknown alley. In the favela, every path has a return, and we will help you find your way.",
+        "backButton": "Back to Home",
+        "toursButton": "See Our Tours",
+        "helpTitle": "Need a conductor?",
+        "helpSubtitle": "Talk to us directly on WhatsApp",
+        "whatsappButton": "Chat on WhatsApp"
+    },
+    "BookingModal": {
+        "title": "Book Experience",
+        "subtitle": "Almost there! Fill in the details to customize your tour.",
+        "step1": "Select Date",
+        "step2": "Your Details",
+        "dateLabel": "Tour Date",
+        "guestsLabel": "Number of People",
+        "nameLabel": "Your Full Name",
+        "next": "Continue",
+        "confirm": "Confirm via WhatsApp",
+        "back": "Back",
+        "guestUnit": "guests",
+        "duration": "Duration: 2 - 3h"
+    },
+    "CTABanner": {
+        "title": "Ready to live this experience?",
+        "subtitle": "Favela-República awaits you. Book your tour and discover Rio from a new angle.",
+        "cta": "Book via WhatsApp",
+        "benefits": [
+            "Local Conductors",
+            "Total Safety",
+            "Panoramic View"
+        ]
+    },
+    "WhatsApp": {
+        "tooltipTitle": "Talk to us!",
+        "tooltipSubtitle": "Ask questions and book your tour via WhatsApp.",
+        "ariaLabel": "Open WhatsApp",
+        "closeLabel": "Close"
+    },
+    "Contact": {
+        "title": "Contact Us",
+        "subtitle": "We're here to help",
+        "description": "Have a question or want to book your tour? Contact us through any of the channels below.",
+        "whatsapp": "WhatsApp",
+        "whatsappDesc": "Quick response, usually within minutes",
+        "email": "Email",
+        "emailDesc": "For more detailed inquiries",
+        "instagram": "Instagram",
+        "instagramDesc": "Follow us for news and photos",
+        "location": "Location",
+        "locationDesc": "Tour meeting point",
+        "hours": "Business Hours",
+        "hoursValue": "Mon - Sun: 8am to 8pm",
+        "preferWhatsApp": "We Prefer WhatsApp!",
+        "preferWhatsAppDesc": "It's the fastest way to contact us. We respond within minutes during business hours.",
+        "sendMessage": "Send Message",
+        "viewMap": "View on map"
+    },
+    "Blog": {
+        "subtitle": "Blog",
+        "title": "Stories and Curiosities",
+        "description": "Discover more about Favela-República, its history, culture, and the people who make it unique.",
+        "cta": "View all articles",
+        "readMore": "Read article",
+        "minRead": "min",
+        "readTimeSuffix": "read",
+        "back": "Back to Blog",
+        "notFound": "Post not found"
+    },
+    "Common": {
+        "skipToContent": "Skip to content",
+        "loading": "Loading...",
+        "price_from": "from",
+        "view_tour": "View Tour",
+        "badges": {
+            "local_conductor": "Local Guide",
+            "safe": "Safe",
+            "verified": "Verified"
+        },
+        "difficulty": {
+            "easy": "Easy",
+            "moderate": "Moderate",
+            "challenging": "Challenging"
+        },
+        "highlights": {
+            "featured": "Featured"
+        }
+    },
+    "FeaturedTours": {
+        "badge": "EXCLUSIVE TOURS",
+        "title": "Our Tours",
+        "subtitle": "Experiences",
+        "description": "Choose the ideal tour for you. All include local guide, tickets for experiences and round-trip transport to the meeting point.",
+        "book": "Book Now",
+        "cta": "View all tours"
+    },
+    "about": {
+        "hero": {
+            "title": "Our Story",
+            "subtitle": "More than a tour, a movement to value and rescue the favela's identity."
+        },
+        "manifesto": {
+            "title": "Our Mission",
+            "text1": "Favela-República was born from the desire to show the true face of our community. Far from stereotypes, we are a place of vibrant culture, hardworking people, and inspiring stories.",
+            "text2": "Every visit directly supports the local economy, creating opportunities and strengthening pride in being from the favela."
+        },
+        "values": {
+            "title": "What Drives Us",
+            "list": [
+                {
+                    "title": "Authenticity",
+                    "desc": "Real experiences led by those who live the community's daily life."
+                },
+                {
+                    "title": "Safety",
+                    "desc": "Total commitment to the well-being and peace of mind of our visitors and residents."
+                },
+                {
+                    "title": "Culture",
+                    "desc": "Valuing the art, music, and history that make the favela a unique heritage."
+                },
+                {
+                    "title": "Community",
+                    "desc": "We generate jobs and income, reinvesting the impact of tourism into local development."
+                },
+                {
+                    "title": "Dialogue",
+                    "desc": "We promote genuine exchange between visitors and residents, breaking down barriers."
+                }
+            ]
+        },
+        "instagram": {
+            "title": "Follow our routine",
+            "handle": "@favelarepublica"
+        }
+    },
+    "SocialProject": {
+        "badge": "Social Project",
+        "title": "Impact that",
+        "titleHighlight": "Transforms Lives",
+        "description_1": "The Dona Irene Social Center is the heart of our mission. A portion of the revenue from every tour goes directly to support educational, cultural, and sports projects for the children and youth of the favela.",
+        "description_2": "It's not just charity, it's real community development. By visiting Favela-República, you help maintain music workshops, jiu-jitsu classes, and tutoring.",
+        "stats": {
+            "residents": {
+                "value": "300+",
+                "label": "Children Served"
+            },
+            "impact": {
+                "value": "100%",
+                "label": "Favela"
+            },
+            "community": {
+                "value": "15+",
+                "label": "Years of Action"
+            }
+        }
+    }
+}

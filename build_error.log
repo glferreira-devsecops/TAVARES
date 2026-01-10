@@ -1,0 +1,284 @@
+
+> favelarepublica@0.1.0 build
+> next build
+
+   [1m[38;2;173;127;168m▲ Next.js 15.5.9[39m[22m
+   - Environments: .env.local
+   - Experiments (use with caution):
+     · optimizePackageImports
+
+ [37m[1m [22m[39m Creating an optimized production build ...
+[31mFailed to compile.
+[39m
+./src/app/globals.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./src/app/globals.css
+Error: Cannot find module 'postcss-nested'
+Require stack:
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/tailwindcss/lib/util/parseObjectStyles.js
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/tailwindcss/lib/lib/setupContextUtils.js
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/tailwindcss/lib/lib/setupTrackingContext.js
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/tailwindcss/lib/plugin.js
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/tailwindcss/lib/index.js
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/build/webpack/config/blocks/css/plugins.js
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/build/webpack/config/blocks/css/index.js
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/build/webpack/config/index.js
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/build/webpack-config.js
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/build/webpack/plugins/next-trace-entrypoints-plugin.js
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/build/collect-build-traces.js
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/build/index.js
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/cli/next-build.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)
+    at /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/server/require-hook.js:57:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)
+    at Module._load (node:internal/modules/cjs/loader:1226:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.require (node:internal/modules/cjs/loader:1503:12)
+    at mod.require (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:152:16)
+    at Object.<anonymous> (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/tailwindcss/lib/util/parseObjectStyles.js:12:63)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1892:10)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.require (node:internal/modules/cjs/loader:1503:12)
+    at mod.require (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:152:16)
+    at Object.<anonymous> (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/tailwindcss/lib/lib/setupContextUtils.js:37:67)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1892:10)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.require (node:internal/modules/cjs/loader:1503:12)
+    at mod.require (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:152:16)
+    at Object.<anonymous> (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/tailwindcss/lib/lib/setupTrackingContext.js:21:28)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1892:10)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.require (node:internal/modules/cjs/loader:1503:12)
+    at mod.require (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:152:16)
+    at Object.<anonymous> (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/tailwindcss/lib/plugin.js:5:70)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1892:10)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.require (node:internal/modules/cjs/loader:1503:12)
+    at mod.require (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:152:16)
+
+Import trace for requested module:
+./src/app/globals.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./src/app/globals.css
+./src/app/globals.css
+
+./src/app/globals.css
+Error: Cannot find module 'postcss-nested'
+Require stack:
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/tailwindcss/lib/util/parseObjectStyles.js
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/tailwindcss/lib/lib/setupContextUtils.js
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/tailwindcss/lib/lib/setupTrackingContext.js
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/tailwindcss/lib/plugin.js
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/tailwindcss/lib/index.js
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/build/webpack/config/blocks/css/plugins.js
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/build/webpack/config/blocks/css/index.js
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/build/webpack/config/index.js
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/build/webpack-config.js
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/build/webpack/plugins/next-trace-entrypoints-plugin.js
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/build/collect-build-traces.js
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/build/index.js
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/cli/next-build.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)
+    at /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/server/require-hook.js:57:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)
+    at Module._load (node:internal/modules/cjs/loader:1226:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.require (node:internal/modules/cjs/loader:1503:12)
+    at mod.require (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:152:16)
+    at Object.<anonymous> (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/tailwindcss/lib/util/parseObjectStyles.js:12:63)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1892:10)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.require (node:internal/modules/cjs/loader:1503:12)
+    at mod.require (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:152:16)
+    at Object.<anonymous> (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/tailwindcss/lib/lib/setupContextUtils.js:37:67)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1892:10)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.require (node:internal/modules/cjs/loader:1503:12)
+    at mod.require (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:152:16)
+    at Object.<anonymous> (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/tailwindcss/lib/lib/setupTrackingContext.js:21:28)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1892:10)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.require (node:internal/modules/cjs/loader:1503:12)
+    at mod.require (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:152:16)
+    at Object.<anonymous> (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/tailwindcss/lib/plugin.js:5:70)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1892:10)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.require (node:internal/modules/cjs/loader:1503:12)
+    at mod.require (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:152:16)
+    at tryRunOrWebpackError (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/webpack/bundle5.js:29:316119)
+    at __webpack_require_module__ (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/webpack/bundle5.js:29:131532)
+    at __nested_webpack_require_161494__ (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/webpack/bundle5.js:29:130967)
+    at /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/webpack/bundle5.js:29:131824
+    at symbolIterator (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/neo-async/async.js:1:14444)
+    at done (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/neo-async/async.js:1:14824)
+    at Hook.eval [as callAsync] (eval at create (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/webpack/bundle5.js:14:9224), <anonymous>:15:1)
+    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/webpack/bundle5.js:14:6378)
+    at /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/webpack/bundle5.js:29:130687
+    at symbolIterator (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/neo-async/async.js:1:14402)
+    at timesSync (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/neo-async/async.js:1:5027)
+    at Object.eachLimit (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/neo-async/async.js:1:14208)
+    at /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/webpack/bundle5.js:29:130247
+    at symbolIterator (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/neo-async/async.js:1:14444)
+    at timesSync (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/neo-async/async.js:1:5027)
+    at Object.eachLimit (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/neo-async/async.js:1:14208)
+    at /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/webpack/bundle5.js:29:129985
+    at symbolIterator (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/neo-async/async.js:1:14444)
+    at done (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/neo-async/async.js:1:14824)
+    at /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/webpack/bundle5.js:29:129496
+    at /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/webpack/bundle5.js:29:110347
+    at /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/webpack/bundle5.js:29:16152
+    at Array.<anonymous> (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/webpack/bundle5.js:29:551693)
+    at /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/webpack/bundle5.js:29:16144
+    at eval (eval at create (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/webpack/bundle5.js:14:9224), <anonymous>:27:1)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at runNextTicks (node:internal/process/task_queues:68:3)
+    at process.processImmediate (node:internal/timers:472:9)
+-- inner error --
+Error: Cannot find module 'postcss-nested'
+Require stack:
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/tailwindcss/lib/util/parseObjectStyles.js
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/tailwindcss/lib/lib/setupContextUtils.js
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/tailwindcss/lib/lib/setupTrackingContext.js
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/tailwindcss/lib/plugin.js
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/tailwindcss/lib/index.js
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/build/webpack/config/blocks/css/plugins.js
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/build/webpack/config/blocks/css/index.js
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/build/webpack/config/index.js
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/build/webpack-config.js
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/build/webpack/plugins/next-trace-entrypoints-plugin.js
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/build/collect-build-traces.js
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/build/index.js
+- /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/cli/next-build.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)
+    at /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/server/require-hook.js:57:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)
+    at Module._load (node:internal/modules/cjs/loader:1226:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.require (node:internal/modules/cjs/loader:1503:12)
+    at mod.require (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:152:16)
+    at Object.<anonymous> (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/tailwindcss/lib/util/parseObjectStyles.js:12:63)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1892:10)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.require (node:internal/modules/cjs/loader:1503:12)
+    at mod.require (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:152:16)
+    at Object.<anonymous> (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/tailwindcss/lib/lib/setupContextUtils.js:37:67)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1892:10)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.require (node:internal/modules/cjs/loader:1503:12)
+    at mod.require (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:152:16)
+    at Object.<anonymous> (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/tailwindcss/lib/lib/setupTrackingContext.js:21:28)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1892:10)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.require (node:internal/modules/cjs/loader:1503:12)
+    at mod.require (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:152:16)
+    at Object.<anonymous> (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/tailwindcss/lib/plugin.js:5:70)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1892:10)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.require (node:internal/modules/cjs/loader:1503:12)
+    at mod.require (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:152:16)
+    at Object.<anonymous> (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!/Users/devferreirag/Documents/Saas/favelarepublica/src/app/globals.css:1:7)
+    at /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/webpack/bundle5.js:29:962717
+    at Hook.eval [as call] (eval at create (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/webpack/bundle5.js:14:9002), <anonymous>:7:1)
+    at Hook.CALL_DELEGATE [as _call] (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/webpack/bundle5.js:14:6272)
+    at /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/webpack/bundle5.js:29:131565
+    at tryRunOrWebpackError (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/webpack/bundle5.js:29:316073)
+    at __webpack_require_module__ (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/webpack/bundle5.js:29:131532)
+    at __nested_webpack_require_161494__ (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/webpack/bundle5.js:29:130967)
+    at /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/webpack/bundle5.js:29:131824
+    at symbolIterator (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/neo-async/async.js:1:14444)
+    at done (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/neo-async/async.js:1:14824)
+    at Hook.eval [as callAsync] (eval at create (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/webpack/bundle5.js:14:9224), <anonymous>:15:1)
+    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/webpack/bundle5.js:14:6378)
+    at /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/webpack/bundle5.js:29:130687
+    at symbolIterator (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/neo-async/async.js:1:14402)
+    at timesSync (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/neo-async/async.js:1:5027)
+    at Object.eachLimit (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/neo-async/async.js:1:14208)
+    at /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/webpack/bundle5.js:29:130247
+    at symbolIterator (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/neo-async/async.js:1:14444)
+    at timesSync (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/neo-async/async.js:1:5027)
+    at Object.eachLimit (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/neo-async/async.js:1:14208)
+    at /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/webpack/bundle5.js:29:129985
+    at symbolIterator (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/neo-async/async.js:1:14444)
+    at done (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/neo-async/async.js:1:14824)
+    at /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/webpack/bundle5.js:29:129496
+    at /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/webpack/bundle5.js:29:110347
+    at /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/webpack/bundle5.js:29:16152
+    at Array.<anonymous> (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/webpack/bundle5.js:29:551693)
+    at /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/webpack/bundle5.js:29:16144
+    at eval (eval at create (/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/compiled/webpack/bundle5.js:14:9224), <anonymous>:27:1)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at runNextTicks (node:internal/process/task_queues:68:3)
+    at process.processImmediate (node:internal/timers:472:9)
+
+Generated code for /Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!/Users/devferreirag/Documents/Saas/favelarepublica/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!/Users/devferreirag/Documents/Saas/favelarepublica/src/app/globals.css
+
+Import trace for requested module:
+./src/app/globals.css
+
+
+> Build failed because of webpack errors
