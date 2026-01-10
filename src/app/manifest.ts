@@ -12,23 +12,14 @@ export default function manifest(): MetadataRoute.Manifest {
         orientation: "portrait-primary",
         icons: [
             {
-                src: "/favicon.ico",
+                src: "/icon",
                 sizes: "any",
                 type: "image/x-icon",
             },
             {
-                src: "/icons/icon-192x192.png",
-                sizes: "192x192",
+                src: "/apple-icon",
+                sizes: "180x180",
                 type: "image/png",
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                purpose: "any maskable" as any,
-            },
-            {
-                src: "/icons/icon-512x512.png",
-                sizes: "512x512",
-                type: "image/png",
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                purpose: "any maskable" as any,
             },
         ],
         categories: ["travel", "tourism"],
