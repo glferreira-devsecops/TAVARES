@@ -116,7 +116,7 @@ export function Footer() {
                                 />
                             </div>
                             <span className="font-heading text-2xl md:text-3xl font-bold text-white">
-                                O Favela-República Tour
+                                Favela-República Tour
                             </span>
                         </Link>
                         <p className="text-neutral-300 text-sm leading-relaxed mb-8">
