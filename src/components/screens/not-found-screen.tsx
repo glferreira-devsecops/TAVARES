@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { CONTACT, WHATSAPP_MESSAGES } from "@/lib/constants";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { Home, MapPin, Search } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 interface NotFoundScreenProps {
@@ -35,6 +36,12 @@ export function NotFoundScreen({ isRoot = false, content = defaultContent }: Not
     const mouseX = useMotionValue(0.5);
     const mouseY = useMotionValue(0.5);
     const [mounted, setMounted] = useState(false);
+
+    // Robust locale detection that works even without IntlProvider (Root 404)
+    const pathname = usePathname();
+    const detectedLocale = pathname?.split('/')[1];
+    const locale = (["pt", "en", "es", "fr"].includes(detectedLocale || "") ? detectedLocale : "pt");
+    const currentLang = locale as "pt" | "en" | "es" | "fr";
 
     // Smooth mouse for parallax
     const smoothX = useSpring(mouseX, { damping: 50, stiffness: 400 });
@@ -167,7 +174,7 @@ export function NotFoundScreen({ isRoot = false, content = defaultContent }: Not
                         </div>
 
                         <WhatsAppButton
-                            message={WHATSAPP_MESSAGES.general.pt} // Could localize this too, but keeping it simpler for logic
+                            message={WHATSAPP_MESSAGES.general[currentLang]}
                             phone={CONTACT.whatsapp.number}
                             className="w-full md:w-auto bg-green-600 hover:bg-green-500 text-white px-6 py-3 rounded-xl font-bold flex items-center justify-center gap-2 transition-colors shadow-lg shadow-green-900/20"
                         >
