@@ -231,7 +231,7 @@ export function Footer() {
                             href="https://rettecnologia.org"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group flex items-center gap-2 text-[10px] uppercase tracking-widest text-neutral-600 hover:text-white transition-all duration-300"
+                            className="group flex items-center gap-2 text-[11px] uppercase tracking-widest text-neutral-600 hover:text-white transition-all duration-300"
                         >
                             <span className="text-neutral-700 group-hover:text-primary-500 transition-colors">Code</span>
                             <span className="w-px h-3 bg-neutral-800 group-hover:bg-primary-500/50 transition-colors"></span>

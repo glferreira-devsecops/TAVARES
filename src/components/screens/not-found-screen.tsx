@@ -178,7 +178,7 @@ export function NotFoundScreen({ isRoot = false, content = defaultContent }: Not
             </div>
 
             {/* Footer decoration */}
-            <div className="fixed bottom-6 left-6 right-6 flex justify-between text-[10px] text-neutral-600 uppercase tracking-widest font-mono pointer-events-none">
+            <div className="fixed bottom-6 left-6 right-6 flex justify-between text-[11px] text-neutral-600 uppercase tracking-widest font-mono pointer-events-none">
                 <span>Favela-República</span>
                 <span>404 Error • Page Not Found</span>
                 <span>Rio de Janeiro</span>

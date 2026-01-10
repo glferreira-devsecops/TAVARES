@@ -14,6 +14,7 @@ import {
     Users,
     X
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 interface TourDetailClientProps {
@@ -25,6 +26,7 @@ import { BookingModal } from "@/components/booking/booking-modal";
 import { useState } from "react";
 
 export function TourDetailClient({ tour, lang }: TourDetailClientProps) {
+    const tTours = useTranslations("Tours");
     const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
     const contentLang = lang as "pt" | "en" | "es" | "fr";
     const content = {
@@ -398,15 +400,15 @@ export function TourDetailClient({ tour, lang }: TourDetailClientProps) {
                                             className="group flex items-center justify-center gap-3 text-sm font-bold text-rose-300 bg-rose-950/30 hover:bg-rose-950/50 border border-rose-500/20 p-5 rounded-xl transition-all duration-300 hover:border-rose-500/40"
                                         >
                                             <span className="group-hover:animate-bounce text-xl">❤️</span>
-                                            <span>Parte do valor ajuda causas sociais</span>
+                                            <span>{tTours("sidebar.socialCause")}</span>
                                         </Link>
                                     </div>
 
                                     <div className="mt-8 pt-6 border-t border-white/10 text-center">
-                                        <p className="text-neutral-500 text-xs uppercase tracking-widest font-bold">Aceitamos</p>
+                                        <p className="text-neutral-500 text-xs uppercase tracking-widest font-bold">{tTours("sidebar.paymentMethodsTitle")}</p>
                                         <div className="flex justify-center gap-4 mt-3 opacity-60 grayscale hover:grayscale-0 transition-all">
                                             {/* Add payment icons if needed */}
-                                            <span className="text-white/50 text-sm">Pix • Cartão • Dinheiro</span>
+                                            <span className="text-white/50 text-sm">{tTours("sidebar.paymentMethods")}</span>
                                         </div>
                                     </div>
                                 </div>

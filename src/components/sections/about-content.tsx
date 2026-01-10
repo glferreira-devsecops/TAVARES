@@ -122,7 +122,7 @@ export default function AboutContent() {
                 <div className="container-custom">
                     <div className="text-center mb-20">
                         <MotionBox>
-                            <span className="text-orange-600 font-bold tracking-widest uppercase text-sm mb-4 block">Nossos Pilares</span>
+                            <span className="text-orange-600 font-bold tracking-widest uppercase text-sm mb-4 block">{t("values.eyebrow")}</span>
                             <h2 className="font-heading text-4xl md:text-6xl font-bold text-neutral-900">
                                 {t("values.title")}
                             </h2>

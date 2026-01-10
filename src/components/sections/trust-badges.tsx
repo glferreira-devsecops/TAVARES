@@ -14,8 +14,8 @@ export function TrustBadges() {
             bg: "bg-yellow-500/10",
             border: "group-hover:border-yellow-500/50",
             shadow: "group-hover:shadow-yellow-500/20",
-            title: t("highlights.fifa.title") || "FIFA Street",
-            subtitle: t("highlights.fifa.subtitle") || "Cenário Real"
+            title: t("highlights.fifa.title"),
+            subtitle: t("highlights.fifa.subtitle")
         },
         {
             icon: Star,
@@ -23,8 +23,8 @@ export function TrustBadges() {
             bg: "bg-amber-500/10",
             border: "group-hover:border-amber-500/50",
             shadow: "group-hover:shadow-amber-500/20",
-            title: "Google",
-            subtitle: "5 Estrelas"
+            title: t("highlights.google.title"),
+            subtitle: t("highlights.google.subtitle")
         },
         {
             icon: Users,
@@ -32,8 +32,8 @@ export function TrustBadges() {
             bg: "bg-emerald-500/10",
             border: "group-hover:border-emerald-500/50",
             shadow: "group-hover:shadow-emerald-500/20",
-            title: "1000+",
-            subtitle: "Visitantes"
+            title: t("highlights.visitors.title"),
+            subtitle: t("highlights.visitors.subtitle")
         },
         {
             icon: MapPin,
@@ -41,8 +41,8 @@ export function TrustBadges() {
             bg: "bg-rose-500/10",
             border: "group-hover:border-rose-500/50",
             shadow: "group-hover:shadow-rose-500/20",
-            title: "Condutores Locais",
-            subtitle: "que vivem no Favela-República"
+            title: t("highlights.local.title"),
+            subtitle: t("highlights.local.subtitle")
         }
     ];
 
@@ -79,7 +79,7 @@ export function TrustBadges() {
                                     <div className="font-heading font-bold text-white text-base sm:text-lg md:text-2xl tracking-tight leading-tight">
                                         {badge.title}
                                     </div>
-                                    <div className="text-[10px] sm:text-xs md:text-sm text-neutral-300 font-medium uppercase tracking-wider group-hover:text-white/80 transition-colors line-clamp-2">
+                                    <div className="text-[11px] sm:text-xs md:text-sm text-neutral-300 font-medium uppercase tracking-wider group-hover:text-white/80 transition-colors line-clamp-2">
                                         {badge.subtitle}
                                     </div>
                                 </div>

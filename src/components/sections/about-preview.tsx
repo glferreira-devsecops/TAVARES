@@ -151,12 +151,12 @@ export function AboutPreview() {
                                 <div>
                                     <GoogleLogo className="w-10 h-10 mx-auto mb-3 text-[#4285F4]" />
                                     <div className="flex justify-center gap-1 mb-2">
-                                        {[1, 2, 3, 4, 5].map(i => (
+                                        {[...Array(5)].map((_, i) => (
                                             <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
                                         ))}
                                     </div>
                                     <p className="font-black text-3xl text-neutral-900 tracking-tight">5.0</p>
-                                    <p className="text-[10px] uppercase font-black text-neutral-400 tracking-[0.2em] mt-1">Google Reviews</p>
+                                    <p className="text-[11px] uppercase font-black text-neutral-400 tracking-[0.2em] mt-1">Google Reviews</p>
                                 </div>
                             </motion.div>
                         </div>
@@ -224,7 +224,7 @@ export function AboutPreview() {
                                             <p className="text-3xl md:text-5xl font-black text-primary-500 mb-2 group-hover:scale-110 transition-transform origin-left">
                                                 {tSocial(`stats.${stat.key}.value`)}
                                             </p>
-                                            <p className="text-[10px] text-neutral-400 uppercase tracking-[0.2em] font-black leading-tight">
+                                            <p className="text-[11px] text-neutral-400 uppercase tracking-[0.2em] font-black leading-tight">
                                                 {tSocial(`stats.${stat.key}.label`)}
                                             </p>
                                         </div>

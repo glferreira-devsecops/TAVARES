@@ -60,6 +60,14 @@
             "google": {
                 "title": "Google",
                 "subtitle": "5.0/5.0"
+            },
+            "visitors": {
+                "title": "1000+",
+                "subtitle": "Visiteurs"
+            },
+            "local": {
+                "title": "Guides Locaux",
+                "subtitle": "De la Favela"
             }
         },
         "stats": {
@@ -153,7 +161,9 @@
         "next": "Continuer",
         "confirm": "Confirmer via WhatsApp",
         "back": "Retour",
-        "duration": "Durée : 2 - 3h"
+        "duration": "Durée : 2 - 3h",
+        "namePlaceholder": "Ex: Jean Dupont",
+        "whatsappIntro": "Bonjour! Je m'appelle {name}. "
     },
     "CTABanner": {
         "title": "Prêt à vivre cette expérience?",
@@ -220,10 +230,13 @@
             "featured": "En Vedette"
         }
     },
-    "FeaturedTours": {
-        "badge": "CIRCUITS EXCLUSIFS",
-        "title": "Nos Tours",
-        "subtitle": "Expériences",
+    "Tours": {
+        "sidebar": {
+            "socialCause": "Une partie des bénéfices aide des causes sociales",
+            "paymentMethodsTitle": "Nous Acceptons",
+            "paymentMethods": "Pix • Carte • Espèces"
+        },
+        "title": "Nos Expériences",
         "description": "Choisissez le tour idéal pour vous. Tous incluent un guide local, des billets pour les expériences et le transport aller-retour au point de rencontre.",
         "book": "Réserver",
         "cta": "Voir tous les tours"
@@ -239,6 +252,7 @@
             "text2": "Chaque visite soutient directement l'économie locale, créant des opportunités et renforçant la fierté d'être de la favela."
         },
         "values": {
+            "eyebrow": "Nos Piliers",
             "title": "Ce qui nous anime",
             "list": [
                 {

@@ -34,8 +34,8 @@ export function MobileMenu({ onClose, isActive }: MobileMenuProps) {
             {/* Noise texture overlay */}
             <div className="absolute inset-0 opacity-20 bg-noise pointer-events-none mix-blend-overlay gpu-accelerated" />
 
-            {/* Close Button - Premium Position aligned with Header */}
-            <div className="absolute top-6 right-4 z-[60]">
+            {/* Close Button - Premium Position aligned with Header, respecting Safe Area */}
+            <div className="absolute top-6 right-4 z-[60] mt-[env(safe-area-inset-top)]">
                 <button
                     onClick={onClose}
                     className="p-3 text-white bg-white/5 rounded-full hover:bg-white/10 transition-all active:scale-90 border border-white/20 backdrop-blur-md shadow-xl gpu-accelerated"
@@ -45,7 +45,7 @@ export function MobileMenu({ onClose, isActive }: MobileMenuProps) {
                 </button>
             </div>
 
-            <div className="flex-1 relative z-10 overflow-y-auto overflow-x-hidden">
+            <div className="flex-1 relative z-10 overflow-y-auto overflow-x-hidden pt-[env(safe-area-inset-top)]">
                 <div className="min-h-full flex flex-col justify-center px-8 py-24">
                     <nav className="mb-12">
                         <ul className="space-y-4">

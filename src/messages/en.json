@@ -59,7 +59,15 @@
             },
             "google": {
                 "title": "Google",
-                "subtitle": "5.0/5.0"
+                "subtitle": "5/5 stars"
+            },
+            "visitors": {
+                "title": "1000+",
+                "subtitle": "Visitors"
+            },
+            "local": {
+                "title": "Local Guides",
+                "subtitle": "From the Favela"
             }
         },
         "stats": {
@@ -141,6 +149,19 @@
         "helpSubtitle": "Talk to us directly on WhatsApp",
         "whatsappButton": "Chat on WhatsApp"
     },
+    "Tours": {
+        "sidebar": {
+            "socialCause": "Part of the proceeds helps social causes",
+            "paymentMethodsTitle": "We Accept",
+            "paymentMethods": "Pix • Card • Cash"
+        },
+        "title": "Our Experiences",
+        "subtitle": "Almost there! Fill in the details to customize your tour.",
+        "step1": "Select Date",
+        "step2": "Your Details",
+        "dateLabel": "Tour Date",
+        "guestsLabel": "Number of People"
+    },
     "BookingModal": {
         "title": "Book Experience",
         "subtitle": "Almost there! Fill in the details to customize your tour.",
@@ -153,7 +174,9 @@
         "confirm": "Confirm via WhatsApp",
         "back": "Back",
         "guestUnit": "guests",
-        "duration": "Duration: 2 - 3h"
+        "duration": "Duration: 2 - 3h",
+        "namePlaceholder": "Ex: John Doe",
+        "whatsappIntro": "Hello! My name is {name}. "
     },
     "CTABanner": {
         "title": "Ready to live this experience?",
@@ -239,6 +262,7 @@
             "text2": "Every visit directly supports the local economy, creating opportunities and strengthening pride in being from the favela."
         },
         "values": {
+            "eyebrow": "Our Pillars",
             "title": "What Drives Us",
             "list": [
                 {

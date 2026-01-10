@@ -60,14 +60,7 @@ export function BookingModal({ isOpen, onClose, tourTitle, locale }: BookingModa
         const baseMsg = WHATSAPP_MESSAGES.tourReservationWithDate(tourTitle, data.date, data.guests)[locale];
 
         // Localized Intro mapping
-        const intros = {
-            pt: `Olá! Me chamo ${data.name}. `,
-            es: `¡Hola! Me llamo ${data.name}. `,
-            fr: `Bonjour! Je m'appelle ${data.name}. `,
-            en: `Hello! My name is ${data.name}. `
-        };
-
-        const nameIntro = intros[locale] || intros.en;
+        const nameIntro = t('whatsappIntro', { name: data.name });
 
         // Remove standard greeting from baseMsg if we add custom intro to avoid "Hello! Hello!"
         const finalMsg = `${nameIntro}${baseMsg.replace(/^(Olá!|Hello!|¡Hola!|Bonjour!)\s*/, "")}`;
@@ -226,7 +219,7 @@ export function BookingModal({ isOpen, onClose, tourTitle, locale }: BookingModa
                                                         type="text"
                                                         value={data.name}
                                                         onChange={(e) => setData({ ...data, name: e.target.value })}
-                                                        placeholder={locale === 'pt' ? 'Ex: João Silva' : 'Ex: John Doe'}
+                                                        placeholder={t('namePlaceholder')}
                                                         className="w-full pl-12 pr-4 py-4 bg-neutral-50 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 outline-none transition-all font-medium text-neutral-900 text-base"
                                                         autoFocus
                                                     />

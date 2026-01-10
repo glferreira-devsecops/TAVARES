@@ -59,6 +59,14 @@
             "google": {
                 "title": "Google",
                 "subtitle": "5.0/5.0"
+            },
+            "visitors": {
+                "title": "1000+",
+                "subtitle": "Visitantes"
+            },
+            "local": {
+                "title": "Guías Locales",
+                "subtitle": "De la Favela"
             }
         },
         "reviewCount": "250+ evaluaciones",
@@ -141,18 +149,40 @@
         "helpSubtitle": "Habla con nosotros directamente en WhatsApp",
         "whatsappButton": "Hablar en WhatsApp"
     },
-    "BookingModal": {
-        "title": "Reservar Experiencia",
+    "Tours": {
+        "sidebar": {
+            "socialCause": "Parte de las ganancias ayuda a causas sociales",
+            "paymentMethodsTitle": "Aceptamos",
+            "paymentMethods": "Pix • Tarjeta • Efectivo"
+        },
+        "title": "Nuestras Experiencias",
         "step1": "Elige la fecha",
         "step2": "Tus datos",
         "subtitle": "Reserva tu lugar ahora",
         "dateLabel": "Fecha del tour",
         "guestsLabel": "Número de personas",
-        "nameLabel": "Tu nombre completo",
         "guestUnit": "personas",
         "next": "Continuar",
         "confirm": "Confirmar vía WhatsApp",
-        "duration": "Duración: 2 - 3h"
+        "duration": "Duración: 2 - 3h",
+        "namePlaceholder": "Ej: Juan Pérez",
+        "whatsappIntro": "¡Hola! Me llamo {name}. "
+    },
+    "BookingModal": {
+        "title": "Reservar Experiencia",
+        "subtitle": "Reserva tu lugar ahora",
+        "step1": "Elige la fecha",
+        "step2": "Tus datos",
+        "dateLabel": "Fecha del tour",
+        "guestsLabel": "Número de personas",
+        "nameLabel": "Tu Nombre Completo",
+        "next": "Continuar",
+        "confirm": "Confirmar vía WhatsApp",
+        "back": "Volver",
+        "guestUnit": "personas",
+        "duration": "Duración: 2 - 3h",
+        "namePlaceholder": "Ej: Juan Pérez",
+        "whatsappIntro": "¡Hola! Me llamo {name}. "
     },
     "CTABanner": {
         "title": "¿Listo para vivir esta experiencia?",
@@ -238,6 +268,7 @@
             "text2": "Cada visita apoya directamente la economía local, creando oportunidades y fortaleciendo el orgullo de ser de la favela."
         },
         "values": {
+            "eyebrow": "Nuestros Pilares",
             "title": "Lo que nos mueve",
             "list": [
                 {

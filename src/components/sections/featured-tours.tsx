@@ -104,11 +104,13 @@ export function FeaturedTours({ tours }: FeaturedToursProps) {
                                     {/* Badges */}
                                     <div className="absolute top-4 left-4 flex flex-col gap-2">
                                         {tour.featured && (
-                                            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-gradient-to-r from-orange-500 to-red-500 text-white text-[10px] font-black uppercase tracking-[0.15em] rounded-full shadow-xl shadow-orange-500/30">
-                                                <Star className="w-3 h-3 fill-current" /> Destaque
-                                            </span>
-                                        )}
-                                    </div>
+                                            <div className="absolute top-4 left-4 z-20">
+                                                <span className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-gradient-to-r from-orange-500 to-red-500 text-white text-[11px] font-black uppercase tracking-[0.15em] rounded-full shadow-xl shadow-orange-500/30">
+                                                    <Star className="w-3 h-3 fill-white" />
+                                                    {tCommon("highlights.featured")}
+                                                </span>
+                                            </div>
+                                        )}</div>
 
                                     {/* Quick Stats on Image */}
                                     <div className="absolute bottom-4 left-4 right-4 flex items-center gap-2">

@@ -1,5 +1,6 @@
 "use client";
 
+import { CONTACT } from "@/lib/constants";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, MessageCircle } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -67,7 +68,7 @@ export function FAQSection() {
                                     </div>
                                 </div>
                                 <a
-                                    href={`https://wa.me/5521999999999`} // Use constant in real code
+                                    href={`https://wa.me/${CONTACT.whatsapp.number}`} // Use constant in real code
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="block w-full py-4 text-center bg-whatsapp text-white font-bold rounded-xl hover:bg-whatsapp/90 transition-all hover:scale-[1.02] shadow-lg shadow-whatsapp/10"

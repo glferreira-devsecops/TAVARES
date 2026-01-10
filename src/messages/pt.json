@@ -63,6 +63,14 @@
             "google": {
                 "title": "Google",
                 "subtitle": "5/5 estrelas"
+            },
+            "visitors": {
+                "title": "1000+",
+                "subtitle": "Visitantes"
+            },
+            "local": {
+                "title": "Condutores Locais",
+                "subtitle": "Da própria favela"
             }
         },
         "stats": {
@@ -144,6 +152,19 @@
         "helpSubtitle": "Fale com a gente direto no WhatsApp",
         "whatsappButton": "Chamar no Zap"
     },
+    "Tours": {
+        "sidebar": {
+            "socialCause": "Parte do valor ajuda causas sociais",
+            "paymentMethodsTitle": "Aceitamos",
+            "paymentMethods": "Pix • Cartão • Dinheiro"
+        },
+        "title": "Nossas Experiências",
+        "subtitle": "Reserve seu lugar agora",
+        "step1": "Escolha a data",
+        "step2": "Seus dados",
+        "dateLabel": "Data do Tour",
+        "guestsLabel": "Número de Pessoas"
+    },
     "BookingModal": {
         "title": "Agendar Experiência",
         "subtitle": "Reserve seu lugar agora",
@@ -156,7 +177,9 @@
         "confirm": "Confirmar via WhatsApp",
         "back": "Voltar",
         "guestUnit": "pessoas",
-        "duration": "Duração: 2 - 3h"
+        "duration": "Duração: 2 - 3h",
+        "namePlaceholder": "Ex: João Silva",
+        "whatsappIntro": "Olá! Me chamo {name}. "
     },
     "CTABanner": {
         "title": "Pronto para viver essa experiência?",
@@ -242,6 +265,7 @@
             "text2": "Cada visita apoia diretamente a economia local, criando oportunidades e fortalecendo o orgulho de ser da favela."
         },
         "values": {
+            "eyebrow": "Nossos Pilares",
             "title": "O que nos move",
             "list": [
                 {

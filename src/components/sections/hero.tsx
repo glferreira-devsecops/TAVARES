@@ -92,7 +92,7 @@ export function Hero() {
                     variants={fadeInUp}
                     className="mb-6 md:mb-8 flex justify-center"
                 >
-                    <span className="inline-flex items-center gap-2.5 px-4 py-1.5 md:px-5 md:py-2 bg-white/10 backdrop-blur-xl rounded-full border border-white/20 text-white text-[10px] md:text-xs font-bold tracking-[0.25em] uppercase shadow-lg hover:bg-white/15 transition-colors duration-300">
+                    <span className="inline-flex items-center gap-2.5 px-4 py-1.5 md:px-5 md:py-2 bg-white/10 backdrop-blur-xl rounded-full border border-white/20 text-white text-[11px] md:text-xs font-bold tracking-[0.25em] uppercase shadow-lg hover:bg-white/15 transition-colors duration-300">
                         <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-gradient-to-r from-orange-400 to-red-500 animate-pulse shadow-lg shadow-orange-500/50" />
                         {t("eyebrow")}
                     </span>
@@ -202,8 +202,8 @@ export function Hero() {
                                 <stat.icon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
                             </div>
                             <div className="text-center md:text-left flex flex-col justify-center min-w-0 w-full overflow-hidden">
-                                <div className="text-[10px] sm:text-base md:text-xl font-bold text-white leading-tight mb-0.5 drop-shadow-md w-full">{stat.value}</div>
-                                <div className="text-[9px] sm:text-xs md:text-sm text-white/80 uppercase tracking-wider font-medium drop-shadow-sm leading-tight text-balance w-full">{stat.label}</div>
+                                <div className="text-[11px] sm:text-base md:text-xl font-bold text-white leading-tight mb-0.5 drop-shadow-md w-full">{stat.value}</div>
+                                <div className="text-[10px] sm:text-xs md:text-sm text-white/80 uppercase tracking-wider font-medium drop-shadow-sm leading-tight text-balance w-full">{stat.label}</div>
                             </div>
                         </motion.div>
                     ))}
