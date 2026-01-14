@@ -32,7 +32,7 @@ import { SEO_DEFAULTS } from "@/lib/constants";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
     const { locale } = await params;
-    const lang = (locales.includes(locale as typeof locales[number]) ? locale : "pt") as keyof typeof SEO_DEFAULTS.defaultTitle;
+    const lang = (locales.includes(locale as typeof locales[number]) ? locale : "en") as keyof typeof SEO_DEFAULTS.defaultTitle;
 
     const url = `${SEO_DEFAULTS.siteUrl}/${locale}`;
 
@@ -65,7 +65,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
                 en: `${SEO_DEFAULTS.siteUrl}/en`,
                 es: `${SEO_DEFAULTS.siteUrl}/es`,
                 fr: `${SEO_DEFAULTS.siteUrl}/fr`,
-                "x-default": `${SEO_DEFAULTS.siteUrl}/pt`,
+                "x-default": `${SEO_DEFAULTS.siteUrl}/en`,
             },
         },
         openGraph: {

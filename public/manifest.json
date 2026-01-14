@@ -1,0 +1,33 @@
+{
+  "name": "Favela-República Tour",
+  "short_name": "FavelaRep",
+  "description": "Turismo autêntico na favela Tavares Bastos - Rio de Janeiro. Tours seguros com condutores locais.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B1120",
+  "theme_color": "#C85A34",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": [
+    "travel",
+    "tourism"
+  ],
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "scope": "/",
+  "screenshots": [],
+  "prefer_related_applications": false
+}

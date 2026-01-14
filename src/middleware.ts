@@ -6,7 +6,7 @@ const intlMiddleware = createMiddleware({
     locales: ["pt", "en", "es", "fr"],
 
     // Used when no locale matches
-    defaultLocale: "pt",
+    defaultLocale: "en",
 
     // Always show the locale prefix, even for the default locale, to be consistent
     localePrefix: "always"

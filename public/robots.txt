@@ -1,0 +1,14 @@
+# Crawlers
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://favelarepublicatour.com/sitemap.xml
+
+# Disallow admin and API routes
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+
+# Crawl-delay for courtesy
+Crawl-delay: 1
