@@ -22,7 +22,7 @@
     "jsdom": "^27.3.0",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.561.0",
-    "next": "^15.5.9",
+    "next": "^16.1.5",
     "next-intl": "^4.6.0",
     "photoswipe": "^5.4.4",
     "postcss-nested": "^7.0.2",
