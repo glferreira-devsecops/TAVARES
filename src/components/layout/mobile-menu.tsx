@@ -1,6 +1,6 @@
 "use client";
 
-import { WhatsAppButton } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { Flag } from "@/components/ui/flag";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { CONTACT, WHATSAPP_MESSAGES } from "@/lib/constants";
@@ -133,15 +133,16 @@ export function MobileMenu({ onClose, isActive }: MobileMenuProps) {
                 transition={{ delay: 0.5 }}
                 className="p-8 border-t border-white/10 bg-neutral-950/50 backdrop-blur-xl relative z-10"
             >
-                <WhatsAppButton
-                    message={WHATSAPP_MESSAGES.general[currentLang]}
-                    phone={CONTACT.whatsapp.number}
+                <Button
+                    href="https://reservas.favelarepublicatour.com/"
+                    external
                     fullWidth
                     size="lg"
-                    className="shadow-xl bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-white border-0 py-6 text-lg"
+                    variant="primary"
+                    className="shadow-xl py-6 text-lg"
                 >
                     {t("book")}
-                </WhatsAppButton>
+                </Button>
             </motion.div>
         </motion.div >
     );

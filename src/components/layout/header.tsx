@@ -2,7 +2,7 @@
 
 import { MobileMenu } from "@/components/layout/mobile-menu";
 import { GmailLogo, TikTokLogo } from "@/components/ui/brand-logos";
-import { WhatsAppButton } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { Flag } from "@/components/ui/flag";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { CONTACT, WHATSAPP_MESSAGES } from "@/lib/constants";
@@ -327,10 +327,11 @@ export function Header() {
                             </div>
 
                             {/* WhatsApp CTA */}
-                            <WhatsAppButton
-                                message={WHATSAPP_MESSAGES.general[locale.startsWith("pt") ? "pt" : locale === "en" ? "en" : locale === "es" ? "es" : "fr"]}
-                                phone={CONTACT.whatsapp.number}
+                            <Button
+                                href="https://reservas.favelarepublicatour.com/"
+                                external
                                 size="sm"
+                                variant="primary"
                                 className={cn(
                                     "shadow-soft-lg hover:shadow-soft-xl hover:-translate-y-0.5 transition-all overflow-hidden relative group font-bold px-6",
                                     !shouldForceSolid && "bg-white text-primary-600 hover:bg-neutral-50"
@@ -340,7 +341,7 @@ export function Header() {
                                     <span className="absolute -inset-full top-0 block w-[50%] -skew-x-12 bg-gradient-to-r from-transparent to-white/20 opacity-0 group-hover:animate-shimmer" />
                                 </span>
                                 {t("book")}
-                            </WhatsAppButton>
+                            </Button>
                         </div>
 
                         {/* Mobile Menu Button */}

@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, WhatsAppButton } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { CONTACT, WHATSAPP_MESSAGES } from "@/lib/constants";
 import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import { ArrowRight, Star, Trophy, Users } from "lucide-react";
@@ -159,19 +159,20 @@ export function Hero() {
                     transition={{ delay: 0.8 }}
                     className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 md:mb-20 px-4 w-full"
                 >
-                    <WhatsAppButton
-                        message={WHATSAPP_MESSAGES.general[currentLang]}
-                        phone={CONTACT.whatsapp.number}
+                    <Button
+                        href="https://reservas.favelarepublicatour.com/"
+                        external
                         size="lg"
-                        className="group relative overflow-hidden bg-white text-neutral-900 border-none px-8 py-5 md:px-10 md:py-6 text-base md:text-lg rounded-full font-bold shadow-2xl hover:scale-105 transition-transform duration-300 w-full sm:w-auto"
+                        variant="primary"
+                        className="group relative overflow-hidden px-8 py-5 md:px-10 md:py-6 text-base md:text-lg rounded-full font-bold shadow-[0_0_30px_-5px_rgba(239,68,68,0.5)] hover:shadow-[0_0_50px_-10px_rgba(239,68,68,0.7)] hover:scale-105 transition-transform duration-300 w-full sm:w-auto"
                     >
                         <span className="relative z-10 flex items-center justify-center gap-2">
                             {t("ctaMain")}
                             <ArrowRight className="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform duration-300" />
                         </span>
                         {/* Shine Effect */}
-                        <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12" />
-                    </WhatsAppButton>
+                        <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12" />
+                    </Button>
 
                     <Button
                         href="/tours"

@@ -1,7 +1,7 @@
 "use client";
 
 import { GoogleLogo } from "@/components/ui/brand-logos";
-import { Button, WhatsAppButton } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { CONTACT, WHATSAPP_MESSAGES } from "@/lib/constants";
 import { motion } from "framer-motion";
 import { ArrowRight, Star } from "lucide-react";
@@ -93,14 +93,14 @@ export function AboutPreview() {
                             >
                                 {t("cta")}
                             </Button>
-                            <WhatsAppButton
-                                message={WHATSAPP_MESSAGES.general[currentLang]}
-                                phone={CONTACT.whatsapp.number}
+                            <Button
+                                href="https://reservas.favelarepublicatour.com/"
+                                external
                                 size="lg"
                                 className="bg-[#25D366] hover:bg-[#128C7E] text-white border-none shadow-xl shadow-green-500/20 font-bold px-8"
                             >
                                 {t("ctaWhatsapp")}
-                            </WhatsAppButton>
+                            </Button>
                         </div>
                     </motion.div>
 

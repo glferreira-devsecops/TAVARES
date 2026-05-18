@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { PAGE_METADATA } from "@/lib/constants";
 import { CheckCircle, Clock, MapPin, Phone, Shield, Users } from "lucide-react";
 import { Metadata } from "next";
-import Link from "next/link";
 
 interface PageProps {
     params: Promise<{ locale: string }>;
@@ -141,11 +140,9 @@ export default async function SegurancaPage({ params }: PageProps) {
                     <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-6">
                         {t.ctaReady}
                     </h2>
-                    <Link href={`/${locale}/tours`}>
-                        <Button variant="primary" size="lg" className="rounded-full px-10">
-                            {t.cta}
-                        </Button>
-                    </Link>
+                    <Button variant="primary" size="lg" href="https://reservas.favelarepublicatour.com/" external className="rounded-full px-10">
+                        {t.cta}
+                    </Button>
                 </div>
             </section>
         </main>

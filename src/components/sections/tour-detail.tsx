@@ -22,12 +22,8 @@ interface TourDetailClientProps {
     lang: "pt" | "en" | "es" | "fr";
 }
 
-import { BookingModal } from "@/components/booking/booking-modal";
-import { useState } from "react";
-
 export function TourDetailClient({ tour, lang }: TourDetailClientProps) {
     const tTours = useTranslations("Tours");
-    const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
     const contentLang = lang as "pt" | "en" | "es" | "fr";
     const content = {
         pt: {
@@ -387,11 +383,12 @@ export function TourDetailClient({ tour, lang }: TourDetailClientProps) {
                                     {/* Action Buttons */}
                                     <div className="space-y-4">
                                         <Button
-                                            variant="whatsapp"
+                                            variant="primary"
                                             fullWidth
                                             size="lg"
-                                            onClick={() => setIsBookingModalOpen(true)}
-                                            className="font-bold text-lg py-7 rounded-xl shadow-[0_0_30px_-5px_rgba(37,211,102,0.3)] hover:shadow-[0_0_50px_-10px_rgba(37,211,102,0.5)] hover:-translate-y-1 transition-all"
+                                            href="https://reservas.favelarepublicatour.com/"
+                                            external
+                                            className="font-bold text-lg py-7 rounded-xl shadow-[0_0_30px_-5px_rgba(239,68,68,0.3)] hover:shadow-[0_0_50px_-10px_rgba(239,68,68,0.5)] hover:-translate-y-1 transition-all"
                                         >
                                             {t.bookNow}
                                         </Button>
@@ -430,12 +427,27 @@ export function TourDetailClient({ tour, lang }: TourDetailClientProps) {
                 </div>
             </section>
 
-            <BookingModal
-                isOpen={isBookingModalOpen}
-                onClose={() => setIsBookingModalOpen(false)}
-                tourTitle={tour.title[contentLang]}
-                locale={lang}
-            />
+            {/* Mobile Sticky Booking Bar */}
+            <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden">
+                <div className="absolute inset-0 bg-neutral-950/80 backdrop-blur-xl border-t border-white/10" />
+                <div className="relative px-4 py-4 pb-8 flex items-center justify-between gap-4">
+                    <div className="flex flex-col">
+                        <span className="text-xs text-neutral-400 font-medium uppercase tracking-wider">{t.from}</span>
+                        <div className="flex items-baseline gap-1">
+                            <span className="text-lg font-bold text-white">R$ {tour.priceFrom}</span>
+                        </div>
+                    </div>
+                    <Button
+                        variant="primary"
+                        size="md"
+                        href="https://reservas.favelarepublicatour.com/"
+                        external
+                        className="font-bold shadow-[0_0_20px_-5px_rgba(239,68,68,0.4)] px-8 py-3 rounded-xl hover:-translate-y-1 transition-all"
+                    >
+                        {t.bookNow}
+                    </Button>
+                </div>
+            </div>
         </main>
     );
 }
